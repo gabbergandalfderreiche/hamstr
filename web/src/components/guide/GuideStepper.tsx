@@ -5,7 +5,7 @@ import { useT } from "@/i18n/client";
 import { Hamster } from "../Hamster";
 
 type Path = "phantom" | "exchange";
-type Screen = "home" | "swapFrom" | "swapTo" | "swapGas" | "pending" | "hamstr" | "buy" | "address" | "withdraw";
+type Screen = "home" | "swapFrom" | "pickUsdc" | "swapTo" | "pickEth" | "pending" | "hamstr" | "buy" | "address" | "withdraw";
 
 const STEP_MS = 6000;
 const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
@@ -119,7 +119,8 @@ function Phone({ screen }: { screen: Screen }) {
       <div className="guide-screen flex h-[380px] flex-col rounded-2xl bg-surface-2 p-3 text-xs">
         <div className="mb-3 text-center font-display text-sm font-extrabold">{title}</div>
         {screen === "home" && <HomeScreen />}
-        {(screen === "swapFrom" || screen === "swapTo" || screen === "swapGas") && <SwapScreen stage={screen} />}
+        {(screen === "swapFrom" || screen === "swapTo") && <SwapScreen stage={screen} />}
+        {(screen === "pickUsdc" || screen === "pickEth") && <PickTokenScreen token={screen === "pickUsdc" ? "USDC" : "ETH"} />}
         {screen === "pending" && <PendingScreen />}
         {screen === "hamstr" && <HamstrScreen />}
         {screen === "buy" && <BuyScreen />}
@@ -169,15 +170,14 @@ function HomeScreen() {
   );
 }
 
-function SwapScreen({ stage }: { stage: "swapFrom" | "swapTo" | "swapGas" }) {
+function SwapScreen({ stage }: { stage: "swapFrom" | "swapTo" }) {
   const s = useT().t.guide.screens;
-  const to = stage === "swapGas" ? { token: "ETH", amount: "≈ 0.0006" } : { token: "USDC", amount: "≈ 248" };
   return (
     <div className="space-y-2">
       <Row glow={stage === "swapFrom"}>
         <div className="text-muted">{s.youPay}</div>
         <div className="mt-1 flex items-center justify-between">
-          <span className="num font-display text-lg font-extrabold">{stage === "swapGas" ? "0.013" : "1.6"}</span>
+          <span className="num font-display text-lg font-extrabold">1.6</span>
           <span className="font-bold">SOL</span>
         </div>
         <div className="mt-1.5 flex items-center gap-1 text-muted">
@@ -188,14 +188,48 @@ function SwapScreen({ stage }: { stage: "swapFrom" | "swapTo" | "swapGas" }) {
       <Row glow={stage !== "swapFrom"}>
         <div className="text-muted">{s.youGet}</div>
         <div className="mt-1 flex items-center justify-between">
-          <span className="num font-display text-lg font-extrabold">{to.amount}</span>
-          <span className="font-bold">{to.token}</span>
+          <span className="num font-display text-lg font-extrabold">≈ 248</span>
+          <span className="font-bold">USDC</span>
         </div>
         <div className="mt-1.5 flex items-center gap-1 text-muted">
           {s.network}: <Chip glow={stage !== "swapFrom"}>Base</Chip>
         </div>
       </Row>
       <div className="btn btn-primary mt-2 w-full !py-2 text-xs">{s.review}</div>
+    </div>
+  );
+}
+
+/** Token list behind the lower token: pick the network "Base" first, then the token. */
+function PickTokenScreen({ token }: { token: "USDC" | "ETH" }) {
+  const s = useT().t.guide.screens;
+  const rows = [
+    { symbol: "USDC", name: "USD Coin" },
+    { symbol: "ETH", name: "Ethereum" },
+  ];
+  return (
+    <div className="space-y-2">
+      <div className="rounded-xl bg-surface px-3 py-2 text-muted">⌕ {s.search}</div>
+      <div className="flex items-center gap-1 overflow-hidden whitespace-nowrap">
+        <span className="text-muted">‹</span>
+        <Chip>Arc</Chip>
+        <Chip glow>Base</Chip>
+        <Chip>Polygon</Chip>
+        <Chip>HyperEVM</Chip>
+      </div>
+      {rows.map((r) => (
+        <Row key={r.symbol} glow={r.symbol === token}>
+          <div className="relative flex items-center justify-between">
+            <div>
+              <div className="font-bold">{r.name}</div>
+              <div className="text-muted">
+                {r.symbol} · <span className="font-bold text-btc-ink">Base</span>
+              </div>
+            </div>
+            {r.symbol === token && <Tap />}
+          </div>
+        </Row>
+      ))}
     </div>
   );
 }
