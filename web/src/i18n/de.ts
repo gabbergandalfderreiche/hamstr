@@ -127,6 +127,31 @@ export const de = {
       },
     ],
 
+    transparency: {
+      statusTitle: "Sicherheits-Status",
+      status: [
+        { ok: true, text: "Quellcode öffentlich (Open Source)", link: "github" },
+        { ok: true, text: "Contract-Code verifiziert (Sourcify)", link: "sourcify" },
+        { ok: true, text: "Automatische Sicherheitsanalyse (Slither): keine kritischen Funde", link: "security" },
+        { ok: true, text: "73 automatische Tests, auch gegen das echte Base-Netzwerk", link: "" },
+        { ok: true, text: "Änderungen nur mit 2 Tagen Vorankündigung (Timelock)", link: "" },
+        { ok: true, text: "Einzahlungs-Limits während der Beta", link: "" },
+        { ok: false, text: "Externes Audit: noch ausstehend", link: "" },
+      ],
+      details: "Details",
+      contractsTitle: "Unsere Contracts",
+      contracts: { usdcVault: "Dollar-Hamster", ethVault: "ETH-Hamster", turboVault: "Turbo-Hamster", timelock: "Timelock (Admin)" },
+      builtOnTitle: "Baut auf",
+      builtOn: {
+        aave: "Verleihen – hier kommen die Zinsen her",
+        uniswap: "Tausch der Zinsen in Bitcoin",
+        chainlink: "Marktpreise als Schutz beim Tausch",
+        cbbtc: "Bitcoin auf Base, 1:1 gedeckt von Coinbase",
+        base: "Die Blockchain, auf der Hamstr läuft",
+      },
+      independent: "Hamstr ist ein unabhängiges Projekt. Wir nutzen die öffentlichen Protokolle dieser Projekte, stehen aber in keiner Partnerschaft mit ihnen.",
+    },
+
     faqTitle: "Fragen",
     faq: [
       {

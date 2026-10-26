@@ -7,6 +7,7 @@ import { HeroYieldCard, LiveStats, MaxiPitch, VaultApy, YieldCalculator } from "
 import { TurboTeaser } from "@/components/turbo/TurboTeaser";
 import { TAX_TOOL } from "@/lib/partners";
 import { GermanFlag } from "@/components/GermanFlag";
+import { Transparency } from "@/components/Transparency";
 import { VAULTS } from "@/lib/vaults";
 import { localePath } from "@/i18n";
 import { getDictionary, getLocale } from "@/i18n/server";
@@ -204,6 +205,7 @@ export default async function Home() {
                 </div>
               ))}
             </div>
+            <Transparency />
           </div>
         </section>
 

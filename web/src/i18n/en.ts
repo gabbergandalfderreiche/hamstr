@@ -129,6 +129,31 @@ export const en: Dictionary = {
       },
     ],
 
+    transparency: {
+      statusTitle: "Security status",
+      status: [
+        { ok: true, text: "Source code public (open source)", link: "github" },
+        { ok: true, text: "Contract code verified (Sourcify)", link: "sourcify" },
+        { ok: true, text: "Automated security analysis (Slither): no critical findings", link: "security" },
+        { ok: true, text: "73 automated tests, including against the real Base network", link: "" },
+        { ok: true, text: "Changes only with 2 days' notice (timelock)", link: "" },
+        { ok: true, text: "Deposit limits during the beta", link: "" },
+        { ok: false, text: "External audit: still pending", link: "" },
+      ],
+      details: "Details",
+      contractsTitle: "Our contracts",
+      contracts: { usdcVault: "Dollar Hamster", ethVault: "ETH Hamster", turboVault: "Turbo Hamster", timelock: "Timelock (admin)" },
+      builtOnTitle: "Built on",
+      builtOn: {
+        aave: "Lending – where the interest comes from",
+        uniswap: "Swapping the interest into Bitcoin",
+        chainlink: "Market prices that protect the swap",
+        cbbtc: "Bitcoin on Base, backed 1:1 by Coinbase",
+        base: "The blockchain Hamstr runs on",
+      },
+      independent: "Hamstr is an independent project. We use these projects' public protocols but have no partnership with them.",
+    },
+
     faqTitle: "Questions",
     faq: [
       {
