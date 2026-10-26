@@ -88,6 +88,11 @@ body {
   box-shadow: 0 2px 0 var(--line);
 }
 
+.card-highlight {
+  border: 2px solid var(--btc);
+  box-shadow: 0 4px 0 var(--btc);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
