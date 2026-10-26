@@ -74,6 +74,15 @@ export const en: Dictionary = {
       contracts: "View contracts",
     },
 
+    maxi: {
+      title: "Want more Bitcoin?",
+      text: "Park your dollars with the hamster. Your money stays in dollars – no price risk on your principal. Only the interest turns into Bitcoin, every day. Stack sats without putting your savings on the line.",
+      points: ["Principal stays in dollars", "Withdraw any time", "Interest arrives as Bitcoin"],
+      apy: (pct) => `≈ ${pct} per year in Bitcoin`,
+      cta: "Go to the Dollar Hamster",
+    },
+    btcSoon: "Until then: park dollars – the interest turns into Bitcoin.",
+
     calc: {
       title: "What's in it for me?",
       sub: "Do the math yourself – with today's interest rates.",

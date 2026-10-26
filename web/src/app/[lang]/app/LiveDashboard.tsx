@@ -150,11 +150,12 @@ export function LiveDashboard({ live }: { live: Live }) {
                   </button>
                 );
               })}
-              <div className="card flex items-center gap-4 p-4 opacity-60">
+              <div className="card flex items-center gap-4 p-4 opacity-80">
                 <Hamster size={56} mood="wink" title="" />
                 <div className="flex-1">
                   <div className="font-display font-extrabold">{t.vaults.btc.name}</div>
                   <div className="text-xs text-muted">{a.fullHamsterDesc}</div>
+                  <div className="mt-1 text-xs font-semibold text-btc-ink">{t.landing.btcSoon}</div>
                 </div>
                 <span className="rounded-full bg-surface-2 px-2.5 py-1 text-xs font-bold text-muted">{a.soon}</span>
               </div>

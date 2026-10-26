@@ -7,6 +7,7 @@ import { SHOW_AUM_FROM_USD } from "@/lib/market";
 import { getLive } from "@/lib/live";
 import { activeChain } from "@/lib/network";
 import { useT } from "@/i18n/client";
+import { Hamster } from "./Hamster";
 
 const pct = (fraction: number, locale: string) =>
   `${(fraction * 100).toLocaleString(locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 })} %`;
@@ -159,6 +160,31 @@ export function YieldCalculator({ appHref }: { appHref: string }) {
           </p>
         </div>
       </div>
+    </div>
+  );
+}
+
+/** "Want more Bitcoin? Park dollars" – the core pitch for Bitcoin fans. */
+export function MaxiPitch({ appHref }: { appHref: string }) {
+  const { t } = useT();
+  const m = useMarketData();
+  const x = t.landing.maxi;
+  return (
+    <div className="card flex flex-col items-center gap-6 bg-surface-2 p-6 md:flex-row md:p-8">
+      <Hamster size={140} mood="sparkle" sparkles title="" />
+      <div className="flex-1">
+        <h2 className="font-display text-3xl font-extrabold md:text-4xl">{x.title}</h2>
+        <p className="mt-3 max-w-2xl text-muted">{x.text}</p>
+        <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
+          {x.points.map((p) => (
+            <li key={p}>✓ {p}</li>
+          ))}
+          <li className="text-good">✓ {x.apy(pct(m.netApy.usdc, t.numberLocale))}</li>
+        </ul>
+      </div>
+      <Link href={appHref} className="btn btn-primary shrink-0">
+        {x.cta}
+      </Link>
     </div>
   );
 }

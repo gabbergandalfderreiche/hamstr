@@ -3,7 +3,7 @@ import { Hamster } from "@/components/Hamster";
 import { Logo } from "@/components/Logo";
 import { LegalFooter } from "@/components/LegalFooter";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { HeroYieldCard, LiveStats, VaultApy, YieldCalculator } from "@/components/LiveYield";
+import { HeroYieldCard, LiveStats, MaxiPitch, VaultApy, YieldCalculator } from "@/components/LiveYield";
 import { VAULTS } from "@/lib/vaults";
 import { localePath } from "@/i18n";
 import { getDictionary, getLocale } from "@/i18n/server";
@@ -96,6 +96,11 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* Bitcoin pitch */}
+        <section className="mx-auto max-w-6xl px-4 pb-4">
+          <MaxiPitch appHref={appHref} />
+        </section>
+
         {/* Calculator */}
         <section id="calculator" className="border-t border-line">
           <div className="mx-auto max-w-6xl px-4 py-16">
@@ -115,12 +120,13 @@ export default async function Home() {
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               {VAULTS.map((v) => {
                 const text = t.vaults[v.id];
+                const soon = v.id === "btc";
                 return (
-                  <div key={v.id} className="card flex flex-col p-6">
+                  <div key={v.id} className={`card flex flex-col p-6 ${soon ? "opacity-80" : ""}`}>
                     <div className="flex items-start justify-between">
                       <Hamster size={72} mood={v.mood} title="" />
                       <span className="rounded-full bg-surface-2 px-2.5 py-1 text-xs font-bold text-muted">
-                        {l.riskBadge(t.vaults.risk[v.risk])}
+                        {soon ? t.app.soon : l.riskBadge(t.vaults.risk[v.risk])}
                       </span>
                     </div>
                     <h3 className="font-display mt-3 text-xl font-extrabold">{text.name}</h3>
@@ -138,9 +144,20 @@ export default async function Home() {
                         <dt className="text-xs text-muted">{l.sourceLabel}</dt>
                         <dd className="font-bold">{text.source}</dd>
                       </div>
-                      <VaultApy id={v.id} demoApy={v.apy} />
+                      {soon ? (
+                        <div>
+                          <dt className="text-xs text-muted">{l.apyLabel}</dt>
+                          <dd className="font-bold text-muted">–</dd>
+                        </div>
+                      ) : (
+                        <VaultApy id={v.id} demoApy={v.apy} />
+                      )}
                     </dl>
-                    <p className="mt-4 border-t border-line pt-3 text-xs text-muted">{text.riskNote}</p>
+                    {soon ? (
+                      <p className="mt-4 border-t border-line pt-3 text-xs font-semibold text-btc-ink">{l.btcSoon}</p>
+                    ) : (
+                      <p className="mt-4 border-t border-line pt-3 text-xs text-muted">{text.riskNote}</p>
+                    )}
                   </div>
                 );
               })}

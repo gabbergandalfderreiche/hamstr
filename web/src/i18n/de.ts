@@ -72,6 +72,15 @@ export const de = {
       contracts: "Contracts ansehen",
     },
 
+    maxi: {
+      title: "Du willst mehr Bitcoin?",
+      text: "Park deine Dollar beim Hamster. Dein Geld bleibt Dollar – kein Kursrisiko aufs Kapital. Nur die Zinsen werden jeden Tag zu Bitcoin. So hamsterst du Sats, ohne dein Erspartes aufs Spiel zu setzen.",
+      points: ["Kapital bleibt in Dollar", "Jederzeit auszahlen", "Zinsen landen als Bitcoin bei dir"],
+      apy: (pct: string) => `≈ ${pct} pro Jahr in Bitcoin`,
+      cta: "Zum Dollar-Hamster",
+    },
+    btcSoon: "Bis dahin: Dollar parken – die Zinsen werden zu Bitcoin.",
+
     calc: {
       title: "Was bringt mir das?",
       sub: "Rechne es selbst aus – mit den Zinsen von heute.",
