@@ -7,6 +7,7 @@ import { waitForTransactionReceipt } from "wagmi/actions";
 import { Hamster } from "@/components/Hamster";
 import { Logo } from "@/components/Logo";
 import { ConnectButton } from "@/components/ConnectButton";
+import { useConnectModal } from "@/components/ConnectModal";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { btcYieldVaultAbi } from "@/generated/contracts";
 import { wagmiConfig } from "@/lib/wagmi";
@@ -195,6 +196,7 @@ function VaultPanel({
   const a = t.app;
   const { fmt, fmtSats } = formatters(t.numberLocale);
   const info = t.vaults[vault.id];
+  const { open: openConnect } = useConnectModal();
   const [mode, setMode] = useState<Mode>("deposit");
   const [amount, setAmount] = useState("");
   const [busy, setBusy] = useState<string | null>(null);
@@ -208,7 +210,7 @@ function VaultPanel({
     value = 0n;
   }
   const limit = mode === "deposit" ? (state.walletBalance < state.maxDeposit ? state.walletBalance : state.maxDeposit) : state.deposited;
-  const tooMuch = value > limit;
+  const tooMuch = Boolean(user) && value > limit;
   const canSubmit = !disabled && !busy && value > 0n && !tooMuch;
 
   /** Shows `label` on the button while the transaction is signed and mined. */
@@ -357,11 +359,17 @@ function VaultPanel({
         </div>
       </div>
 
-      <button className="btn btn-primary mt-5 w-full" disabled={!canSubmit} onClick={submit}>
+      <button
+        className="btn btn-primary mt-5 w-full"
+        disabled={user ? !canSubmit : false}
+        onClick={user ? submit : openConnect}
+      >
         {busy ??
-          (disabled
-            ? a.loginFirst
-            : value === 0n
+          (!user
+            ? t.connect.login
+            : disabled
+              ? a.wrongNetwork
+              : value === 0n
               ? a.enterAmount
               : mode === "deposit"
                 ? a.depositCta(amount, vault.symbol)

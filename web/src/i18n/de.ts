@@ -81,6 +81,14 @@ export const de = {
     },
     btcSoon: "Bis dahin: Dollar parken – die Zinsen werden zu Bitcoin.",
 
+    taxTool: {
+      label: "Steuer-Tipp",
+      title: "Und die Steuern?",
+      text: "Crypto-Café Tax erstellt deinen Steuerreport automatisch – auch für DeFi-Vaults wie Hamstr. Für Steuerzahler in Deutschland.",
+      cta: "Zu Crypto-Café Tax",
+      note: "Externer Link",
+    },
+
     calc: {
       title: "Was bringt mir das?",
       sub: "Rechne es selbst aus – mit den Zinsen von heute.",
@@ -180,6 +188,16 @@ export const de = {
   connect: {
     login: "Anmelden",
     logout: "Abmelden",
+    modalTitle: "Anmelden",
+    modalSub: "Wähle, wie du dich verbinden willst.",
+    close: "Schließen",
+    noWallet: "Keine Browser-Wallet gefunden. Melde dich mit Passkey an oder nutze Phantom.",
+    phantomMobile: {
+      title: "Phantom auf dem Handy?",
+      qrHint: "Scanne den Code mit der Handy-Kamera – Hamstr öffnet sich direkt in der Phantom-App und ist verbunden.",
+      open: "In der Phantom-App öffnen",
+      openHint: "Öffnet Hamstr im Browser der Phantom-App.",
+    },
     detected: "Im Browser erkannt",
     phantomHint: "Einfache Wallet · unterstützt Base",
     installPhantom: { title: "Phantom installieren", hint: "Kostenlose Wallet für Base · phantom.com" },
@@ -228,7 +246,6 @@ export const de = {
     feeValue: (pct: number) => `nur ${pct} % vom Gewinn`,
     perMonth: "Geschätzt pro Monat",
     risk: "Risiko",
-    loginFirst: "Erst anmelden",
     enterAmount: "Betrag eingeben",
     depositCta: (amount: string, symbol: string) => `${amount} ${symbol} hamstern`,
     withdrawCta: (amount: string, symbol: string) => `${amount} ${symbol} auszahlen`,

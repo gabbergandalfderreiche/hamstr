@@ -9,6 +9,7 @@ import { oracleSwapperAbi, turboVaultAbi } from "@/generated/contracts";
 import { wagmiConfig } from "@/lib/wagmi";
 import type { Live } from "@/lib/live";
 import { useT } from "@/i18n/client";
+import { useConnectModal } from "@/components/ConnectModal";
 
 const REFRESH_MS = 5_000;
 /** Withdrawals revert if they return less than this share of the shown value. */
@@ -28,6 +29,7 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
   const d = t.turbo.dash;
   const a = t.app;
   const { address, isConnected } = useConnection();
+  const { open: openConnect } = useConnectModal();
   const who = address ?? zeroAddress;
   const v = { address: vault, abi: turboVaultAbi } as const;
 
@@ -104,7 +106,7 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
     value = 0n;
   }
   const limit = mode === "deposit" ? (wallet < maxDeposit ? wallet : maxDeposit) : myValue;
-  const tooMuch = !useAll && value > limit;
+  const tooMuch = isConnected && !useAll && value > limit;
   const canSubmit = isConnected && !busy && value > 0n && !tooMuch;
 
   async function send(label: string, tx: () => Promise<Hash>) {
@@ -243,11 +245,15 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
           <p className="mt-3 rounded-2xl bg-red-500/10 px-3 py-2 text-xs font-bold text-red-600">{d.withdrawWarn}</p>
         )}
 
-        <button className="btn mt-5 w-full bg-red-500 text-white shadow-[0_4px_0_#b91c1c]" disabled={!canSubmit} onClick={submit}>
+        <button
+          className="btn mt-5 w-full bg-red-500 text-white shadow-[0_4px_0_#b91c1c]"
+          disabled={isConnected ? !canSubmit : false}
+          onClick={isConnected ? submit : openConnect}
+        >
           {busy && busy !== a.busy.claim
             ? busy
             : !isConnected
-              ? a.loginFirst
+              ? t.connect.login
               : value === 0n
                 ? a.enterAmount
                 : mode === "deposit"

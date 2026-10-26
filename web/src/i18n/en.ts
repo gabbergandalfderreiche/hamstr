@@ -83,6 +83,14 @@ export const en: Dictionary = {
     },
     btcSoon: "Until then: park dollars – the interest turns into Bitcoin.",
 
+    taxTool: {
+      label: "Tax tip",
+      title: "And taxes?",
+      text: "Crypto-Café Tax creates your tax report automatically – including DeFi vaults like Hamstr. For taxpayers in Germany.",
+      cta: "Go to Crypto-Café Tax",
+      note: "External link",
+    },
+
     calc: {
       title: "What's in it for me?",
       sub: "Do the math yourself – with today's interest rates.",
@@ -182,6 +190,16 @@ export const en: Dictionary = {
   connect: {
     login: "Sign in",
     logout: "Sign out",
+    modalTitle: "Sign in",
+    modalSub: "Choose how you want to connect.",
+    close: "Close",
+    noWallet: "No browser wallet found. Sign in with a passkey or use Phantom.",
+    phantomMobile: {
+      title: "Phantom on your phone?",
+      qrHint: "Scan the code with your phone camera – Hamstr opens right inside the Phantom app, already connected.",
+      open: "Open in the Phantom app",
+      openHint: "Opens Hamstr in the Phantom app's browser.",
+    },
     detected: "Detected in your browser",
     phantomHint: "Easy wallet · supports Base",
     installPhantom: { title: "Install Phantom", hint: "Free wallet for Base · phantom.com" },
@@ -230,7 +248,6 @@ export const en: Dictionary = {
     feeValue: (pct) => `only ${pct} % of profit`,
     perMonth: "Estimated per month",
     risk: "Risk",
-    loginFirst: "Sign in first",
     enterAmount: "Enter an amount",
     depositCta: (amount, symbol) => `Stack ${amount} ${symbol}`,
     withdrawCta: (amount, symbol) => `Withdraw ${amount} ${symbol}`,

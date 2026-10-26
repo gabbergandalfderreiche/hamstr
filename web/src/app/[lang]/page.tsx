@@ -5,6 +5,7 @@ import { LegalFooter } from "@/components/LegalFooter";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { HeroYieldCard, LiveStats, MaxiPitch, VaultApy, YieldCalculator } from "@/components/LiveYield";
 import { TurboTeaser } from "@/components/turbo/TurboTeaser";
+import { TAX_TOOL } from "@/lib/partners";
 import { VAULTS } from "@/lib/vaults";
 import { localePath } from "@/i18n";
 import { getDictionary, getLocale } from "@/i18n/server";
@@ -110,6 +111,25 @@ export default async function Home() {
             <div className="mt-8">
               <YieldCalculator appHref={appHref} />
             </div>
+            {TAX_TOOL.url && (
+              <a
+                href={TAX_TOOL.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card mt-4 flex flex-col gap-3 p-5 transition hover:border-btc sm:flex-row sm:items-center"
+              >
+                <span className="w-fit rounded-full bg-surface-2 px-2.5 py-1 text-xs font-bold text-muted">
+                  {l.taxTool.label}
+                </span>
+                <div className="flex-1">
+                  <div className="font-display font-extrabold">{l.taxTool.title}</div>
+                  <p className="text-sm text-muted">{l.taxTool.text}</p>
+                </div>
+                <span className="text-sm font-bold text-btc-ink">
+                  {l.taxTool.cta} ↗<span className="block text-[10px] font-normal text-muted">{l.taxTool.note}</span>
+                </span>
+              </a>
+            )}
           </div>
         </section>
 
