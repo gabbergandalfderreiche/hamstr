@@ -33,6 +33,9 @@ MULTISIG=$DEPLOYER KEEPER=$DEPLOYER TREASURY=$TREASURY TIMELOCK_DELAY=60 \
   USDC_MIN_HARVEST=100000 ETH_MIN_HARVEST=10000000000000 \
   forge script script/Deploy.s.sol --rpc-url "$RPC" --broadcast --private-key $DEPLOYER_PK
 
+echo "==> Deploying the Turbo vault (high risk) on top"
+forge script script/DeployTurbo.s.sol --rpc-url "$RPC" --broadcast --private-key $DEPLOYER_PK
+
 echo "==> Sending 20,000 USDC to the test wallet"
 cast rpc --rpc-url "$RPC" anvil_impersonateAccount $A_USDC >/dev/null
 cast rpc --rpc-url "$RPC" anvil_setBalance $A_USDC $HUNDRED_ETH >/dev/null

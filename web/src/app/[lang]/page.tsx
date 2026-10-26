@@ -4,6 +4,7 @@ import { Logo } from "@/components/Logo";
 import { LegalFooter } from "@/components/LegalFooter";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { HeroYieldCard, LiveStats, MaxiPitch, VaultApy, YieldCalculator } from "@/components/LiveYield";
+import { TurboTeaser } from "@/components/turbo/TurboTeaser";
 import { VAULTS } from "@/lib/vaults";
 import { localePath } from "@/i18n";
 import { getDictionary, getLocale } from "@/i18n/server";
@@ -161,6 +162,9 @@ export default async function Home() {
                   </div>
                 );
               })}
+            </div>
+            <div className="mt-4">
+              <TurboTeaser />
             </div>
           </div>
         </section>

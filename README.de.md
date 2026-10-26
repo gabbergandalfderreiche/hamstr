@@ -26,6 +26,16 @@ Nutzer ──USDC/ETH──▶ BtcYieldVault ──▶ AaveV3Strategy ──▶ 
 - **Swap-Schutz:** Liegt der Uniswap-Kurs mehr als 1 % unter Chainlink, wird der Tausch abgelehnt (schützt vor MEV und einem kompromittierten Keeper). Veraltete Preise oder ein ausgefallener Sequencer blockieren ebenfalls.
 - **Gebühr:** 10 % der Zinsen (Performance-Fee), im Contract auf max. 20 % gedeckelt. 0 % Ein-/Auszahlung.
 
+## Turbo-Hamster (Hochrisiko)
+
+Ein optionaler Vault für Leute, die bewusst Risiko eingehen: ETH rein, der Vault stellt konzentrierte WETH/cbBTC-Liquidität auf Uniswap V3 bereit (Bereich ±8 %), die Handelsgebühren werden als cbBTC ausgezahlt. **Der Einsatz ist nicht geschützt** – laufen ETH und BTC auseinander, hält die Position am Ende mehr vom schwächeren Coin (Impermanent Loss); eine Auszahlung macht den Verlust endgültig. Fork-Test: ETH −15 % gegenüber BTC → 6,2 % weniger als halb/halb gehalten.
+
+- Anteile werden mit Chainlink bewertet, nie mit dem Pool-Kurs; Auszahlungen und Keeper-Aktionen brechen ab, wenn der Pool mehr als 1 % von Chainlink abweicht (Schutz vor Manipulation)
+- Gebühren werden bei jeder Ein-/Auszahlung und Übertragung pro Anteil verbucht – Spät-Einzahler bekommen nichts von früher
+- Der Keeper richtet den Bereich neu aus, wenn der Kurs ihn verlässt, und investiert neue Einzahlungen
+- Im UI: interaktiver IL-Simulator, zwei Kontrollfragen und eine Risiko-Bestätigung vor der Freischaltung; das Dashboard zeigt immer den Wert gegenüber dem eingezahlten ETH
+- Deploy auf die bestehenden Contracts: `contracts/script/deploy-turbo-mainnet.ps1` (Limits 0,5 ETH gesamt / 0,2 ETH pro Adresse)
+
 ## Sicherheitsmodell
 
 | Rolle | Wer | Darf |
@@ -43,6 +53,7 @@ contracts/   Foundry: Smart Contracts, Tests, Deploy-Script
   src/BtcYieldVault.sol                 Vault (Variante "Zinsen werden zu BTC")
   src/swappers/OracleUniswapSwapper.sol Uniswap-Swap mit Chainlink-Untergrenze
   src/strategies/AaveV3Strategy.sol     Aave-V3-Lending
+  src/TurboVault.sol                    HOCHRISIKO: Uniswap-V3-Liquidität WETH/cbBTC, Gebühren als cbBTC
   src/YieldVault.sol                    ERC-4626-Vault (Basis für einen späteren reinen BTC-Vault)
   script/Deploy.s.sol                   Deployment inkl. Timelock, Rollen, Limits
 web/         Next.js-Frontend mit Hamster-UI, Passkey-Login (Base Account), Deutsch + Englisch
@@ -111,11 +122,12 @@ cd .. && RPC_URL=http://127.0.0.1:8545 DEPLOYMENT=contracts/deployments/31337.js
 
 ## Status
 
-- [x] Contracts + 58 Tests (inkl. Base-Fork mit echtem Aave, Uniswap, Chainlink)
+- [x] Contracts + 73 Tests (inkl. Base-Fork mit echtem Aave, Uniswap, Chainlink)
 - [x] Deploy-Script mit Timelock & Rollen
 - [x] Frontend an echte Contracts angebunden (lokaler Fork getestet)
 - [x] Website auf Deutsch und Englisch, Impressum, Datenschutz, Beta-Hinweis
 - [x] Keeper-Bot (lokal gegen Fork getestet, GitHub Actions eingerichtet)
+- [x] Turbo-Hamster (Hochrisiko): Contract, 15 Fork-Tests, Keeper, UI mit Simulator und Quiz – noch nicht auf dem Mainnet
 - [ ] wstETH-/Lido-Strategie für den ETH-Vault
 - [ ] Externes Audit
 - [ ] Mainnet-Beta

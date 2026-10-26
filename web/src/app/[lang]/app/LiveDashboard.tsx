@@ -16,6 +16,7 @@ import type { Live, LiveVault } from "@/lib/live";
 import type { Dictionary } from "@/i18n";
 import { useT } from "@/i18n/client";
 import { useMarketData } from "@/lib/useMarketData";
+import { TurboTeaser } from "@/components/turbo/TurboTeaser";
 import { useVaultState, type VaultState } from "./useVaultState";
 
 type Mood = "sparkle" | "happy" | "wink";
@@ -159,6 +160,7 @@ export function LiveDashboard({ live }: { live: Live }) {
                 </div>
                 <span className="rounded-full bg-surface-2 px-2.5 py-1 text-xs font-bold text-muted">{a.soon}</span>
               </div>
+              {live.deployment.turboVault && <TurboTeaser />}
             </div>
           </section>
 

@@ -26,6 +26,8 @@ export const btcYieldVaultAbi = ${JSON.stringify(abi("BtcYieldVault.sol", "BtcYi
 
 export const oracleSwapperAbi = ${JSON.stringify(abi("OracleUniswapSwapper.sol", "OracleUniswapSwapper"), null, 2)} as const;
 
+export const turboVaultAbi = ${JSON.stringify(abi("TurboVault.sol", "TurboVault"), null, 2)} as const;
+
 export const deployments = ${JSON.stringify(deployments, null, 2)} as const;
 `;
 

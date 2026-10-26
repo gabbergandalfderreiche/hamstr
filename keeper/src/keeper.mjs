@@ -1,4 +1,5 @@
-// Hamstr keeper: harvests each vault when the yield is clearly worth more than the gas.
+// Hamstr keeper: harvests each vault when the yield is clearly worth more than the gas, and tends the
+// Turbo vault (re-centers its Uniswap range, deploys idle deposits) if one is deployed.
 //
 // Per vault:
 //   1. skip if paused (the guardian is dealing with something) or below the vault's minHarvest
@@ -127,7 +128,78 @@ async function main() {
       log(`${name}: ERROR ${reason(err)}`);
     }
   }
+  if (d.turboVault) {
+    try {
+      log(`Turbo vault: ${await tendTurbo({ d, client, wallet, account })}`);
+    } catch (err) {
+      ok = false;
+      log(`Turbo vault: ERROR ${reason(err)}`);
+    }
+  }
   return ok && !lowBalance;
+}
+
+const turboAbi = parseAbi([
+  "function paused() view returns (bool)",
+  "function positionId() view returns (uint256)",
+  "function inRange() view returns (bool)",
+  "function totalAssets() view returns (uint256)",
+  "function reserved0() view returns (uint256)",
+  "function reserved1() view returns (uint256)",
+  "function rebalance()",
+  "function deployIdle()",
+  "error PriceDeviation(uint256 poolSqrtPrice, uint256 oracleSqrtPrice)",
+  "error NoPosition()",
+  "error ZeroAmount()",
+  "error AccessControlUnauthorizedAccount(address account, bytes32 neededRole)",
+]);
+const erc20BalanceAbi = parseAbi(["function balanceOf(address) view returns (uint256)"]);
+
+/// Turbo vault: re-center the range when the price left it, otherwise put idle deposits to work.
+async function tendTurbo({ d, client, wallet, account }) {
+  const vault = d.turboVault;
+  const read = (functionName) => client.readContract({ address: vault, abi: turboAbi, functionName });
+  const [paused, positionId, inRange, total, reserved0, reserved1] = await Promise.all([
+    read("paused"),
+    read("positionId"),
+    read("inRange"),
+    read("totalAssets"),
+    read("reserved0"),
+    read("reserved1"),
+  ]);
+  if (paused) return "skipped – vault is paused";
+  if (total === 0n) return "skipped – nothing deposited";
+
+  const [weth, btc] = await Promise.all([
+    client.readContract({ address: d.weth, abi: erc20BalanceAbi, functionName: "balanceOf", args: [vault] }),
+    client.readContract({ address: d.cbbtc, abi: erc20BalanceAbi, functionName: "balanceOf", args: [vault] }),
+  ]);
+  const idleWeth = weth - reserved0;
+  const idleBtc = btc - reserved1;
+
+  let action;
+  if (positionId === 0n || !inRange) action = "rebalance";
+  else {
+    // Deploy once idle WETH is worth bothering about: 0.005 ETH or 2 % of the vault.
+    const threshold = total / 50n > parseEther("0.005") ? total / 50n : parseEther("0.005");
+    if (idleWeth >= threshold) action = "deployIdle";
+  }
+  const state = `value ${formatEther(total)} ETH, idle ${formatEther(idleWeth)} WETH + ${idleBtc} sats, in range: ${inRange}`;
+  if (!action) return `skipped – nothing to do (${state})`;
+
+  const request = { address: vault, abi: turboAbi, functionName: action, account };
+  try {
+    await client.simulateContract(request);
+  } catch (err) {
+    throw new Error(`${action} would fail: ${reason(err)}`);
+  }
+  if (!wallet) return `would ${action} (${state})`;
+
+  const gas = await client.estimateContractGas(request);
+  const hash = await wallet.writeContract({ ...request, gas: (gas * 12n) / 10n });
+  const receipt = await client.waitForTransactionReceipt({ hash });
+  if (receipt.status !== "success") throw new Error(`${action} reverted in tx ${hash}`);
+  return `${action} done (${state}) – tx ${hash}`;
 }
 
 async function harvestVault({ name, vault, d, client, wallet, account, quote }) {

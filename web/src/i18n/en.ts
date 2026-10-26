@@ -243,6 +243,75 @@ export const en: Dictionary = {
     unknownError: "Unknown error",
   },
 
+  turbo: {
+    badge: "High risk · fun option",
+    title: "Turbo Hamster",
+    tagline: "ETH in, trading fees out as Bitcoin – with real risk to your deposit.",
+    banner: "HIGH RISK: you can lose significantly compared to simply holding. Only money you can afford to lose.",
+    cardText: "For the brave: your ETH works as liquidity on Uniswap, the fees come back as Bitcoin. Your deposit is not protected.",
+    cardCta: "Go to Turbo Hamster",
+    how: [
+      "You deposit ETH. The hamster swaps half into Bitcoin (cbBTC) and provides both on Uniswap.",
+      "Traders swapping between ETH and BTC pay fees. Part of them goes to you – as Bitcoin.",
+      "The position only covers a price range (±8 %). When the price leaves it, it earns nothing until the keeper re-centers it.",
+    ],
+    il: {
+      title: "You need to understand this: impermanent loss",
+      explain:
+        "The Turbo Hamster holds a mix of ETH and BTC. When one of them rises a lot, the vault automatically sells some of it. You end up with more of the weaker coin – and less than if you had simply held.",
+      sliderLabel: "What if ETH, measured against BTC,",
+      up: (pct) => `… rises ${pct} %`,
+      down: (pct) => `… falls ${pct} %`,
+      flat: "… stays the same",
+      perEth: "Value per 1 ETH deposited, measured in ETH",
+      turbo: "Turbo Hamster (before fees)",
+      keep: "Simply keeping your ETH",
+      fiftyFifty: "Holding half ETH, half BTC",
+      loss: (pct) => `Impermanent loss vs. holding: −${pct} %`,
+      fees: "On top come the trading fees: recently about 20 % per year in the pool for in-range liquidity – after re-centering and our fee realistically more like 8–15 %, sometimes less. Not guaranteed.",
+      final: "Important: withdrawing at the wrong moment makes the loss final.",
+    },
+    quiz: {
+      title: "Quick check before you start",
+      questions: [
+        {
+          q: "What happens when ETH rises a lot against BTC?",
+          options: [
+            "I have more ETH than before.",
+            "The vault sold ETH on the way up – I have less than if I had kept my ETH.",
+            "Nothing, my ETH is protected.",
+          ],
+          correct: 1,
+        },
+        {
+          q: "Can I lose money with the Turbo Hamster even if nothing gets hacked?",
+          options: ["No.", "Yes – just through price moves between ETH and BTC."],
+          correct: 1,
+        },
+      ],
+      wrong: "Not quite – have another look at the calculator above.",
+      confirm:
+        "I only deposit money I can afford to lose. I understand that withdrawing makes a loss versus holding final.",
+      unlock: "Unlock Turbo",
+    },
+    dash: {
+      yourValue: "Your value now",
+      deposited: "Deposited",
+      result: "Result in ETH (before fees)",
+      fees: "Fees to claim",
+      claimBtc: "Claim as Bitcoin",
+      status: "Status",
+      inRange: "In range – earning fees",
+      outOfRange: "Out of range – earning nothing right now, waiting to be re-centered",
+      noPosition: "Not invested yet – the keeper opens the position",
+      vaultSize: "Turbo in total",
+      withdrawWarn: "Withdrawing makes a loss versus holding final.",
+      slippage: "Protection: you get at least 98.5 % of the value shown, otherwise it is cancelled.",
+      notDeployed: "The Turbo Hamster is not live on this network yet. You can already try the calculator.",
+      back: "Back to the safe hamsters",
+    },
+  },
+
   beta: {
     tag: "Beta",
     title: "Before you start",

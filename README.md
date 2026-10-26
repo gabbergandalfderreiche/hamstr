@@ -26,6 +26,16 @@ User ──USDC/ETH──▶ BtcYieldVault ──▶ AaveV3Strategy ──▶ Aa
 - **Swap protection:** if the Uniswap price is more than 1 % below Chainlink, the swap is rejected (protects against MEV and a compromised keeper). Stale prices or a Base sequencer outage also block it.
 - **Fee:** 10 % of the interest (performance fee), capped at 20 % in the contract. 0 % on deposits and withdrawals.
 
+## Turbo Hamster (high risk)
+
+An optional vault for people who knowingly take risk: ETH is deposited, the vault provides concentrated WETH/cbBTC liquidity on Uniswap V3 (range ±8 %), and the trading fees are paid out as cbBTC. **The deposit is not protected** – when ETH and BTC move apart, the position ends up holding more of the weaker coin (impermanent loss); withdrawing makes the loss final. Fork test: ETH −15 % vs BTC → 6.2 % less than holding half/half.
+
+- Shares priced with Chainlink, never with the pool price; withdrawals and keeper actions revert if the pool is more than 1 % away from Chainlink (anti-manipulation)
+- Fees are credited per share on every deposit/withdrawal/transfer, so late depositors get nothing earned before them
+- The keeper re-centers the range when the price leaves it and deploys idle deposits
+- In the UI: interactive impermanent-loss simulator, two quiz questions and a risk confirmation before the vault unlocks; the dashboard always shows value vs. ETH deposited
+- Deploy on top of the existing contracts: `contracts/script/deploy-turbo-mainnet.ps1` (limits 0.5 ETH total / 0.2 ETH per address)
+
 ## Security model
 
 | Role | Who | Can |
@@ -43,6 +53,7 @@ contracts/   Foundry: smart contracts, tests, deploy script
   src/BtcYieldVault.sol                 Vault ("interest becomes BTC")
   src/swappers/OracleUniswapSwapper.sol Uniswap swap with Chainlink floor
   src/strategies/AaveV3Strategy.sol     Aave V3 lending
+  src/TurboVault.sol                    HIGH RISK: Uniswap V3 WETH/cbBTC liquidity, fees paid as cbBTC
   src/YieldVault.sol                    ERC-4626 vault (base for a future pure BTC vault)
   script/Deploy.s.sol                   Deployment incl. timelock, roles, limits
 web/         Next.js frontend with hamster UI, passkey login (Base Account), English + German
@@ -115,11 +126,12 @@ The website is available in English and German (`/en/...`, `/de/...`). Visitors 
 
 ## Status
 
-- [x] Contracts + 58 tests (incl. Base fork with real Aave, Uniswap, Chainlink)
+- [x] Contracts + 73 tests (incl. Base fork with real Aave, Uniswap, Chainlink)
 - [x] Deploy script with timelock & roles
 - [x] Frontend wired to real contracts (tested on local fork)
 - [x] Website in English and German, legal notice, privacy policy, beta notice
 - [x] Keeper bot (tested against fork, GitHub Actions set up)
+- [x] Turbo Hamster (high risk): contract, 15 fork tests, keeper, UI with simulator and quiz – not yet deployed on mainnet
 - [ ] wstETH / Lido strategy for the ETH vault
 - [ ] External audit
 - [ ] Mainnet beta

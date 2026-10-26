@@ -10,6 +10,8 @@ type Deployment = {
   weth: Address;
   cbbtc: Address;
   timelock: Address;
+  /** High-risk Turbo vault (Uniswap WETH/cbBTC liquidity), if deployed. */
+  turboVault?: Address;
 };
 
 export type LiveVault = {

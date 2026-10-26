@@ -241,6 +241,75 @@ export const de = {
     unknownError: "Unbekannter Fehler",
   },
 
+  turbo: {
+    badge: "Hochrisiko · Spaß-Option",
+    title: "Turbo-Hamster",
+    tagline: "ETH rein, Handelsgebühren als Bitcoin raus – mit echtem Risiko für deinen Einsatz.",
+    banner: "HOCHRISIKO: Du kannst gegenüber einfachem Halten deutlich verlieren. Nur Geld, das du verlieren kannst.",
+    cardText: "Für Mutige: Dein ETH arbeitet als Liquidität auf Uniswap, die Gebühren kommen als Bitcoin. Dein Einsatz ist nicht geschützt.",
+    cardCta: "Zum Turbo-Hamster",
+    how: [
+      "Du zahlst ETH ein. Der Hamster tauscht die Hälfte in Bitcoin (cbBTC) und stellt beides auf Uniswap bereit.",
+      "Wer dort zwischen ETH und BTC tauscht, zahlt Gebühren. Ein Teil davon geht an dich – als Bitcoin.",
+      "Die Position deckt nur einen Kursbereich ab (±8 %). Verlässt der Kurs ihn, verdient sie nichts, bis der Keeper sie neu ausrichtet.",
+    ],
+    il: {
+      title: "Das musst du verstehen: Impermanent Loss",
+      explain:
+        "Der Turbo-Hamster hält ETH und BTC gemischt. Steigt einer der beiden stark, verkauft der Vault automatisch davon. Du hast am Ende mehr vom schwächeren Coin – und weniger, als wenn du einfach gehalten hättest.",
+      sliderLabel: "Was wäre, wenn ETH gegenüber BTC",
+      up: (pct: number) => `… um ${pct} % steigt`,
+      down: (pct: number) => `… um ${pct} % fällt`,
+      flat: "… gleich bleibt",
+      perEth: "Wert pro 1 eingezahltem ETH, gemessen in ETH",
+      turbo: "Turbo-Hamster (ohne Gebühren)",
+      keep: "Dein ETH einfach behalten",
+      fiftyFifty: "Halb ETH, halb BTC gehalten",
+      loss: (pct: string) => `Impermanent Loss gegenüber Halten: −${pct} %`,
+      fees: "Dazu kommen die Handelsgebühren: Im Pool zuletzt rund 20 % pro Jahr für Liquidität im Bereich – nach Neuausrichtungen und Gebühr realistisch eher 8–15 %, manchmal weniger. Nicht garantiert.",
+      final: "Wichtig: Wer im falschen Moment auszahlt, macht den Verlust endgültig.",
+    },
+    quiz: {
+      title: "Kurzer Check, bevor es losgeht",
+      questions: [
+        {
+          q: "Was passiert, wenn ETH gegenüber BTC stark steigt?",
+          options: [
+            "Ich habe mehr ETH als vorher.",
+            "Der Vault hat unterwegs ETH verkauft – ich habe weniger, als wenn ich mein ETH behalten hätte.",
+            "Nichts, mein ETH ist geschützt.",
+          ],
+          correct: 1,
+        },
+        {
+          q: "Kann ich beim Turbo-Hamster Geld verlieren, auch wenn nichts gehackt wird?",
+          options: ["Nein.", "Ja – allein durch Kursbewegungen zwischen ETH und BTC."],
+          correct: 1,
+        },
+      ],
+      wrong: "Nicht ganz – schau dir den Rechner oben noch einmal an.",
+      confirm:
+        "Ich zahle nur Geld ein, dessen Verlust ich verkraften kann. Mir ist klar, dass eine Auszahlung einen Verlust gegenüber Halten endgültig macht.",
+      unlock: "Turbo freischalten",
+    },
+    dash: {
+      yourValue: "Dein Wert jetzt",
+      deposited: "Eingezahlt",
+      result: "Ergebnis in ETH (ohne Gebühren)",
+      fees: "Gebühren zum Abholen",
+      claimBtc: "Als Bitcoin abholen",
+      status: "Status",
+      inRange: "Im Bereich – verdient Gebühren",
+      outOfRange: "Außerhalb des Bereichs – verdient gerade nichts, wartet auf Neuausrichtung",
+      noPosition: "Noch nicht investiert – der Keeper startet die Position",
+      vaultSize: "Turbo insgesamt",
+      withdrawWarn: "Auszahlen macht einen Verlust gegenüber Halten endgültig.",
+      slippage: "Schutz: Du bekommst mindestens 98,5 % des angezeigten Werts, sonst wird abgebrochen.",
+      notDeployed: "Der Turbo-Hamster ist auf diesem Netzwerk noch nicht gestartet. Den Rechner kannst du schon ausprobieren.",
+      back: "Zurück zu den sicheren Hamstern",
+    },
+  },
+
   beta: {
     tag: "Beta",
     title: "Kurz bevor du loslegst",
