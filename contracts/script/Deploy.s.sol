@@ -2,6 +2,7 @@
 pragma solidity ^0.8.24;
 
 import {Script, console} from "forge-std/Script.sol";
+import {VmSafe} from "forge-std/Vm.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {TimelockController} from "@openzeppelin/contracts/governance/TimelockController.sol";
 
@@ -59,7 +60,10 @@ contract Deploy is Script {
         (, address deployer,) = vm.readCallers();
         d = deploy(p, deployer);
         vm.stopBroadcast();
-        _write(d, p);
+        // A dry run must not leave a deployment file behind: the frontend and keeper would treat
+        // simulated addresses as real ones.
+        if (vm.isContext(VmSafe.ForgeContext.ScriptBroadcast)) _write(d, p);
+        else console.log("Dry run - deployments file not written");
     }
 
     /// @notice Beta defaults; every value can be overridden with an environment variable.
