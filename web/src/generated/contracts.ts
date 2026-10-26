@@ -3933,6 +3933,8 @@ export const deployments = {
     "swapper": "0x03584509af985B9ACcd90eC108582B6D84d88758",
     "timelock": "0x8E69CD749251B6d780E9349234442945Bf1877F3",
     "treasury": "0x7Ad9D41C88440b91EbdD260e5Fd99f7b74Dc46Fb",
+    "turboSwapper": "0xb8D5a27Fd7D44203aeb6e7287994523Ed85da6fe",
+    "turboVault": "0xd303E417Afd36f82A06f37736FBF8Db71fd952e6",
     "usdc": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
     "usdcStrategy": "0x98234779Acc9f6aa56e4ff0fc6D1d8BE72732338",
     "usdcVault": "0x3647c58c7eF2f4E871Cb3390E21ddD211242aADA",
