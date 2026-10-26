@@ -82,11 +82,11 @@ export const de = {
     btcSoon: "Bis dahin: Dollar parken – die Zinsen werden zu Bitcoin.",
 
     taxTool: {
-      label: "Steuer-Tipp",
+      label: "Steuer-Tool · Deutschland",
       title: "Und die Steuern?",
-      text: "Crypto-Café Tax erstellt deinen Steuerreport automatisch – auch für DeFi-Vaults wie Hamstr. Für Steuerzahler in Deutschland.",
+      text: "Crypto-Café Tax erstellt deinen Steuerreport automatisch – auch für DeFi-Vaults wie Hamstr.",
       cta: "Zu Crypto-Café Tax",
-      note: "Externer Link",
+      note: "Externer Link · keine Steuerberatung",
     },
 
     calc: {

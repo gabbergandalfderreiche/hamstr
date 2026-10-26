@@ -84,11 +84,11 @@ export const en: Dictionary = {
     btcSoon: "Until then: park dollars – the interest turns into Bitcoin.",
 
     taxTool: {
-      label: "Tax tip",
+      label: "Tax tool · Germany",
       title: "And taxes?",
-      text: "Crypto-Café Tax creates your tax report automatically – including DeFi vaults like Hamstr. For taxpayers in Germany.",
+      text: "Crypto-Café Tax creates your tax report automatically – including DeFi vaults like Hamstr.",
       cta: "Go to Crypto-Café Tax",
-      note: "External link",
+      note: "External link · not tax advice",
     },
 
     calc: {

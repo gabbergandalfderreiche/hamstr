@@ -6,6 +6,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { HeroYieldCard, LiveStats, MaxiPitch, VaultApy, YieldCalculator } from "@/components/LiveYield";
 import { TurboTeaser } from "@/components/turbo/TurboTeaser";
 import { TAX_TOOL } from "@/lib/partners";
+import { GermanFlag } from "@/components/GermanFlag";
 import { VAULTS } from "@/lib/vaults";
 import { localePath } from "@/i18n";
 import { getDictionary, getLocale } from "@/i18n/server";
@@ -118,7 +119,8 @@ export default async function Home() {
                 rel="noopener noreferrer"
                 className="card mt-4 flex flex-col gap-3 p-5 transition hover:border-btc sm:flex-row sm:items-center"
               >
-                <span className="w-fit rounded-full bg-surface-2 px-2.5 py-1 text-xs font-bold text-muted">
+                <span className="flex w-fit items-center gap-1.5 rounded-full bg-surface-2 px-2.5 py-1 text-xs font-bold text-muted">
+                  <GermanFlag />
                   {l.taxTool.label}
                 </span>
                 <div className="flex-1">
