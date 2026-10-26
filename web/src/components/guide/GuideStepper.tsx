@@ -172,31 +172,43 @@ function HomeScreen() {
 
 function SwapScreen({ stage }: { stage: "swapFrom" | "swapTo" }) {
   const s = useT().t.guide.screens;
+  const check = stage === "swapTo";
+  // Like the wallet: no network name on this screen, only a small network badge on the token icon.
   return (
     <div className="space-y-2">
-      <Row glow={stage === "swapFrom"}>
+      <Row glow={!check}>
         <div className="text-muted">{s.youPay}</div>
         <div className="mt-1 flex items-center justify-between">
           <span className="num font-display text-lg font-extrabold">1.6</span>
-          <span className="font-bold">SOL</span>
-        </div>
-        <div className="mt-1.5 flex items-center gap-1 text-muted">
-          {s.network}: <Chip>Solana</Chip>
+          <TokenPill symbol="SOL" />
         </div>
       </Row>
       <div className="text-center text-lg text-muted">↓</div>
-      <Row glow={stage !== "swapFrom"}>
+      <Row>
         <div className="text-muted">{s.youGet}</div>
         <div className="mt-1 flex items-center justify-between">
           <span className="num font-display text-lg font-extrabold">≈ 248</span>
-          <span className="font-bold">USDC</span>
+          <TokenPill symbol="USDC" base glow={check} />
         </div>
-        <div className="mt-1.5 flex items-center gap-1 text-muted">
-          {s.network}: <Chip glow={stage !== "swapFrom"}>Base</Chip>
-        </div>
+        {check && <div className="mt-1.5 text-right text-[10px] font-bold text-btc-ink">↑ {s.baseBadge}</div>}
       </Row>
       <div className="btn btn-primary mt-2 w-full !py-2 text-xs">{s.review}</div>
     </div>
+  );
+}
+
+/** Token button with a round icon; `base` adds the small network badge the wallet shows for Base. */
+function TokenPill({ symbol, base, glow }: { symbol: string; base?: boolean; glow?: boolean }) {
+  return (
+    <span className="flex items-center gap-1.5 rounded-full bg-surface-2 py-1 pl-1 pr-2 font-bold">
+      <span className="relative grid h-6 w-6 place-items-center rounded-full bg-ink/80 text-[8px] text-surface">
+        {symbol.slice(0, 1)}
+        {base && (
+          <span className={`absolute -bottom-1 -right-1 h-3 w-3 rounded-[3px] border border-surface bg-[#0052ff] ${glow ? "guide-glow" : ""}`} />
+        )}
+      </span>
+      {symbol} ▾
+    </span>
   );
 }
 
