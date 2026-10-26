@@ -257,7 +257,7 @@ export const en: Dictionary = {
     paths: { phantom: "I have crypto in Phantom (e.g. SOL)", exchange: "I'm starting from zero" },
     steps: {
       phantom: [
-        { screen: "home", title: "Open Phantom, tap “Swap”", text: "You'll find the swap button on the Phantom app's home screen." },
+        { screen: "home", title: "Open Phantom, tap “Swap”", text: "On the home screen, tap “Swap” below your balance – or the arrows icon ⇄ in the bottom bar. Both lead to the same swap." },
         { screen: "swapFrom", title: "Top: what you give", text: "For example SOL on Solana. Enter the amount you want to stack." },
         { screen: "swapTo", title: "Bottom: USDC on Base", text: "Pick USDC and make sure the network says “Base”. Phantom moves your money from Solana to Base automatically." },
         { screen: "swapGas", title: "Plus about $2 of ETH on Base", text: "Same swap again, this time to ETH on Base. That's your fee pot. For the ETH Hamster you can swap everything to ETH right away." },

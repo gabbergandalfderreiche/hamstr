@@ -255,7 +255,7 @@ export const de = {
     paths: { phantom: "Ich habe Krypto in Phantom (z. B. SOL)", exchange: "Ich fange bei null an" },
     steps: {
       phantom: [
-        { screen: "home", title: "Phantom öffnen, „Tauschen“ antippen", text: "In der Phantom-App findest du den Tausch-Knopf auf der Startseite." },
+        { screen: "home", title: "Phantom öffnen, „Tauschen“ antippen", text: "Auf der Startseite unter deinem Guthaben auf „Tauschen“ – oder unten in der Leiste auf das Pfeil-Symbol ⇄. Beides führt zum selben Tausch." },
         { screen: "swapFrom", title: "Oben: was du hergibst", text: "Zum Beispiel SOL auf Solana. Gib den Betrag ein, den du hamstern willst." },
         { screen: "swapTo", title: "Unten: USDC auf Base", text: "Wähle USDC und achte auf das Netzwerk „Base“. Phantom bringt dein Geld automatisch von Solana nach Base." },
         { screen: "swapGas", title: "Noch ca. 2 $ in ETH auf Base", text: "Den gleichen Tausch nochmal, diesmal mit ETH auf Base. Das ist dein Gebühren-Topf. Für den ETH-Hamster kannst du gleich alles in ETH tauschen." },
@@ -275,7 +275,7 @@ export const de = {
       exchange: "Deine Börse",
       balance: "Guthaben",
       send: "Senden",
-      receive: "Empfangen",
+      receive: "Erhalten",
       swap: "Tauschen",
       youPay: "Du gibst",
       youGet: "Du bekommst",

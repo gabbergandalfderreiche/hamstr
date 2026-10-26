@@ -142,20 +142,30 @@ const Chip = ({ children, glow }: { children: ReactNode; glow?: boolean }) => (
 
 function HomeScreen() {
   const s = useT().t.guide.screens;
+  // Two ways to the swap: the button under the balance and the arrows icon in the bottom bar.
   return (
-    <>
-      <div className="text-center text-muted">{s.balance}</div>
-      <div className="num mt-1 text-center font-display text-3xl font-extrabold">$ 250</div>
-      <div className="mt-1 text-center text-muted">1.6 SOL · Solana</div>
-      <div className="mt-6 grid grid-cols-3 gap-2 text-center">
-        {[s.send, s.receive, s.swap].map((label) => (
-          <div key={label} className={`rounded-xl bg-surface p-2 font-bold ${label === s.swap ? "guide-glow" : ""}`}>
-            {label}
-          </div>
-        ))}
+    <div className="-mx-3 -mb-3 flex flex-1 flex-col">
+      <div className="px-3">
+        <div className="text-center text-muted">{s.balance}</div>
+        <div className="num mt-1 text-center font-display text-3xl font-extrabold">$ 250</div>
+        <div className="mt-1 text-center text-muted">1.6 SOL · Solana</div>
+        {/* Same order as in the wallet (send, swap, receive, buy), in two rows so the labels stay readable. */}
+        <div className="mt-5 grid grid-cols-2 gap-1.5 text-center">
+          {[s.send, s.swap, s.receive, s.buy].map((label) => (
+            <div key={label} className={`relative rounded-xl bg-surface py-2 font-bold ${label === s.swap ? "guide-glow" : ""}`}>
+              {label}
+              {label === s.swap && <Tap className="absolute -bottom-2 right-2" />}
+            </div>
+          ))}
+        </div>
       </div>
-      <Tap className="mt-3 self-end mr-6" />
-    </>
+      <div className="mt-auto grid grid-cols-4 rounded-b-2xl border-t border-line bg-surface py-2.5 text-center text-base text-muted">
+        <span>⌂</span>
+        <span className="guide-glow mx-auto grid h-7 w-7 place-items-center rounded-full font-bold text-btc-ink">⇄</span>
+        <span>◷</span>
+        <span>⌕</span>
+      </div>
+    </div>
   );
 }
 
@@ -293,5 +303,5 @@ function WithdrawScreen() {
 
 /** Animated fingertip that hints where to tap. */
 function Tap({ className = "" }: { className?: string }) {
-  return <span className={`guide-tap block h-6 w-6 rounded-full bg-btc/40 ring-4 ring-btc/30 ${className}`} />;
+  return <span className={`guide-tap block h-5 w-5 rounded-full bg-btc/40 ring-4 ring-btc/30 ${className}`} />;
 }
