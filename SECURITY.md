@@ -7,7 +7,7 @@
 | | |
 |---|---|
 | Open source | All contracts in [`contracts/src`](contracts/src), MIT (TurboVault includes GPL-2.0 Uniswap math) |
-| Verified source | All mainnet contracts verified on [Sourcify](https://repo.sourcify.dev/8453/0x3647c58c7eF2f4E871Cb3390E21ddD211242aADA) |
+| Verified source | All 8 mainnet contracts verified (exact match) on [Basescan](https://basescan.org/address/0x3647c58c7eF2f4E871Cb3390E21ddD211242aADA#code) and [Sourcify](https://repo.sourcify.dev/8453/0x3647c58c7eF2f4E871Cb3390E21ddD211242aADA) |
 | Tests | 73 Foundry tests, incl. forks of Base mainnet with the real Aave, Uniswap and Chainlink |
 | Admin changes | Only through a `TimelockController` with a 2-day delay |
 | Emergency | Guardian can pause deposits and pull funds out of strategies; withdrawals always stay open |

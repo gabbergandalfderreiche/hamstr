@@ -131,7 +131,7 @@ export const de = {
       statusTitle: "Sicherheits-Status",
       status: [
         { ok: true, text: "Quellcode öffentlich (Open Source)", link: "github" },
-        { ok: true, text: "Contract-Code verifiziert (Sourcify)", link: "sourcify" },
+        { ok: true, text: "Alle Contracts verifiziert auf Basescan und Sourcify", link: "basescan" },
         { ok: true, text: "Automatische Sicherheitsanalyse (Slither): keine kritischen Funde", link: "security" },
         { ok: true, text: "Änderungen nur mit 2 Tagen Vorankündigung (Timelock)", link: "" },
         { ok: true, text: "Einzahlungs-Limits während der Beta", link: "" },
@@ -146,7 +146,7 @@ export const de = {
           { value: "1.536", label: "Zufalls-Szenarien pro Testlauf (Fuzzing)" },
           { value: "29", label: "Tests gegen das echte Base-Netzwerk mit Aave, Uniswap und Chainlink" },
           { value: "0", label: "kritische Funde in der Slither-Analyse" },
-          { value: "4 / 4", label: "Contracts öffentlich verifiziert" },
+          { value: "8 / 8", label: "Contracts öffentlich verifiziert (Basescan & Sourcify)" },
         ],
         runs: "Über 20 komplette Testläufe während der Entwicklung, zuletzt am 26.10.2026.",
         slitherBadge: "Analysiert mit Slither",
@@ -157,7 +157,8 @@ export const de = {
       },
       details: "Details",
       contractsTitle: "Unsere Contracts",
-      contracts: { usdcVault: "Dollar-Hamster", ethVault: "ETH-Hamster", turboVault: "Turbo-Hamster", timelock: "Timelock (Admin)" },
+      contracts: { usdcVault: "Dollar-Hamster", ethVault: "ETH-Hamster", turboVault: "Turbo-Hamster", timelock: "Timelock (Admin)", usdcStrategy: "Dollar-Strategie (Aave)", ethStrategy: "ETH-Strategie (Aave)", swapper: "Bitcoin-Tausch", turboSwapper: "Turbo-Tausch" },
+      contractsMore: "Technik im Hintergrund",
       builtOnTitle: "Baut auf",
       builtOn: {
         aave: "Verleihen – hier kommen die Zinsen her",

@@ -133,7 +133,7 @@ export const en: Dictionary = {
       statusTitle: "Security status",
       status: [
         { ok: true, text: "Source code public (open source)", link: "github" },
-        { ok: true, text: "Contract code verified (Sourcify)", link: "sourcify" },
+        { ok: true, text: "All contracts verified on Basescan and Sourcify", link: "basescan" },
         { ok: true, text: "Automated security analysis (Slither): no critical findings", link: "security" },
         { ok: true, text: "Changes only with 2 days' notice (timelock)", link: "" },
         { ok: true, text: "Deposit limits during the beta", link: "" },
@@ -148,7 +148,7 @@ export const en: Dictionary = {
           { value: "1,536", label: "random scenarios per test run (fuzzing)" },
           { value: "29", label: "tests against the real Base network with Aave, Uniswap and Chainlink" },
           { value: "0", label: "critical findings in the Slither analysis" },
-          { value: "4 / 4", label: "contracts publicly verified" },
+          { value: "8 / 8", label: "contracts publicly verified (Basescan & Sourcify)" },
         ],
         runs: "More than 20 full test runs during development, most recently on 26 Oct 2026.",
         slitherBadge: "Analyzed with Slither",
@@ -159,7 +159,8 @@ export const en: Dictionary = {
       },
       details: "Details",
       contractsTitle: "Our contracts",
-      contracts: { usdcVault: "Dollar Hamster", ethVault: "ETH Hamster", turboVault: "Turbo Hamster", timelock: "Timelock (admin)" },
+      contracts: { usdcVault: "Dollar Hamster", ethVault: "ETH Hamster", turboVault: "Turbo Hamster", timelock: "Timelock (admin)", usdcStrategy: "Dollar strategy (Aave)", ethStrategy: "ETH strategy (Aave)", swapper: "Bitcoin swap", turboSwapper: "Turbo swap" },
+      contractsMore: "Behind the scenes",
       builtOnTitle: "Built on",
       builtOn: {
         aave: "Lending – where the interest comes from",

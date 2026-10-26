@@ -12,10 +12,25 @@ const SLITHER = "https://github.com/crytic/slither";
 const LINKS: Record<string, string> = {
   github: REPO,
   security: `${REPO}/blob/main/SECURITY.md`,
-  sourcify: MAINNET
-    ? `https://repo.sourcify.dev/8453/${MAINNET.usdcVault}`
-    : "https://sourcify.dev",
+  basescan: MAINNET
+    ? `https://basescan.org/address/${MAINNET.usdcVault}#code`
+    : "https://basescan.org",
 };
+
+const MAIN_CONTRACTS = [
+  "usdcVault",
+  "ethVault",
+  "turboVault",
+  "timelock",
+] as const;
+const HELPER_CONTRACTS = [
+  "usdcStrategy",
+  "ethStrategy",
+  "swapper",
+  "turboSwapper",
+] as const;
+type ContractKey =
+  (typeof MAIN_CONTRACTS)[number] | (typeof HELPER_CONTRACTS)[number];
 
 /** Protocols Hamstr integrates. Plain names and links only – no logos, no implied partnership. */
 const BUILT_ON = [
@@ -37,11 +52,40 @@ export function Transparency() {
   const { t } = useT();
   const x = t.landing.transparency;
   const d = MAINNET;
-  const contracts = d
-    ? (["usdcVault", "ethVault", "turboVault", "timelock"] as const)
-        .filter((key) => d[key])
-        .map((key) => ({ key, label: x.contracts[key], address: d[key] }))
-    : [];
+  const pick = (keys: readonly ContractKey[]) =>
+    d
+      ? keys
+          .filter((key) => d[key])
+          .map((key) => ({ key, label: x.contracts[key], address: d[key] }))
+      : [];
+  const renderContract = (c: {
+    key: string;
+    label: string;
+    address: string;
+  }) => (
+    <li key={c.key}>
+      <div className="font-semibold">{c.label}</div>
+      <div className="num flex flex-wrap gap-x-3 text-xs text-muted">
+        <span>{short(c.address)}</span>
+        <a
+          href={`https://basescan.org/address/${c.address}#code`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Basescan ↗
+        </a>
+        <a
+          href={`https://repo.sourcify.dev/8453/${c.address}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Sourcify ↗
+        </a>
+      </div>
+    </li>
+  );
 
   const r = x.report;
 
@@ -147,31 +191,16 @@ export function Transparency() {
             {x.contractsTitle}
           </h3>
           <ul className="mt-3 space-y-3 text-sm">
-            {contracts.map((c) => (
-              <li key={c.key}>
-                <div className="font-semibold">{c.label}</div>
-                <div className="num flex flex-wrap gap-x-3 text-xs text-muted">
-                  <span>{short(c.address)}</span>
-                  <a
-                    href={`https://basescan.org/address/${c.address}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                  >
-                    Basescan ↗
-                  </a>
-                  <a
-                    href={`https://repo.sourcify.dev/8453/${c.address}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                  >
-                    Sourcify ↗
-                  </a>
-                </div>
-              </li>
-            ))}
+            {pick(MAIN_CONTRACTS).map(renderContract)}
           </ul>
+          <details className="mt-4 border-t border-line pt-3">
+            <summary className="cursor-pointer text-xs font-semibold text-muted">
+              {x.contractsMore} (4)
+            </summary>
+            <ul className="mt-3 space-y-3 text-sm">
+              {pick(HELPER_CONTRACTS).map(renderContract)}
+            </ul>
+          </details>
         </div>
 
         <div className="card p-6">
