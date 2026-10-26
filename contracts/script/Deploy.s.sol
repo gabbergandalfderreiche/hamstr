@@ -31,7 +31,8 @@ contract Deploy is Script {
         uint256 timelockDelay;
         uint256 performanceFee;
         uint256 maxSlippageBps;
-        uint32 oracleMaxAge;
+        uint32 oracleMaxAgeStable; // USDC/USD
+        uint32 oracleMaxAgeVolatile; // ETH/USD, cbBTC/USD
         uint256 usdcCap;
         uint256 usdcUserCap;
         uint256 usdcMinHarvest;
@@ -69,8 +70,10 @@ contract Deploy is Script {
         p.timelockDelay = vm.envOr("TIMELOCK_DELAY", uint256(2 days));
         p.performanceFee = vm.envOr("PERFORMANCE_FEE_BPS", uint256(1_000)); // 10%
         p.maxSlippageBps = vm.envOr("MAX_SLIPPAGE_BPS", uint256(100)); // 1% below Chainlink
-        // Chainlink's USDC/USD and cbBTC/USD feeds on Base update at least every 24h.
-        p.oracleMaxAge = uint32(vm.envOr("ORACLE_MAX_AGE", uint256(25 hours)));
+        // Measured on Base (Oct 2026): USDC/USD updates every 24h, ETH/USD and cbBTC/USD at least
+        // every ~20 min. Each limit is the heartbeat plus a margin.
+        p.oracleMaxAgeStable = uint32(vm.envOr("ORACLE_MAX_AGE_STABLE", uint256(25 hours)));
+        p.oracleMaxAgeVolatile = uint32(vm.envOr("ORACLE_MAX_AGE_VOLATILE", uint256(1 hours)));
         p.usdcCap = vm.envOr("USDC_CAP", uint256(50_000e6));
         p.usdcUserCap = vm.envOr("USDC_USER_CAP", uint256(5_000e6));
         p.usdcMinHarvest = vm.envOr("USDC_MIN_HARVEST", uint256(5e6)); // don't swap less than 5 USDC
@@ -92,9 +95,9 @@ contract Deploy is Script {
         d.swapper = new OracleUniswapSwapper(
             deployer, IUniswapV3SwapRouter02(B.UNISWAP_ROUTER), IChainlinkAggregator(B.SEQUENCER_UPTIME), p.maxSlippageBps
         );
-        d.swapper.setFeed(B.USDC, IChainlinkAggregator(B.FEED_USDC_USD), p.oracleMaxAge);
-        d.swapper.setFeed(B.WETH, IChainlinkAggregator(B.FEED_ETH_USD), p.oracleMaxAge);
-        d.swapper.setFeed(B.CBBTC, IChainlinkAggregator(B.FEED_CBBTC_USD), p.oracleMaxAge);
+        d.swapper.setFeed(B.USDC, IChainlinkAggregator(B.FEED_USDC_USD), p.oracleMaxAgeStable);
+        d.swapper.setFeed(B.WETH, IChainlinkAggregator(B.FEED_ETH_USD), p.oracleMaxAgeVolatile);
+        d.swapper.setFeed(B.CBBTC, IChainlinkAggregator(B.FEED_CBBTC_USD), p.oracleMaxAgeVolatile);
         d.swapper.setRoute(B.USDC, B.CBBTC, abi.encodePacked(B.USDC, B.FEE_USDC_CBBTC, B.CBBTC));
         d.swapper.setRoute(B.WETH, B.CBBTC, abi.encodePacked(B.WETH, B.FEE_WETH_CBBTC, B.CBBTC));
         d.swapper.transferOwnership(address(d.timelock));

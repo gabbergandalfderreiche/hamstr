@@ -42,6 +42,12 @@ contract DeployForkTest is Test {
         assertEq(d.usdcVault.performanceFee(), 1_000);
         assertEq(d.swapper.maxSlippageBps(), 100);
         assertEq(d.usdcVault.feeRecipient(), treasury);
+        (, uint32 usdcAge) = d.swapper.feeds(B.USDC);
+        (, uint32 btcAge) = d.swapper.feeds(B.CBBTC);
+        (, uint32 ethAge) = d.swapper.feeds(B.WETH);
+        assertEq(usdcAge, 25 hours);
+        assertEq(btcAge, 1 hours);
+        assertEq(ethAge, 1 hours);
     }
 
     function test_DeployerKeepsNoRights() public {

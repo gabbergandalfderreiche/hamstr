@@ -35,6 +35,9 @@ cast rpc --rpc-url "$RPC" evm_increaseTime $((HOURS * 3600)) >/dev/null
 cast rpc --rpc-url "$RPC" evm_mine >/dev/null
 echo "==> Advanced $HOURS hours"
 
+# SKIP_HARVEST=1: only move time forward, e.g. to test the keeper (keeper/src/keeper.mjs).
+if [ "${SKIP_HARVEST:-}" = "1" ]; then exit 0; fi
+
 for key in usdcVault ethVault; do
   vault=$(grep -o "\"$key\": *\"0x[0-9a-fA-F]*\"" $DEPLOYMENT | grep -o "0x[0-9a-fA-F]*")
   pending=$(cast call --rpc-url "$RPC" "$vault" "unrealizedYield()(uint256)")

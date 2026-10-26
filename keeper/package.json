@@ -1,0 +1,16 @@
+{
+  "name": "hamstr-keeper",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Harvests the Hamstr vaults when it is worth it.",
+  "scripts": {
+    "start": "node src/keeper.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "viem": "2.57.11"
+  }
+}
