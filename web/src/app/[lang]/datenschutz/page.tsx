@@ -42,7 +42,7 @@ function German() {
       <h2>Kurz zusammengefasst</h2>
       <ul>
         <li>Kein Benutzerkonto, keine Registrierung, keine Angabe von Name oder E-Mail nötig.</li>
-        <li>Kein Tracking, keine Analyse- oder Werbedienste. Nur ein Cookie für deine Sprachwahl.</li>
+        <li>Keine Werbe-Tracker, keine persönlichen Profile. Für anonyme Besucherzahlen nutzen wir Vercel Web Analytics – ohne Cookies. Ein Cookie speichert nur deine Sprachwahl.</li>
         <li>Schriften werden von unserem eigenen Server ausgeliefert, nicht von Google.</li>
         <li>
           Transaktionen auf der Blockchain sind öffentlich und dauerhaft – das ist eine Eigenschaft der Blockchain,
@@ -57,6 +57,15 @@ function German() {
         auszuliefern und vor Missbrauch zu schützen. Die Übermittlung in die USA erfolgt auf Grundlage des Swiss-U.S.
         bzw. EU-U.S. Data Privacy Framework bzw. von Standardvertragsklauseln. Rechtsgrundlage ist unser berechtigtes
         Interesse an einem sicheren Betrieb.
+      </p>
+
+      <h2>Besucherstatistik (Vercel Web Analytics)</h2>
+      <p>
+        Um zu sehen, welche Seiten genutzt werden, verwenden wir Vercel Web Analytics. Erfasst werden die
+        aufgerufene Seite, die verweisende Seite, Land, Gerätetyp, Browser und Betriebssystem. Es werden keine
+        Cookies gesetzt und keine Profile über mehrere Websites gebildet. Zur Unterscheidung von Besuchen bildet
+        Vercel aus Merkmalen der Anfrage einen anonymen Wert, der nach spätestens 24 Stunden verworfen wird.
+        Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung der Website.
       </p>
 
       <h2>Verbindung mit einer Wallet</h2>
@@ -130,7 +139,7 @@ function English() {
       <h2>In short</h2>
       <ul>
         <li>No user account, no registration, no name or e-mail required.</li>
-        <li>No tracking, no analytics or advertising services. Only one cookie for your language choice.</li>
+        <li>No ad trackers, no personal profiles. For anonymous visitor numbers we use Vercel Web Analytics – without cookies. One cookie only stores your language choice.</li>
         <li>Fonts are served from our own server, not from Google.</li>
         <li>
           Transactions on the blockchain are public and permanent – that is a property of the blockchain, not of this
@@ -144,6 +153,14 @@ function English() {
         such as IP address, time, requested page and browser details in server logs to deliver the site and protect
         it against abuse. Transfers to the USA are based on the Swiss-U.S. / EU-U.S. Data Privacy Framework or
         standard contractual clauses. The legal basis is our legitimate interest in secure operation.
+      </p>
+
+      <h2>Visitor statistics (Vercel Web Analytics)</h2>
+      <p>
+        To see which pages are used, we use Vercel Web Analytics. It records the page visited, the referring
+        page, country, device type, browser and operating system. No cookies are set and no cross-site profiles
+        are built. To tell visits apart, Vercel derives an anonymous value from request data that is discarded
+        after 24 hours at the latest. The legal basis is our legitimate interest in improving the website.
       </p>
 
       <h2>Connecting a wallet</h2>
