@@ -4,6 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import QRCode from "qrcode";
 import { useConnect, useConnection, useConnectors, type Connector } from "wagmi";
 import { Hamster } from "./Hamster";
+import Link from "next/link";
 import { useT } from "@/i18n/client";
 
 const PHANTOM_DOWNLOAD = "https://phantom.com/download";
@@ -38,7 +39,7 @@ export function ConnectModalProvider({ children }: { children: ReactNode }) {
 }
 
 function ConnectDialog({ onClose }: { onClose: () => void }) {
-  const { t } = useT();
+  const { t, path } = useT();
   const c = t.connect;
   const connectors = useConnectors();
   const connect = useConnect();
@@ -178,6 +179,10 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
             )}
           </div>
         )}
+
+        <Link href={path("/start")} onClick={onClose} className="mt-4 block text-center text-xs font-semibold underline">
+          {t.guide.link}
+        </Link>
 
         {errorText && <p className="mt-3 text-xs font-semibold text-red-600">{errorText}</p>}
       </div>

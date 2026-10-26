@@ -214,3 +214,76 @@ body {
     opacity: 0.35;
   }
 }
+
+/* Getting-started guide: phone mock-up animations. */
+@keyframes guide-fill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.guide-progress {
+  animation: guide-fill linear forwards;
+}
+
+@keyframes guide-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.guide-screen > * {
+  animation: guide-in 0.4s ease both;
+}
+
+@keyframes guide-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(247, 147, 26, 0); }
+  50% { box-shadow: 0 0 0 4px rgba(247, 147, 26, 0.45); }
+}
+.guide-glow {
+  animation: guide-glow 1.4s ease-in-out infinite;
+}
+
+@keyframes guide-tap {
+  0%, 100% { transform: scale(0.7); opacity: 0.4; }
+  50% { transform: scale(1); opacity: 1; }
+}
+.guide-tap {
+  animation: guide-tap 1.2s ease-in-out infinite;
+}
+
+/* Pending → arrived: spinner for 2.5 s, then the check mark pops in. */
+@keyframes guide-spin { to { transform: rotate(360deg); } }
+@keyframes guide-hide { to { opacity: 0; } }
+@keyframes guide-show { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
+.guide-spinner {
+  animation: guide-spin 0.9s linear infinite, guide-hide 0.2s 2.5s forwards;
+}
+.guide-check,
+.guide-label-done {
+  opacity: 0;
+  animation: guide-show 0.35s 2.5s ease-out forwards;
+}
+.guide-pending-text {
+  display: grid;
+}
+.guide-pending-text > span {
+  grid-area: 1 / 1;
+}
+.guide-label-pending {
+  animation: guide-hide 0.2s 2.5s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guide-glow,
+  .guide-tap,
+  .guide-spinner,
+  .guide-screen > * {
+    animation: none;
+  }
+  .guide-spinner,
+  .guide-label-pending {
+    opacity: 0;
+  }
+  .guide-check,
+  .guide-label-done {
+    opacity: 1;
+    animation: none;
+  }
+}

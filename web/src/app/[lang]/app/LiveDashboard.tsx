@@ -18,6 +18,7 @@ import type { Dictionary } from "@/i18n";
 import { useT } from "@/i18n/client";
 import { useMarketData } from "@/lib/useMarketData";
 import { TurboTeaser } from "@/components/turbo/TurboTeaser";
+import { FundingHint } from "@/components/guide/FundingHint";
 import { useVaultState, type VaultState } from "./useVaultState";
 
 type Mood = "sparkle" | "happy" | "wink";
@@ -358,6 +359,8 @@ function VaultPanel({
           <span>{a.feeValue(state.performanceFeeBps / 100)}</span>
         </div>
       </div>
+
+      {user && mode === "deposit" && state.walletBalance === 0n && <FundingHint address={user} symbol={vault.symbol} />}
 
       <button
         className="btn btn-primary mt-5 w-full"

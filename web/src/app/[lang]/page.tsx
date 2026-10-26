@@ -30,6 +30,7 @@ export default async function Home() {
             <a href="#calculator" className="hover:text-ink">{t.nav.calc}</a>
             <a href="#vaults" className="hover:text-ink">{t.nav.vaults}</a>
             <a href="#safety" className="hover:text-ink">{t.nav.safety}</a>
+            <Link href={localePath(locale, "/start")} className="hover:text-ink">{t.nav.guide}</Link>
           </nav>
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
@@ -63,6 +64,9 @@ export default async function Home() {
                   {l.ctaSecondary}
                 </a>
               </div>
+              <Link href={localePath(locale, "/start")} className="mt-4 inline-block text-sm font-semibold underline">
+                {t.guide.link}
+              </Link>
               <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-muted">
                 {l.trust.map((item) => (
                   <li key={item}>✓ {item}</li>
