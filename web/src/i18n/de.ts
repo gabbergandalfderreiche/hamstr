@@ -19,6 +19,8 @@ export const de = {
     openApp: "App öffnen",
     toApp: "Zur App",
     language: "Sprache",
+    themeDark: "Dunkles Design",
+    themeLight: "Helles Design",
   },
 
   landing: {

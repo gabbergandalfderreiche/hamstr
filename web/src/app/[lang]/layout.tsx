@@ -6,6 +6,7 @@ import { BRAND } from "@/lib/brand";
 import { LOCALES } from "@/i18n";
 import { LocaleProvider } from "@/i18n/client";
 import { getDictionary, getLocale } from "@/i18n/server";
+import { THEME_INIT_SCRIPT } from "@/components/ThemeToggle";
 import "../globals.css";
 
 const body = Inter({
@@ -41,7 +42,11 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const locale = await getLocale();
   return (
-    <html lang={locale} className={`${body.variable} ${display.variable} h-full antialiased`}>
+    // suppressHydrationWarning: the theme script sets data-theme on <html> before React hydrates.
+    <html lang={locale} className={`${body.variable} ${display.variable} h-full antialiased`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body className="min-h-full flex flex-col">
         <LocaleProvider locale={locale}>
           <Providers>{children}</Providers>

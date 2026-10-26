@@ -21,6 +21,8 @@ export const en: Dictionary = {
     openApp: "Open app",
     toApp: "To the app",
     language: "Language",
+    themeDark: "Dark theme",
+    themeLight: "Light theme",
   },
 
   landing: {
