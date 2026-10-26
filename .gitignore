@@ -17,3 +17,6 @@ node_modules/
 
 # local tool config
 .claude/
+
+# generated inputs for manual explorer verification (contracts/script/verify-mainnet.ps1)
+contracts/verification/
