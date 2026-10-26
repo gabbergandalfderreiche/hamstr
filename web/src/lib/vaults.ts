@@ -1,58 +1,29 @@
-export type Risk = "niedrig" | "mittel";
+import type { Dictionary } from "@/i18n";
 
+export type Risk = "niedrig" | "mittel";
+export type VaultId = "usdc" | "eth" | "btc";
+
+/** Vault facts; the texts (name, summary, source, risk note) are in the dictionaries under `vaults`. */
 export type Vault = {
-  id: string;
-  name: string;
+  id: VaultId;
   deposit: string;
   /** What the yield is paid out in. */
   payout: string;
-  source: string;
-  summary: string;
   risk: Risk;
-  riskNote: string;
   /** Demo value until contracts are live. */
   apy: number;
   mood: "sparkle" | "happy" | "wink";
 };
 
 export const VAULTS: Vault[] = [
-  {
-    id: "usdc",
-    name: "Dollar-Hamster",
-    deposit: "USDC",
-    payout: "cbBTC",
-    source: "Aave Lending",
-    summary: "Deine Dollar bleiben Dollar. Nur die Zinsen werden zu Bitcoin.",
-    risk: "niedrig",
-    riskNote: "Kein Kursrisiko aufs Kapital. Smart-Contract-Risiko bei Aave und Hamstr.",
-    apy: 5.2,
-    mood: "sparkle",
-  },
-  {
-    id: "eth",
-    name: "ETH-Hamster",
-    deposit: "ETH",
-    payout: "cbBTC",
-    source: "Aave Lending",
-    summary: "Dein ETH bleibt ETH. Nur die Zinsen werden zu Bitcoin.",
-    risk: "niedrig",
-    riskNote: "ETH-Kursrisiko bleibt. Smart-Contract-Risiko bei Aave und Hamstr.",
-    apy: 1.4,
-    mood: "happy",
-  },
-  {
-    id: "btc",
-    name: "Voll-Hamster",
-    deposit: "cbBTC",
-    payout: "cbBTC",
-    source: "Aave Lending",
-    summary: "Für Überzeugte: Bitcoin rein, mehr Bitcoin raus.",
-    risk: "niedrig",
-    riskNote: "Volles BTC-Kursrisiko. Bitcoin-Zinsen sind niedrig.",
-    apy: 0.6,
-    mood: "wink",
-  },
+  { id: "usdc", deposit: "USDC", payout: "cbBTC", risk: "niedrig", apy: 5.2, mood: "sparkle" },
+  { id: "eth", deposit: "ETH", payout: "cbBTC", risk: "niedrig", apy: 1.4, mood: "happy" },
+  { id: "btc", deposit: "cbBTC", payout: "cbBTC", risk: "niedrig", apy: 0.6, mood: "wink" },
 ];
+
+export function vaultText(t: Dictionary, id: VaultId) {
+  return t.vaults[id];
+}
 
 /** Demo BTC price for estimates only. */
 export const DEMO_BTC_USD = 100_000;

@@ -2,18 +2,14 @@
 
 import { useState } from "react";
 import { useConnect, useConnection, useConnectors, useDisconnect } from "wagmi";
-
-const LABELS: Record<string, { title: string; hint: string }> = {
-  baseAccount: { title: "Mit Passkey anmelden", hint: "Face ID / Fingerabdruck · empfohlen" },
-  injected: { title: "Browser-Wallet", hint: "MetaMask, Rabby & Co." },
-  mock: { title: "Test-Wallet (lokal)", hint: "Nur auf dem lokalen Fork · Testgeld" },
-};
+import { useT } from "@/i18n/client";
 
 function short(address: string) {
   return `${address.slice(0, 6)}…${address.slice(-4)}`;
 }
 
 export function ConnectButton() {
+  const { t } = useT();
   const { address, isConnected } = useConnection();
   const connectors = useConnectors();
   const connect = useConnect();
@@ -22,7 +18,7 @@ export function ConnectButton() {
 
   if (isConnected && address) {
     return (
-      <button className="btn btn-ghost !py-2 text-sm" onClick={() => disconnect.mutate()} title="Abmelden">
+      <button className="btn btn-ghost !py-2 text-sm" onClick={() => disconnect.mutate()} title={t.connect.logout}>
         <span className="h-2 w-2 rounded-full bg-good" />
         <span className="num">{short(address)}</span>
       </button>
@@ -32,12 +28,12 @@ export function ConnectButton() {
   return (
     <div className="relative">
       <button className="btn btn-primary !py-2 text-sm" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
-        Anmelden
+        {t.connect.login}
       </button>
       {open && (
         <div className="card absolute right-0 z-30 mt-2 w-72 p-2">
           {connectors.map((c) => {
-            const label = LABELS[c.type] ?? { title: c.name, hint: "" };
+            const label = t.connect.connectors[c.type] ?? { title: c.name, hint: "" };
             return (
               <button
                 key={c.uid}

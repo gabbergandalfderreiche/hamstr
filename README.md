@@ -1,81 +1,83 @@
 # hamstr
 
-DeFi BTC maxi aggregator: **Bitcoin hamstern. Automatisch.**
+🇬🇧 English · 🇩🇪 [Deutsch](README.de.md)
 
-Nutzer zahlen USDC oder ETH ein. Das Kapital bleibt, wo es ist – nur die Zinsen werden automatisch zu Bitcoin (cbBTC) und können jederzeit abgeholt werden. Läuft auf [Base](https://base.org).
+DeFi BTC maxi aggregator: **Stack Bitcoin. Automatically.**
 
-> ⚠️ **Beta, nicht extern auditiert.** Nicht mit Geld nutzen, dessen Verlust du nicht verkraften kannst.
+Users deposit USDC or ETH. The principal stays where it is – only the interest is turned into Bitcoin (cbBTC) automatically and can be claimed at any time. Runs on [Base](https://base.org).
 
-## So funktioniert's
+> ⚠️ **Beta, not externally audited.** Do not use with money you cannot afford to lose.
+
+## How it works
 
 ```
-Nutzer ──USDC/ETH──▶ BtcYieldVault ──▶ AaveV3Strategy ──▶ Aave V3 (Zinsen)
+User ──USDC/ETH──▶ BtcYieldVault ──▶ AaveV3Strategy ──▶ Aave V3 (interest)
                          │
               Keeper ──harvest()──▶ OracleUniswapSwapper ──▶ Uniswap V3 ──▶ cbBTC
                          │                 ▲
-                         │          Chainlink-Preis als Untergrenze
+                         │          Chainlink price as floor
                          ▼
-                 claim() ──cbBTC──▶ Nutzer
+                 claim() ──cbBTC──▶ User
 ```
 
-- **Kapital 1:1:** 1.000 USDC rein = 1.000 Anteile = jederzeit 1.000 USDC raus.
-- **Faire Verteilung:** Zinsen werden bei jeder Ein-/Auszahlung den bisherigen Haltern gutgeschrieben. Wer kurz vor einem Harvest einzahlt, bekommt keine fremden Zinsen.
-- **Harvest:** Ein Keeper tauscht die gesammelten Zinsen regelmäßig über Uniswap in cbBTC. Jede Periode hat ihren eigenen Kurs; jeder bekommt exakt seinen Anteil.
-- **Swap-Schutz:** Liegt der Uniswap-Kurs mehr als 1 % unter Chainlink, wird der Tausch abgelehnt (schützt vor MEV und einem kompromittierten Keeper). Veraltete Preise oder ein ausgefallener Sequencer blockieren ebenfalls.
-- **Gebühr:** 10 % der Zinsen (Performance-Fee), im Contract auf max. 20 % gedeckelt. 0 % Ein-/Auszahlung.
+- **Principal 1:1:** deposit 1,000 USDC = 1,000 shares = withdraw 1,000 USDC any time.
+- **Fair distribution:** interest is credited to existing holders on every deposit and withdrawal. Depositing right before a harvest does not capture other people's interest.
+- **Harvest:** a keeper regularly swaps the accumulated interest into cbBTC on Uniswap. Every period has its own rate; everyone gets exactly their share.
+- **Swap protection:** if the Uniswap price is more than 1 % below Chainlink, the swap is rejected (protects against MEV and a compromised keeper). Stale prices or a Base sequencer outage also block it.
+- **Fee:** 10 % of the interest (performance fee), capped at 20 % in the contract. 0 % on deposits and withdrawals.
 
-## Sicherheitsmodell
+## Security model
 
-| Rolle | Wer | Darf |
+| Role | Who | Can |
 |---|---|---|
-| Admin | `TimelockController` (2 Tage Verzögerung), gesteuert vom Multisig | Strategie, Swapper, Gebühren, Limits ändern |
-| Guardian | Multisig | Sofort pausieren, Gelder aus der Strategie zurückholen |
-| Keeper | Bot-Wallet | Nur `harvest()` – Swap-Untergrenze durch Chainlink |
+| Admin | `TimelockController` (2-day delay), controlled by the multisig | change strategy, swapper, fees, limits |
+| Guardian | Multisig | pause immediately, pull funds out of the strategy |
+| Keeper | Bot wallet | only `harvest()` – swap floor enforced by Chainlink |
 
-Auszahlen und Abholen funktionieren immer, auch wenn pausiert ist. Der Deployer behält nach dem Deployment keinerlei Rechte (wird im Deploy-Script geprüft).
+Withdrawing and claiming always work, even while paused. The deployer keeps no rights after deployment (checked by the deploy script).
 
-## Projektstruktur
+## Project structure
 
 ```
-contracts/   Foundry: Smart Contracts, Tests, Deploy-Script
-  src/BtcYieldVault.sol                 Vault (Variante "Zinsen werden zu BTC")
-  src/swappers/OracleUniswapSwapper.sol Uniswap-Swap mit Chainlink-Untergrenze
-  src/strategies/AaveV3Strategy.sol     Aave-V3-Lending
-  src/YieldVault.sol                    ERC-4626-Vault (Basis für einen späteren reinen BTC-Vault)
-  script/Deploy.s.sol                   Deployment inkl. Timelock, Rollen, Limits
-web/         Next.js-Frontend mit Hamster-UI, Passkey-Login (Base Account)
-keeper/      Harvest-Bot (Node + viem), läuft täglich per GitHub Actions
+contracts/   Foundry: smart contracts, tests, deploy script
+  src/BtcYieldVault.sol                 Vault ("interest becomes BTC")
+  src/swappers/OracleUniswapSwapper.sol Uniswap swap with Chainlink floor
+  src/strategies/AaveV3Strategy.sol     Aave V3 lending
+  src/YieldVault.sol                    ERC-4626 vault (base for a future pure BTC vault)
+  script/Deploy.s.sol                   Deployment incl. timelock, roles, limits
+web/         Next.js frontend with hamster UI, passkey login (Base Account), English + German
+keeper/      Harvest bot (Node + viem), runs daily via GitHub Actions
 ```
 
-## Entwicklung
+## Development
 
-Voraussetzungen: [Foundry](https://getfoundry.sh), Node.js 20+, Git.
+Requirements: [Foundry](https://getfoundry.sh), Node.js 20+, Git.
 
 ```bash
 git clone --recursive https://github.com/gabbergandalfderreiche/hamstr.git
 cd hamstr/contracts
-forge test            # Unit-Tests + Tests gegen eine Kopie des Base-Mainnets
+forge test            # unit tests + tests against a copy of Base mainnet
 ```
 
-### Lokal mit echten Contracts testen (Base-Fork, Testgeld)
+### Test locally with real contracts (Base fork, test money)
 
 ```bash
-# Terminal 1
+# terminal 1
 anvil --fork-url https://mainnet.base.org --chain-id 31337
 
-# Terminal 2
-cd contracts && bash script/local-fork.sh        # deployt + 20.000 Test-USDC
+# terminal 2
+cd contracts && bash script/local-fork.sh        # deploys + 20,000 test USDC
 cd ../web && npm install && npm run sync-contracts
-cp .env.example .env.local                        # NEXT_PUBLIC_NETWORK=fork setzen
-npm run dev                                       # http://localhost:3000/app → "Test-Wallet (lokal)"
+cp .env.example .env.local                        # set NEXT_PUBLIC_NETWORK=fork
+npm run dev                                       # http://localhost:3000/app → "Test wallet (local)"
 
-# Zeit vorspulen + Harvest wie der Keeper
+# move time forward + harvest like the keeper
 cd contracts && HOURS=12 bash script/local-harvest.sh
 ```
 
-Die lokalen Scripts nutzen die öffentlichen Anvil-Testschlüssel. **Diese Adressen niemals auf einem echten Netzwerk verwenden** – auf Base-Mainnet haben sie EIP-7702-"Sweeper"-Delegationen, die eingehendes ETH stehlen.
+The local scripts use anvil's public test keys. **Never use these addresses on a real network** – on Base mainnet they carry EIP-7702 "sweeper" delegations that steal incoming ETH.
 
-### Mainnet-Deployment
+### Mainnet deployment
 
 ```bash
 cd contracts
@@ -84,39 +86,44 @@ MULTISIG=0x... KEEPER=0x... TREASURY=0x... \
 cd ../web && npm run sync-contracts
 ```
 
-Beta-Standardwerte (per Umgebungsvariable änderbar): Timelock 2 Tage, 50.000 USDC / 5.000 USDC pro Person, 15 ETH / 1,5 ETH pro Person, 10 % Performance-Fee, 1 % max. Abweichung von Chainlink, Chainlink-Preise max. 1 h alt (ETH, cbBTC) bzw. 25 h (USDC).
+Beta defaults (override via environment variables): 2-day timelock, 50,000 USDC / 5,000 USDC per person, 15 ETH / 1.5 ETH per person, 10 % performance fee, max. 1 % deviation from Chainlink, Chainlink prices at most 1 h old (ETH, cbBTC) or 25 h (USDC).
 
-### Keeper (täglicher Harvest)
+### Keeper (daily harvest)
 
-[`keeper/src/keeper.mjs`](keeper/src/keeper.mjs) harvestet beide Vaults, aber nur, wenn es sich lohnt:
+[`keeper/src/keeper.mjs`](keeper/src/keeper.mjs) harvests both vaults, but only when it pays off:
 
-1. überspringt pausierte Vaults und Beträge unter `minHarvest`
-2. bewertet die Zinsen per Chainlink in USD und Sats
-3. simuliert `harvest()` vorab – veraltete Preise, Defizit oder fehlende Rolle kosten so kein Gas
-4. schätzt die Gebühr (L2 + L1-Daten) und harvestet nur, wenn die Zinsen ≥ 5× die Gebühr wert sind
-5. setzt eine eigene Mindestmenge (0,75 % unter Chainlink) zusätzlich zur Grenze im Swapper
+1. skips paused vaults and amounts below `minHarvest`
+2. values the interest in USD and sats via Chainlink
+3. simulates `harvest()` first – stale prices, a deficit or a missing role cost no gas
+4. estimates the fee (L2 + L1 data) and only harvests when the interest is worth ≥ 5× the fee
+5. sets its own minimum output (0.75 % below Chainlink) on top of the swapper's floor
 
-Läuft täglich per [GitHub Actions](.github/workflows/keeper.yml). Dafür im Repo unter *Settings → Secrets → Actions* `BASE_RPC_URL` und `KEEPER_PRIVATE_KEY` anlegen und die Keeper-Wallet mit ~0,005 ETH auf Base füllen. Bis zum Mainnet-Deployment beendet sich der Job einfach. Echte Probleme (veraltetes Oracle, Defizit, fehlende Rolle, wenig Gas-Guthaben) lassen den Lauf fehlschlagen → GitHub schickt eine E-Mail.
+Runs daily via [GitHub Actions](.github/workflows/keeper.yml). Add `BASE_RPC_URL` and `KEEPER_PRIVATE_KEY` under *Settings → Secrets → Actions* and fund the keeper wallet with ~0.005 ETH on Base. Until the mainnet deployment the job simply exits. Real problems (stale oracle, deficit, missing role, low gas balance) fail the run → GitHub sends an e-mail.
 
-Hinweis: GitHub pausiert geplante Workflows in öffentlichen Repos nach 60 Tagen ohne Commits – dann unter *Actions* wieder aktivieren.
+Note: GitHub pauses scheduled workflows in public repos after 60 days without commits – re-enable it under *Actions*.
 
 ```bash
-# lokal gegen den Fork testen (Anvil hat ~170x höhere Gaspreise als Base, daher Schwelle senken)
+# test locally against the fork (anvil gas prices are ~170x higher than Base, so lower the threshold)
 cd contracts && HOURS=24 SKIP_HARVEST=1 bash script/local-harvest.sh
 cd .. && RPC_URL=http://127.0.0.1:8545 DEPLOYMENT=contracts/deployments/31337.json \
   KEEPER_PRIVATE_KEY=<anvil #0> MIN_PROFIT_MULTIPLE=0.05 node keeper/src/keeper.mjs
 ```
 
+### Languages
+
+The website is available in English and German (`/en/...`, `/de/...`). Visitors without a language in the URL are redirected based on their browser language; the DE | EN switcher remembers the choice in a cookie. All texts live in [`web/src/i18n`](web/src/i18n) – `en.ts` is type-checked against `de.ts`, so a missing translation fails the build.
+
 ## Status
 
-- [x] Contracts + 58 Tests (inkl. Base-Fork mit echtem Aave, Uniswap, Chainlink)
-- [x] Deploy-Script mit Timelock & Rollen
-- [x] Frontend an echte Contracts angebunden (lokaler Fork getestet)
-- [x] Keeper-Bot (lokal gegen Fork getestet, GitHub Actions eingerichtet)
-- [ ] wstETH-/Lido-Strategie für den ETH-Vault
-- [ ] Externes Audit
-- [ ] Mainnet-Beta
+- [x] Contracts + 58 tests (incl. Base fork with real Aave, Uniswap, Chainlink)
+- [x] Deploy script with timelock & roles
+- [x] Frontend wired to real contracts (tested on local fork)
+- [x] Website in English and German, legal notice, privacy policy, beta notice
+- [x] Keeper bot (tested against fork, GitHub Actions set up)
+- [ ] wstETH / Lido strategy for the ETH vault
+- [ ] External audit
+- [ ] Mainnet beta
 
-## Lizenz
+## License
 
 MIT

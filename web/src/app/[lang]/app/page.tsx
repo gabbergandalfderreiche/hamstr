@@ -9,6 +9,7 @@ import { activeChain } from "@/lib/network";
 
 export const metadata: Metadata = {
   title: `App – ${BRAND.name}`,
+  alternates: { languages: { de: "/de/app", en: "/en/app" } },
 };
 
 export default function AppPage() {

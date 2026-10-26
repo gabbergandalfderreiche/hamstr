@@ -1,0 +1,234 @@
+import type { Dictionary } from "./de";
+
+/** English texts. Typed against the German dictionary, so a missing key fails the type check. */
+export const en: Dictionary = {
+  langName: "English",
+  numberLocale: "en-US",
+
+  brand: {
+    tagline: "Stack Bitcoin. Automatically.",
+    description:
+      "Deposit dollars, ETH or Bitcoin. Your principal stays put – the interest turns into Bitcoin automatically.",
+    mascot: "Hamstr mascot",
+    homeLabel: (brand) => `${brand} home`,
+  },
+
+  nav: {
+    how: "How it works",
+    vaults: "Vaults",
+    fees: "Fees",
+    safety: "Safety",
+    openApp: "Open app",
+    toApp: "To the app",
+    language: "Language",
+  },
+
+  landing: {
+    badge: "Beta on Base · deposits capped",
+    heroLine1: "Stack Bitcoin.",
+    heroLine2: "Automatically.",
+    ctaPrimary: "Start stacking",
+    ctaSecondary: "How does it work?",
+    trust: ["Withdraw any time", "Fees on-chain", "No token of our own"],
+    bubble: "Stashing sats for winter!",
+    todayLabel: "Stacked today",
+    example: "Example",
+
+    howTitle: "How it works",
+    howSub: "Three steps. The hamster does the rest.",
+    step: (n) => `Step ${n}`,
+    steps: [
+      {
+        title: "Deposit",
+        text: "Sign in with Face ID or your fingerprint. No seed phrase, no extension. Dollars, ETH or Bitcoin – buy directly by card.",
+      },
+      {
+        title: "Earn interest",
+        text: "Your principal is lent out on Aave, one of the largest DeFi protocols. No token of our own, no make-believe yield.",
+      },
+      {
+        title: "Collect Bitcoin",
+        text: "The interest turns into Bitcoin (cbBTC) automatically. Watch your cheek pouches fill up every day.",
+      },
+    ],
+
+    vaultsTitle: "Pick your hamster",
+    vaultsSub: "Every vault pays its yield in Bitcoin.",
+    riskBadge: (risk) => `${risk} risk`,
+    depositLabel: "Deposit",
+    payoutLabel: "Yield in",
+    sourceLabel: "Source",
+    apyLabel: "APY (example)",
+
+    feesTitle: "Fees you understand",
+    feesText:
+      "We only earn when you earn. If you lose money you pay nothing – and we charge again only once your previous high is beaten.",
+    exampleEarnPre: "Your money earns",
+    exampleEarnPost: "in interest.",
+    exampleUser: "becomes Bitcoin for you",
+    exampleFee: (brand) => `to ${brand}`,
+    feeRows: [
+      { label: "Deposit", value: "0 %", note: "" },
+      { label: "Withdrawal", value: "0 %", note: "" },
+      { label: "Performance fee", value: "10 %", note: "on profit only" },
+      { label: "Management fee", value: "0 %", note: "" },
+    ],
+    feeCaps: "Hard caps in the smart contract: max. 20 % performance fee. Changes only with 2 days' notice.",
+
+    safetyTitle: "Cute, not naive",
+    safetySub: "How we protect your money – and what you should know.",
+    safety: [
+      {
+        title: "You stay in control",
+        text: "Non-custodial: your balance sits in the smart contract, not with us. You can withdraw any time – even while the vault is paused.",
+      },
+      {
+        title: "Fees capped in code",
+        text: "At most 20 % performance fee – fixed in the contract. Every change is announced 2 days ahead through a timelock.",
+      },
+      {
+        title: "A careful start",
+        text: "During the beta, deposits are capped per person and in total. An emergency multisig can pull everything out of the strategy.",
+      },
+      {
+        title: "Open and verifiable",
+        text: "Built on audited OpenZeppelin code. The source code is public. External audit status: pending.",
+      },
+    ],
+
+    faqTitle: "Questions",
+    faq: [
+      {
+        q: "Where does the yield come from?",
+        a: "From interest paid by people who borrow on Aave. Not from new deposits and not from a token of our own. The interest is swapped to Bitcoin on Uniswap – only at a price close to the Chainlink market price.",
+      },
+      {
+        q: "What is cbBTC?",
+        a: "Bitcoin on the Base blockchain, backed 1:1 by real Bitcoin held by Coinbase. You can hold it, swap it or redeem it for regular Bitcoin at Coinbase any time.",
+      },
+      {
+        q: "Can I lose money?",
+        a: "Yes. Smart contracts can have bugs, protocols like Aave can run into trouble, and prices move. Only deposit what you can afford to lose – especially during the beta.",
+      },
+      {
+        q: "Why a hamster?",
+        a: "Because hamsters stash food in summer so they get through the winter. That's exactly what we do with Bitcoin.",
+      },
+    ],
+
+    ctaTitle: "Winter is coming. It always does.",
+    ctaText: "Start stacking today – from $10.",
+  },
+
+  vaults: {
+    risk: { niedrig: "low", mittel: "medium" },
+    usdc: {
+      name: "Dollar Hamster",
+      summary: "Your dollars stay dollars. Only the interest becomes Bitcoin.",
+      source: "Aave lending",
+      riskNote: "No price risk on your principal. Smart contract risk at Aave and Hamstr.",
+    },
+    eth: {
+      name: "ETH Hamster",
+      summary: "Your ETH stays ETH. Only the interest becomes Bitcoin.",
+      source: "Aave lending",
+      riskNote: "ETH price risk remains. Smart contract risk at Aave and Hamstr.",
+    },
+    btc: {
+      name: "Full Hamster",
+      summary: "For believers: Bitcoin in, more Bitcoin out.",
+      source: "Aave lending",
+      riskNote: "Full BTC price risk. Bitcoin interest rates are low.",
+    },
+  },
+
+  footer: {
+    disclaimer: (brand) =>
+      `${brand} is beta software. Crypto assets are volatile, smart contracts can contain bugs, and a total loss is possible. Not investment advice. Yields shown are examples or variable and no guarantee of future returns.`,
+    impressum: "Legal notice",
+    privacy: "Privacy",
+    source: "Source code",
+  },
+
+  connect: {
+    login: "Sign in",
+    logout: "Sign out",
+    connectors: {
+      baseAccount: { title: "Sign in with passkey", hint: "Face ID / fingerprint · recommended" },
+      injected: { title: "Browser wallet", hint: "MetaMask, Rabby & co." },
+      mock: { title: "Test wallet (local)", hint: "Local fork only · test money" },
+    },
+  },
+
+  app: {
+    demoBanner: "Demo mode: deposits are only simulated and time runs fast. No real money yet.",
+    forkBanner: "Local Base fork: real contracts, test money. Time & harvest via script (local-harvest.sh).",
+    betaBanner: "Beta: contracts not externally audited yet. Deposits capped per person and in total.",
+    wrongNetwork: "Your wallet is on the wrong network.",
+    switchTo: (name) => `Switch to ${name}`,
+    bubbleIdle: "What are we stacking today?",
+    bubbleLogin: "Sign in and let's go!",
+    deposited: "Deposited",
+    depositedHint: "Principal, withdraw any time",
+    claimable: "Ready to claim",
+    pending: "Waiting for swap",
+    pendingHint: (pct) => `slightly less after the ${pct} % fee`,
+    earnedBtc: "Bitcoin stacked",
+    feesPaid: "Fees paid",
+    feesPaidHint: "10 % of profit",
+    vaultsTitle: "Vaults",
+    paused: "paused",
+    yieldIn: "yield in",
+    betaLimit: "beta limit",
+    apyExample: "APY example",
+    soon: "soon",
+    fullHamsterDesc: "cbBTC → more cbBTC",
+    claim: "Claim",
+    pendingSats: (sats) => `+ ≈ ${sats} sats waiting for the next swap`,
+    depositTab: "Deposit",
+    withdrawTab: "Withdraw",
+    withdraw: "Withdraw",
+    amount: "Amount",
+    max: "Max",
+    all: "All",
+    tooMuchDeposit: "More than your balance or the beta limit.",
+    tooMuchWithdraw: "More than you deposited.",
+    inWallet: "In your wallet",
+    fee: "Fee",
+    feeValue: (pct) => `only ${pct} % of profit`,
+    perMonth: "Estimated per month",
+    risk: "Risk",
+    loginFirst: "Sign in first",
+    enterAmount: "Enter an amount",
+    depositCta: (amount, symbol) => `Stack ${amount} ${symbol}`,
+    withdrawCta: (amount, symbol) => `Withdraw ${amount} ${symbol}`,
+    busy: { approve: "Approving…", deposit: "Depositing…", withdraw: "Withdrawing…", claim: "Claiming…" },
+    reactDeposit: (amount, symbol) => `Nom nom! ${amount} ${symbol} into the cheeks.`,
+    reactWithdraw: "No problem – your principal is back.",
+    reactWithdrawDemo: "No problem – you can always withdraw.",
+    reactClaim: "Bitcoin stashed! Off to your wallet.",
+    cancelled: "Cancelled.",
+    unknownError: "Unknown error",
+  },
+
+  beta: {
+    tag: "Beta",
+    title: "Before you start",
+    intro: (brand) => `${brand} is new. So we both know what you're getting into, please confirm each point:`,
+    points: [
+      "I understand that Hamstr is beta software and its smart contracts have not been externally audited yet.",
+      "I am aware that I can lose some or all of the funds I deposit, and I only deposit what I can afford to lose.",
+      "Hamstr does not give investment, legal or tax advice. Yields shown are variable and not guaranteed.",
+      "I am of legal age and allowed to use this service in my country. I am responsible for my own taxes.",
+    ],
+    confirmAll: "Please confirm all points",
+    continue: "Got it, continue to the app",
+    back: "Back to the home page",
+  },
+
+  legal: {
+    impressumTitle: "Legal notice",
+    privacyTitle: "Privacy policy",
+    translationNote: "This is a translation for convenience. In case of discrepancies, the German version prevails.",
+  },
+};

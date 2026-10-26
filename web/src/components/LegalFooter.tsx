@@ -1,24 +1,24 @@
+"use client";
+
 import Link from "next/link";
 import { BRAND } from "@/lib/brand";
+import { useT } from "@/i18n/client";
 
 export function LegalFooter() {
+  const { t, path } = useT();
   return (
     <footer className="border-t border-line">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-xs leading-relaxed text-muted md:flex-row md:items-start md:justify-between">
-        <p className="max-w-2xl">
-          {BRAND.name} ist Beta-Software. Krypto-Assets sind volatil, Smart Contracts können Fehler enthalten,
-          ein Totalverlust ist möglich. Keine Anlageberatung. Angezeigte Renditen sind Beispiele bzw. variabel
-          und keine Garantie für die Zukunft.
-        </p>
+        <p className="max-w-2xl">{t.footer.disclaimer(BRAND.name)}</p>
         <nav className="flex shrink-0 gap-4 font-semibold">
-          <Link href="/impressum" className="hover:text-ink">
-            Impressum
+          <Link href={path("/impressum")} className="hover:text-ink">
+            {t.footer.impressum}
           </Link>
-          <Link href="/datenschutz" className="hover:text-ink">
-            Datenschutz
+          <Link href={path("/datenschutz")} className="hover:text-ink">
+            {t.footer.privacy}
           </Link>
           <a href="https://github.com/gabbergandalfderreiche/hamstr" className="hover:text-ink">
-            Quellcode
+            {t.footer.source}
           </a>
         </nav>
       </div>

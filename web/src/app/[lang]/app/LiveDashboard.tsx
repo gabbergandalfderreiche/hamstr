@@ -7,33 +7,38 @@ import { waitForTransactionReceipt } from "wagmi/actions";
 import { Hamster } from "@/components/Hamster";
 import { Logo } from "@/components/Logo";
 import { ConnectButton } from "@/components/ConnectButton";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { btcYieldVaultAbi } from "@/generated/contracts";
 import { wagmiConfig } from "@/lib/wagmi";
 import { activeChain, NETWORK } from "@/lib/network";
 import { VAULTS } from "@/lib/vaults";
 import type { Live, LiveVault } from "@/lib/live";
+import type { Dictionary } from "@/i18n";
+import { useT } from "@/i18n/client";
 import { useVaultState, type VaultState } from "./useVaultState";
 
 type Mood = "sparkle" | "happy" | "wink";
 type Mode = "deposit" | "withdraw";
 
-function fmt(value: bigint, decimals: number, digits = 4) {
-  const n = Number(formatUnits(value, decimals));
-  return n.toLocaleString("de-CH", { maximumFractionDigits: digits });
+function formatters(locale: string) {
+  return {
+    fmt: (value: bigint, decimals: number, digits = 4) =>
+      Number(formatUnits(value, decimals)).toLocaleString(locale, { maximumFractionDigits: digits }),
+    fmtSats: (sats: bigint) => Number(sats).toLocaleString(locale),
+  };
 }
 
-function fmtSats(sats: bigint) {
-  return Number(sats).toLocaleString("de-CH");
-}
-
-function errorText(e: unknown) {
+function errorText(e: unknown, t: Dictionary) {
   const err = e as { shortMessage?: string; message?: string };
-  const msg = err.shortMessage ?? err.message ?? "Unbekannter Fehler";
-  if (/rejected|denied/i.test(msg)) return "Abgebrochen.";
+  const msg = err.shortMessage ?? err.message ?? t.app.unknownError;
+  if (/rejected|denied/i.test(msg)) return t.app.cancelled;
   return msg.split("\n")[0];
 }
 
 export function LiveDashboard({ live }: { live: Live }) {
+  const { t } = useT();
+  const a = t.app;
+  const { fmt, fmtSats } = formatters(t.numberLocale);
   const { address, isConnected, chainId } = useConnection();
   const switchChain = useSwitchChain();
   const usdc = useVaultState(live, live.vaults[0], address);
@@ -41,7 +46,7 @@ export function LiveDashboard({ live }: { live: Live }) {
   const states: Record<LiveVault["id"], VaultState> = { usdc, eth };
 
   const [selectedId, setSelectedId] = useState<LiveVault["id"]>("usdc");
-  const [bubble, setBubble] = useState("Was hamstern wir heute?");
+  const [bubble, setBubble] = useState<string | null>(null);
   const [mood, setMood] = useState<Mood>("sparkle");
 
   const selected = live.vaults.find((v) => v.id === selectedId)!;
@@ -60,50 +65,48 @@ export function LiveDashboard({ live }: { live: Live }) {
   return (
     <div className="flex min-h-full flex-col">
       <header className="border-b border-line bg-bg/85 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
           <Logo />
-          <ConnectButton />
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
+            <ConnectButton />
+          </div>
         </div>
       </header>
 
       <div className="border-b border-line bg-surface-2 px-4 py-2 text-center text-xs font-semibold text-btc-ink">
-        {NETWORK === "fork"
-          ? "Lokaler Base-Fork: echte Contracts, aber Testgeld. Zeit & Harvest per Script (local-harvest.sh)."
-          : "Beta: Contracts noch nicht extern geprüft. Einzahlungen pro Person und insgesamt gedeckelt."}
+        {NETWORK === "fork" ? a.forkBanner : a.betaBanner}
       </div>
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {wrongChain && (
           <div className="card mb-6 flex flex-wrap items-center justify-between gap-3 p-4">
-            <span className="font-semibold">Deine Wallet ist im falschen Netzwerk.</span>
+            <span className="font-semibold">{a.wrongNetwork}</span>
             <button className="btn btn-primary !py-2 text-sm" onClick={() => switchChain.mutate({ chainId: activeChain.id })}>
-              Zu {activeChain.name} wechseln
+              {a.switchTo(activeChain.name)}
             </button>
           </div>
         )}
 
         <section className="screentone card grid items-center gap-6 overflow-hidden p-6 md:grid-cols-[auto_1fr]">
           <div className="relative mx-auto">
-            <div className="bubble mb-3 max-w-56 text-sm">{isConnected ? bubble : "Melde dich an, dann geht's los!"}</div>
-            <Hamster size={150} mood={mood} sparkles={claimable > 0n} className="float mx-auto" />
+            <div className="bubble mb-3 max-w-56 text-sm">{isConnected ? (bubble ?? a.bubbleIdle) : a.bubbleLogin}</div>
+            <Hamster size={150} mood={mood} sparkles={claimable > 0n} className="float mx-auto" title={t.brand.mascot} />
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
-            <Stat label="Eingezahlt" value={`$ ${fmt(totalUsd, 6, 2)}`} hint="Kapital, jederzeit abhebbar" />
-            <Stat label="Abholbereit" value={`${fmtSats(claimable)} sats`} accent hint={`≈ ${fmt(claimable, 8, 8)} cbBTC`} />
-            <Stat
-              label="Wartet auf Umtausch"
-              value={`≈ ${fmtSats(pendingSats)} sats`}
-              hint={`nach ${feeBps / 100} % Gebühr etwas weniger`}
-            />
+            <Stat label={a.deposited} value={`$ ${fmt(totalUsd, 6, 2)}`} hint={a.depositedHint} />
+            <Stat label={a.claimable} value={`${fmtSats(claimable)} sats`} accent hint={`≈ ${fmt(claimable, 8, 8)} cbBTC`} />
+            <Stat label={a.pending} value={`≈ ${fmtSats(pendingSats)} sats`} hint={feeBps ? a.pendingHint(feeBps / 100) : undefined} />
           </div>
         </section>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_400px]">
           <section>
-            <h2 className="font-display text-xl font-extrabold">Vaults</h2>
+            <h2 className="font-display text-xl font-extrabold">{a.vaultsTitle}</h2>
             <div className="mt-3 space-y-3">
               {live.vaults.map((lv) => {
                 const info = VAULTS.find((v) => v.id === lv.id)!;
+                const text = t.vaults[lv.id];
                 const st = states[lv.id];
                 const active = lv.id === selectedId;
                 const fill = st.depositCap > 0n ? Number((st.totalSupply * 1000n) / st.depositCap) / 10 : 0;
@@ -120,17 +123,17 @@ export function LiveDashboard({ live }: { live: Live }) {
                     <Hamster size={56} mood={info.mood} title="" />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <span className="font-display font-extrabold">{info.name}</span>
-                        {st.paused && <span className="rounded-full bg-blush/40 px-2 text-[10px] font-bold">pausiert</span>}
+                        <span className="font-display font-extrabold">{text.name}</span>
+                        {st.paused && <span className="rounded-full bg-blush/40 px-2 text-[10px] font-bold">{a.paused}</span>}
                       </div>
                       <div className="text-xs text-muted">
-                        {lv.symbol} → Rendite in cbBTC · {info.source}
+                        {lv.symbol} → {a.yieldIn} cbBTC · {text.source}
                       </div>
                       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-surface-2">
                         <div className="h-full bg-btc" style={{ width: `${Math.min(fill, 100)}%` }} />
                       </div>
                       <div className="num mt-1 text-[10px] text-muted">
-                        {fmt(st.totalSupply, lv.decimals, 2)} / {fmt(st.depositCap, lv.decimals, 2)} {lv.symbol} Beta-Limit
+                        {fmt(st.totalSupply, lv.decimals, 2)} / {fmt(st.depositCap, lv.decimals, 2)} {lv.symbol} {a.betaLimit}
                       </div>
                     </div>
                     <div className="text-right">
@@ -145,10 +148,10 @@ export function LiveDashboard({ live }: { live: Live }) {
               <div className="card flex items-center gap-4 p-4 opacity-60">
                 <Hamster size={56} mood="wink" title="" />
                 <div className="flex-1">
-                  <div className="font-display font-extrabold">Voll-Hamster</div>
-                  <div className="text-xs text-muted">cbBTC → mehr cbBTC</div>
+                  <div className="font-display font-extrabold">{t.vaults.btc.name}</div>
+                  <div className="text-xs text-muted">{a.fullHamsterDesc}</div>
                 </div>
-                <span className="rounded-full bg-surface-2 px-2.5 py-1 text-xs font-bold text-muted">bald</span>
+                <span className="rounded-full bg-surface-2 px-2.5 py-1 text-xs font-bold text-muted">{a.soon}</span>
               </div>
             </div>
           </section>
@@ -180,7 +183,10 @@ function VaultPanel({
   disabled: boolean;
   onReact: (text: string, mood: Mood) => void;
 }) {
-  const info = VAULTS.find((v) => v.id === vault.id)!;
+  const { t } = useT();
+  const a = t.app;
+  const { fmt, fmtSats } = formatters(t.numberLocale);
+  const info = t.vaults[vault.id];
   const [mode, setMode] = useState<Mode>("deposit");
   const [amount, setAmount] = useState("");
   const [busy, setBusy] = useState<string | null>(null);
@@ -211,10 +217,10 @@ function VaultPanel({
       const v = { address: vault.address, abi: btcYieldVaultAbi } as const;
       if (mode === "deposit") {
         if (vault.native) {
-          await send("Einzahlen…", () => write.mutateAsync({ ...v, functionName: "depositETH", args: [user], value }));
+          await send(a.busy.deposit, () => write.mutateAsync({ ...v, functionName: "depositETH", args: [user], value }));
         } else {
           if (state.allowance < value) {
-            await send("Freigeben…", () =>
+            await send(a.busy.approve, () =>
               write.mutateAsync({
                 address: vault.asset,
                 abi: erc20Abi,
@@ -223,22 +229,22 @@ function VaultPanel({
               }),
             );
           }
-          await send("Einzahlen…", () => write.mutateAsync({ ...v, functionName: "deposit", args: [value, user] }));
+          await send(a.busy.deposit, () => write.mutateAsync({ ...v, functionName: "deposit", args: [value, user] }));
         }
-        onReact(`Mjam! ${amount} ${vault.symbol} in die Backen.`, "happy");
+        onReact(a.reactDeposit(amount, vault.symbol), "happy");
       } else {
-        await send("Auszahlen…", () =>
+        await send(a.busy.withdraw, () =>
           write.mutateAsync({
             ...v,
             functionName: vault.native ? "withdrawETH" : "withdraw",
             args: [value, user, user],
           }),
         );
-        onReact("Kein Problem – dein Kapital ist zurück.", "wink");
+        onReact(a.reactWithdraw, "wink");
       }
       setAmount("");
     } catch (e) {
-      setError(errorText(e));
+      setError(errorText(e, t));
     } finally {
       setBusy(null);
       state.refetch();
@@ -249,12 +255,12 @@ function VaultPanel({
     if (!user) return;
     setError(null);
     try {
-      await send("Abholen…", () =>
+      await send(a.busy.claim, () =>
         write.mutateAsync({ address: vault.address, abi: btcYieldVaultAbi, functionName: "claim", args: [user] }),
       );
-      onReact("Bitcoin gebunkert! Ab in deine Wallet.", "happy");
+      onReact(a.reactClaim, "happy");
     } catch (e) {
-      setError(errorText(e));
+      setError(errorText(e, t));
     } finally {
       setBusy(null);
       state.refetch();
@@ -269,16 +275,16 @@ function VaultPanel({
       <div className="mt-5 rounded-2xl bg-surface-2 p-4">
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-xs font-semibold text-muted">Abholbereit</div>
+            <div className="text-xs font-semibold text-muted">{a.claimable}</div>
             <div className="num font-display text-2xl font-extrabold text-btc-ink">{fmtSats(state.claimableSats)} sats</div>
             {state.pendingSatsEstimate > 0n && (
               <div className="num text-xs text-muted">
-                + ≈ {fmtSats(state.pendingSatsEstimate)} sats warten auf den nächsten Umtausch
+                {a.pendingSats(fmtSats(state.pendingSatsEstimate))}
               </div>
             )}
           </div>
           <button className="btn btn-primary !px-4 !py-2 text-sm" disabled={disabled || !!busy || state.claimableSats === 0n} onClick={claim}>
-            Abholen
+            {a.claim}
           </button>
         </div>
       </div>
@@ -296,15 +302,15 @@ function VaultPanel({
               setError(null);
             }}
           >
-            {m === "deposit" ? "Einzahlen" : "Auszahlen"}
+            {m === "deposit" ? a.depositTab : a.withdrawTab}
           </button>
         ))}
       </div>
 
       <div className="mt-4 flex items-baseline justify-between text-xs font-bold text-muted">
-        <label htmlFor="amount">Betrag</label>
+        <label htmlFor="amount">{a.amount}</label>
         <button className="num underline" onClick={() => setAmount(formatUnits(limit, vault.decimals))} disabled={limit === 0n}>
-          {mode === "deposit" ? "Max" : "Alles"}: {fmt(limit, vault.decimals)} {vault.symbol}
+          {mode === "deposit" ? a.max : a.all}: {fmt(limit, vault.decimals)} {vault.symbol}
         </button>
       </div>
       <div className="mt-1 flex items-center rounded-2xl border-[1.5px] border-line bg-bg px-4 focus-within:border-btc">
@@ -320,36 +326,38 @@ function VaultPanel({
       </div>
       {tooMuch && (
         <p className="mt-2 text-xs font-semibold text-red-600">
-          {mode === "deposit" ? "Mehr als dein Guthaben oder das Beta-Limit." : "Mehr als du eingezahlt hast."}
+          {mode === "deposit" ? a.tooMuchDeposit : a.tooMuchWithdraw}
         </p>
       )}
 
       <div className="mt-4 space-y-1 rounded-2xl bg-surface-2 p-4 text-sm">
         <div className="flex justify-between">
-          <span className="text-muted">In deiner Wallet</span>
+          <span className="text-muted">{a.inWallet}</span>
           <span className="num">
             {fmt(state.walletBalance, vault.decimals)} {vault.symbol}
           </span>
         </div>
         <div className="flex justify-between">
-          <span className="text-muted">Eingezahlt</span>
+          <span className="text-muted">{a.deposited}</span>
           <span className="num">
             {fmt(state.deposited, vault.decimals)} {vault.symbol}
           </span>
         </div>
         <div className="flex justify-between">
-          <span className="text-muted">Gebühr</span>
-          <span>nur {state.performanceFeeBps / 100} % vom Gewinn</span>
+          <span className="text-muted">{a.fee}</span>
+          <span>{a.feeValue(state.performanceFeeBps / 100)}</span>
         </div>
       </div>
 
       <button className="btn btn-primary mt-5 w-full" disabled={!canSubmit} onClick={submit}>
         {busy ??
           (disabled
-            ? "Erst anmelden"
+            ? a.loginFirst
             : value === 0n
-              ? "Betrag eingeben"
-              : `${amount} ${vault.symbol} ${mode === "deposit" ? "hamstern" : "auszahlen"}`)}
+              ? a.enterAmount
+              : mode === "deposit"
+                ? a.depositCta(amount, vault.symbol)
+                : a.withdrawCta(amount, vault.symbol))}
       </button>
       {error && <p className="mt-3 text-xs font-semibold text-red-600">{error}</p>}
       <p className="mt-3 text-xs leading-relaxed text-muted">{info.riskNote}</p>
