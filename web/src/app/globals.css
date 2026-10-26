@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/* Palette: warm cream + Bitcoin orange, with anime blush pink as accent. */
+:root {
+  --bg: #fff8ee;
+  --surface: #ffffff;
+  --surface-2: #fff1dc;
+  --ink: #2a1e14;
+  --muted: #7a6656;
+  --line: #f0e0c8;
+  --btc: #f7931a;
+  --btc-ink: #b45f05;
+  --blush: #ff9fb2;
+  --good: #1f9d5a;
+  --dots: rgba(247, 147, 26, 0.13);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17120e;
+    --surface: #211a14;
+    --surface-2: #2b2119;
+    --ink: #fbefe1;
+    --muted: #b8a595;
+    --line: #3a2e24;
+    --btc: #f9a33c;
+    --btc-ink: #ffbd6b;
+    --blush: #ff9fb2;
+    --good: #4ad08a;
+    --dots: rgba(249, 163, 60, 0.1);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #17120e;
+  --surface: #211a14;
+  --surface-2: #2b2119;
+  --ink: #fbefe1;
+  --muted: #b8a595;
+  --line: #3a2e24;
+  --btc: #f9a33c;
+  --btc-ink: #ffbd6b;
+  --blush: #ff9fb2;
+  --good: #4ad08a;
+  --dots: rgba(249, 163, 60, 0.1);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-btc: var(--btc);
+  --color-btc-ink: var(--btc-ink);
+  --color-blush: var(--blush);
+  --color-good: var(--good);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Keep anchored sections clear of the sticky header. */
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Manga screentone dots behind hero sections. */
+.screentone {
+  background-image: radial-gradient(var(--dots) 1.4px, transparent 1.6px);
+  background-size: 14px 14px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 2px 0 var(--line);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.8rem 1.4rem;
+  font-weight: 700;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn:active:not(:disabled) {
+  transform: translateY(2px);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: var(--btc);
+  color: #2a1406;
+  box-shadow: 0 4px 0 #c76f08;
+}
+.btn-primary:active {
+  box-shadow: 0 2px 0 #c76f08;
+}
+.btn-ghost {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+  box-shadow: 0 3px 0 var(--line);
+}
+
+/* Anime speech bubble. */
+.bubble {
+  position: relative;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 20px;
+  padding: 0.6rem 0.9rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  bottom: -11px;
+  width: 18px;
+  height: 18px;
+  background: var(--surface);
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: rotate(45deg);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .float {
+    animation: float 4s ease-in-out infinite;
+  }
+  .hamster-sparkles {
+    animation: twinkle 2.4s ease-in-out infinite;
+    transform-origin: center;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
