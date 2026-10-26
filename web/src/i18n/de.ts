@@ -70,6 +70,16 @@ export const de = {
       aumSoon: "Gerade gestartet",
       aumSoonHint: "Beta mit kleinen Limits",
       contracts: "Contracts ansehen",
+      aumDetails: "Details",
+      aumBreakdown: {
+        usdc: "Dollar-Hamster",
+        eth: "ETH-Hamster",
+        turbo: "Turbo-Hamster",
+        total: "Gesamt",
+        inSats: "in Bitcoin gerechnet",
+        btc: "Schon zu Bitcoin getauscht, noch nicht abgeholt",
+        note: "Live von der Blockchain, alle 30 Sekunden aktualisiert.",
+      },
     },
 
     maxi: {

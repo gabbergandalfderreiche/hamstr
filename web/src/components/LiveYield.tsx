@@ -37,6 +37,14 @@ export function LiveStats() {
 
   const vault = getLive(activeChain.id)?.deployment.usdcVault;
   const showAum = m.tvlUsd >= SHOW_AUM_FROM_USD;
+  const b = l.aumBreakdown;
+  const loc = t.numberLocale;
+  const num = (n: number, digits: number) => n.toLocaleString(loc, { maximumFractionDigits: digits });
+  const rows = [
+    { label: b.usdc, amount: `${num(m.tvl.usdc, 2)} USDC`, usd: m.tvl.usdc },
+    { label: b.eth, amount: `${num(m.tvl.eth, 5)} ETH`, usd: m.tvl.ethUsd },
+    { label: b.turbo, amount: `${num(m.tvl.turbo, 5)} ETH`, usd: m.tvl.turboUsd },
+  ];
 
   return (
     <section className="border-b border-line bg-surface">
@@ -45,7 +53,40 @@ export function LiveStats() {
         <Stat label={l.apyEth} value={pct(m.netApy.eth, t.numberLocale)} hint={l.apyHint} accent />
         <Stat
           label={l.aum}
-          value={showAum ? usd(m.tvlUsd, t.numberLocale) : l.aumSoon}
+          value={
+            <details className="group">
+              <summary className="flex cursor-pointer list-none items-baseline gap-2 [&::-webkit-details-marker]:hidden">
+                {showAum ? usd(m.tvlUsd, loc) : l.aumSoon}
+                <span className="font-sans text-xs font-semibold text-muted underline group-open:hidden">{l.aumDetails} ▾</span>
+              </summary>
+              <div className="card mt-2 p-4 font-sans text-sm font-normal">
+                <dl className="space-y-1.5">
+                  {rows.map((r) => (
+                    <div key={r.label} className="flex justify-between gap-3">
+                      <dt className="text-muted">{r.label}</dt>
+                      <dd className="num text-right">
+                        {r.amount} <span className="text-muted">≈ {usd(r.usd, loc, 2)}</span>
+                      </dd>
+                    </div>
+                  ))}
+                  <div className="flex justify-between gap-3 border-t border-line pt-1.5 font-semibold">
+                    <dt>{b.total}</dt>
+                    <dd className="num text-right">
+                      {usd(m.tvlUsd, loc, 2)}
+                      <div className="text-xs font-normal text-muted">
+                        ≈ {num(Math.round(m.tvlUsd * m.satsPerUsd), 0)} sats {b.inSats}
+                      </div>
+                    </dd>
+                  </div>
+                  <div className="flex justify-between gap-3 pt-1.5">
+                    <dt className="text-muted">{b.btc}</dt>
+                    <dd className="num whitespace-nowrap text-right text-btc-ink">{num(m.btcSats, 0)} sats</dd>
+                  </div>
+                </dl>
+                <p className="mt-3 text-[11px] text-muted">{b.note}</p>
+              </div>
+            </details>
+          }
           hint={
             <>
               <span className="inline-flex items-center gap-1">
@@ -68,7 +109,7 @@ export function LiveStats() {
   );
 }
 
-function Stat({ label, value, hint, accent }: { label: string; value: string; hint: ReactNode; accent?: boolean }) {
+function Stat({ label, value, hint, accent }: { label: string; value: ReactNode; hint: ReactNode; accent?: boolean }) {
   return (
     <div>
       <div className="text-xs font-semibold text-muted">{label}</div>

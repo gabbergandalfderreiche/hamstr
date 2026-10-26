@@ -72,6 +72,16 @@ export const en: Dictionary = {
       aumSoon: "Just launched",
       aumSoonHint: "Beta with small limits",
       contracts: "View contracts",
+      aumDetails: "Details",
+      aumBreakdown: {
+        usdc: "Dollar Hamster",
+        eth: "ETH Hamster",
+        turbo: "Turbo Hamster",
+        total: "Total",
+        inSats: "counted in Bitcoin",
+        btc: "Already swapped to Bitcoin, not yet claimed",
+        note: "Live from the blockchain, refreshed every 30 seconds.",
+      },
     },
 
     maxi: {
