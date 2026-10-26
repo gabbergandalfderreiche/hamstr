@@ -151,6 +151,9 @@ export const de = {
   connect: {
     login: "Anmelden",
     logout: "Abmelden",
+    detected: "Im Browser erkannt",
+    phantomHint: "Einfache Wallet · unterstützt Base",
+    installPhantom: { title: "Phantom installieren", hint: "Kostenlose Wallet für Base · phantom.com" },
     connectors: {
       baseAccount: { title: "Mit Passkey anmelden", hint: "Face ID / Fingerabdruck · empfohlen" },
       injected: { title: "Browser-Wallet", hint: "MetaMask, Rabby & Co." },

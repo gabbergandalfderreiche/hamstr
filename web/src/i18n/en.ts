@@ -153,6 +153,9 @@ export const en: Dictionary = {
   connect: {
     login: "Sign in",
     logout: "Sign out",
+    detected: "Detected in your browser",
+    phantomHint: "Easy wallet · supports Base",
+    installPhantom: { title: "Install Phantom", hint: "Free wallet for Base · phantom.com" },
     connectors: {
       baseAccount: { title: "Sign in with passkey", hint: "Face ID / fingerprint · recommended" },
       injected: { title: "Browser wallet", hint: "MetaMask, Rabby & co." },
