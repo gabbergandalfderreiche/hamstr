@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Hamster } from "@/components/Hamster";
 import { Logo } from "@/components/Logo";
+import { LegalFooter } from "@/components/LegalFooter";
 import { BRAND } from "@/lib/brand";
 import { VAULTS } from "@/lib/vaults";
 
@@ -280,18 +281,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-4 py-8 text-xs leading-relaxed text-muted">
-          <div className="flex items-center gap-2">
-            <Logo />
-          </div>
-          <p className="mt-3 max-w-3xl">
-            {BRAND.name} ist eine Beta-Software. Krypto-Assets sind volatil, Smart Contracts können Fehler
-            enthalten. Keine Anlageberatung. Frühere oder angezeigte Renditen sind keine Garantie für die
-            Zukunft. Alle Werte auf dieser Seite sind Beispiele.
-          </p>
-        </div>
-      </footer>
+      <LegalFooter />
     </div>
   );
 }
