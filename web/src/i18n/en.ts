@@ -397,20 +397,26 @@ export const en: Dictionary = {
       "The position only covers a price range (±8 %). When the price leaves it, it earns nothing until the keeper re-centers it.",
     ],
     il: {
-      title: "You need to understand this: impermanent loss",
+      title: "What the Turbo Hamster can earn",
       explain:
-        "The Turbo Hamster holds a mix of ETH and BTC. When one of them rises a lot, the vault automatically sells some of it. You end up with more of the weaker coin – and less than if you had simply held.",
-      sliderLabel: "What if ETH, measured against BTC,",
-      up: (pct) => `… rises ${pct} %`,
-      down: (pct) => `… falls ${pct} %`,
-      flat: "… stays the same",
-      perEth: "Value per 1 ETH deposited, measured in ETH",
-      turbo: "Turbo Hamster (before fees)",
-      keep: "Simply keeping your ETH",
-      fiftyFifty: "Holding half ETH, half BTC",
-      loss: (pct) => `Impermanent loss vs. holding: −${pct} %`,
-      fees: "On top come the trading fees: recently about 20 % per year in the pool for in-range liquidity – after re-centering and our fee realistically more like 8–15 %, sometimes less. Not guaranteed.",
-      final: "Important: withdrawing at the wrong moment makes the loss final.",
+        "Your ETH works in the Uniswap ETH/BTC pool. Every swap in the pool pays trading fees – you get your share as Bitcoin.",
+      amountLabel: "You deposit",
+      periodLabel: "Period",
+      periods: [
+        { months: 1, label: "1 month" },
+        { months: 6, label: "6 months" },
+        { months: 12, label: "1 year" },
+      ],
+      scenarios: [
+        { apy: 8, label: "Quiet market" },
+        { apy: 12, label: "Normal" },
+        { apy: 15, label: "Busy trading" },
+      ],
+      perYear: (pct) => `${pct} % per year`,
+      basis: "Basis: the pool recently paid around 20 % per year in fees. After rebalancing and our fee, realistically 8–15 %, sometimes less. Not guaranteed.",
+      risk: (pct) =>
+        `The catch: if one of the two coins rises strongly, the pool automatically sells some of it – you end up holding more of the weaker one. This price loss (impermanent loss) can eat up the fees. Example: if ETH falls 20 % against BTC, you're about ${pct} % behind “holding half ETH, half BTC”, before fees.`,
+      final: "Withdrawing at the wrong moment makes a loss permanent.",
     },
     quiz: {
       title: "Quick check before you start",
@@ -430,7 +436,7 @@ export const en: Dictionary = {
           correct: 1,
         },
       ],
-      wrong: "Not quite – have another look at the calculator above.",
+      wrong: "Not quite – read “The catch” in the calculator above again.",
       confirm:
         "I only deposit money I can afford to lose. I understand that withdrawing makes a loss versus holding final.",
       unlock: "Unlock Turbo",

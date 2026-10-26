@@ -6,7 +6,7 @@ import { btcYieldVaultAbi, oracleSwapperAbi, turboVaultAbi } from "@/generated/c
 import { AAVE_POOL, aavePoolAbi, rayRateToApy } from "./market";
 import { getLive } from "./live";
 import { activeChain } from "./network";
-import { DEMO_BTC_USD, VAULTS } from "./vaults";
+import { DEMO_BTC_USD, DEMO_ETH_USD, VAULTS } from "./vaults";
 
 const REFRESH_MS = 30_000;
 const live = getLive(activeChain.id);
@@ -20,6 +20,8 @@ export type MarketData = {
   feePct: number;
   /** Sats one US dollar buys right now. */
   satsPerUsd: number;
+  /** ETH price in USD. */
+  ethUsd: number;
   /** Assets in all vaults (incl. Turbo), in USD. */
   tvlUsd: number;
   /** Per vault: amount in the vault's own unit (USDC or ETH) and in USD. */
@@ -36,6 +38,7 @@ const DEMO: MarketData = {
   },
   feePct: 10,
   satsPerUsd: 1e8 / DEMO_BTC_USD,
+  ethUsd: DEMO_ETH_USD,
   tvlUsd: 0,
   tvl: { usdc: 0, eth: 0, ethUsd: 0, turbo: 0, turboUsd: 0 },
   btcSats: 0,
@@ -100,6 +103,7 @@ export function useMarketData(): MarketData {
     },
     feePct: feeBps / 100,
     satsPerUsd: Number(satsPerUsdc),
+    ethUsd,
     tvlUsd: tvl.usdc + tvl.ethUsd + tvl.turboUsd,
     tvl,
     btcSats: Number(btcInVaults),

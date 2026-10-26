@@ -395,20 +395,26 @@ export const de = {
       "Die Position deckt nur einen Kursbereich ab (±8 %). Verlässt der Kurs ihn, verdient sie nichts, bis der Keeper sie neu ausrichtet.",
     ],
     il: {
-      title: "Das musst du verstehen: Impermanent Loss",
+      title: "Was der Turbo-Hamster verdienen kann",
       explain:
-        "Der Turbo-Hamster hält ETH und BTC gemischt. Steigt einer der beiden stark, verkauft der Vault automatisch davon. Du hast am Ende mehr vom schwächeren Coin – und weniger, als wenn du einfach gehalten hättest.",
-      sliderLabel: "Was wäre, wenn ETH gegenüber BTC",
-      up: (pct: number) => `… um ${pct} % steigt`,
-      down: (pct: number) => `… um ${pct} % fällt`,
-      flat: "… gleich bleibt",
-      perEth: "Wert pro 1 eingezahltem ETH, gemessen in ETH",
-      turbo: "Turbo-Hamster (ohne Gebühren)",
-      keep: "Dein ETH einfach behalten",
-      fiftyFifty: "Halb ETH, halb BTC gehalten",
-      loss: (pct: string) => `Impermanent Loss gegenüber Halten: −${pct} %`,
-      fees: "Dazu kommen die Handelsgebühren: Im Pool zuletzt rund 20 % pro Jahr für Liquidität im Bereich – nach Neuausrichtungen und Gebühr realistisch eher 8–15 %, manchmal weniger. Nicht garantiert.",
-      final: "Wichtig: Wer im falschen Moment auszahlt, macht den Verlust endgültig.",
+        "Dein ETH arbeitet im Uniswap-Pool ETH/BTC. Bei jedem Tausch im Pool fallen Handelsgebühren an – deinen Anteil bekommst du als Bitcoin.",
+      amountLabel: "Du zahlst ein",
+      periodLabel: "Zeitraum",
+      periods: [
+        { months: 1, label: "1 Monat" },
+        { months: 6, label: "6 Monate" },
+        { months: 12, label: "1 Jahr" },
+      ],
+      scenarios: [
+        { apy: 8, label: "Ruhiger Markt" },
+        { apy: 12, label: "Normal" },
+        { apy: 15, label: "Viel Handel" },
+      ],
+      perYear: (pct: number) => `${pct} % pro Jahr`,
+      basis: "Basis: Im Pool gab es zuletzt rund 20 % pro Jahr an Gebühren. Nach Neuausrichtungen und unserer Gebühr realistisch eher 8–15 %, manchmal weniger. Nicht garantiert.",
+      risk: (pct: string) =>
+        `Der Haken: Steigt einer der beiden Coins stark, verkauft der Pool automatisch davon – du hältst dann mehr vom schwächeren. Dieser Kursverlust (Impermanent Loss) kann die Gebühren auffressen. Beispiel: Fällt ETH gegenüber BTC um 20 %, liegst du vor Gebühren rund ${pct} % hinter „halb ETH, halb BTC halten“.`,
+      final: "Wer im falschen Moment auszahlt, macht einen Verlust endgültig.",
     },
     quiz: {
       title: "Kurzer Check, bevor es losgeht",
@@ -428,7 +434,7 @@ export const de = {
           correct: 1,
         },
       ],
-      wrong: "Nicht ganz – schau dir den Rechner oben noch einmal an.",
+      wrong: "Nicht ganz – lies im Rechner oben noch einmal „Der Haken“.",
       confirm:
         "Ich zahle nur Geld ein, dessen Verlust ich verkraften kann. Mir ist klar, dass eine Auszahlung einen Verlust gegenüber Halten endgültig macht.",
       unlock: "Turbo freischalten",
