@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, M_PLUS_Rounded_1c } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "../providers";
 import { BRAND } from "@/lib/brand";
 import { LOCALES } from "@/i18n";
@@ -45,6 +46,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
         <LocaleProvider locale={locale}>
           <Providers>{children}</Providers>
         </LocaleProvider>
+        <Analytics />
       </body>
     </html>
   );
