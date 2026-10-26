@@ -16,7 +16,7 @@ export const en: Dictionary = {
   nav: {
     how: "How it works",
     vaults: "Vaults",
-    fees: "Fees",
+    calc: "Calculator",
     safety: "Safety",
     openApp: "Open app",
     toApp: "To the app",
@@ -58,22 +58,38 @@ export const en: Dictionary = {
     depositLabel: "Deposit",
     payoutLabel: "Yield in",
     sourceLabel: "Source",
-    apyLabel: "APY (example)",
+    apyLabel: "Yield p.a.",
+    apyLabelDemo: "Yield p.a. (example)",
 
-    feesTitle: "Fees you understand",
-    feesText:
-      "We only earn when you earn. If you lose money you pay nothing – and we charge again only once your previous high is beaten.",
-    exampleEarnPre: "Your money earns",
-    exampleEarnPost: "in interest.",
-    exampleUser: "becomes Bitcoin for you",
-    exampleFee: (brand) => `to ${brand}`,
-    feeRows: [
-      { label: "Deposit", value: "0 %", note: "" },
-      { label: "Withdrawal", value: "0 %", note: "" },
-      { label: "Performance fee", value: "10 %", note: "on profit only" },
-      { label: "Management fee", value: "0 %", note: "" },
-    ],
-    feeCaps: "Hard caps in the smart contract: max. 20 % performance fee. Changes only with 2 days' notice.",
+    heroCard: { label: "Yield right now", hint: "per year, in Bitcoin, after fees", demo: "Example value" },
+
+    live: {
+      badge: "Live on Base",
+      apyUsdc: "Yield on dollars",
+      apyEth: "Yield on ETH",
+      apyHint: "per year · in Bitcoin · after fees",
+      aum: "Assets under management",
+      aumSoon: "Just launched",
+      aumSoonHint: "Beta with small limits",
+      contracts: "View contracts",
+    },
+
+    calc: {
+      title: "What's in it for me?",
+      sub: "Do the math yourself – with today's interest rates.",
+      amountLabel: "I deposit",
+      inDollar: "in dollars",
+      inEth: "in ETH",
+      capitalLabel: "Your money",
+      capitalHint: "stays yours – withdraw any time",
+      yearLabel: "Plus, after one year",
+      perMonth: (sats) => `that's ≈ ${sats} sats per month`,
+      approx: (usd) => `≈ ${usd} in Bitcoin`,
+      footnote: (fee) =>
+        `Current variable rate from Aave, already after the ${fee} % fee. Bitcoin price live from Chainlink. Rates can change – no guarantee.`,
+      demo: "Example values – live rates appear once the vaults are connected.",
+      details: "What does it cost?",
+    },
 
     safetyTitle: "Cute, not naive",
     safetySub: "How we protect your money – and what you should know.",
@@ -101,6 +117,10 @@ export const en: Dictionary = {
       {
         q: "Where does the yield come from?",
         a: "From interest paid by people who borrow on Aave. Not from new deposits and not from a token of our own. The interest is swapped to Bitcoin on Uniswap – only at a price close to the Chainlink market price.",
+      },
+      {
+        q: "What does it cost?",
+        a: "Depositing and withdrawing are free. We keep 10 % of the interest – only when you earn, never from your principal. The yield shown is already after this fee. The 20 % cap is fixed in the smart contract, and every change is announced 2 days ahead.",
       },
       {
         q: "What is cbBTC?",

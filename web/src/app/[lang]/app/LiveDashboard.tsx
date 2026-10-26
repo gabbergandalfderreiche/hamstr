@@ -15,6 +15,7 @@ import { VAULTS } from "@/lib/vaults";
 import type { Live, LiveVault } from "@/lib/live";
 import type { Dictionary } from "@/i18n";
 import { useT } from "@/i18n/client";
+import { useMarketData } from "@/lib/useMarketData";
 import { useVaultState, type VaultState } from "./useVaultState";
 
 type Mood = "sparkle" | "happy" | "wink";
@@ -41,6 +42,9 @@ export function LiveDashboard({ live }: { live: Live }) {
   const { fmt, fmtSats } = formatters(t.numberLocale);
   const { address, isConnected, chainId } = useConnection();
   const switchChain = useSwitchChain();
+  const market = useMarketData();
+  const apyText = (id: LiveVault["id"]) =>
+    `${(market.netApy[id] * 100).toLocaleString(t.numberLocale, { minimumFractionDigits: 1, maximumFractionDigits: 1 })} % p.a.`;
   const usdc = useVaultState(live, live.vaults[0], address);
   const eth = useVaultState(live, live.vaults[1], address);
   const states: Record<LiveVault["id"], VaultState> = { usdc, eth };
@@ -128,6 +132,7 @@ export function LiveDashboard({ live }: { live: Live }) {
                       </div>
                       <div className="text-xs text-muted">
                         {lv.symbol} → {a.yieldIn} cbBTC · {text.source}
+                        {market.isLive && <span className="font-bold text-good"> · {apyText(lv.id)}</span>}
                       </div>
                       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-surface-2">
                         <div className="h-full bg-btc" style={{ width: `${Math.min(fill, 100)}%` }} />

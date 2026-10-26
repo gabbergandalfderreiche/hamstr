@@ -3,7 +3,7 @@ import { Hamster } from "@/components/Hamster";
 import { Logo } from "@/components/Logo";
 import { LegalFooter } from "@/components/LegalFooter";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { BRAND } from "@/lib/brand";
+import { HeroYieldCard, LiveStats, VaultApy, YieldCalculator } from "@/components/LiveYield";
 import { VAULTS } from "@/lib/vaults";
 import { localePath } from "@/i18n";
 import { getDictionary, getLocale } from "@/i18n/server";
@@ -23,8 +23,8 @@ export default async function Home() {
           <Logo />
           <nav className="hidden items-center gap-6 text-sm font-semibold text-muted md:flex">
             <a href="#how" className="hover:text-ink">{t.nav.how}</a>
+            <a href="#calculator" className="hover:text-ink">{t.nav.calc}</a>
             <a href="#vaults" className="hover:text-ink">{t.nav.vaults}</a>
-            <a href="#fees" className="hover:text-ink">{t.nav.fees}</a>
             <a href="#safety" className="hover:text-ink">{t.nav.safety}</a>
           </nav>
           <div className="flex items-center gap-3">
@@ -71,16 +71,12 @@ export default async function Home() {
               <div className="float mx-auto mt-10 aspect-square w-72 rounded-full bg-surface-2 p-4 md:w-80">
                 <Hamster size={288} sparkles className="h-full w-full" title={t.brand.mascot} />
               </div>
-              <div className="card absolute -bottom-4 right-0 px-4 py-3 md:-right-6">
-                <div className="text-xs font-semibold text-muted">{l.todayLabel}</div>
-                <div className="num font-display text-lg font-extrabold text-good">
-                  +{(1240).toLocaleString(t.numberLocale)} sats
-                </div>
-                <div className="text-[10px] text-muted">{l.example}</div>
-              </div>
+              <HeroYieldCard />
             </div>
           </div>
         </section>
+
+        <LiveStats />
 
         {/* How it works */}
         <section id="how" className="mx-auto max-w-6xl px-4 py-16">
@@ -97,6 +93,17 @@ export default async function Home() {
                 <p className="mt-2 text-sm leading-relaxed text-muted">{s.text}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Calculator */}
+        <section id="calculator" className="border-t border-line">
+          <div className="mx-auto max-w-6xl px-4 py-16">
+            <h2 className="font-display text-3xl font-extrabold md:text-4xl">{l.calc.title}</h2>
+            <p className="mt-2 text-muted">{l.calc.sub}</p>
+            <div className="mt-8">
+              <YieldCalculator appHref={appHref} />
+            </div>
           </div>
         </section>
 
@@ -131,54 +138,13 @@ export default async function Home() {
                         <dt className="text-xs text-muted">{l.sourceLabel}</dt>
                         <dd className="font-bold">{text.source}</dd>
                       </div>
-                      <div>
-                        <dt className="text-xs text-muted">{l.apyLabel}</dt>
-                        <dd className="num font-bold">{v.apy.toLocaleString(t.numberLocale, { minimumFractionDigits: 1 })} %</dd>
-                      </div>
+                      <VaultApy id={v.id} demoApy={v.apy} />
                     </dl>
                     <p className="mt-4 border-t border-line pt-3 text-xs text-muted">{text.riskNote}</p>
                   </div>
                 );
               })}
             </div>
-          </div>
-        </section>
-
-        {/* Fees */}
-        <section id="fees" className="mx-auto grid max-w-6xl gap-8 px-4 py-16 md:grid-cols-2">
-          <div>
-            <h2 className="font-display text-3xl font-extrabold md:text-4xl">{l.feesTitle}</h2>
-            <p className="mt-3 text-muted">{l.feesText}</p>
-            <div className="card mt-6 p-5">
-              <div className="text-sm font-semibold text-muted">{l.example}</div>
-              <p className="mt-2">
-                {l.exampleEarnPre} <b className="num">$100</b> {l.exampleEarnPost}
-              </p>
-              <div className="mt-3 flex h-4 overflow-hidden rounded-full">
-                <div className="bg-btc" style={{ width: "90%" }} />
-                <div className="bg-blush" style={{ width: "10%" }} />
-              </div>
-              <div className="mt-2 flex justify-between gap-3 text-sm">
-                <span>
-                  <b className="num">$90</b> {l.exampleUser}
-                </span>
-                <span className="text-muted">
-                  <b className="num">$10</b> {l.exampleFee(BRAND.name)}
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="card divide-y divide-line self-start">
-            {l.feeRows.map((f) => (
-              <div key={f.label} className="flex items-center justify-between px-5 py-4">
-                <div>
-                  <div className="font-semibold">{f.label}</div>
-                  {f.note && <div className="text-xs text-muted">{f.note}</div>}
-                </div>
-                <div className="num font-display text-2xl font-extrabold">{f.value}</div>
-              </div>
-            ))}
-            <div className="px-5 py-3 text-xs text-muted">{l.feeCaps}</div>
           </div>
         </section>
 
@@ -199,7 +165,7 @@ export default async function Home() {
         </section>
 
         {/* FAQ */}
-        <section className="mx-auto max-w-3xl px-4 py-16">
+        <section id="faq" className="mx-auto max-w-3xl px-4 py-16">
           <h2 className="font-display text-3xl font-extrabold md:text-4xl">{l.faqTitle}</h2>
           <div className="mt-6 space-y-3">
             {l.faq.map((f) => (

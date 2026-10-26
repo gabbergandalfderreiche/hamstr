@@ -14,7 +14,7 @@ export const de = {
   nav: {
     how: "So geht's",
     vaults: "Vaults",
-    fees: "Gebühren",
+    calc: "Rechner",
     safety: "Sicherheit",
     openApp: "App öffnen",
     toApp: "Zur App",
@@ -56,22 +56,38 @@ export const de = {
     depositLabel: "Einzahlen",
     payoutLabel: "Rendite in",
     sourceLabel: "Quelle",
-    apyLabel: "APY (Beispiel)",
+    apyLabel: "Rendite p.a.",
+    apyLabelDemo: "Rendite p.a. (Beispiel)",
 
-    feesTitle: "Gebühren, die du verstehst",
-    feesText:
-      "Wir verdienen nur, wenn du verdienst. Machst du Verlust, zahlst du nichts – und wir verlangen erst wieder etwas, wenn dein früherer Höchststand übertroffen ist.",
-    exampleEarnPre: "Dein Geld verdient",
-    exampleEarnPost: "Zinsen.",
-    exampleUser: "werden zu Bitcoin für dich",
-    exampleFee: (brand: string) => `an ${brand}`,
-    feeRows: [
-      { label: "Einzahlung", value: "0 %", note: "" },
-      { label: "Auszahlung", value: "0 %", note: "" },
-      { label: "Performance-Fee", value: "10 %", note: "nur auf Gewinn" },
-      { label: "Management-Fee", value: "0 %", note: "" },
-    ],
-    feeCaps: "Obergrenzen fest im Smart Contract: max. 20 % Performance-Fee. Änderungen nur mit 2 Tagen Vorankündigung.",
+    heroCard: { label: "Rendite gerade", hint: "pro Jahr, in Bitcoin, nach Gebühren", demo: "Beispielwert" },
+
+    live: {
+      badge: "Live auf Base",
+      apyUsdc: "Rendite auf Dollar",
+      apyEth: "Rendite auf ETH",
+      apyHint: "pro Jahr · in Bitcoin · nach Gebühren",
+      aum: "Verwaltetes Vermögen",
+      aumSoon: "Gerade gestartet",
+      aumSoonHint: "Beta mit kleinen Limits",
+      contracts: "Contracts ansehen",
+    },
+
+    calc: {
+      title: "Was bringt mir das?",
+      sub: "Rechne es selbst aus – mit den Zinsen von heute.",
+      amountLabel: "Ich lege an",
+      inDollar: "in Dollar",
+      inEth: "in ETH",
+      capitalLabel: "Dein Geld",
+      capitalHint: "bleibt dir – jederzeit abhebbar",
+      yearLabel: "Dazu nach einem Jahr",
+      perMonth: (sats: string) => `das sind ≈ ${sats} sats pro Monat`,
+      approx: (usd: string) => `≈ ${usd} in Bitcoin`,
+      footnote: (fee: number) =>
+        `Aktueller, variabler Zins von Aave, bereits nach ${fee} % Gebühr. Bitcoin-Kurs live von Chainlink. Zinsen können sich ändern – keine Garantie.`,
+      demo: "Beispielwerte – die Live-Zinsen erscheinen, sobald die Vaults verbunden sind.",
+      details: "Was kostet das?",
+    },
 
     safetyTitle: "Süß, aber nicht naiv",
     safetySub: "Wie wir dein Geld schützen – und was du wissen musst.",
@@ -99,6 +115,10 @@ export const de = {
       {
         q: "Woher kommt die Rendite?",
         a: "Aus Zinsen von Leuten, die bei Aave Geld leihen. Nicht aus neuen Einzahlungen und nicht aus einem eigenen Token. Die Zinsen werden über Uniswap in Bitcoin getauscht – nur zu einem Kurs nahe am Chainlink-Marktpreis.",
+      },
+      {
+        q: "Was kostet das?",
+        a: "Ein- und Auszahlen kostet nichts. Wir behalten 10 % der Zinsen – nur wenn du verdienst, nie von deinem Kapital. Die angezeigte Rendite ist bereits nach dieser Gebühr. Die Obergrenze von 20 % steht fest im Smart Contract, und jede Änderung wird 2 Tage vorher angekündigt.",
       },
       {
         q: "Was ist cbBTC?",
