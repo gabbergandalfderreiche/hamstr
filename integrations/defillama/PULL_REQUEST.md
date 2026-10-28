@@ -5,7 +5,7 @@ Files for a pull request to [DefiLlama/DefiLlama-Adapters](https://github.com/De
 - `projects/hamstr/index.js` → copy to `projects/hamstr/index.js` in the fork
 - `hamstr-logo.png` / `hamstr-logo.svg` → attach the PNG to the PR description
 
-Fields marked **TODO** need your input before submitting.
+All fields are filled in.
 
 ---
 
@@ -17,7 +17,7 @@ Fields marked **TODO** need your input before submitting.
 Hamstr
 
 ##### Twitter Link:
-**TODO** (e.g. https://x.com/…)
+https://x.com/HamstrFI
 
 ##### List of audit links if any:
 No external audit yet. Automated analysis (Slither, 0 high findings) and 73 Foundry tests incl. Base mainnet forks: https://github.com/gabbergandalfderreiche/hamstr/blob/main/SECURITY.md
@@ -32,7 +32,7 @@ https://www.hamstr.online
 ~$2 (beta with deposit caps)
 
 ##### Treasury Addresses (if the protocol has treasury)
-**TODO** – leave empty, or add the fee recipient if you want it shown publicly
+0x7Ad9D41C88440b91EbdD260e5Fd99f7b74Dc46Fb (Base) – fee recipient of all three vaults
 
 ##### Chain:
 Base

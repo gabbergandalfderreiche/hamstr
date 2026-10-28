@@ -20,6 +20,9 @@ export function LegalFooter() {
           <a href="https://github.com/gabbergandalfderreiche/hamstr" className="hover:text-ink">
             {t.footer.source}
           </a>
+          <a href={BRAND.x} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
+            X
+          </a>
         </nav>
       </div>
     </footer>
