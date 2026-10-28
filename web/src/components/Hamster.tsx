@@ -1,3 +1,11 @@
+import { useId } from "react";
+
+/**
+ * Hamstr mascot v2 — chibi hamster with a Bitcoin coin, shaded fur and anime eyes.
+ * Drop-in for the old <Hamster />: same props (mood, size, sparkles, className, title),
+ * plus `animated` (idle loop: bob, blink, ear twitch, cheek chomp, coin shine, twinkles).
+ * Respects prefers-reduced-motion.
+ */
 type Mood = "sparkle" | "happy" | "wink";
 
 type HamsterProps = {
@@ -5,138 +13,50 @@ type HamsterProps = {
   size?: number;
   /** Show the Bitcoin coin in its paws. */
   coin?: boolean;
-  /** Little anime sparkles around the hamster. */
+  /** Idle loop (bob, blink, ear twitch, coin shine). Meant for the big mascots, not icons. */
+  animated?: boolean;
   sparkles?: boolean;
   className?: string;
   title?: string;
 };
 
-const FUR = "#F4A04A";
-const FUR_DARK = "#E2832C";
-const CREAM = "#FFF1DC";
-const PINK = "#FFB3C1";
-const INK = "#2A1A10";
+const DEFS = "<radialGradient id=\"__P__-fur\" cx=\"38%\" cy=\"26%\" r=\"78%\"> <stop offset=\"0\" stop-color=\"#FFD39A\"/> <stop offset=\".38\" stop-color=\"#F4A04A\"/> <stop offset=\".78\" stop-color=\"#EC8F37\"/> <stop offset=\"1\" stop-color=\"#C9691F\"/> </radialGradient> <radialGradient id=\"__P__-ear\" cx=\"40%\" cy=\"35%\" r=\"70%\"> <stop offset=\"0\" stop-color=\"#FFD39A\"/><stop offset=\"1\" stop-color=\"#C9691F\"/> </radialGradient> <radialGradient id=\"__P__-earin\" cx=\"50%\" cy=\"60%\" r=\"60%\"> <stop offset=\"0\" stop-color=\"#FFC9D3\"/><stop offset=\"1\" stop-color=\"#F0708E\"/> </radialGradient> <radialGradient id=\"__P__-cream\" cx=\"50%\" cy=\"22%\" r=\"85%\"> <stop offset=\"0\" stop-color=\"#FFFBF4\"/> <stop offset=\".6\" stop-color=\"#FFF1DC\"/> <stop offset=\"1\" stop-color=\"#F5D7B0\"/> </radialGradient> <radialGradient id=\"__P__-cheek\" cx=\"45%\" cy=\"30%\" r=\"75%\"> <stop offset=\"0\" stop-color=\"#FFFBF4\"/> <stop offset=\".7\" stop-color=\"#FFF1DC\"/> <stop offset=\"1\" stop-color=\"#F2CFA2\"/> </radialGradient> <linearGradient id=\"__P__-iris\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"> <stop offset=\"0\" stop-color=\"#1A0E07\"/> <stop offset=\".55\" stop-color=\"#3B200F\"/> <stop offset=\"1\" stop-color=\"#A65A22\"/> </linearGradient> <radialGradient id=\"__P__-blush\" cx=\"50%\" cy=\"50%\" r=\"50%\"> <stop offset=\"0\" stop-color=\"#FF9FB2\" stop-opacity=\".95\"/> <stop offset=\"1\" stop-color=\"#FF9FB2\" stop-opacity=\"0\"/> </radialGradient> <radialGradient id=\"__P__-coin\" cx=\"38%\" cy=\"30%\" r=\"80%\"> <stop offset=\"0\" stop-color=\"#FFE3A3\"/> <stop offset=\".35\" stop-color=\"#FDB24C\"/> <stop offset=\".75\" stop-color=\"#F7931A\"/> <stop offset=\"1\" stop-color=\"#C2620A\"/> </radialGradient> <linearGradient id=\"__P__-rim\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"> <stop offset=\"0\" stop-color=\"#FFD891\"/> <stop offset=\".5\" stop-color=\"#D9770C\"/> <stop offset=\"1\" stop-color=\"#9E4D05\"/> </linearGradient> <linearGradient id=\"__P__-shine\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"> <stop offset=\"0\" stop-color=\"#fff\" stop-opacity=\"0\"/> <stop offset=\".5\" stop-color=\"#fff\" stop-opacity=\".75\"/> <stop offset=\"1\" stop-color=\"#fff\" stop-opacity=\"0\"/> </linearGradient> <radialGradient id=\"__P__-glow\" cx=\"50%\" cy=\"50%\" r=\"50%\"> <stop offset=\"0\" stop-color=\"#F7931A\" stop-opacity=\".35\"/> <stop offset=\"1\" stop-color=\"#F7931A\" stop-opacity=\"0\"/> </radialGradient> <filter id=\"__P__-soft\" x=\"-30%\" y=\"-30%\" width=\"160%\" height=\"160%\"><feGaussianBlur stdDeviation=\"9\"/></filter> <filter id=\"__P__-soft2\" x=\"-30%\" y=\"-30%\" width=\"160%\" height=\"160%\"><feGaussianBlur stdDeviation=\"4\"/></filter> <clipPath id=\"__P__-coinclip\"><circle cx=\"256\" cy=\"392\" r=\"64\"/></clipPath> <clipPath id=\"__P__-bodyclip\"><path d=\"M448.0 290.0 Q453.3 304.4 445.6 317.8 Q446.8 332.5 438.6 345.0 Q441.9 361.4 427.1 370.8 Q422.6 384.7 411.3 394.6 Q408.1 410.4 391.8 415.9 Q384.8 429.8 368.9 434.0 Q358.0 444.4 343.2 448.6 Q332.4 461.1 315.3 459.3 Q301.5 465.8 286.0 465.8 Q271.6 473.9 256.0 468.0 Q240.7 470.6 226.0 465.8 Q210.3 466.3 196.7 459.3 Q179.9 460.4 168.8 448.6 Q150.0 450.4 143.1 434.0 Q128.8 428.1 120.2 415.9 Q106.3 408.6 100.7 394.6 Q84.7 387.3 84.9 370.8 Q67.4 362.4 73.4 345.0 Q61.1 333.4 66.4 317.8 Q58.0 304.4 64.0 290.0 Q52.2 275.1 66.4 262.2 Q66.2 247.8 73.4 235.0 Q68.2 217.9 84.9 209.2 Q87.5 194.3 100.7 185.4 Q106.9 171.9 120.2 164.1 Q128.8 151.9 143.1 146.0 Q152.7 133.7 168.8 131.4 Q178.4 116.3 196.7 120.7 Q210.1 112.9 226.0 114.2 Q240.3 104.7 256.0 112.0 Q271.8 104.2 286.0 114.2 Q302.3 111.1 315.3 120.7 Q332.6 118.6 343.2 131.4 Q358.1 135.6 368.9 146.0 Q382.8 152.3 391.8 164.1 Q405.6 171.5 411.3 185.4 Q427.8 192.4 427.1 209.2 Q439.8 219.4 438.6 235.0 Q448.4 247.2 445.6 262.2 Q455.9 275.4 448.0 290.0Z\"/></clipPath>";
+const BODY_ANIMATED = "<ellipse cx=\"256\" cy=\"486\" rx=\"150\" ry=\"14\" fill=\"#2A1A10\" opacity=\".14\" filter=\"url(#__P__-soft2)\"/> <circle cx=\"256\" cy=\"300\" r=\"250\" fill=\"url(#__P__-glow)\"/> __SPARKLES__ <g class=\"__P__-bob\"> <!-- ears --> <g class=\"__P__-earL\" style=\"transform-origin:150px 150px\"> <ellipse cx=\"128\" cy=\"128\" rx=\"50\" ry=\"46\" fill=\"url(#__P__-ear)\" transform=\"rotate(-18 128 128)\"/> <ellipse cx=\"132\" cy=\"134\" rx=\"30\" ry=\"27\" fill=\"url(#__P__-earin)\" transform=\"rotate(-18 132 134)\"/> </g> <g class=\"__P__-earR\" style=\"transform-origin:362px 150px\"> <ellipse cx=\"384\" cy=\"128\" rx=\"50\" ry=\"46\" fill=\"url(#__P__-ear)\" transform=\"rotate(18 384 128)\"/> <ellipse cx=\"380\" cy=\"134\" rx=\"30\" ry=\"27\" fill=\"url(#__P__-earin)\" transform=\"rotate(18 380 134)\"/> </g> <!-- body --> <path d=\"M232 122 Q236 92 250 84 Q246 104 256 116 Q262 90 280 86 Q268 104 274 124Z\" fill=\"#F4A04A\"/> <path d=\"M448.0 290.0 Q453.3 304.4 445.6 317.8 Q446.8 332.5 438.6 345.0 Q441.9 361.4 427.1 370.8 Q422.6 384.7 411.3 394.6 Q408.1 410.4 391.8 415.9 Q384.8 429.8 368.9 434.0 Q358.0 444.4 343.2 448.6 Q332.4 461.1 315.3 459.3 Q301.5 465.8 286.0 465.8 Q271.6 473.9 256.0 468.0 Q240.7 470.6 226.0 465.8 Q210.3 466.3 196.7 459.3 Q179.9 460.4 168.8 448.6 Q150.0 450.4 143.1 434.0 Q128.8 428.1 120.2 415.9 Q106.3 408.6 100.7 394.6 Q84.7 387.3 84.9 370.8 Q67.4 362.4 73.4 345.0 Q61.1 333.4 66.4 317.8 Q58.0 304.4 64.0 290.0 Q52.2 275.1 66.4 262.2 Q66.2 247.8 73.4 235.0 Q68.2 217.9 84.9 209.2 Q87.5 194.3 100.7 185.4 Q106.9 171.9 120.2 164.1 Q128.8 151.9 143.1 146.0 Q152.7 133.7 168.8 131.4 Q178.4 116.3 196.7 120.7 Q210.1 112.9 226.0 114.2 Q240.3 104.7 256.0 112.0 Q271.8 104.2 286.0 114.2 Q302.3 111.1 315.3 120.7 Q332.6 118.6 343.2 131.4 Q358.1 135.6 368.9 146.0 Q382.8 152.3 391.8 164.1 Q405.6 171.5 411.3 185.4 Q427.8 192.4 427.1 209.2 Q439.8 219.4 438.6 235.0 Q448.4 247.2 445.6 262.2 Q455.9 275.4 448.0 290.0Z\" fill=\"url(#__P__-fur)\"/> <g clip-path=\"url(#__P__-bodyclip)\"> <!-- rim light + bottom shade --> <ellipse cx=\"200\" cy=\"170\" rx=\"150\" ry=\"80\" fill=\"#fff\" opacity=\".22\" filter=\"url(#__P__-soft)\"/> <ellipse cx=\"256\" cy=\"500\" rx=\"230\" ry=\"90\" fill=\"#C9691F\" opacity=\".45\" filter=\"url(#__P__-soft)\"/> <!-- forehead marking --> <path d=\"M226 118 Q256 104 286 118 Q276 170 256 178 Q236 170 226 118Z\" fill=\"#C9691F\" opacity=\".35\" filter=\"url(#__P__-soft2)\"/> <!-- fur strokes --> <g stroke=\"#C9691F\" stroke-width=\"3.2\" stroke-linecap=\"round\" fill=\"none\" opacity=\".35\"> <path d=\"M150 190 q-6 10 -2 20\"/><path d=\"M168 172 q-5 9 -1 17\"/> <path d=\"M362 190 q6 10 2 20\"/><path d=\"M344 172 q5 9 1 17\"/> <path d=\"M100 300 q-8 8 -6 18\"/><path d=\"M412 300 q8 8 6 18\"/> </g> </g> <!-- belly / muzzle --> <path d=\"M381.4 392.7 Q382.8 404.4 373.4 413.4 Q370.5 424.5 360.3 432.3 Q357.7 445.0 342.5 448.6 Q333.9 457.4 321.0 461.6 Q311.9 471.6 296.7 470.6 Q284.9 477.7 270.6 475.3 Q257.2 478.2 243.8 475.5 Q229.3 479.1 217.6 471.2 Q204.0 469.3 193.0 462.6 Q178.4 460.6 171.3 449.9 Q159.6 443.9 153.2 433.9 Q143.2 426.1 139.6 415.2 Q129.2 406.6 131.1 394.6 Q119.8 384.7 128.0 373.0 Q125.3 361.9 130.6 351.3 Q130.0 339.8 138.6 330.6 Q138.1 317.9 151.7 311.7 Q152.5 297.7 169.5 295.4 Q175.6 283.8 191.0 282.4 Q200.5 273.3 215.3 273.4 Q226.0 262.3 241.4 268.7 Q254.8 265.9 268.2 268.5 Q283.3 262.6 294.4 272.8 Q308.8 273.1 319.0 281.4 Q332.3 285.0 340.7 294.1 Q352.7 299.9 358.8 310.1 Q370.4 317.2 372.4 328.8 Q385.9 336.6 380.9 349.4 Q386.9 359.8 384.0 371.0 Q390.5 382.4 381.4 392.7Z\" fill=\"url(#__P__-cream)\"/> <!-- stuffed cheeks --> <g class=\"__P__-cheeks\"> <g class=\"__P__-cheekL\" style=\"transform-origin:150px 300px\"> <ellipse cx=\"146\" cy=\"304\" rx=\"74\" ry=\"62\" fill=\"url(#__P__-cheek)\"/> <ellipse cx=\"150\" cy=\"292\" rx=\"44\" ry=\"26\" fill=\"url(#__P__-blush)\"/> <g stroke=\"#fff\" stroke-width=\"4\" stroke-linecap=\"round\" opacity=\".85\"> <path d=\"M128 286 l-8 12\"/><path d=\"M144 284 l-8 12\"/><path d=\"M160 284 l-8 12\"/> </g> </g> <g class=\"__P__-cheekR\" style=\"transform-origin:362px 300px\"> <ellipse cx=\"366\" cy=\"304\" rx=\"74\" ry=\"62\" fill=\"url(#__P__-cheek)\"/> <ellipse cx=\"362\" cy=\"292\" rx=\"44\" ry=\"26\" fill=\"url(#__P__-blush)\"/> <g stroke=\"#fff\" stroke-width=\"4\" stroke-linecap=\"round\" opacity=\".85\"> <path d=\"M352 286 l8 12\"/><path d=\"M368 284 l8 12\"/><path d=\"M384 284 l8 12\"/> </g> </g> </g> <!-- whiskers --> <g stroke=\"#2A1A10\" stroke-width=\"2.4\" stroke-linecap=\"round\" opacity=\".28\" fill=\"none\"> <path d=\"M206 300 q-50 -8 -92 -2\"/><path d=\"M206 312 q-48 4 -88 16\"/> <path d=\"M306 300 q50 -8 92 -2\"/><path d=\"M306 312 q48 4 88 16\"/> </g> <!-- eyes --> __EYES__ <!-- nose, mouth, teeth --> <path d=\"M244 282 Q256 272 268 282 Q262 294 256 294 Q250 294 244 282Z\" fill=\"#F0708E\"/> <ellipse cx=\"252\" cy=\"280\" rx=\"4\" ry=\"2.5\" fill=\"#fff\" opacity=\".7\"/> <path d=\"M256 294 v8 M234 300 Q245 314 256 302 Q267 314 278 300\" stroke=\"#2A1A10\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/> <path d=\"M249 307 h14 v9 q0 4 -4 4 h-6 q-4 0 -4 -4Z\" fill=\"#fff\" stroke=\"#2A1A10\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/> <path d=\"M256 307 v12\" stroke=\"#2A1A10\" stroke-width=\"1.8\" opacity=\".5\"/> <!-- feet --> <g> <ellipse cx=\"178\" cy=\"466\" rx=\"40\" ry=\"20\" fill=\"url(#__P__-ear)\"/> <ellipse cx=\"334\" cy=\"466\" rx=\"40\" ry=\"20\" fill=\"url(#__P__-ear)\"/> <g fill=\"#FF9FB2\"><circle cx=\"164\" cy=\"468\" r=\"5\"/><circle cx=\"178\" cy=\"472\" r=\"5\"/><circle cx=\"192\" cy=\"468\" r=\"5\"/> <circle cx=\"320\" cy=\"468\" r=\"5\"/><circle cx=\"334\" cy=\"472\" r=\"5\"/><circle cx=\"348\" cy=\"468\" r=\"5\"/></g> </g>";
+const BODY_ANIMATED_COIN = " <!-- coin --> <g class=\"__P__-coin\" style=\"transform-origin:256px 392px\"> <circle cx=\"256\" cy=\"398\" r=\"66\" fill=\"#7A3A04\" opacity=\".25\" filter=\"url(#__P__-soft2)\"/> <circle cx=\"256\" cy=\"392\" r=\"64\" fill=\"url(#__P__-rim)\"/> <circle cx=\"256\" cy=\"392\" r=\"54\" fill=\"url(#__P__-coin)\"/> <circle cx=\"256\" cy=\"392\" r=\"46\" fill=\"none\" stroke=\"#FFE3A3\" stroke-width=\"2.5\" opacity=\".7\" stroke-dasharray=\"3 5\"/> <text x=\"259\" y=\"413\" text-anchor=\"middle\" font-size=\"62\" font-weight=\"800\" fill=\"#B45F05\" opacity=\".55\" font-family=\"Inter, system-ui, sans-serif\" transform=\"rotate(14 256 392)\">\u20bf</text> <text x=\"256\" y=\"410\" text-anchor=\"middle\" font-size=\"62\" font-weight=\"800\" fill=\"#fff\" font-family=\"Inter, system-ui, sans-serif\" transform=\"rotate(14 256 392)\">\u20bf</text> <path d=\"M212 368 A48 48 0 0 1 250 342\" stroke=\"#fff\" stroke-width=\"5\" stroke-linecap=\"round\" fill=\"none\" opacity=\".7\"/> <g clip-path=\"url(#__P__-coinclip)\"> <rect class=\"__P__-shine\" x=\"150\" y=\"320\" width=\"40\" height=\"150\" fill=\"url(#__P__-shine)\" transform=\"rotate(25 256 392)\" opacity=\"0\"/> </g> </g> <!-- paws on coin --> <g> <ellipse cx=\"196\" cy=\"392\" rx=\"26\" ry=\"22\" fill=\"url(#__P__-ear)\"/> <ellipse cx=\"316\" cy=\"392\" rx=\"26\" ry=\"22\" fill=\"url(#__P__-ear)\"/> <g stroke=\"#C9691F\" stroke-width=\"2.5\" stroke-linecap=\"round\" opacity=\".55\"> <path d=\"M206 378 v12\"/><path d=\"M214 384 v10\"/><path d=\"M306 378 v12\"/><path d=\"M298 384 v10\"/> </g> <ellipse cx=\"190\" cy=\"384\" rx=\"10\" ry=\"6\" fill=\"#fff\" opacity=\".35\"/> <ellipse cx=\"310\" cy=\"384\" rx=\"10\" ry=\"6\" fill=\"#fff\" opacity=\".35\"/> </g>";;
+const BODY_STATIC = "<ellipse cx=\"256\" cy=\"486\" rx=\"150\" ry=\"14\" fill=\"#2A1A10\" opacity=\".14\" filter=\"url(#__P__-soft2)\"/> <circle cx=\"256\" cy=\"300\" r=\"250\" fill=\"url(#__P__-glow)\"/> __SPARKLES__ <g class=\"__P__-bob\"> <!-- ears --> <g class=\"__P__-earL\" style=\"transform-origin:150px 150px\"> <ellipse cx=\"128\" cy=\"128\" rx=\"50\" ry=\"46\" fill=\"url(#__P__-ear)\" transform=\"rotate(-18 128 128)\"/> <ellipse cx=\"132\" cy=\"134\" rx=\"30\" ry=\"27\" fill=\"url(#__P__-earin)\" transform=\"rotate(-18 132 134)\"/> </g> <g class=\"__P__-earR\" style=\"transform-origin:362px 150px\"> <ellipse cx=\"384\" cy=\"128\" rx=\"50\" ry=\"46\" fill=\"url(#__P__-ear)\" transform=\"rotate(18 384 128)\"/> <ellipse cx=\"380\" cy=\"134\" rx=\"30\" ry=\"27\" fill=\"url(#__P__-earin)\" transform=\"rotate(18 380 134)\"/> </g> <!-- body --> <path d=\"M232 122 Q236 92 250 84 Q246 104 256 116 Q262 90 280 86 Q268 104 274 124Z\" fill=\"#F4A04A\"/> <path d=\"M448.0 290.0 Q453.3 304.4 445.6 317.8 Q446.8 332.5 438.6 345.0 Q441.9 361.4 427.1 370.8 Q422.6 384.7 411.3 394.6 Q408.1 410.4 391.8 415.9 Q384.8 429.8 368.9 434.0 Q358.0 444.4 343.2 448.6 Q332.4 461.1 315.3 459.3 Q301.5 465.8 286.0 465.8 Q271.6 473.9 256.0 468.0 Q240.7 470.6 226.0 465.8 Q210.3 466.3 196.7 459.3 Q179.9 460.4 168.8 448.6 Q150.0 450.4 143.1 434.0 Q128.8 428.1 120.2 415.9 Q106.3 408.6 100.7 394.6 Q84.7 387.3 84.9 370.8 Q67.4 362.4 73.4 345.0 Q61.1 333.4 66.4 317.8 Q58.0 304.4 64.0 290.0 Q52.2 275.1 66.4 262.2 Q66.2 247.8 73.4 235.0 Q68.2 217.9 84.9 209.2 Q87.5 194.3 100.7 185.4 Q106.9 171.9 120.2 164.1 Q128.8 151.9 143.1 146.0 Q152.7 133.7 168.8 131.4 Q178.4 116.3 196.7 120.7 Q210.1 112.9 226.0 114.2 Q240.3 104.7 256.0 112.0 Q271.8 104.2 286.0 114.2 Q302.3 111.1 315.3 120.7 Q332.6 118.6 343.2 131.4 Q358.1 135.6 368.9 146.0 Q382.8 152.3 391.8 164.1 Q405.6 171.5 411.3 185.4 Q427.8 192.4 427.1 209.2 Q439.8 219.4 438.6 235.0 Q448.4 247.2 445.6 262.2 Q455.9 275.4 448.0 290.0Z\" fill=\"url(#__P__-fur)\"/> <g clip-path=\"url(#__P__-bodyclip)\"> <!-- rim light + bottom shade --> <ellipse cx=\"200\" cy=\"170\" rx=\"150\" ry=\"80\" fill=\"#fff\" opacity=\".22\" filter=\"url(#__P__-soft)\"/> <ellipse cx=\"256\" cy=\"500\" rx=\"230\" ry=\"90\" fill=\"#C9691F\" opacity=\".45\" filter=\"url(#__P__-soft)\"/> <!-- forehead marking --> <path d=\"M226 118 Q256 104 286 118 Q276 170 256 178 Q236 170 226 118Z\" fill=\"#C9691F\" opacity=\".35\" filter=\"url(#__P__-soft2)\"/> <!-- fur strokes --> <g stroke=\"#C9691F\" stroke-width=\"3.2\" stroke-linecap=\"round\" fill=\"none\" opacity=\".35\"> <path d=\"M150 190 q-6 10 -2 20\"/><path d=\"M168 172 q-5 9 -1 17\"/> <path d=\"M362 190 q6 10 2 20\"/><path d=\"M344 172 q5 9 1 17\"/> <path d=\"M100 300 q-8 8 -6 18\"/><path d=\"M412 300 q8 8 6 18\"/> </g> </g> <!-- belly / muzzle --> <path d=\"M381.4 392.7 Q382.8 404.4 373.4 413.4 Q370.5 424.5 360.3 432.3 Q357.7 445.0 342.5 448.6 Q333.9 457.4 321.0 461.6 Q311.9 471.6 296.7 470.6 Q284.9 477.7 270.6 475.3 Q257.2 478.2 243.8 475.5 Q229.3 479.1 217.6 471.2 Q204.0 469.3 193.0 462.6 Q178.4 460.6 171.3 449.9 Q159.6 443.9 153.2 433.9 Q143.2 426.1 139.6 415.2 Q129.2 406.6 131.1 394.6 Q119.8 384.7 128.0 373.0 Q125.3 361.9 130.6 351.3 Q130.0 339.8 138.6 330.6 Q138.1 317.9 151.7 311.7 Q152.5 297.7 169.5 295.4 Q175.6 283.8 191.0 282.4 Q200.5 273.3 215.3 273.4 Q226.0 262.3 241.4 268.7 Q254.8 265.9 268.2 268.5 Q283.3 262.6 294.4 272.8 Q308.8 273.1 319.0 281.4 Q332.3 285.0 340.7 294.1 Q352.7 299.9 358.8 310.1 Q370.4 317.2 372.4 328.8 Q385.9 336.6 380.9 349.4 Q386.9 359.8 384.0 371.0 Q390.5 382.4 381.4 392.7Z\" fill=\"url(#__P__-cream)\"/> <!-- stuffed cheeks --> <g class=\"__P__-cheeks\"> <g class=\"__P__-cheekL\" style=\"transform-origin:150px 300px\"> <ellipse cx=\"146\" cy=\"304\" rx=\"74\" ry=\"62\" fill=\"url(#__P__-cheek)\"/> <ellipse cx=\"150\" cy=\"292\" rx=\"44\" ry=\"26\" fill=\"url(#__P__-blush)\"/> <g stroke=\"#fff\" stroke-width=\"4\" stroke-linecap=\"round\" opacity=\".85\"> <path d=\"M128 286 l-8 12\"/><path d=\"M144 284 l-8 12\"/><path d=\"M160 284 l-8 12\"/> </g> </g> <g class=\"__P__-cheekR\" style=\"transform-origin:362px 300px\"> <ellipse cx=\"366\" cy=\"304\" rx=\"74\" ry=\"62\" fill=\"url(#__P__-cheek)\"/> <ellipse cx=\"362\" cy=\"292\" rx=\"44\" ry=\"26\" fill=\"url(#__P__-blush)\"/> <g stroke=\"#fff\" stroke-width=\"4\" stroke-linecap=\"round\" opacity=\".85\"> <path d=\"M352 286 l8 12\"/><path d=\"M368 284 l8 12\"/><path d=\"M384 284 l8 12\"/> </g> </g> </g> <!-- whiskers --> <g stroke=\"#2A1A10\" stroke-width=\"2.4\" stroke-linecap=\"round\" opacity=\".28\" fill=\"none\"> <path d=\"M206 300 q-50 -8 -92 -2\"/><path d=\"M206 312 q-48 4 -88 16\"/> <path d=\"M306 300 q50 -8 92 -2\"/><path d=\"M306 312 q48 4 88 16\"/> </g> <!-- eyes --> __EYES__ <!-- nose, mouth, teeth --> <path d=\"M244 282 Q256 272 268 282 Q262 294 256 294 Q250 294 244 282Z\" fill=\"#F0708E\"/> <ellipse cx=\"252\" cy=\"280\" rx=\"4\" ry=\"2.5\" fill=\"#fff\" opacity=\".7\"/> <path d=\"M256 294 v8 M234 300 Q245 314 256 302 Q267 314 278 300\" stroke=\"#2A1A10\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/> <path d=\"M249 307 h14 v9 q0 4 -4 4 h-6 q-4 0 -4 -4Z\" fill=\"#fff\" stroke=\"#2A1A10\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/> <path d=\"M256 307 v12\" stroke=\"#2A1A10\" stroke-width=\"1.8\" opacity=\".5\"/> <!-- feet --> <g> <ellipse cx=\"178\" cy=\"466\" rx=\"40\" ry=\"20\" fill=\"url(#__P__-ear)\"/> <ellipse cx=\"334\" cy=\"466\" rx=\"40\" ry=\"20\" fill=\"url(#__P__-ear)\"/> <g fill=\"#FF9FB2\"><circle cx=\"164\" cy=\"468\" r=\"5\"/><circle cx=\"178\" cy=\"472\" r=\"5\"/><circle cx=\"192\" cy=\"468\" r=\"5\"/> <circle cx=\"320\" cy=\"468\" r=\"5\"/><circle cx=\"334\" cy=\"472\" r=\"5\"/><circle cx=\"348\" cy=\"468\" r=\"5\"/></g> </g>";
+const BODY_STATIC_COIN = " <!-- coin --> <g class=\"__P__-coin\" style=\"transform-origin:256px 392px\"> <circle cx=\"256\" cy=\"398\" r=\"66\" fill=\"#7A3A04\" opacity=\".25\" filter=\"url(#__P__-soft2)\"/> <circle cx=\"256\" cy=\"392\" r=\"64\" fill=\"url(#__P__-rim)\"/> <circle cx=\"256\" cy=\"392\" r=\"54\" fill=\"url(#__P__-coin)\"/> <circle cx=\"256\" cy=\"392\" r=\"46\" fill=\"none\" stroke=\"#FFE3A3\" stroke-width=\"2.5\" opacity=\".7\" stroke-dasharray=\"3 5\"/> <text x=\"259\" y=\"413\" text-anchor=\"middle\" font-size=\"62\" font-weight=\"800\" fill=\"#B45F05\" opacity=\".55\" font-family=\"Inter, system-ui, sans-serif\" transform=\"rotate(14 256 392)\">\u20bf</text> <text x=\"256\" y=\"410\" text-anchor=\"middle\" font-size=\"62\" font-weight=\"800\" fill=\"#fff\" font-family=\"Inter, system-ui, sans-serif\" transform=\"rotate(14 256 392)\">\u20bf</text> <path d=\"M212 368 A48 48 0 0 1 250 342\" stroke=\"#fff\" stroke-width=\"5\" stroke-linecap=\"round\" fill=\"none\" opacity=\".7\"/> <g clip-path=\"url(#__P__-coinclip)\"> <rect class=\"__P__-shine\" x=\"150\" y=\"320\" width=\"40\" height=\"150\" fill=\"url(#__P__-shine)\" transform=\"rotate(25 256 392)\" opacity=\"0.55\"/> </g> </g> <!-- paws on coin --> <g> <ellipse cx=\"196\" cy=\"392\" rx=\"26\" ry=\"22\" fill=\"url(#__P__-ear)\"/> <ellipse cx=\"316\" cy=\"392\" rx=\"26\" ry=\"22\" fill=\"url(#__P__-ear)\"/> <g stroke=\"#C9691F\" stroke-width=\"2.5\" stroke-linecap=\"round\" opacity=\".55\"> <path d=\"M206 378 v12\"/><path d=\"M214 384 v10\"/><path d=\"M306 378 v12\"/><path d=\"M298 384 v10\"/> </g> <ellipse cx=\"190\" cy=\"384\" rx=\"10\" ry=\"6\" fill=\"#fff\" opacity=\".35\"/> <ellipse cx=\"310\" cy=\"384\" rx=\"10\" ry=\"6\" fill=\"#fff\" opacity=\".35\"/> </g>";;
+const SPARKLES = "<g class=\"__P__-sparkles\"> <path class=\"__P__-tw1\" style=\"transform-origin:70px 120px\" d=\"M70 98 Q73.52 116.48 92 120 Q73.52 123.52 70 142 Q66.48 123.52 48 120 Q66.48 116.48 70 98Z\" fill=\"#F7931A\"/> <path class=\"__P__-tw2\" style=\"transform-origin:448px 96px\" d=\"M448 81 Q450.4 93.6 463 96 Q450.4 98.4 448 111 Q445.6 98.4 433 96 Q445.6 93.6 448 81Z\" fill=\"#FF9FB2\"/> <path class=\"__P__-tw3\" style=\"transform-origin:462px 300px\" d=\"M462 281 Q465.04 296.96 481 300 Q465.04 303.04 462 319 Q458.96 303.04 443 300 Q458.96 296.96 462 281Z\" fill=\"#F7931A\"/> <path class=\"__P__-tw2\" style=\"transform-origin:46px 330px\" d=\"M46 317 Q48.08 327.92 59 330 Q48.08 332.08 46 343 Q43.92 332.08 33 330 Q43.92 327.92 46 317Z\" fill=\"#FF9FB2\"/> <path class=\"__P__-tw1\" style=\"transform-origin:410px 30px\" d=\"M410 21 Q411.44 28.56 419 30 Q411.44 31.44 410 39 Q408.56 31.44 401 30 Q408.56 28.56 410 21Z\" fill=\"#FFD39A\"/> </g>";
+const EYES: Record<Mood, string> = {
+  sparkle: "<g class=\"__P__-eye\" style=\"transform-origin:192px 236px\"> <ellipse cx=\"192\" cy=\"239\" rx=\"33\" ry=\"39\" fill=\"#2A1A10\" opacity=\".18\"/> <ellipse cx=\"192\" cy=\"236\" rx=\"30\" ry=\"37\" fill=\"url(#__P__-iris)\"/> <ellipse cx=\"200\" cy=\"223\" rx=\"12\" ry=\"13\" fill=\"#fff\"/> <circle cx=\"181\" cy=\"250\" r=\"5.5\" fill=\"#fff\" opacity=\".95\"/> <path class=\"\" style=\"transform-origin:206px 244px\" d=\"M206 239 Q206.8 243.2 211 244 Q206.8 244.8 206 249 Q205.2 244.8 201 244 Q205.2 243.2 206 239Z\" fill=\"#FFE2B0\"/> </g> <g class=\"__P__-eye\" style=\"transform-origin:320px 236px\"> <ellipse cx=\"320\" cy=\"239\" rx=\"33\" ry=\"39\" fill=\"#2A1A10\" opacity=\".18\"/> <ellipse cx=\"320\" cy=\"236\" rx=\"30\" ry=\"37\" fill=\"url(#__P__-iris)\"/> <ellipse cx=\"328\" cy=\"223\" rx=\"12\" ry=\"13\" fill=\"#fff\"/> <circle cx=\"309\" cy=\"250\" r=\"5.5\" fill=\"#fff\" opacity=\".95\"/> <path class=\"\" style=\"transform-origin:334px 244px\" d=\"M334 239 Q334.8 243.2 339 244 Q334.8 244.8 334 249 Q333.2 244.8 329 244 Q333.2 243.2 334 239Z\" fill=\"#FFE2B0\"/> </g>",
+  happy: "<path d=\"M162 244 Q192 210 222 244\" stroke=\"#2A1A10\" stroke-width=\"9\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M290 244 Q320 210 350 244\" stroke=\"#2A1A10\" stroke-width=\"9\" stroke-linecap=\"round\" fill=\"none\"/>",
+  wink: "<g class=\"__P__-eye\" style=\"transform-origin:192px 236px\"> <ellipse cx=\"192\" cy=\"239\" rx=\"33\" ry=\"39\" fill=\"#2A1A10\" opacity=\".18\"/> <ellipse cx=\"192\" cy=\"236\" rx=\"30\" ry=\"37\" fill=\"url(#__P__-iris)\"/> <ellipse cx=\"200\" cy=\"223\" rx=\"12\" ry=\"13\" fill=\"#fff\"/> <circle cx=\"181\" cy=\"250\" r=\"5.5\" fill=\"#fff\" opacity=\".95\"/> <path class=\"\" style=\"transform-origin:206px 244px\" d=\"M206 239 Q206.8 243.2 211 244 Q206.8 244.8 206 249 Q205.2 244.8 201 244 Q205.2 243.2 206 239Z\" fill=\"#FFE2B0\"/> </g><path d=\"M290 244 Q320 210 350 244\" stroke=\"#2A1A10\" stroke-width=\"9\" stroke-linecap=\"round\" fill=\"none\"/>",
+};
+const CSS = ".__P__-bob{animation:__P__-bob 2.4s ease-in-out infinite;transform-origin:256px 480px} @keyframes __P__-bob{0%,100%{transform:translateY(0) scale(1,1)}50%{transform:translateY(-6px) scale(1.012,.988)}} .__P__-eye{animation:__P__-blink 4.8s infinite} @keyframes __P__-blink{0%,93%,100%{transform:scaleY(1)}95.5%{transform:scaleY(.08)}} .__P__-earL{animation:__P__-earL 4.8s ease-in-out infinite} .__P__-earR{animation:__P__-earR 4.8s ease-in-out infinite .15s} @keyframes __P__-earL{0%,60%,100%{transform:rotate(0)}66%{transform:rotate(-9deg)}72%{transform:rotate(3deg)}78%{transform:rotate(0)}} @keyframes __P__-earR{0%,60%,100%{transform:rotate(0)}66%{transform:rotate(9deg)}72%{transform:rotate(-3deg)}78%{transform:rotate(0)}} .__P__-cheekL,.__P__-cheekR{animation:__P__-chomp 2.4s ease-in-out infinite} @keyframes __P__-chomp{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}} .__P__-coin{animation:__P__-coin 2.4s ease-in-out infinite} @keyframes __P__-coin{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}} .__P__-shine{animation:__P__-shine 2.4s ease-in-out infinite} @keyframes __P__-shine{0%,55%{transform:translateX(-60px) rotate(25deg);opacity:0}65%{opacity:.85}85%,100%{transform:translateX(150px) rotate(25deg);opacity:0}} .__P__-tw1,.__P__-tw2,.__P__-tw3{animation:__P__-tw 2.4s ease-in-out infinite} .__P__-tw2{animation-delay:-.8s}.__P__-tw3{animation-delay:-1.6s} @keyframes __P__-tw{0%,100%{transform:scale(.55) rotate(0);opacity:.5}50%{transform:scale(1.1) rotate(45deg);opacity:1}} @media (prefers-reduced-motion: reduce){[class^=\"__P__-\"]{animation:none!important}}";
 
-function Eye({ cx, cy, mood, side }: { cx: number; cy: number; mood: Mood; side: "left" | "right" }) {
-  const closed = mood === "happy" || (mood === "wink" && side === "right");
-  if (closed) {
-    return (
-      <path
-        d={`M${cx - 12} ${cy + 3} Q${cx} ${cy - 11} ${cx + 12} ${cy + 3}`}
-        stroke={INK}
-        strokeWidth={4.5}
-        strokeLinecap="round"
-        fill="none"
-      />
-    );
-  }
-  return (
-    <g>
-      <ellipse cx={cx} cy={cy} rx={13} ry={16} fill={INK} />
-      <ellipse cx={cx} cy={cy + 6} rx={9} ry={8} fill="#7A3E17" />
-      <circle cx={cx + 4} cy={cy - 6} r={5.2} fill="#fff" />
-      <circle cx={cx - 5} cy={cy + 7} r={2.4} fill="#fff" />
-    </g>
-  );
-}
-
-function Sparkle({ x, y, s, color }: { x: number; y: number; s: number; color: string }) {
-  return (
-    <path
-      d={`M${x} ${y - s} Q${x + s * 0.18} ${y - s * 0.18} ${x + s} ${y} Q${x + s * 0.18} ${y + s * 0.18} ${x} ${y + s} Q${x - s * 0.18} ${y + s * 0.18} ${x - s} ${y} Q${x - s * 0.18} ${y - s * 0.18} ${x} ${y - s}Z`}
-      fill={color}
-    />
-  );
-}
-
-/** The Hamstr mascot: a chibi anime hamster that stuffs its cheeks with Bitcoin. */
 export function Hamster({
   mood = "sparkle",
   size = 240,
   coin = true,
+  animated = false,
   sparkles = false,
   className,
   title = "Hamstr Maskottchen",
 }: HamsterProps) {
+  const p = "h" + useId().replace(/[^a-zA-Z0-9]/g, "");
+  const coinParts = coin ? (animated ? BODY_ANIMATED_COIN : BODY_STATIC_COIN) : "";
+  const body = ((animated ? BODY_ANIMATED : BODY_STATIC) + coinParts + " </g>")
+    .replace("__EYES__", EYES[mood])
+    .replace("__SPARKLES__", sparkles ? SPARKLES : "");
+  const html = (`<defs>${DEFS}</defs>` + (animated ? `<style>${CSS}</style>` : "") + body).replaceAll("__P__", p);
   return (
     <svg
-      viewBox="0 0 240 240"
+      viewBox="0 0 512 512"
       width={size}
       height={size}
       className={className}
       role="img"
       aria-label={title}
-    >
-      {sparkles && (
-        <g className="hamster-sparkles">
-          <Sparkle x={36} y={56} s={11} color="#F7931A" />
-          <Sparkle x={206} y={46} s={8} color={PINK} />
-          <Sparkle x={214} y={150} s={10} color="#F7931A" />
-          <Sparkle x={24} y={160} s={7} color={PINK} />
-        </g>
-      )}
-
-      <ellipse cx={120} cy={222} rx={70} ry={9} fill={INK} opacity={0.08} />
-
-      {/* ears */}
-      <circle cx={64} cy={80} r={21} fill={FUR} />
-      <circle cx={176} cy={80} r={21} fill={FUR} />
-      <circle cx={65} cy={82} r={12} fill={PINK} />
-      <circle cx={175} cy={82} r={12} fill={PINK} />
-
-      {/* feet */}
-      <ellipse cx={88} cy={213} rx={17} ry={9} fill={FUR_DARK} />
-      <ellipse cx={152} cy={213} rx={17} ry={9} fill={FUR_DARK} />
-
-      {/* body */}
-      <ellipse cx={120} cy={146} rx={82} ry={72} fill={FUR} />
-      <path d="M104 78 Q120 70 136 78 Q128 96 120 98 Q112 96 104 78Z" fill={FUR_DARK} opacity={0.55} />
-      <ellipse cx={120} cy={170} rx={54} ry={44} fill={CREAM} />
-
-      {/* stuffed cheeks */}
-      <ellipse cx={70} cy={150} rx={31} ry={25} fill={CREAM} />
-      <ellipse cx={170} cy={150} rx={31} ry={25} fill={CREAM} />
-      <ellipse cx={72} cy={145} rx={13} ry={7} fill={PINK} opacity={0.8} />
-      <ellipse cx={168} cy={145} rx={13} ry={7} fill={PINK} opacity={0.8} />
-
-      {/* face */}
-      <Eye cx={92} cy={120} mood={mood} side="left" />
-      <Eye cx={148} cy={120} mood={mood} side="right" />
-      <path d="M115 136 Q120 132 125 136 Q122 141 120 141 Q118 141 115 136Z" fill="#F07C93" />
-      <path
-        d="M110 145 Q115 151 120 145 Q125 151 130 145"
-        stroke={INK}
-        strokeWidth={2.6}
-        strokeLinecap="round"
-        fill="none"
-      />
-
-      {coin ? (
-        <g>
-          <circle cx={120} cy={182} r={25} fill="#F7931A" stroke="#D9770C" strokeWidth={3} />
-          <circle cx={120} cy={182} r={18} fill="none" stroke="#FFD08A" strokeWidth={1.5} opacity={0.8} />
-          <text
-            x={120}
-            y={191}
-            textAnchor="middle"
-            fontSize={26}
-            fontWeight={800}
-            fill="#fff"
-            fontFamily="system-ui, sans-serif"
-          >
-            ₿
-          </text>
-          <ellipse cx={97} cy={180} rx={11} ry={9} fill={FUR} />
-          <ellipse cx={143} cy={180} rx={11} ry={9} fill={FUR} />
-          <circle cx={97} cy={180} r={3.5} fill={PINK} />
-          <circle cx={143} cy={180} r={3.5} fill={PINK} />
-        </g>
-      ) : (
-        <g>
-          <ellipse cx={100} cy={178} rx={11} ry={9} fill={FUR} />
-          <ellipse cx={140} cy={178} rx={11} ry={9} fill={FUR} />
-        </g>
-      )}
-    </svg>
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
   );
 }

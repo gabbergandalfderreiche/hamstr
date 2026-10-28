@@ -76,8 +76,8 @@ export default async function Home() {
 
             <div className="relative mx-auto w-full max-w-sm">
               <div className="bubble absolute -top-2 left-2 z-10 text-sm md:-left-6">{l.bubble}</div>
-              <div className="float mx-auto mt-10 aspect-square w-72 rounded-full bg-surface-2 p-4 md:w-80">
-                <Hamster size={288} sparkles className="h-full w-full" title={t.brand.mascot} />
+              <div className="mx-auto mt-10 aspect-square w-72 rounded-full bg-surface-2 p-4 md:w-80">
+                <Hamster size={288} animated sparkles className="h-full w-full" title={t.brand.mascot} />
               </div>
               <HeroYieldCard />
             </div>
@@ -232,7 +232,7 @@ export default async function Home() {
         {/* CTA */}
         <section className="mx-auto max-w-6xl px-4 pb-16">
           <div className="card flex flex-col items-center gap-6 bg-surface-2 p-8 text-center md:flex-row md:text-left">
-            <Hamster size={120} mood="happy" sparkles title="" />
+            <Hamster size={120} mood="happy" animated sparkles title="" />
             <div className="flex-1">
               <h2 className="font-display text-2xl font-extrabold md:text-3xl">{l.ctaTitle}</h2>
               <p className="mt-1 text-muted">{l.ctaText}</p>

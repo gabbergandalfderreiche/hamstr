@@ -96,7 +96,7 @@ export function Dashboard() {
         <section className="screentone card grid items-center gap-6 overflow-hidden p-6 md:grid-cols-[auto_1fr]">
           <div className="relative mx-auto">
             <div className="bubble mb-3 max-w-56 text-sm">{bubble ?? a.bubbleIdle}</div>
-            <Hamster size={150} mood={mood} sparkles={earnedSats > 0} className="float mx-auto" title={t.brand.mascot} />
+            <Hamster size={150} mood={mood} animated sparkles={earnedSats > 0} className="mx-auto" title={t.brand.mascot} />
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             <Stat label={a.deposited} value={fmtUsd(totalUsd)} />

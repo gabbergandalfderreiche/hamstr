@@ -210,7 +210,7 @@ export function MaxiPitch({ appHref }: { appHref: string }) {
   const x = t.landing.maxi;
   return (
     <div className="card flex flex-col items-center gap-6 bg-surface-2 p-6 md:flex-row md:p-8">
-      <Hamster size={140} mood="sparkle" sparkles title="" />
+      <Hamster size={140} mood="sparkle" animated sparkles title="" />
       <div className="flex-1">
         <h2 className="font-display text-3xl font-extrabold md:text-4xl">{x.title}</h2>
         <p className="mt-3 max-w-2xl text-muted">{x.text}</p>

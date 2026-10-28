@@ -41,7 +41,7 @@ export default async function StartPage() {
 
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-10">
         <section className="flex flex-col items-start gap-6 md:flex-row md:items-center">
-          <Hamster size={110} mood="wink" sparkles title="" />
+          <Hamster size={110} mood="wink" animated sparkles title="" />
           <div>
             <div className="text-xs font-bold uppercase tracking-widest text-btc-ink">{g.kicker}</div>
             <h1 className="mt-1 font-display text-4xl font-extrabold md:text-5xl">{g.title}</h1>

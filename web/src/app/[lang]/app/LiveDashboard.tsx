@@ -103,7 +103,7 @@ export function LiveDashboard({ live }: { live: Live }) {
         <section className="screentone card grid items-center gap-6 overflow-hidden p-6 md:grid-cols-[auto_1fr]">
           <div className="relative mx-auto">
             <div className="bubble mb-3 max-w-56 text-sm">{isConnected ? (bubble ?? a.bubbleIdle) : a.bubbleLogin}</div>
-            <Hamster size={150} mood={mood} sparkles={claimable > 0n} className="float mx-auto" title={t.brand.mascot} />
+            <Hamster size={150} mood={mood} animated sparkles={claimable > 0n} className="mx-auto" title={t.brand.mascot} />
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             <Stat label={a.deposited} value={`$ ${fmt(totalUsd, 6, 2)}`} hint={a.depositedHint} />

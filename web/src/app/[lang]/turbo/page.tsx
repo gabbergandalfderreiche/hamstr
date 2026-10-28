@@ -49,7 +49,7 @@ export default async function TurboPage() {
 
         <main className="mx-auto w-full max-w-6xl flex-1 space-y-8 px-4 py-8">
           <section className="flex flex-col items-start gap-6 md:flex-row md:items-center">
-            <Hamster size={120} mood="wink" sparkles title="" />
+            <Hamster size={120} mood="wink" animated sparkles title="" />
             <div className="flex-1">
               <span className="rounded-full bg-red-500 px-2.5 py-1 text-xs font-bold text-white">{tb.badge}</span>
               <h1 className="font-display mt-3 text-4xl font-extrabold md:text-5xl">{tb.title}</h1>
