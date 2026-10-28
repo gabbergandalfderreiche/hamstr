@@ -19,6 +19,7 @@ export function useConnectModal() {
 /** Wallets the browser announced itself (EIP-6963), e.g. Phantom or MetaMask; their id is the wallet's rdns. */
 const isDetected = (c: Connector) => c.type === "injected" && c.id !== "injected";
 const isPhantom = (c: Connector) => c.id === "app.phantom" || /phantom/i.test(c.name);
+const isWalletConnect = (c: Connector) => c.type === "walletConnect";
 
 /** Opens this site inside the Phantom app's browser, where Phantom is connected automatically. */
 function phantomBrowseLink(url: string) {
@@ -46,6 +47,8 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
   const { isConnected } = useConnection();
   const dialog = useRef<HTMLDivElement>(null);
   const [qr, setQr] = useState<string | null>(null);
+  const [phoneQr, setPhoneQr] = useState<string | null>(null);
+  const [phoneWaiting, setPhoneWaiting] = useState(false);
 
   // Browser-only facts, read once when the dialog opens.
   const [env] = useState(() => {
@@ -61,7 +64,11 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
   const detected = connectors.filter(isDetected);
   const hasPhantom = detected.some(isPhantom);
   // The generic entry only helps when a wallet is injected but did not announce itself by name.
-  const shown = connectors.filter((x) => (x.id === "injected" ? env.hasExtension && detected.length === 0 : true));
+  const shown = connectors.filter((x) =>
+    isWalletConnect(x) ? false : x.id === "injected" ? env.hasExtension && detected.length === 0 : true,
+  );
+  // Phone wallet → desktop session (WalletConnect). Only offered on desktop and when configured.
+  const phoneWallet = env.mobile ? undefined : connectors.find(isWalletConnect);
   const phantomLink = env.url ? phantomBrowseLink(env.url) : "";
 
   useEffect(() => {
@@ -74,6 +81,23 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
     dialog.current?.focus();
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
+
+  // The WalletConnect connector announces its pairing link; we draw it as a QR code in this dialog.
+  useEffect(() => {
+    if (!phoneWallet) return;
+    const onMessage = ({ type, data }: { type: string; data?: unknown }) => {
+      if (type !== "display_uri" || typeof data !== "string") return;
+      QRCode.toDataURL(data, { margin: 1, width: 220 }).then(setPhoneQr, () => setPhoneQr(null));
+    };
+    phoneWallet.emitter.on("message", onMessage);
+    return () => phoneWallet.emitter.off("message", onMessage);
+  }, [phoneWallet]);
+
+  function startPhoneLogin() {
+    if (!phoneWallet) return;
+    setPhoneWaiting(true);
+    connect.mutate({ connector: phoneWallet }, { onError: () => setPhoneWaiting(false) });
+  }
 
   useEffect(() => {
     if (hasPhantom || env.mobile || !phantomLink) return;
@@ -146,6 +170,25 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
             );
           })}
         </div>
+
+        {phoneWallet && (
+          <div className="mt-4 rounded-2xl border-2 border-btc/60 p-4">
+            <div className="font-bold">{c.phoneLogin.title}</div>
+            <p className="mt-1 text-xs leading-relaxed text-muted">{c.phoneLogin.text}</p>
+            {phoneQr ? (
+              <div className="mt-3 flex items-center gap-4">
+                {/* QR code generated locally as a data URL. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={phoneQr} alt="QR code" width={140} height={140} className="rounded-lg bg-white p-1" />
+                <p className="text-xs leading-relaxed text-muted">{c.phoneLogin.scan}</p>
+              </div>
+            ) : (
+              <button onClick={startPhoneLogin} disabled={phoneWaiting} className="btn btn-primary mt-3 w-full !py-2 text-sm">
+                {phoneWaiting ? c.phoneLogin.waiting : c.phoneLogin.show}
+              </button>
+            )}
+          </div>
+        )}
 
         {!hasPhantom && (
           <div className="mt-4 rounded-2xl bg-surface-2 p-4">

@@ -319,6 +319,13 @@ export const en: Dictionary = {
     modalSub: "Choose how you want to connect.",
     close: "Close",
     noWallet: "No browser wallet found. Sign in with a passkey or use Phantom.",
+    phoneLogin: {
+      title: "Use your phone to sign in here",
+      text: "For phone wallets like MetaMask, Trust, Rainbow or Coinbase Wallet: scan the QR code, approve in the app – and you're signed in here on your computer.",
+      show: "Show QR code",
+      waiting: "Creating QR code …",
+      scan: "In your wallet app, tap “Scan” (WalletConnect), scan the code and approve the connection.",
+    },
     phantomMobile: {
       title: "Phantom on your phone?",
       qrHint: "Scan the code with your phone camera. Hamstr then opens on your phone inside the Phantom app and is connected there – not here on your computer. On a computer, use the Phantom browser extension.",

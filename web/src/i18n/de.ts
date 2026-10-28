@@ -317,6 +317,13 @@ export const de = {
     modalSub: "Wähle, wie du dich verbinden willst.",
     close: "Schließen",
     noWallet: "Keine Browser-Wallet gefunden. Melde dich mit Passkey an oder nutze Phantom.",
+    phoneLogin: {
+      title: "Mit dem Handy hier am PC anmelden",
+      text: "Für Handy-Wallets wie MetaMask, Trust, Rainbow oder Coinbase Wallet: QR-Code scannen, in der App bestätigen – angemeldet bist du dann hier am PC.",
+      show: "QR-Code anzeigen",
+      waiting: "QR-Code wird erstellt …",
+      scan: "In der Wallet-App auf „Scannen“ (WalletConnect) tippen, Code scannen und die Verbindung bestätigen.",
+    },
     phantomMobile: {
       title: "Phantom auf dem Handy?",
       qrHint: "Scanne den Code mit der Handy-Kamera. Hamstr öffnet sich dann auf deinem Handy in der Phantom-App und ist dort verbunden – nicht hier am PC. Für den PC gibt es die Phantom-Browser-Erweiterung.",
