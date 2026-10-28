@@ -2,7 +2,8 @@
 
 import { useCallback, useState } from "react";
 import { erc20Abi, formatUnits, parseUnits, type Address, type Hash } from "viem";
-import { useConnection, useEstimateFeesPerGas, useSwitchChain, useWriteContract } from "wagmi";
+import { useConnection, useEstimateFeesPerGas, useSwitchChain } from "wagmi";
+import { useAttributedWrite } from "@/lib/attribution";
 import { waitForTransactionReceipt } from "wagmi/actions";
 import { Hamster } from "@/components/Hamster";
 import { Logo } from "@/components/Logo";
@@ -210,7 +211,7 @@ function VaultPanel({
   const [done, setDone] = useState<{ text: string; hash: Hash } | null>(null);
   const [celebrate, setCelebrate] = useState<string | null>(null);
   const endCelebration = useCallback(() => setCelebrate(null), []);
-  const write = useWriteContract();
+  const write = useAttributedWrite();
   const fees = useEstimateFeesPerGas({ query: { enabled: vault.native, refetchInterval: 30_000 } });
 
   let value = 0n;

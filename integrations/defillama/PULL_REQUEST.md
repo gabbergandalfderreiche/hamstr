@@ -29,7 +29,7 @@ https://www.hamstr.online
 (attach hamstr-logo.png)
 
 ##### Current TVL:
-~$2 (beta with deposit caps)
+~$12 (beta with deposit caps, launched 26 Oct 2026)
 
 ##### Treasury Addresses (if the protocol has treasury)
 0x7Ad9D41C88440b91EbdD260e5Fd99f7b74Dc46Fb (Base) – fee recipient of all three vaults

@@ -15,6 +15,7 @@
     "@vercel/analytics": "2.0.1",
     "@walletconnect/ethereum-provider": "2.25.0",
     "next": "16.4.3",
+    "ox": "0.14.57",
     "qrcode": "1.5.4",
     "react": "19.3.0",
     "react-dom": "19.3.0",

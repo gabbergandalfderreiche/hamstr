@@ -2,7 +2,8 @@
 
 import { useCallback, useState } from "react";
 import { formatEther, parseEther, zeroAddress, type Address, type Hash } from "viem";
-import { useBalance, useConnection, useEstimateFeesPerGas, useReadContracts, useSimulateContract, useWriteContract } from "wagmi";
+import { useBalance, useConnection, useEstimateFeesPerGas, useReadContracts, useSimulateContract } from "wagmi";
+import { useAttributedWrite } from "@/lib/attribution";
 import { waitForTransactionReceipt } from "wagmi/actions";
 import { refetchSoon, spendableEth, txUrl } from "@/lib/tx";
 import { Hamster } from "@/components/Hamster";
@@ -98,7 +99,7 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
   const [celebrate, setCelebrate] = useState<string | null>(null);
   const endCelebration = useCallback(() => setCelebrate(null), []);
   const [done, setDone] = useState<{ text: string; hash: Hash } | null>(null);
-  const write = useWriteContract();
+  const write = useAttributedWrite();
   const fees = useEstimateFeesPerGas({ query: { refetchInterval: 30_000 } });
 
   const eth = (x: bigint, digits = 4) =>

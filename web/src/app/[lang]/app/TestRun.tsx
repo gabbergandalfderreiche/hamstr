@@ -3,7 +3,8 @@
 import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { erc20Abi, formatUnits, type Address, type Hash } from "viem";
-import { useBalance, useEstimateFeesPerGas, useWriteContract } from "wagmi";
+import { useBalance, useEstimateFeesPerGas } from "wagmi";
+import { useAttributedWrite } from "@/lib/attribution";
 import { waitForTransactionReceipt } from "wagmi/actions";
 import { btcYieldVaultAbi } from "@/generated/contracts";
 import { Hamster } from "@/components/Hamster";
@@ -70,7 +71,7 @@ export function TestRun({
   const { t, path } = useT();
   const tr = t.testRun;
   const { open: openConnect } = useConnectModal();
-  const write = useWriteContract();
+  const write = useAttributedWrite();
   const key = storageKey(user);
   const raw = useSyncExternalStore(subscribe, () => readProgress(key), () => "{}");
   const progress = JSON.parse(raw) as Progress;
