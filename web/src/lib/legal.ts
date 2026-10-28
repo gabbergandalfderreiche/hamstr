@@ -5,14 +5,18 @@
  */
 export const LEGAL = {
   operator: "[Firmenname oder Vor- und Nachname]",
-  legalForm: "[Rechtsform, z. B. GmbH / Einzelunternehmen]",
+  // Until the company is registered; then put the legal form (e.g. GmbH) in both.
+  legalForm: "Firma in Gründung",
+  legalFormEn: "Company in formation",
   street: "[Strasse und Hausnummer]",
   city: "[PLZ Ort]",
   country: "Schweiz",
   email: "[kontakt@deine-domain.ch]",
   responsiblePerson: "[Vor- und Nachname der verantwortlichen Person]",
-  uid: "[UID, z. B. CHE-123.456.789 – falls vorhanden]",
-  register: "[Handelsregister / Registeramt – falls eingetragen]",
+  /** Empty until there is one; the line is then simply left out. */
+  uid: "",
+  register: "Noch nicht im Handelsregister eingetragen (Firma in Gründung)",
+  registerEn: "Not yet entered in the commercial register (company in formation)",
   /** Version of the beta notice; bump it to make everyone confirm again after changes. */
   betaNoticeVersion: "2026-10-26",
   lastUpdated: "26. Oktober 2026",

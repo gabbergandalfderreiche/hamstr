@@ -23,7 +23,7 @@ export default async function Impressum() {
       <p>
         <Field value={LEGAL.operator} />
         <br />
-        <Field value={LEGAL.legalForm} />
+        <Field value={en ? LEGAL.legalFormEn : LEGAL.legalForm} />
         <br />
         <Field value={LEGAL.street} />
         <br />
@@ -44,9 +44,13 @@ export default async function Impressum() {
 
       <h2>Register</h2>
       <p>
-        <Field value={LEGAL.register} />
-        <br />
-        <Field value={LEGAL.uid} />
+        <Field value={en ? LEGAL.registerEn : LEGAL.register} />
+        {LEGAL.uid && (
+          <>
+            <br />
+            <Field value={LEGAL.uid} />
+          </>
+        )}
       </p>
 
       {en ? (
