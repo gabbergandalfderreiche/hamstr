@@ -36,6 +36,11 @@ export async function generateMetadata(): Promise<Metadata> {
     title: `${BRAND.name} – ${t.brand.tagline}`,
     description: t.brand.description,
     alternates: { languages: { de: "/de", en: "/en" } },
+    // Wallets show this icon in their confirm dialogs.
+    icons: {
+      icon: [{ url: "/favicon.ico", sizes: "48x48" }, { url: "/hamstr-logo.png", type: "image/png", sizes: "512x512" }],
+      apple: "/apple-touch-icon.png",
+    },
   };
 }
 
