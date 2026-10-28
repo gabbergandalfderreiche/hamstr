@@ -207,7 +207,7 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
               key={m}
               role="tab"
               aria-selected={mode === m}
-              className={`rounded-full py-2 ${mode === m ? "bg-red-500 text-white" : "text-muted"}`}
+              className={`rounded-full py-2 ${mode === m ? "bg-btc text-[#2a1406]" : "text-muted"}`}
               onClick={() => {
                 setMode(m);
                 setAmount("");
@@ -233,7 +233,7 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
             {mode === "deposit" ? a.max : a.all}: {eth(limit)} ETH
           </button>
         </div>
-        <div className="mt-1 flex items-center rounded-2xl border-[1.5px] border-line bg-bg px-4 focus-within:border-red-500">
+        <div className="mt-1 flex items-center rounded-2xl border-[1.5px] border-line bg-bg px-4 focus-within:border-btc">
           <input
             id="turbo-amount"
             inputMode="decimal"
@@ -257,7 +257,7 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
         )}
 
         <button
-          className="btn mt-5 w-full bg-red-500 text-white shadow-[0_4px_0_#b91c1c]"
+          className="btn btn-primary mt-5 w-full"
           disabled={isConnected ? !canSubmit : false}
           onClick={isConnected ? submit : openConnect}
         >
