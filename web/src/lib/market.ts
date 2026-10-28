@@ -3,12 +3,6 @@ import { parseAbi } from "viem";
 /** Aave V3 Pool on Base (also valid on a local fork of Base). */
 export const AAVE_POOL = "0xA238Dd80C259a72e81d7e4664a9801593F98d1c5" as const;
 
-/**
- * The landing page shows assets under management only from this amount on. Below it a tiny number
- * would put people off more than it informs them, so it says "just launched" instead.
- */
-export const SHOW_AUM_FROM_USD = 10_000;
-
 export const aavePoolAbi = parseAbi([
   "function getReserveData(address asset) view returns ((uint256 configuration, uint128 liquidityIndex, uint128 currentLiquidityRate, uint128 variableBorrowIndex, uint128 currentVariableBorrowRate, uint128 currentStableBorrowRate, uint40 lastUpdateTimestamp, uint16 id, address aTokenAddress, address stableDebtTokenAddress, address variableDebtTokenAddress, address interestRateStrategyAddress, uint128 accruedToTreasury, uint128 unbacked, uint128 isolationModeTotalDebt))",
 ]);

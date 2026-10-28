@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { erc20Abi, formatUnits, parseUnits, type Address, type Hash } from "viem";
-import { useConnection, useSwitchChain, useWriteContract } from "wagmi";
+import { useConnection, useEstimateFeesPerGas, useSwitchChain, useWriteContract } from "wagmi";
 import { waitForTransactionReceipt } from "wagmi/actions";
 import { Hamster } from "@/components/Hamster";
 import { Logo } from "@/components/Logo";
@@ -20,6 +20,7 @@ import { useMarketData } from "@/lib/useMarketData";
 import { TurboTeaser } from "@/components/turbo/TurboTeaser";
 import { FundingHint } from "@/components/guide/FundingHint";
 import { useVaultState, type VaultState } from "./useVaultState";
+import { refetchSoon, spendableEth, txUrl } from "@/lib/tx";
 
 type Mood = "sparkle" | "happy" | "wink";
 type Mode = "deposit" | "withdraw";
@@ -202,7 +203,9 @@ function VaultPanel({
   const [amount, setAmount] = useState("");
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [done, setDone] = useState<{ text: string; hash: Hash } | null>(null);
   const write = useWriteContract();
+  const fees = useEstimateFeesPerGas({ query: { enabled: vault.native, refetchInterval: 30_000 } });
 
   let value = 0n;
   try {
@@ -210,8 +213,11 @@ function VaultPanel({
   } catch {
     value = 0n;
   }
-  const limit = mode === "deposit" ? (state.walletBalance < state.maxDeposit ? state.walletBalance : state.maxDeposit) : state.deposited;
+  // Native ETH: keep a little back for gas, otherwise "Max" leaves nothing to pay the deposit with.
+  const spendable = vault.native ? spendableEth(state.walletBalance, fees.data?.maxFeePerGas) : state.walletBalance;
+  const limit = mode === "deposit" ? (spendable < state.maxDeposit ? spendable : state.maxDeposit) : state.deposited;
   const tooMuch = Boolean(user) && value > limit;
+  const needsGas = tooMuch && mode === "deposit" && vault.native && value <= state.walletBalance && value <= state.maxDeposit;
   const canSubmit = !disabled && !busy && value > 0n && !tooMuch;
 
   /** Shows `label` on the button while the transaction is signed and mined. */
@@ -219,16 +225,19 @@ function VaultPanel({
     setBusy(label);
     const hash = await tx();
     await waitForTransactionReceipt(wagmiConfig, { hash });
+    return hash;
   }
 
   async function submit() {
     if (!user) return;
     setError(null);
+    setDone(null);
     try {
       const v = { address: vault.address, abi: btcYieldVaultAbi } as const;
       if (mode === "deposit") {
         if (vault.native) {
-          await send(a.busy.deposit, () => write.mutateAsync({ ...v, functionName: "depositETH", args: [user], value }));
+          const hash = await send(a.busy.deposit, () => write.mutateAsync({ ...v, functionName: "depositETH", args: [user], value }));
+          setDone({ text: a.done.deposit, hash });
         } else {
           if (state.allowance < value) {
             await send(a.busy.approve, () =>
@@ -240,17 +249,19 @@ function VaultPanel({
               }),
             );
           }
-          await send(a.busy.deposit, () => write.mutateAsync({ ...v, functionName: "deposit", args: [value, user] }));
+          const hash = await send(a.busy.deposit, () => write.mutateAsync({ ...v, functionName: "deposit", args: [value, user] }));
+          setDone({ text: a.done.deposit, hash });
         }
         onReact(a.reactDeposit(amount, vault.symbol), "happy");
       } else {
-        await send(a.busy.withdraw, () =>
+        const hash = await send(a.busy.withdraw, () =>
           write.mutateAsync({
             ...v,
             functionName: vault.native ? "withdrawETH" : "withdraw",
             args: [value, user, user],
           }),
         );
+        setDone({ text: a.done.withdraw, hash });
         onReact(a.reactWithdraw, "wink");
       }
       setAmount("");
@@ -258,23 +269,25 @@ function VaultPanel({
       setError(errorText(e, t));
     } finally {
       setBusy(null);
-      state.refetch();
+      refetchSoon(state.refetch);
     }
   }
 
   async function claim() {
     if (!user) return;
     setError(null);
+    setDone(null);
     try {
-      await send(a.busy.claim, () =>
+      const hash = await send(a.busy.claim, () =>
         write.mutateAsync({ address: vault.address, abi: btcYieldVaultAbi, functionName: "claim", args: [user] }),
       );
+      setDone({ text: a.done.claim, hash });
       onReact(a.reactClaim, "happy");
     } catch (e) {
       setError(errorText(e, t));
     } finally {
       setBusy(null);
-      state.refetch();
+      refetchSoon(state.refetch);
     }
   }
 
@@ -337,7 +350,7 @@ function VaultPanel({
       </div>
       {tooMuch && (
         <p className="mt-2 text-xs font-semibold text-red-600">
-          {mode === "deposit" ? a.tooMuchDeposit : a.tooMuchWithdraw}
+          {needsGas ? a.keepGas : mode === "deposit" ? a.tooMuchDeposit : a.tooMuchWithdraw}
         </p>
       )}
 
@@ -378,6 +391,15 @@ function VaultPanel({
                 ? a.depositCta(amount, vault.symbol)
                 : a.withdrawCta(amount, vault.symbol))}
       </button>
+      {busy && <p className="mt-2 text-xs text-muted">{a.txPending}</p>}
+      {done && (
+        <div className="mt-3 rounded-2xl bg-good/15 px-4 py-3 text-sm">
+          <span className="font-bold text-good">✓ {done.text}</span> <span className="text-muted">{a.doneHint}</span>{" "}
+          <a href={txUrl(done.hash)} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold underline">
+            {a.viewTx} ↗
+          </a>
+        </div>
+      )}
       {error && <p className="mt-3 text-xs font-semibold text-red-600">{error}</p>}
       <p className="mt-3 text-xs leading-relaxed text-muted">{info.riskNote}</p>
     </section>

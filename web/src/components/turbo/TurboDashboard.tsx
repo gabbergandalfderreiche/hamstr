@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { formatEther, parseEther, zeroAddress, type Address, type Hash } from "viem";
-import { useBalance, useConnection, useReadContracts, useSimulateContract, useWriteContract } from "wagmi";
+import { useBalance, useConnection, useEstimateFeesPerGas, useReadContracts, useSimulateContract, useWriteContract } from "wagmi";
 import { waitForTransactionReceipt } from "wagmi/actions";
+import { refetchSoon, spendableEth, txUrl } from "@/lib/tx";
 import { Hamster } from "@/components/Hamster";
 import { oracleSwapperAbi, turboVaultAbi } from "@/generated/contracts";
 import { wagmiConfig } from "@/lib/wagmi";
@@ -93,7 +94,9 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
   const [useAll, setUseAll] = useState(false);
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [done, setDone] = useState<{ text: string; hash: Hash } | null>(null);
   const write = useWriteContract();
+  const fees = useEstimateFeesPerGas({ query: { refetchInterval: 30_000 } });
 
   const eth = (x: bigint, digits = 4) =>
     Number(formatEther(x)).toLocaleString(t.numberLocale, { maximumFractionDigits: digits });
@@ -105,20 +108,26 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
   } catch {
     value = 0n;
   }
-  const limit = mode === "deposit" ? (wallet < maxDeposit ? wallet : maxDeposit) : myValue;
+  // Keep a little ETH back for gas, otherwise "Max" leaves nothing to pay the deposit with.
+  const spendable = spendableEth(wallet, fees.data?.maxFeePerGas);
+  const limit = mode === "deposit" ? (spendable < maxDeposit ? spendable : maxDeposit) : myValue;
   const tooMuch = isConnected && !useAll && value > limit;
+  const needsGas = tooMuch && mode === "deposit" && value <= wallet && value <= maxDeposit;
   const canSubmit = isConnected && !busy && value > 0n && !tooMuch;
 
   async function send(label: string, tx: () => Promise<Hash>) {
     setBusy(label);
     const hash = await tx();
     await waitForTransactionReceipt(wagmiConfig, { hash });
+    return hash;
   }
 
-  async function run(label: string, tx: () => Promise<Hash>) {
+  async function run(label: string, doneText: string, tx: () => Promise<Hash>) {
     setError(null);
+    setDone(null);
     try {
-      await send(label, tx);
+      const hash = await send(label, tx);
+      setDone({ text: doneText, hash });
       setAmount("");
       setUseAll(false);
     } catch (e) {
@@ -127,31 +136,33 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
       setError(/rejected|denied/i.test(msg) ? a.cancelled : msg.split("\n")[0]);
     } finally {
       setBusy(null);
-      reads.refetch();
-      extra.refetch();
-      claimPreview.refetch();
-      ethBalance.refetch();
+      refetchSoon(() => {
+        reads.refetch();
+        extra.refetch();
+        claimPreview.refetch();
+        ethBalance.refetch();
+      });
     }
   }
 
   function submit() {
     if (!address) return;
     if (mode === "deposit") {
-      run(a.busy.deposit, () => write.mutateAsync({ ...v, functionName: "depositETH", args: [address], value }));
+      run(a.busy.deposit, a.done.deposit, () => write.mutateAsync({ ...v, functionName: "depositETH", args: [address], value }));
       return;
     }
     // Withdraw by ETH value: the matching share of the user's shares (all of them for the max).
     const all = useAll || value >= myValue;
     const burn = all ? shares : (shares * value) / myValue;
     const minOut = ((all ? myValue : value) * MIN_OUT_BPS) / 10_000n;
-    run(a.busy.withdraw, () =>
+    run(a.busy.withdraw, a.done.withdraw, () =>
       write.mutateAsync({ ...v, functionName: "withdrawETH", args: [burn, address, address, minOut] }),
     );
   }
 
   function claim() {
     if (!address) return;
-    run(a.busy.claim, () => write.mutateAsync({ ...v, functionName: "claim", args: [address, true] }));
+    run(a.busy.claim, a.done.claim, () => write.mutateAsync({ ...v, functionName: "claim", args: [address, true] }));
   }
 
   const status = positionId === 0n ? d.noPosition : inRange ? d.inRange : d.outOfRange;
@@ -238,7 +249,7 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
         </div>
         {tooMuch && (
           <p className="mt-2 text-xs font-semibold text-red-600">
-            {mode === "deposit" ? a.tooMuchDeposit : a.tooMuchWithdraw}
+            {needsGas ? a.keepGas : mode === "deposit" ? a.tooMuchDeposit : a.tooMuchWithdraw}
           </p>
         )}
         {mode === "withdraw" && (
@@ -261,6 +272,15 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
                   : a.withdrawCta(amount, "ETH")}
         </button>
         {mode === "withdraw" && <p className="mt-2 text-[11px] text-muted">{d.slippage}</p>}
+        {busy && <p className="mt-2 text-xs text-muted">{a.txPending}</p>}
+        {done && (
+          <div className="mt-3 rounded-2xl bg-good/15 px-4 py-3 text-sm">
+            <span className="font-bold text-good">✓ {done.text}</span> <span className="text-muted">{a.doneHint}</span>{" "}
+            <a href={txUrl(done.hash)} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold underline">
+              {a.viewTx} ↗
+            </a>
+          </div>
+        )}
         {error && <p className="mt-3 text-xs font-semibold text-red-600">{error}</p>}
       </section>
     </div>

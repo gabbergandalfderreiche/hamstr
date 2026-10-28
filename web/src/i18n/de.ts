@@ -388,6 +388,11 @@ export const de = {
     reactClaim: "Bitcoin gebunkert! Ab in deine Wallet.",
     cancelled: "Abgebrochen.",
     unknownError: "Unbekannter Fehler",
+    keepGas: "Lass ein kleines bisschen ETH für die Netzwerk-Gebühr übrig – „Max“ rechnet das automatisch ab.",
+    txPending: "Bitte in deiner Wallet bestätigen. Danach dauert es meist nur ein paar Sekunden – Fenster offen lassen.",
+    done: { deposit: "Eingezahlt!", withdraw: "Ausgezahlt!", claim: "Abgeholt!" },
+    doneHint: "Hat geklappt. Deine Übersicht aktualisiert sich in ein paar Sekunden.",
+    viewTx: "Transaktion ansehen",
   },
 
   turbo: {

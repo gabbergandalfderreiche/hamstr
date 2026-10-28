@@ -390,6 +390,11 @@ export const en: Dictionary = {
     reactClaim: "Bitcoin stashed! Off to your wallet.",
     cancelled: "Cancelled.",
     unknownError: "Unknown error",
+    keepGas: "Leave a tiny bit of ETH for the network fee – “Max” takes care of that automatically.",
+    txPending: "Please confirm in your wallet. After that it usually takes just a few seconds – keep this window open.",
+    done: { deposit: "Deposited!", withdraw: "Withdrawn!", claim: "Claimed!" },
+    doneHint: "It worked. Your overview updates in a few seconds.",
+    viewTx: "View transaction",
   },
 
   turbo: {
