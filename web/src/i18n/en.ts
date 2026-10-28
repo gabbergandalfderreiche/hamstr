@@ -312,6 +312,33 @@ export const en: Dictionary = {
     howTo: "Step-by-step guide →",
   },
 
+  testRun: {
+    kicker: "Test run · 2 minutes",
+    title: (amount) => `Test first: ${amount} in and back out`,
+    sub: "Before you deposit for real, try it with a tiny amount. You'll see for yourself that money goes in and comes back out any time. It only costs the network fee, usually a few cents.",
+    steps: {
+      login: "Sign in",
+      fund: "Money on Base",
+      deposit: (amount) => `Deposit ${amount}`,
+      withdraw: (amount) => `Withdraw ${amount}`,
+    },
+    needFunds: (amount) => `You need at least ${amount} on Base.`,
+    needGas: "You still need a few cents of ETH on Base for the network fee.",
+    guide: "Here's how →",
+    depositCta: (amount) => `Deposit ${amount} as a test`,
+    depositHintUsdc: "Two quick confirmations in your wallet: first the approval for the Dollar Hamster, then the deposit.",
+    depositHintEth: "One confirmation in your wallet.",
+    depositedNow: (amount) => `${amount} is now in the hamster – you can also see it in the overview below.`,
+    withdrawCta: (amount) => `Withdraw ${amount} again`,
+    withdrawHint: "Your money goes straight back to your wallet. No request, no waiting.",
+    busy: { approve: "Approving…", deposit: "Depositing…", withdraw: "Withdrawing…" },
+    doneTitle: "Test run done!",
+    doneText: "In and out works – seen with your own money. Now you can stack for real, at your own pace.",
+    withdrawTx: "View withdrawal",
+    skip: "Skip",
+    hide: "Hide",
+  },
+
   connect: {
     login: "Sign in",
     logout: "Sign out",

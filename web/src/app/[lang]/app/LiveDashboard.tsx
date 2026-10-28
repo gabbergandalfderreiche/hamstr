@@ -19,6 +19,7 @@ import { useT } from "@/i18n/client";
 import { useMarketData } from "@/lib/useMarketData";
 import { TurboTeaser } from "@/components/turbo/TurboTeaser";
 import { FundingHint } from "@/components/guide/FundingHint";
+import { TestRun } from "./TestRun";
 import { useVaultState, type VaultState } from "./useVaultState";
 import { refetchSoon, spendableEth, txUrl } from "@/lib/tx";
 
@@ -95,6 +96,8 @@ export function LiveDashboard({ live }: { live: Live }) {
             </button>
           </div>
         )}
+
+        <TestRun live={live} states={states} user={address} disabled={!isConnected || wrongChain} />
 
         <section className="screentone card grid items-center gap-6 overflow-hidden p-6 md:grid-cols-[auto_1fr]">
           <div className="relative mx-auto">

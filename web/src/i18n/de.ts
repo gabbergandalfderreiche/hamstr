@@ -310,6 +310,33 @@ export const de = {
     howTo: "Schritt-für-Schritt-Anleitung →",
   },
 
+  testRun: {
+    kicker: "Testlauf · 2 Minuten",
+    title: (amount: string) => `Erst testen: ${amount} rein und wieder raus`,
+    sub: "Bevor du richtig einzahlst: Probier es mit einem Mini-Betrag. So siehst du selbst, dass Geld reingeht und jederzeit wieder rauskommt. Kostet nur die Netzwerk-Gebühr, meist ein paar Cent.",
+    steps: {
+      login: "Anmelden",
+      fund: "Geld auf Base",
+      deposit: (amount: string) => `${amount} einzahlen`,
+      withdraw: (amount: string) => `${amount} auszahlen`,
+    },
+    needFunds: (amount: string) => `Du brauchst mindestens ${amount} auf Base.`,
+    needGas: "Du brauchst noch ein paar Cent ETH auf Base für die Netzwerk-Gebühr.",
+    guide: "So geht's →",
+    depositCta: (amount: string) => `${amount} testweise einzahlen`,
+    depositHintUsdc: "Zwei kurze Bestätigungen in der Wallet: erst die Freigabe für den Dollar-Hamster, dann die Einzahlung.",
+    depositHintEth: "Eine Bestätigung in der Wallet.",
+    depositedNow: (amount: string) => `${amount} liegt jetzt im Hamster – siehst du auch unten in der Übersicht.`,
+    withdrawCta: (amount: string) => `${amount} wieder auszahlen`,
+    withdrawHint: "Dein Geld geht direkt zurück in deine Wallet. Kein Antrag, keine Wartezeit.",
+    busy: { approve: "Freigeben…", deposit: "Einzahlen…", withdraw: "Auszahlen…" },
+    doneTitle: "Testlauf geschafft!",
+    doneText: "Rein und raus funktioniert – mit deinem eigenen Geld gesehen. Jetzt kannst du in Ruhe richtig hamstern.",
+    withdrawTx: "Auszahlung ansehen",
+    skip: "Überspringen",
+    hide: "Ausblenden",
+  },
+
   connect: {
     login: "Anmelden",
     logout: "Abmelden",
