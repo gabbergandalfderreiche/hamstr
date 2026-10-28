@@ -287,3 +287,69 @@ body {
     animation: none;
   }
 }
+
+/* Deposit confirmed: green "go" button and a short burst of coins. */
+.btn-go {
+  background: var(--good);
+  color: #fff;
+  box-shadow: 0 4px 0 #157244;
+}
+.btn-go:active {
+  box-shadow: 0 2px 0 #157244;
+}
+
+@keyframes celebrate-burst {
+  0% { transform: translate(-50%, 0) scale(0.4) rotate(0); opacity: 0; }
+  10% { opacity: 1; }
+  55% { transform: translate(calc(-50% + var(--x) * 0.8), var(--y)) scale(1) rotate(calc(var(--spin) * 0.6)); opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--x)), 10vh) scale(0.9) rotate(var(--spin)); opacity: 0; }
+}
+@keyframes celebrate-pop {
+  0% { transform: scale(0.3) rotate(-6deg); opacity: 0; }
+  18% { transform: scale(1.12) rotate(2deg); opacity: 1; }
+  28% { transform: scale(1) rotate(0); }
+  85% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0; }
+}
+@keyframes celebrate-flash {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.celebrate-flash {
+  background: radial-gradient(circle at 50% 60%, rgba(74, 208, 138, 0.35), transparent 60%);
+  animation: celebrate-flash 1.2s ease-out both;
+}
+.celebrate-piece {
+  position: absolute;
+  left: 50%;
+  bottom: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 800;
+  animation: celebrate-burst 2.2s cubic-bezier(0.2, 0.7, 0.4, 1) both;
+}
+.celebrate-coin {
+  background: var(--btc);
+  color: #2a1406;
+  box-shadow: inset 0 -3px 0 #c76f08;
+}
+.celebrate-spark {
+  background: var(--good);
+  border-radius: 3px;
+  transform-origin: center;
+}
+.celebrate-text {
+  animation: celebrate-pop 2.6s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .celebrate-piece,
+  .celebrate-flash {
+    display: none;
+  }
+  .celebrate-text {
+    animation: celebrate-flash 2.6s ease both;
+  }
+}

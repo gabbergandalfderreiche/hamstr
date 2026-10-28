@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { formatEther, parseEther, zeroAddress, type Address, type Hash } from "viem";
 import { useBalance, useConnection, useEstimateFeesPerGas, useReadContracts, useSimulateContract, useWriteContract } from "wagmi";
 import { waitForTransactionReceipt } from "wagmi/actions";
 import { refetchSoon, spendableEth, txUrl } from "@/lib/tx";
 import { Hamster } from "@/components/Hamster";
+import { Celebration } from "@/components/Celebration";
 import { oracleSwapperAbi, turboVaultAbi } from "@/generated/contracts";
 import { wagmiConfig } from "@/lib/wagmi";
 import type { Live } from "@/lib/live";
@@ -94,6 +95,8 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
   const [useAll, setUseAll] = useState(false);
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [celebrate, setCelebrate] = useState<string | null>(null);
+  const endCelebration = useCallback(() => setCelebrate(null), []);
   const [done, setDone] = useState<{ text: string; hash: Hash } | null>(null);
   const write = useWriteContract();
   const fees = useEstimateFeesPerGas({ query: { refetchInterval: 30_000 } });
@@ -122,12 +125,13 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
     return hash;
   }
 
-  async function run(label: string, doneText: string, tx: () => Promise<Hash>) {
+  async function run(label: string, doneText: string, tx: () => Promise<Hash>, onSuccess?: () => void) {
     setError(null);
     setDone(null);
     try {
       const hash = await send(label, tx);
       setDone({ text: doneText, hash });
+      onSuccess?.();
       setAmount("");
       setUseAll(false);
     } catch (e) {
@@ -148,7 +152,13 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
   function submit() {
     if (!address) return;
     if (mode === "deposit") {
-      run(a.busy.deposit, a.done.deposit, () => write.mutateAsync({ ...v, functionName: "depositETH", args: [address], value }));
+      const text = a.celebrate(amount, "ETH");
+      run(
+        a.busy.deposit,
+        a.done.deposit,
+        () => write.mutateAsync({ ...v, functionName: "depositETH", args: [address], value }),
+        () => setCelebrate(text),
+      );
       return;
     }
     // Withdraw by ETH value: the matching share of the user's shares (all of them for the max).
@@ -207,7 +217,7 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
               key={m}
               role="tab"
               aria-selected={mode === m}
-              className={`rounded-full py-2 ${mode === m ? "bg-btc text-[#2a1406]" : "text-muted"}`}
+              className={`rounded-full py-2 ${mode !== m ? "text-muted" : m === "deposit" ? "bg-good text-white" : "bg-btc text-[#2a1406]"}`}
               onClick={() => {
                 setMode(m);
                 setAmount("");
@@ -256,8 +266,10 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
           <p className="mt-3 rounded-2xl bg-red-500/10 px-3 py-2 text-xs font-bold text-red-600">{d.withdrawWarn}</p>
         )}
 
+        {celebrate && <Celebration text={celebrate} onDone={endCelebration} />}
+
         <button
-          className="btn btn-primary mt-5 w-full"
+          className={`btn mt-5 w-full ${mode === "deposit" ? "btn-go" : "btn-primary"}`}
           disabled={isConnected ? !canSubmit : false}
           onClick={isConnected ? submit : openConnect}
         >

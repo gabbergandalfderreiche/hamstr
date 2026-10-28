@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { erc20Abi, formatUnits, parseUnits, type Address, type Hash } from "viem";
 import { useConnection, useEstimateFeesPerGas, useSwitchChain, useWriteContract } from "wagmi";
 import { waitForTransactionReceipt } from "wagmi/actions";
@@ -20,6 +20,7 @@ import { useMarketData } from "@/lib/useMarketData";
 import { TurboTeaser } from "@/components/turbo/TurboTeaser";
 import { FundingHint } from "@/components/guide/FundingHint";
 import { TestRun } from "./TestRun";
+import { Celebration } from "@/components/Celebration";
 import { useVaultState, type VaultState } from "./useVaultState";
 import { refetchSoon, spendableEth, txUrl } from "@/lib/tx";
 
@@ -207,6 +208,8 @@ function VaultPanel({
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState<{ text: string; hash: Hash } | null>(null);
+  const [celebrate, setCelebrate] = useState<string | null>(null);
+  const endCelebration = useCallback(() => setCelebrate(null), []);
   const write = useWriteContract();
   const fees = useEstimateFeesPerGas({ query: { enabled: vault.native, refetchInterval: 30_000 } });
 
@@ -256,6 +259,7 @@ function VaultPanel({
           setDone({ text: a.done.deposit, hash });
         }
         onReact(a.reactDeposit(amount, vault.symbol), "happy");
+        setCelebrate(a.celebrate(amount, vault.symbol));
       } else {
         const hash = await send(a.busy.withdraw, () =>
           write.mutateAsync({
@@ -322,7 +326,7 @@ function VaultPanel({
             key={m}
             role="tab"
             aria-selected={mode === m}
-            className={`rounded-full py-2 ${mode === m ? "bg-btc text-[#2a1406]" : "text-muted"}`}
+            className={`rounded-full py-2 ${mode !== m ? "text-muted" : m === "deposit" ? "bg-good text-white" : "bg-btc text-[#2a1406]"}`}
             onClick={() => {
               setMode(m);
               setAmount("");
@@ -378,8 +382,10 @@ function VaultPanel({
 
       {user && mode === "deposit" && state.walletBalance === 0n && <FundingHint address={user} symbol={vault.symbol} />}
 
+      {celebrate && <Celebration text={celebrate} onDone={endCelebration} />}
+
       <button
-        className="btn btn-primary mt-5 w-full"
+        className={`btn mt-5 w-full ${mode === "deposit" ? "btn-go" : "btn-primary"}`}
         disabled={user ? !canSubmit : false}
         onClick={user ? submit : openConnect}
       >

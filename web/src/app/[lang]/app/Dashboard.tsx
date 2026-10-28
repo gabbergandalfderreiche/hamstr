@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Hamster } from "@/components/Hamster";
+import { Celebration } from "@/components/Celebration";
 import { Logo } from "@/components/Logo";
 import { ConnectButton } from "@/components/ConnectButton";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -35,6 +36,8 @@ export function Dashboard() {
   const [earnedSats, setEarnedSats] = useState(0);
   const [bubble, setBubble] = useState<string | null>(null);
   const [mood, setMood] = useState<Vault["mood"]>("sparkle");
+  const [celebrate, setCelebrate] = useState<string | null>(null);
+  const endCelebration = useCallback(() => setCelebrate(null), []);
 
   const satsPerSecond = useMemo(
     () =>
@@ -61,6 +64,7 @@ export function Dashboard() {
     if (!valid) return;
     setPositions((p) => ({ ...p, [selected.id]: (p[selected.id] ?? 0) + value }));
     setBubble(a.reactDeposit(String(value), selected.deposit));
+    setCelebrate(a.celebrate(String(value), selected.deposit));
     setMood("happy");
     setAmount("");
   }
@@ -204,7 +208,8 @@ export function Dashboard() {
               </div>
             </div>
 
-            <button className="btn btn-primary mt-5 w-full" disabled={!valid} onClick={deposit}>
+            {celebrate && <Celebration text={celebrate} onDone={endCelebration} />}
+            <button className="btn btn-go mt-5 w-full" disabled={!valid} onClick={deposit}>
               {valid ? a.depositCta(String(value), selected.deposit) : a.enterAmount}
             </button>
             <p className="mt-3 text-xs leading-relaxed text-muted">{selectedText.riskNote}</p>
