@@ -8,6 +8,7 @@ export const de = {
     description:
       "Zahl Dollar, ETH oder Bitcoin ein. Dein Kapital bleibt, wo es ist – die Zinsen werden automatisch zu Bitcoin.",
     mascot: "Hamstr Maskottchen",
+    pet: "Hamster streicheln",
     homeLabel: (brand: string) => `${brand} Startseite`,
   },
 

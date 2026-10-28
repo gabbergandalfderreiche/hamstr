@@ -20,10 +20,14 @@ const display = M_PLUS_Rounded_1c({
   weight: ["500", "700", "800"],
 });
 
-// Absolute URLs for hreflang links; Vercel sets this for production deployments.
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3000";
+// Absolute URLs for hreflang links and link previews. Production uses the real domain
+// (the bare hamstr.online only redirects); previews use their Vercel URL.
+const siteUrl =
+  process.env.VERCEL_ENV === "production"
+    ? "https://www.hamstr.online"
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000";
 
 export function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
@@ -31,16 +35,23 @@ export function generateStaticParams() {
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getDictionary();
+  const locale = await getLocale();
+  const title = `${BRAND.name} – ${t.brand.tagline}`;
+  // Link preview for X, WhatsApp & co.; icons come from app/icon.png and app/apple-icon.png.
+  const og = locale === "de" ? "/brand/og-de.jpg" : "/brand/og-en.jpg";
   return {
     metadataBase: new URL(siteUrl),
-    title: `${BRAND.name} – ${t.brand.tagline}`,
+    title,
     description: t.brand.description,
     alternates: { languages: { de: "/de", en: "/en" } },
-    // Wallets show this icon in their confirm dialogs.
-    icons: {
-      icon: [{ url: "/favicon.ico", sizes: "48x48" }, { url: "/hamstr-icon-dark.png", type: "image/png", sizes: "512x512" }],
-      apple: "/apple-touch-icon.png",
+    openGraph: {
+      title,
+      description: t.brand.description,
+      url: `/${locale}`,
+      siteName: BRAND.name,
+      images: [{ url: og, width: 1200, height: 630 }],
     },
+    twitter: { card: "summary_large_image", site: "@HamstrFI", images: [og] },
   };
 }
 

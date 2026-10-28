@@ -19,7 +19,7 @@ export function HeroYieldCard() {
   const { t } = useT();
   const m = useMarketData();
   return (
-    <div className="card absolute -bottom-4 right-0 px-4 py-3 md:-right-6">
+    <div className="card pointer-events-none absolute -bottom-4 right-0 px-4 py-3 md:-right-6">
       <div className="text-xs font-semibold text-muted">{t.landing.heroCard.label}</div>
       <div className="num font-display text-2xl font-extrabold text-good">{pct(m.netApy.usdc, t.numberLocale)}</div>
       <div className="text-[10px] text-muted">{m.isLive ? t.landing.heroCard.hint : t.landing.heroCard.demo}</div>

@@ -21,7 +21,7 @@ const phoneWallet = WC_PROJECT_ID
           name: BRAND.name,
           description: "Park dollars, the interest turns into Bitcoin.",
           url: "https://www.hamstr.online",
-          icons: ["https://www.hamstr.online/hamstr-icon-dark.png"],
+          icons: ["https://www.hamstr.online/brand/hamstr-mascot.png"],
         },
       }),
     ]

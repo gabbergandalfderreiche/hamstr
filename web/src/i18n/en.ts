@@ -10,6 +10,7 @@ export const en: Dictionary = {
     description:
       "Deposit dollars, ETH or Bitcoin. Your principal stays put – the interest turns into Bitcoin automatically.",
     mascot: "Hamstr mascot",
+    pet: "Pet the hamster",
     homeLabel: (brand) => `${brand} home`,
   },
 

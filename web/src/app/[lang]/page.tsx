@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Hamster } from "@/components/Hamster";
+import { Hamster, HamsterPet } from "@/components/Hamster";
 import { Logo } from "@/components/Logo";
 import { LegalFooter } from "@/components/LegalFooter";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -75,9 +75,10 @@ export default async function Home() {
             </div>
 
             <div className="relative mx-auto w-full max-w-sm">
-              <div className="bubble absolute -top-2 left-2 z-10 text-sm md:-left-6">{l.bubble}</div>
+              <div className="bubble pointer-events-none absolute -top-2 left-2 z-10 text-sm md:-left-6">{l.bubble}</div>
               <div className="mx-auto mt-10 aspect-square w-72 rounded-full bg-surface-2 p-4 md:w-80">
-                <Hamster size={288} animated sparkles className="h-full w-full" title={t.brand.mascot} />
+                {/* Easter egg: click and it turns around and wiggles. */}
+                <HamsterPet size={288} sparkles animated className="h-full w-full [&>svg]:h-full [&>svg]:w-full" label={t.brand.pet} />
               </div>
               <HeroYieldCard />
             </div>
