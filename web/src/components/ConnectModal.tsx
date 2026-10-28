@@ -49,6 +49,7 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
   const [qr, setQr] = useState<string | null>(null);
   const [phoneQr, setPhoneQr] = useState<string | null>(null);
   const [phoneWaiting, setPhoneWaiting] = useState(false);
+  const [phoneFailed, setPhoneFailed] = useState(false);
 
   // Browser-only facts, read once when the dialog opens.
   const [env] = useState(() => {
@@ -93,8 +94,20 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
     return () => phoneWallet.emitter.off("message", onMessage);
   }, [phoneWallet]);
 
+  // If WalletConnect never sends a pairing link (relay unreachable, domain not allowed in the
+  // project), the button would spin forever; give up after a while and say so.
+  useEffect(() => {
+    if (!phoneWaiting || phoneQr) return;
+    const id = setTimeout(() => {
+      setPhoneWaiting(false);
+      setPhoneFailed(true);
+    }, 15_000);
+    return () => clearTimeout(id);
+  }, [phoneWaiting, phoneQr]);
+
   function startPhoneLogin() {
     if (!phoneWallet) return;
+    setPhoneFailed(false);
     setPhoneWaiting(true);
     connect.mutate({ connector: phoneWallet }, { onError: () => setPhoneWaiting(false) });
   }
@@ -183,9 +196,12 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
                 <p className="text-xs leading-relaxed text-muted">{c.phoneLogin.scan}</p>
               </div>
             ) : (
-              <button onClick={startPhoneLogin} disabled={phoneWaiting} className="btn btn-primary mt-3 w-full !py-2 text-sm">
-                {phoneWaiting ? c.phoneLogin.waiting : c.phoneLogin.show}
-              </button>
+              <>
+                <button onClick={startPhoneLogin} disabled={phoneWaiting} className="btn btn-primary mt-3 w-full !py-2 text-sm">
+                  {phoneWaiting ? c.phoneLogin.waiting : c.phoneLogin.show}
+                </button>
+                {phoneFailed && <p className="mt-2 text-xs font-semibold text-red-600">{c.phoneLogin.failed}</p>}
+              </>
             )}
           </div>
         )}

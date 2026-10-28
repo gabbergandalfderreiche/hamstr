@@ -351,6 +351,7 @@ export const en: Dictionary = {
       text: "For phone wallets like MetaMask, Trust, Rainbow or Coinbase Wallet: scan the QR code, approve in the app – and you're signed in here on your computer.",
       show: "Show QR code",
       waiting: "Creating QR code …",
+      failed: "The QR code couldn't be created right now. Try again in a moment or sign in with a passkey.",
       scan: "In your wallet app, tap “Scan” (WalletConnect), scan the code and approve the connection.",
     },
     phantomMobile: {

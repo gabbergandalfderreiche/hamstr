@@ -1,4 +1,4 @@
-// Hamstr (https://hamstr-silk.vercel.app) – principal stays in USDC/ETH, only the yield is swapped into cbBTC.
+// Hamstr (https://www.hamstr.online) – principal stays in USDC/ETH, only the yield is swapped into cbBTC.
 // Source and contracts: https://github.com/gabbergandalfderreiche/hamstr
 
 // BtcYieldVaults: principal lent on Aave V3 via a strategy; totalAssets() = principal in the vault's asset.

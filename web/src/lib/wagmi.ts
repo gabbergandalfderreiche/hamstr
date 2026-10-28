@@ -20,8 +20,8 @@ const phoneWallet = WC_PROJECT_ID
         metadata: {
           name: BRAND.name,
           description: "Park dollars, the interest turns into Bitcoin.",
-          url: "https://hamstr-silk.vercel.app",
-          icons: ["https://hamstr-silk.vercel.app/hamstr-logo.png"],
+          url: "https://www.hamstr.online",
+          icons: ["https://www.hamstr.online/hamstr-logo.png"],
         },
       }),
     ]

@@ -23,7 +23,7 @@ Hamstr
 No external audit yet. Automated analysis (Slither, 0 high findings) and 73 Foundry tests incl. Base mainnet forks: https://github.com/gabbergandalfderreiche/hamstr/blob/main/SECURITY.md
 
 ##### Website Link:
-https://hamstr-silk.vercel.app
+https://www.hamstr.online
 
 ##### Logo (High resolution, will be shown with rounded borders):
 (attach hamstr-logo.png)

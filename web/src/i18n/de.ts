@@ -349,6 +349,7 @@ export const de = {
       text: "Für Handy-Wallets wie MetaMask, Trust, Rainbow oder Coinbase Wallet: QR-Code scannen, in der App bestätigen – angemeldet bist du dann hier am PC.",
       show: "QR-Code anzeigen",
       waiting: "QR-Code wird erstellt …",
+      failed: "Der QR-Code konnte gerade nicht erstellt werden. Versuch es gleich nochmal oder melde dich mit Passkey an.",
       scan: "In der Wallet-App auf „Scannen“ (WalletConnect) tippen, Code scannen und die Verbindung bestätigen.",
     },
     phantomMobile: {
