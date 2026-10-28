@@ -50,6 +50,8 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
   const [phoneQr, setPhoneQr] = useState<string | null>(null);
   const [phoneWaiting, setPhoneWaiting] = useState(false);
   const [phoneFailed, setPhoneFailed] = useState(false);
+  // Only one QR code is visible at a time, so nobody scans the wrong one.
+  const [shownQr, setShownQr] = useState<"phone" | "phantom" | null>(null);
 
   // Browser-only facts, read once when the dialog opens.
   const [env] = useState(() => {
@@ -106,7 +108,8 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
   }, [phoneWaiting, phoneQr]);
 
   function startPhoneLogin() {
-    if (!phoneWallet) return;
+    setShownQr("phone");
+    if (!phoneWallet || phoneQr) return;
     setPhoneFailed(false);
     setPhoneWaiting(true);
     connect.mutate({ connector: phoneWallet }, { onError: () => setPhoneWaiting(false) });
@@ -188,7 +191,7 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
           <div className="mt-4 rounded-2xl border-2 border-btc/60 p-4">
             <div className="font-bold">{c.phoneLogin.title}</div>
             <p className="mt-1 text-xs leading-relaxed text-muted">{c.phoneLogin.text}</p>
-            {phoneQr ? (
+            {phoneQr && shownQr === "phone" ? (
               <div className="mt-3 flex items-center gap-4">
                 {/* QR code generated locally as a data URL. */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -217,14 +220,21 @@ function ConnectDialog({ onClose }: { onClose: () => void }) {
                 <p className="mt-2 text-xs text-muted">{c.phantomMobile.openHint}</p>
               </>
             ) : (
-              <div className="mt-3 flex items-center gap-4">
-                {qr && (
-                  // QR code generated locally as a data URL.
-                  // eslint-disable-next-line @next/next/no-img-element
+              shownQr === "phantom" && qr ? (
+                <div className="mt-3 flex items-center gap-4">
+                  {/* QR code generated locally as a data URL. */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={qr} alt="QR code" width={120} height={120} className="rounded-lg bg-white p-1" />
-                )}
-                <p className="text-xs leading-relaxed text-muted">{c.phantomMobile.qrHint}</p>
-              </div>
+                  <p className="text-xs leading-relaxed text-muted">{c.phantomMobile.qrHint}</p>
+                </div>
+              ) : (
+                <>
+                  <p className="mt-1 text-xs leading-relaxed text-muted">{c.phantomMobile.intro}</p>
+                  <button onClick={() => setShownQr("phantom")} disabled={!qr} className="btn btn-ghost mt-3 w-full !py-2 text-sm">
+                    {c.phantomMobile.showQr}
+                  </button>
+                </>
+              )
             )}
             {!env.mobile && (
               <a

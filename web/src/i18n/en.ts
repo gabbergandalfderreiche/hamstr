@@ -356,6 +356,8 @@ export const en: Dictionary = {
     },
     phantomMobile: {
       title: "Phantom on your phone?",
+      intro: "Then you can use Hamstr right inside the Phantom app on your phone – not here on your computer.",
+      showQr: "Show code for the Phantom app",
       qrHint: "Scan the code with your phone camera. Hamstr then opens on your phone inside the Phantom app and is connected there – not here on your computer. On a computer, use the Phantom browser extension.",
       open: "Open in the Phantom app",
       openHint: "Opens Hamstr in the Phantom app's browser.",

@@ -354,6 +354,8 @@ export const de = {
     },
     phantomMobile: {
       title: "Phantom auf dem Handy?",
+      intro: "Dann kannst du Hamstr direkt in der Phantom-App auf dem Handy nutzen – nicht hier am PC.",
+      showQr: "Code für die Phantom-App anzeigen",
       qrHint: "Scanne den Code mit der Handy-Kamera. Hamstr öffnet sich dann auf deinem Handy in der Phantom-App und ist dort verbunden – nicht hier am PC. Für den PC gibt es die Phantom-Browser-Erweiterung.",
       open: "In der Phantom-App öffnen",
       openHint: "Öffnet Hamstr im Browser der Phantom-App.",
