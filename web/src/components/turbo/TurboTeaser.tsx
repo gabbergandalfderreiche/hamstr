@@ -19,6 +19,7 @@ export function TurboTeaser() {
           <span className="font-display font-extrabold">{tb.title}</span>
           <span className="rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-bold text-white">{tb.badge}</span>
         </div>
+        <p className="mt-1 text-sm font-bold text-good">{tb.cardYield}</p>
         <p className="mt-1 text-xs text-muted">{tb.cardText}</p>
       </div>
       <span className="text-sm font-bold text-red-600">{tb.cardCta} →</span>

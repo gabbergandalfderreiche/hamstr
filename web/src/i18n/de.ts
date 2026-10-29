@@ -88,7 +88,7 @@ export const de = {
         turbo: "Turbo-Hamster",
         total: "Gesamt",
         inSats: "in Bitcoin gerechnet",
-        btc: "Schon zu Bitcoin getauscht, noch nicht abgeholt",
+        btc: "Verdient, noch nicht abgeholt",
         note: "Live von der Blockchain, alle 30 Sekunden aktualisiert.",
       },
     },
@@ -440,6 +440,7 @@ export const de = {
     tagline: "ETH rein, Handelsgebühren als Bitcoin raus – mit echtem Risiko für deinen Einsatz.",
     banner: "HOCHRISIKO: Du kannst gegenüber einfachem Halten deutlich verlieren. Nur Geld, das du verlieren kannst.",
     cardText: "Für Mutige: Dein ETH arbeitet als Liquidität auf Uniswap, die Gebühren kommen als Bitcoin. Dein Einsatz ist nicht geschützt.",
+    cardYield: "Bis zu 15 % pro Jahr möglich (Beispielrechnung, nicht garantiert)",
     cardCta: "Zum Turbo-Hamster",
     how: [
       "Du zahlst ETH ein. Der Hamster tauscht die Hälfte in Bitcoin (cbBTC) und stellt beides auf Uniswap bereit.",

@@ -90,7 +90,7 @@ export const en: Dictionary = {
         turbo: "Turbo Hamster",
         total: "Total",
         inSats: "counted in Bitcoin",
-        btc: "Already swapped to Bitcoin, not yet claimed",
+        btc: "Earned, not yet claimed",
         note: "Live from the blockchain, refreshed every 30 seconds.",
       },
     },
@@ -442,6 +442,7 @@ export const en: Dictionary = {
     tagline: "ETH in, trading fees out as Bitcoin – with real risk to your deposit.",
     banner: "HIGH RISK: you can lose significantly compared to simply holding. Only money you can afford to lose.",
     cardText: "For the brave: your ETH works as liquidity on Uniswap, the fees come back as Bitcoin. Your deposit is not protected.",
+    cardYield: "Up to 15 % a year possible (example calculation, not guaranteed)",
     cardCta: "Go to Turbo Hamster",
     how: [
       "You deposit ETH. The hamster swaps half into Bitcoin (cbBTC) and provides both on Uniswap.",

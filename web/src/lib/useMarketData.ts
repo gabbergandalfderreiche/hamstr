@@ -1,7 +1,8 @@
 "use client";
 
-import { useReadContract, useReadContracts } from "wagmi";
-import { erc20Abi } from "viem";
+import { useQuery } from "@tanstack/react-query";
+import { usePublicClient, useReadContracts } from "wagmi";
+import { erc20Abi, parseAbi } from "viem";
 import { btcYieldVaultAbi, oracleSwapperAbi, turboVaultAbi } from "@/generated/contracts";
 import { AAVE_POOL, aavePoolAbi, rayRateToApy } from "./market";
 import { getLive } from "./live";
@@ -9,6 +10,13 @@ import { activeChain } from "./network";
 import { DEMO_BTC_USD, DEMO_ETH_USD, VAULTS } from "./vaults";
 
 const REFRESH_MS = 30_000;
+const MAX_BPS = 10_000n;
+
+// Uniswap's position manager: simulating collect() as the Turbo vault returns the fees earned so far.
+const positionManagerAbi = parseAbi([
+  "function collect((uint256 tokenId, address recipient, uint128 amount0Max, uint128 amount1Max)) payable returns (uint256 amount0, uint256 amount1)",
+]);
+const MAX_UINT128 = 2n ** 128n - 1n;
 const live = getLive(activeChain.id);
 const d = live?.deployment;
 
@@ -26,7 +34,7 @@ export type MarketData = {
   tvlUsd: number;
   /** Per vault: amount in the vault's own unit (USDC or ETH) and in USD. */
   tvl: { usdc: number; eth: number; ethUsd: number; turbo: number; turboUsd: number };
-  /** cbBTC sitting in the Bitcoin vaults (harvested interest not yet claimed), in sats. */
+  /** Earned but not yet claimed, in sats: cbBTC in the Bitcoin vaults plus the users' Turbo fees. */
   btcSats: number;
 };
 
@@ -67,11 +75,40 @@ export function useMarketData(): MarketData {
       : [],
     query: { enabled, refetchInterval: REFRESH_MS },
   });
-  const { data: turboAssets } = useReadContract({
-    address: d?.turboVault,
-    abi: turboVaultAbi,
-    functionName: "totalAssets",
-    query: { enabled: Boolean(d?.turboVault), refetchInterval: REFRESH_MS },
+  const turbo = d?.turboVault ? ({ address: d.turboVault, abi: turboVaultAbi } as const) : undefined;
+  const { data: turboData } = useReadContracts({
+    contracts: turbo
+      ? [
+          { ...turbo, functionName: "totalAssets" },
+          { ...turbo, functionName: "positionManager" },
+          { ...turbo, functionName: "positionId" },
+          { ...turbo, functionName: "performanceFee" },
+          { ...turbo, functionName: "reserved0" },
+          { ...turbo, functionName: "reserved1" },
+        ]
+      : [],
+    query: { enabled: Boolean(turbo), refetchInterval: REFRESH_MS },
+  });
+  const turboAssets = turboData?.[0]?.result as bigint | undefined;
+  const positionManager = turboData?.[1]?.result as `0x${string}` | undefined;
+  const positionId = (turboData?.[2]?.result as bigint | undefined) ?? 0n;
+  // Fees still sitting in the Uniswap position (WETH, cbBTC); collected on the next deposit, withdraw or claim.
+  // Plain eth_call: wagmi's simulate hook waits for a connected wallet, this works for every visitor.
+  const client = usePublicClient();
+  const uncollected = useQuery({
+    queryKey: ["turbo-uncollected", positionManager, positionId.toString()],
+    queryFn: async () => {
+      const { result } = await client!.simulateContract({
+        address: positionManager!,
+        abi: positionManagerAbi,
+        functionName: "collect",
+        args: [{ tokenId: positionId, recipient: d!.turboVault!, amount0Max: MAX_UINT128, amount1Max: MAX_UINT128 }],
+        account: d!.turboVault!,
+      });
+      return result;
+    },
+    enabled: Boolean(client && positionManager) && positionId > 0n,
+    refetchInterval: REFRESH_MS,
   });
 
   if (!enabled || !data) return DEMO;
@@ -87,6 +124,14 @@ export function useMarketData(): MarketData {
   if (!usdcReserve || !ethReserve || !satsPerUsdc || !usdcPerEth) return DEMO;
 
   const keep = 1 - feeBps / 10_000;
+  // Turbo fees users can claim: already reserved for them plus fresh ones after the protocol fee.
+  const turboFee = (turboData?.[3]?.result as bigint | undefined) ?? 0n;
+  const [fresh0, fresh1] = uncollected.data ?? [0n, 0n];
+  const toUsers = (amount: bigint) => amount - (amount * turboFee) / MAX_BPS;
+  const turboWeth = ((turboData?.[4]?.result as bigint | undefined) ?? 0n) + toUsers(fresh0);
+  const turboCbbtc = ((turboData?.[5]?.result as bigint | undefined) ?? 0n) + toUsers(fresh1);
+  const satsPerEth = (satsPerUsdc * usdcPerEth) / 1_000_000n;
+  const turboSats = turboCbbtc + (turboWeth * satsPerEth) / 10n ** 18n;
   const ethUsd = Number(usdcPerEth) / 1e6;
   const tvl = {
     usdc: Number(usdcTvl) / 1e6,
@@ -106,6 +151,6 @@ export function useMarketData(): MarketData {
     ethUsd,
     tvlUsd: tvl.usdc + tvl.ethUsd + tvl.turboUsd,
     tvl,
-    btcSats: Number(btcInVaults),
+    btcSats: Number(btcInVaults + turboSats),
   };
 }
