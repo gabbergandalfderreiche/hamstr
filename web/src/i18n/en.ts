@@ -66,6 +66,13 @@ export const en: Dictionary = {
     apyLabelDemo: "Yield p.a. (example)",
 
     heroCard: { label: "Yield right now", hint: "per year, in Bitcoin, after fees", demo: "Example value" },
+    bet: {
+      badge: "New · Testnet",
+      title: "P2P Bet: football bets between friends",
+      text: "Bet 1 vs 1 on top-league matches, no bookmaker. The result comes from an oracle, not from you.",
+      cta: "Go to the bets",
+      note: "Test dollars (tUSD) on Base Sepolia only. Play money with no value, no real money.",
+    },
 
     live: {
       badge: "Live on Base",

@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { Hamster, HamsterPet } from "@/components/Hamster";
+import { Hamster } from "@/components/Hamster";
 import { Logo } from "@/components/Logo";
 import { LegalFooter } from "@/components/LegalFooter";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { HamsterLion } from "@/components/HamsterLion";
 import { HeroYieldCard, LiveStats, MaxiPitch, VaultApy, YieldCalculator } from "@/components/LiveYield";
 import { TurboTeaser } from "@/components/turbo/TurboTeaser";
-import { TAX_TOOL } from "@/lib/partners";
+import { BET_APP, TAX_TOOL } from "@/lib/partners";
 import { GermanFlag } from "@/components/GermanFlag";
 import { Transparency } from "@/components/Transparency";
 import { VAULTS } from "@/lib/vaults";
@@ -44,13 +45,14 @@ export default async function Home() {
       <main>
         {/* Hero */}
         <section className="screentone border-b border-line">
-          <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-20">
+          {/* Left: Hamstr Yield. Middle: the hamster. Right: P2P Bet. */}
+          <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:py-20 lg:grid-cols-[1fr_auto_1fr] lg:gap-8">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs font-bold text-muted">
                 <span className="h-2 w-2 rounded-full bg-good" />
                 {l.badge}
               </span>
-              <h1 className="font-display mt-5 text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
+              <h1 className="font-display mt-5 text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl lg:text-5xl">
                 {l.heroLine1}
                 <br />
                 <span className="text-btc">{l.heroLine2}</span>
@@ -74,14 +76,32 @@ export default async function Home() {
               </ul>
             </div>
 
-            <div className="relative mx-auto w-full max-w-sm">
+            <div className="relative mx-auto w-full max-w-sm lg:w-72">
               <div className="bubble pointer-events-none absolute -top-2 left-2 z-10 text-sm md:-left-6">{l.bubble}</div>
-              <div className="mx-auto mt-10 aspect-square w-72 rounded-full bg-surface-2 p-4 md:w-80">
-                {/* Easter egg: click and it turns around and wiggles. */}
-                <HamsterPet size={288} sparkles animated className="h-full w-full [&>svg]:h-full [&>svg]:w-full" label={t.brand.pet} />
+              <div className="mx-auto mt-10 aspect-square w-72 rounded-full bg-surface-2 p-4 lg:w-64">
+                {/* Easter eggs: click and it turns around and wiggles; double click and it becomes the lion. */}
+                <HamsterLion label={t.brand.pet} />
               </div>
               <HeroYieldCard />
             </div>
+
+            <a
+              href={`${BET_APP.url}/${locale}`}
+              className="group relative mx-auto block w-full max-w-sm overflow-hidden rounded-3xl border-2 border-[#f5b53a]/60 bg-[#17121d] p-6 text-[#fbefe1] shadow-[0_0_40px_rgba(245,181,58,0.18)] transition hover:border-[#f5b53a] lg:max-w-none"
+            >
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-bold">
+                <span className="h-2 w-2 rounded-full bg-[#f5b53a]" />
+                {l.bet.badge}
+              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/lion-leap.png" alt="" className="mx-auto mt-3 w-56 transition group-hover:scale-105" draggable={false} />
+              <h2 className="font-display mt-2 text-2xl font-extrabold">{l.bet.title}</h2>
+              <p className="mt-2 text-sm text-[#fbefe1]/75">{l.bet.text}</p>
+              <span className="mt-5 inline-block rounded-full bg-[#f5b53a] px-5 py-2.5 text-sm font-extrabold text-[#2a1406]">
+                {l.bet.cta} ↗
+              </span>
+              <p className="mt-3 text-xs text-[#fbefe1]/55">{l.bet.note}</p>
+            </a>
           </div>
         </section>
 

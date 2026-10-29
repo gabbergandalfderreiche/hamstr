@@ -64,6 +64,13 @@ export const de = {
     apyLabelDemo: "Rendite p.a. (Beispiel)",
 
     heroCard: { label: "Rendite gerade", hint: "pro Jahr, in Bitcoin, nach Gebühren", demo: "Beispielwert" },
+    bet: {
+      badge: "Neu · Testnet",
+      title: "P2P Bet: Fußball-Wetten unter Freunden",
+      text: "Wette 1 gegen 1 auf Spiele der Top-Ligen, ohne Buchmacher. Das Ergebnis kommt von einem Oracle, nicht von euch.",
+      cta: "Zu den Wetten",
+      note: "Nur mit Test-Dollar (tUSD) auf Base Sepolia. Spielgeld ohne Wert, kein echtes Geld.",
+    },
 
     live: {
       badge: "Live auf Base",
