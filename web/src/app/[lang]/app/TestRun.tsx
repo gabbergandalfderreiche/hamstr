@@ -5,6 +5,7 @@ import Link from "next/link";
 import { erc20Abi, formatUnits, type Address, type Hash } from "viem";
 import { useBalance, useEstimateFeesPerGas } from "wagmi";
 import { useAttributedWrite } from "@/lib/attribution";
+import { useAaveSupplyBlocked } from "@/lib/useAaveStatus";
 import { waitForTransactionReceipt } from "wagmi/actions";
 import { btcYieldVaultAbi } from "@/generated/contracts";
 import { Hamster } from "@/components/Hamster";
@@ -80,6 +81,7 @@ export function TestRun({
   const ethBalance = useBalance({ address: user, query: { enabled: Boolean(user), refetchInterval: 4_000 } });
   const fees = useEstimateFeesPerGas({ query: { refetchInterval: 30_000 } });
   const [busy, setBusy] = useState<string | null>(null);
+  const aaveBlocked = { usdc: useAaveSupplyBlocked(live.vaults.find((v) => v.id === "usdc")?.asset), eth: useAaveSupplyBlocked(live.vaults.find((v) => v.id === "eth")?.asset) };
   const [error, setError] = useState<string | null>(null);
 
   if (progress.hidden) return null;
@@ -210,7 +212,12 @@ export function TestRun({
               </Link>
             </p>
           )}
-          {current === 2 && (
+          {current === 2 && aaveBlocked[vault.id] && (
+            <p className="text-sm">
+              <span className="font-bold">{t.app.aavePaused.title}</span> {tr.aavePaused}
+            </p>
+          )}
+          {current === 2 && !aaveBlocked[vault.id] && (
             <>
               <button onClick={deposit} disabled={disabled || Boolean(busy)} className="btn btn-primary">
                 {busy ?? tr.depositCta(amountText)}

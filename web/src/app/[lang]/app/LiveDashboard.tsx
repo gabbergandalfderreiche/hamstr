@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import { erc20Abi, formatUnits, parseUnits, type Address, type Hash } from "viem";
 import { useConnection, useEstimateFeesPerGas, useSwitchChain } from "wagmi";
 import { useAttributedWrite } from "@/lib/attribution";
+import { useAaveSupplyBlocked } from "@/lib/useAaveStatus";
 import { waitForTransactionReceipt } from "wagmi/actions";
 import { Hamster } from "@/components/Hamster";
 import { Logo } from "@/components/Logo";
@@ -225,7 +226,9 @@ function VaultPanel({
   const limit = mode === "deposit" ? (spendable < state.maxDeposit ? spendable : state.maxDeposit) : state.deposited;
   const tooMuch = Boolean(user) && value > limit;
   const needsGas = tooMuch && mode === "deposit" && vault.native && value <= state.walletBalance && value <= state.maxDeposit;
-  const canSubmit = !disabled && !busy && value > 0n && !tooMuch;
+  // Aave paused new supply (withdrawals still work): pause deposits instead of letting the wallet show an error.
+  const aavePaused = useAaveSupplyBlocked(vault.asset) && mode === "deposit";
+  const canSubmit = !disabled && !busy && value > 0n && !tooMuch && !aavePaused;
 
   /** Shows `label` on the button while the transaction is signed and mined. */
   async function send(label: string, tx: () => Promise<Hash>) {
@@ -383,6 +386,13 @@ function VaultPanel({
 
       {user && mode === "deposit" && state.walletBalance === 0n && <FundingHint address={user} symbol={vault.symbol} />}
 
+      {aavePaused && (
+        <div className="mt-4 rounded-2xl border-2 border-btc/50 bg-btc/10 px-4 py-3 text-sm">
+          <div className="font-bold">{a.aavePaused.title}</div>
+          <p className="mt-1 text-muted">{a.aavePaused.text}</p>
+        </div>
+      )}
+
       {celebrate && <Celebration text={celebrate} onDone={endCelebration} />}
 
       <button
@@ -395,6 +405,8 @@ function VaultPanel({
             ? t.connect.login
             : disabled
               ? a.wrongNetwork
+              : aavePaused
+              ? a.aavePaused.button
               : value === 0n
               ? a.enterAmount
               : mode === "deposit"
