@@ -355,14 +355,19 @@ body {
 }
 
 /* Hamster turns into the lion (double click in the hero): the SVG hamster hands over to the eight
-   drawn morph frames, a golden burst at the end, then off to Löwensprung. */
+   drawn morph frames, which dissolve into each other while bouncing, a golden burst at the end,
+   then off to Löwensprung. Frame timing is set inline per frame. */
 .morph-out {
   animation: morph-out 0.15s linear forwards;
 }
-.morph-frames {
-  aspect-ratio: 332 / 385;
-  background: url(/hamstr-morph.png) 0 0 / 800% 100% no-repeat;
-  animation: morph-frames 1.6s steps(8, jump-none) forwards;
+.morph-frame {
+  background-image: url(/hamstr-morph.png);
+  background-size: 800% 100%;
+  background-repeat: no-repeat;
+}
+.morph-bounce {
+  transform-origin: 50% 100%;
+  animation: morph-bounce 0.4s ease-in-out 4;
 }
 .morph-burst {
   background: radial-gradient(circle, rgba(255, 214, 110, 0.95) 0%, rgba(247, 147, 26, 0.6) 35%, transparent 70%);
@@ -372,9 +377,23 @@ body {
 @keyframes morph-out {
   to { opacity: 0; }
 }
-@keyframes morph-frames {
-  from { background-position: 0% 0; }
-  to { background-position: 100% 0; }
+/* hold, dissolve: fade in over the first 120 of 320 ms, stay until the next frame covers it, then go */
+@keyframes morph-hold {
+  0%, 99% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes morph-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes morph-dissolve {
+  0% { opacity: 0; }
+  37.5%, 99% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes morph-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3%) scale(1.04, 0.97); }
 }
 @keyframes morph-burst {
   0% { transform: scale(0.2); opacity: 0; }
