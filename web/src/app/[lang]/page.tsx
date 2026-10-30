@@ -82,6 +82,10 @@ export default async function Home() {
                 {/* Easter eggs: click and it turns around and wiggles; double click and it becomes the lion. */}
                 <HamsterLion label={t.brand.pet} />
               </div>
+              {/* Kept narrow on the left so the yield card on the right never covers it. */}
+              <div className="pointer-events-none absolute -bottom-5 -left-1 max-w-[9.5rem] -rotate-3 rounded-xl border-2 border-ink bg-surface px-2.5 py-1 text-[11px] font-bold leading-tight md:-left-5">
+                {l.petHint}
+              </div>
               <HeroYieldCard />
             </div>
 
@@ -94,7 +98,7 @@ export default async function Home() {
                 {l.bet.badge}
               </span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/lion-leap.png" alt="" className="mx-auto mt-3 w-56 transition group-hover:scale-105" draggable={false} />
+              <img src="/funny-lion.png" alt="" className="mx-auto mt-3 w-40 transition group-hover:-rotate-3 group-hover:scale-105" draggable={false} />
               <h2 className="font-display mt-2 text-2xl font-extrabold">{l.bet.title}</h2>
               <p className="mt-2 text-sm text-[#fbefe1]/75">{l.bet.text}</p>
               <span className="mt-5 inline-block rounded-full bg-[#f5b53a] px-5 py-2.5 text-sm font-extrabold text-[#2a1406]">

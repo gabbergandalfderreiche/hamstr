@@ -64,6 +64,7 @@ export const de = {
     apyLabelDemo: "Rendite p.a. (Beispiel)",
 
     heroCard: { label: "Rendite gerade", hint: "pro Jahr, in Bitcoin, nach Gebühren", demo: "Beispielwert" },
+    petHint: "Psst: klick mich an – oder doppelt 👆",
     bet: {
       badge: "Neu · Testnet",
       title: "P2P Bet: Fußball-Wetten unter Freunden",

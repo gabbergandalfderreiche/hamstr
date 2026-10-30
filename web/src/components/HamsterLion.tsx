@@ -5,11 +5,11 @@ import { HamsterPet } from "@/components/Hamster";
 import { useT } from "@/i18n/client";
 import { BET_APP } from "@/lib/partners";
 
-const MORPH_MS = 1500;
+const MORPH_MS = 2100;
 
 /**
- * The hero hamster. A single click is still the turn-and-wiggle easter egg; a double click turns it
- * into the lion and jumps to Löwensprung on P2P Bet.
+ * The hero hamster. A single click is still the turn-and-wiggle easter egg; a double click plays the
+ * drawn hamster-to-lion frames and jumps to Löwensprung on P2P Bet.
  */
 export function HamsterLion({ label }: { label: string }) {
   const { locale } = useT();
@@ -38,14 +38,8 @@ export function HamsterLion({ label }: { label: string }) {
       </div>
       {morphing && (
         <>
+          <div className="morph-frames pointer-events-none absolute -bottom-[6%] left-1/2 w-[150%] -translate-x-1/2" aria-hidden />
           <div className="morph-burst pointer-events-none absolute inset-0 rounded-full" aria-hidden />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/lion-leap.png"
-            alt=""
-            className="morph-in pointer-events-none absolute left-1/2 top-1/2 w-[135%] max-w-none"
-            draggable={false}
-          />
         </>
       )}
     </div>
