@@ -98,7 +98,7 @@ export default async function Home() {
                 {l.bet.badge}
               </span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/funny-lion.png" alt="" className="mx-auto mt-3 w-40 transition group-hover:-rotate-3 group-hover:scale-105" draggable={false} />
+              <img src="/lion-leap.png" alt="" className="mx-auto mt-3 w-56 transition group-hover:scale-105" draggable={false} />
               <h2 className="font-display mt-2 text-2xl font-extrabold">{l.bet.title}</h2>
               <p className="mt-2 text-sm text-[#fbefe1]/75">{l.bet.text}</p>
               <span className="mt-5 inline-block rounded-full bg-[#f5b53a] px-5 py-2.5 text-sm font-extrabold text-[#2a1406]">
