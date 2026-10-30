@@ -295,6 +295,7 @@ function VaultPanel({
         write.mutateAsync({ address: vault.address, abi: btcYieldVaultAbi, functionName: "claim", args: [user] }),
       );
       setDone({ text: a.done.claim, hash });
+      setCelebrate(a.celebrateClaim(fmtSats(state.claimableSats)));
       onReact(a.reactClaim, "happy");
     } catch (e) {
       setError(errorText(e, t));

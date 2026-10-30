@@ -426,6 +426,7 @@ export const en: Dictionary = {
     busy: { approve: "Approving…", deposit: "Depositing…", withdraw: "Withdrawing…", claim: "Claiming…" },
     reactDeposit: (amount, symbol) => `Nom nom! ${amount} ${symbol} into the cheeks.`,
     celebrate: (amount, symbol) => `+${amount} ${symbol} stacked! 🚀`,
+    celebrateClaim: (sats) => `+${sats} sats in your wallet! ₿`,
     reactWithdraw: "No problem – your principal is back.",
     reactWithdrawDemo: "No problem – you can always withdraw.",
     reactClaim: "Bitcoin stashed! Off to your wallet.",

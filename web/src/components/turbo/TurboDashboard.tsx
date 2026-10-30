@@ -173,7 +173,13 @@ export function TurboDashboard({ live, vault }: { live: Live; vault: Address }) 
 
   function claim() {
     if (!address) return;
-    run(a.busy.claim, a.done.claim, () => write.mutateAsync({ ...v, functionName: "claim", args: [address, true] }));
+    const text = a.celebrateClaim(Number(feeSats).toLocaleString(t.numberLocale));
+    run(
+      a.busy.claim,
+      a.done.claim,
+      () => write.mutateAsync({ ...v, functionName: "claim", args: [address, true] }),
+      () => setCelebrate(text),
+    );
   }
 
   const status = positionId === 0n ? d.noPosition : inRange ? d.inRange : d.outOfRange;

@@ -424,6 +424,7 @@ export const de = {
     busy: { approve: "Freigeben…", deposit: "Einzahlen…", withdraw: "Auszahlen…", claim: "Abholen…" },
     reactDeposit: (amount: string, symbol: string) => `Mjam! ${amount} ${symbol} in die Backen.`,
     celebrate: (amount: string, symbol: string) => `+${amount} ${symbol} gehamstert! 🚀`,
+    celebrateClaim: (sats: string) => `+${sats} sats in deiner Wallet! ₿`,
     reactWithdraw: "Kein Problem – dein Kapital ist zurück.",
     reactWithdrawDemo: "Kein Problem – auszahlen geht immer.",
     reactClaim: "Bitcoin gebunkert! Ab in deine Wallet.",
