@@ -55,7 +55,7 @@ const DEMO: MarketData = {
   btcSats: 0,
 };
 
-/** Live yields, BTC price and AuM for the landing page and app (demo values without a deployment). */
+/** Live yields, BTC price and TVL for the landing page and app (demo values without a deployment). */
 export function useMarketData(): MarketData {
   const enabled = Boolean(d);
   const vault = (address: `0x${string}`) => ({ address, abi: btcYieldVaultAbi }) as const;

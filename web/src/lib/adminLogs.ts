@@ -85,6 +85,8 @@ export type AdminSummary = {
   withdrawals: Flow[];
   /** cbBTC (sats) the vault harvests sent to the treasury, with time. */
   harvestFees: { vault: Address; sats: bigint; time: number }[];
+  /** What users claimed: cbBTC (sats) and, for Turbo claims without swap, WETH. */
+  claims: { sats: bigint; weth: bigint; time: number }[];
   /** Turbo protocol fees: WETH and cbBTC, with time. */
   turboFees: { weth: bigint; sats: bigint; time: number }[];
   /** First deposit time per wallet. */
@@ -105,6 +107,7 @@ export function summarize(live: Live, { logs, latestBlock, latestTime }: AdminLo
     deposits: [],
     withdrawals: [],
     harvestFees: [],
+    claims: [],
     turboFees: [],
     firstSeen: new Map(),
     roles: new Map(),
@@ -153,6 +156,10 @@ export function summarize(live: Live, { logs, latestBlock, latestTime }: AdminLo
         s.lastHarvest.set(vault, t);
         break;
       }
+      case "Claim":
+        // Bitcoin vaults: Claim(user, receiver, rewards); Turbo: Claim(user, receiver, cbbtcOut, wethOut).
+        s.claims.push({ sats: (a.rewards ?? a.cbbtcOut) as bigint, weth: (a.wethOut as bigint | undefined) ?? 0n, time: t });
+        break;
       case "FeesCollected":
         s.turboFees.push({ weth: a.protocol0 as bigint, sats: a.protocol1 as bigint, time: t });
         break;

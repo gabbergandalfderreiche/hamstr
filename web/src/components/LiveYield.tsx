@@ -3,6 +3,7 @@
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { useMarketData } from "@/lib/useMarketData";
+import { useClaimedSats } from "@/lib/useClaimedSats";
 import { getLive } from "@/lib/live";
 import { activeChain } from "@/lib/network";
 import { useT } from "@/i18n/client";
@@ -27,15 +28,16 @@ export function HeroYieldCard() {
   );
 }
 
-/** Strip under the hero: live yields and assets under management. */
+/** Strip under the hero: live yields and total value locked. */
 export function LiveStats() {
   const { t } = useT();
   const m = useMarketData();
+  const claimed = useClaimedSats(m.isLive, m.satsPerUsd, m.ethUsd);
   const l = t.landing.live;
   if (!m.isLive) return null;
 
   const vault = getLive(activeChain.id)?.deployment.usdcVault;
-  const b = l.aumBreakdown;
+  const b = l.tvlBreakdown;
   const loc = t.numberLocale;
   const num = (n: number, digits: number) => n.toLocaleString(loc, { maximumFractionDigits: digits });
   const rows = [
@@ -50,12 +52,12 @@ export function LiveStats() {
         <Stat label={l.apyUsdc} value={pct(m.netApy.usdc, t.numberLocale)} hint={l.apyHint} accent />
         <Stat label={l.apyEth} value={pct(m.netApy.eth, t.numberLocale)} hint={l.apyHint} accent />
         <Stat
-          label={l.aum}
+          label={l.tvl}
           value={
             <details className="group">
               <summary className="flex cursor-pointer list-none items-baseline gap-2 [&::-webkit-details-marker]:hidden">
                 {usd(m.tvlUsd, loc, m.tvlUsd < 1000 ? 2 : 0)}
-                <span className="font-sans text-xs font-semibold text-muted underline group-open:hidden">{l.aumDetails} ▾</span>
+                <span className="font-sans text-xs font-semibold text-muted underline group-open:hidden">{l.tvlDetails} ▾</span>
               </summary>
               <div className="card mt-2 p-4 font-sans text-sm font-normal">
                 <dl className="space-y-1.5">
@@ -77,6 +79,10 @@ export function LiveStats() {
                     </dd>
                   </div>
                   <div className="flex justify-between gap-3 pt-1.5">
+                    <dt className="text-muted">{b.claimed}</dt>
+                    <dd className="num whitespace-nowrap text-right text-good">{claimed === undefined ? "…" : `${num(claimed, 0)} sats`}</dd>
+                  </div>
+                  <div className="flex justify-between gap-3">
                     <dt className="text-muted">{b.btc}</dt>
                     <dd className="num whitespace-nowrap text-right text-btc-ink">{num(m.btcSats, m.btcSats < 10 ? 2 : 0)} sats</dd>
                   </div>
@@ -89,7 +95,7 @@ export function LiveStats() {
             <>
               <span className="inline-flex items-center gap-1">
                 <span className="h-1.5 w-1.5 rounded-full bg-good" />
-                ≈ {num(Math.round(m.tvlUsd * m.satsPerUsd), 0)} sats · {l.aumSoonHint}
+                ≈ {num(Math.round(m.tvlUsd * m.satsPerUsd), 0)} sats · {l.tvlHint}
               </span>
               {vault && (
                 <>
