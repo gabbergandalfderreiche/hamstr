@@ -34,7 +34,10 @@ export type MarketData = {
   tvlUsd: number;
   /** Per vault: amount in the vault's own unit (USDC or ETH) and in USD. */
   tvl: { usdc: number; eth: number; ethUsd: number; turbo: number; turboUsd: number };
-  /** Earned but not yet claimed, in sats: cbBTC in the Bitcoin vaults plus the users' Turbo fees. */
+  /**
+   * Earned but not yet claimed, in sats (with decimals): cbBTC waiting in the Bitcoin vaults, their
+   * interest not yet swapped (after the fee) and the users' Turbo fees.
+   */
   btcSats: number;
 };
 
@@ -71,6 +74,11 @@ export function useMarketData(): MarketData {
           quote(d!.weth, d!.usdc, 10n ** 18n), // USDC per 1 ETH
           { address: d!.cbbtc, abi: erc20Abi, functionName: "balanceOf", args: [d!.usdcVault] },
           { address: d!.cbbtc, abi: erc20Abi, functionName: "balanceOf", args: [d!.ethVault] },
+          // Interest earned but not yet swapped: booked (pendingYield) plus still accruing at Aave.
+          { ...vault(d!.usdcVault), functionName: "pendingYield" },
+          { ...vault(d!.usdcVault), functionName: "unrealizedYield" },
+          { ...vault(d!.ethVault), functionName: "pendingYield" },
+          { ...vault(d!.ethVault), functionName: "unrealizedYield" },
         ]
       : [],
     query: { enabled, refetchInterval: REFRESH_MS },
@@ -132,6 +140,9 @@ export function useMarketData(): MarketData {
   const turboCbbtc = ((turboData?.[5]?.result as bigint | undefined) ?? 0n) + toUsers(fresh1);
   const satsPerEth = (satsPerUsdc * usdcPerEth) / 1_000_000n;
   const turboSats = turboCbbtc + (turboWeth * satsPerEth) / 10n ** 18n;
+  const big = (i: number) => (data[i]?.result as bigint | undefined) ?? 0n;
+  const interestSats =
+    (Number(big(9) + big(10)) / 1e6) * Number(satsPerUsdc) * keep + (Number(big(11) + big(12)) / 1e18) * Number(satsPerEth) * keep;
   const ethUsd = Number(usdcPerEth) / 1e6;
   const tvl = {
     usdc: Number(usdcTvl) / 1e6,
@@ -151,6 +162,6 @@ export function useMarketData(): MarketData {
     ethUsd,
     tvlUsd: tvl.usdc + tvl.ethUsd + tvl.turboUsd,
     tvl,
-    btcSats: Number(btcInVaults + turboSats),
+    btcSats: Number(btcInVaults + turboSats) + interestSats,
   };
 }

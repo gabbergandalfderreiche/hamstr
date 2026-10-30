@@ -43,11 +43,17 @@ export function useVaultState(live: Live, vault: LiveVault, user: Address | unde
   const s = { address: live.deployment.swapper, abi: oracleSwapperAbi, functionName: "quote" } as const;
   const quotes = useReadContracts({
     contracts: [
-      { ...s, args: [vault.asset, live.deployment.cbbtc, pendingCredit] },
+      // Sats per whole unit (1 USDC / 1 ETH): quoting the tiny credit itself would round to 0 sats.
+      { ...s, args: [vault.asset, live.deployment.cbbtc, 10n ** BigInt(vault.decimals)] },
       { ...s, args: [vault.asset, live.deployment.usdc, deposited] },
     ],
     query: { refetchInterval: REFRESH_MS },
   });
+
+  const feeBps = Number((r?.[2]?.result as bigint | undefined) ?? 0n);
+  const satsPerUnit = Number((quotes.data?.[0]?.result as bigint | undefined) ?? 0n);
+  // Interest earned so far, in sats after the fee, with decimals: small deposits earn fractions of a sat.
+  const earnedSats = (Number(pendingCredit) / 10 ** vault.decimals) * satsPerUnit * (1 - feeBps / 10_000);
 
   return {
     totalSupply: (r?.[0]?.result as bigint | undefined) ?? 0n,
@@ -58,7 +64,7 @@ export function useVaultState(live: Live, vault: LiveVault, user: Address | unde
     deposited,
     claimableSats: position?.[0] ?? 0n,
     pendingCredit,
-    pendingSatsEstimate: (quotes.data?.[0]?.result as bigint | undefined) ?? 0n,
+    earnedSats,
     depositedUsd: (quotes.data?.[1]?.result as bigint | undefined) ?? 0n, // 6 decimals
     allowance: (r?.[7]?.result as bigint | undefined) ?? 0n,
     walletBalance: vault.native ? (native.data?.value ?? 0n) : ((r?.[8]?.result as bigint | undefined) ?? 0n),

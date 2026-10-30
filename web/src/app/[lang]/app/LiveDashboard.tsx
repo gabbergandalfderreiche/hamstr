@@ -34,6 +34,8 @@ function formatters(locale: string) {
     fmt: (value: bigint, decimals: number, digits = 4) =>
       Number(formatUnits(value, decimals)).toLocaleString(locale, { maximumFractionDigits: digits }),
     fmtSats: (sats: bigint) => Number(sats).toLocaleString(locale),
+    /** Fractional sats: two decimals below 10 so a fresh deposit doesn't show a flat 0. */
+    fmtEarned: (sats: number) => sats.toLocaleString(locale, { maximumFractionDigits: sats < 10 ? 2 : 0 }),
   };
 }
 
@@ -47,7 +49,7 @@ function errorText(e: unknown, t: Dictionary) {
 export function LiveDashboard({ live }: { live: Live }) {
   const { t } = useT();
   const a = t.app;
-  const { fmt, fmtSats } = formatters(t.numberLocale);
+  const { fmt, fmtSats, fmtEarned } = formatters(t.numberLocale);
   const { address, isConnected, chainId } = useConnection();
   const switchChain = useSwitchChain();
   const market = useMarketData();
@@ -66,7 +68,7 @@ export function LiveDashboard({ live }: { live: Live }) {
 
   const totalUsd = usdc.depositedUsd + eth.depositedUsd;
   const claimable = usdc.claimableSats + eth.claimableSats;
-  const pendingSats = usdc.pendingSatsEstimate + eth.pendingSatsEstimate;
+  const earnedSats = usdc.earnedSats + eth.earnedSats;
   const feeBps = usdc.performanceFeeBps || eth.performanceFeeBps;
 
   function react(text: string, m: Mood) {
@@ -110,7 +112,7 @@ export function LiveDashboard({ live }: { live: Live }) {
           <div className="grid gap-4 sm:grid-cols-3">
             <Stat label={a.deposited} value={`$ ${fmt(totalUsd, 6, 2)}`} hint={a.depositedHint} />
             <Stat label={a.claimable} value={`${fmtSats(claimable)} sats`} accent hint={`≈ ${fmt(claimable, 8, 8)} cbBTC`} />
-            <Stat label={a.pending} value={`≈ ${fmtSats(pendingSats)} sats`} hint={feeBps ? a.pendingHint(feeBps / 100) : undefined} />
+            <Stat label={a.pending} value={`≈ ${fmtEarned(earnedSats)} sats`} hint={feeBps ? a.pendingHint(feeBps / 100) : undefined} />
           </div>
         </section>
 
@@ -202,7 +204,7 @@ function VaultPanel({
 }) {
   const { t } = useT();
   const a = t.app;
-  const { fmt, fmtSats } = formatters(t.numberLocale);
+  const { fmt, fmtSats, fmtEarned } = formatters(t.numberLocale);
   const info = t.vaults[vault.id];
   const { open: openConnect } = useConnectModal();
   const [mode, setMode] = useState<Mode>("deposit");
@@ -312,10 +314,8 @@ function VaultPanel({
           <div>
             <div className="text-xs font-semibold text-muted">{a.claimable}</div>
             <div className="num font-display text-2xl font-extrabold text-btc-ink">{fmtSats(state.claimableSats)} sats</div>
-            {state.pendingSatsEstimate > 0n && (
-              <div className="num text-xs text-muted">
-                {a.pendingSats(fmtSats(state.pendingSatsEstimate))}
-              </div>
+            {state.earnedSats > 0 && (
+              <div className="num text-xs text-muted">{a.pendingSats(fmtEarned(state.earnedSats))}</div>
             )}
           </div>
           <button className="btn btn-primary !px-4 !py-2 text-sm" disabled={disabled || !!busy || state.claimableSats === 0n} onClick={claim}>

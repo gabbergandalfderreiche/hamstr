@@ -78,7 +78,7 @@ export function LiveStats() {
                   </div>
                   <div className="flex justify-between gap-3 pt-1.5">
                     <dt className="text-muted">{b.btc}</dt>
-                    <dd className="num whitespace-nowrap text-right text-btc-ink">{num(m.btcSats, 0)} sats</dd>
+                    <dd className="num whitespace-nowrap text-right text-btc-ink">{num(m.btcSats, m.btcSats < 10 ? 2 : 0)} sats</dd>
                   </div>
                 </dl>
                 <p className="mt-3 text-[11px] text-muted">{b.note}</p>
