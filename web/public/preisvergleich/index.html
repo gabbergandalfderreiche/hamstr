@@ -310,6 +310,8 @@ aside.filters{align-self:start;position:sticky;top:calc(env(safe-area-inset-top,
 .bf h1 em{font-style:normal;color:var(--gold)}
 .bf-head>p{color:var(--night-mute);font-size:16.5px;max-width:48ch;margin:0 0 16px}
 .bf .count{margin:0 0 18px;max-width:420px}
+.bf-head>p.bf-claim{font-size:21px;font-weight:600;color:var(--night-ink);max-width:none}
+.bf-claim span{color:var(--gold)}
 .bf .hsearch{max-width:520px}
 .dotd{background:linear-gradient(160deg,#2B211A,#17120F);border:1px solid #F5B83D55;border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
 .dotd .dk{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
@@ -472,7 +474,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
       <div class="bf-head">
         <div class="bf-kick"><span class="pulse" aria-hidden="true"></span>Black Week · <span id="bwTitle">endet Cyber Monday, 30.11. um 23:59</span></div>
         <h1>Black Week.<br><em>Nur echte Rabatte.</em></h1>
-        <p>Jeder Deal ist gegen den Preisverlauf der letzten 30 Tage geprüft. Keine Mondpreise, kein Zubehör zwischen den Geräten, immer das günstigste Angebot zuerst.</p>
+        <p class="bf-claim">Immer das Günstigste zuerst. <span>Ohne Mondpreise.</span></p>
         <div class="count num" id="countdown"></div>
         <form class="hsearch" id="heroForm" role="search">
           <input id="hq" type="search" autocomplete="off" placeholder="Was willst du hamstern?" aria-label="Produkt suchen">
