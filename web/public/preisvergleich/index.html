@@ -465,6 +465,9 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 .bb-t small{font-size:12px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .bb-go{flex:none;background:var(--accent);color:var(--on-accent);border:0;border-radius:12px;padding:13px 18px;font-weight:800;font-size:15px;text-decoration:none}
 @media (max-width:880px){.buybar:not([hidden]){display:flex}body.has-buybar{padding-bottom:84px}body.has-buybar .totop{bottom:calc(90px + env(safe-area-inset-bottom,0px))}body.has-buybar .toast{bottom:calc(96px + env(safe-area-inset-bottom,0px))}}
+/* Beta-Hinweis: klein beim Logo statt Balken über der Seite */
+.demo{display:none}
+.logo .beta{align-self:flex-start;margin-top:2px;font-family:var(--f-body);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:0 4px;line-height:1.5}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
 
 /* drawer on narrow screens */
@@ -495,7 +498,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 <div class="demo">Beta: Angebote mit «Echter Preis» sind echte Shop-Preise (Stand 21.11.2026). Alle anderen sind Beispieldaten.</div>
 <header>
   <div class="wrap hbar">
-    <a class="logo" href="#start" aria-label="Hamstr Startseite"><img src="img/mascot-happy.webp" alt="" width="38" height="38"><b>hamstr</b></a>
+    <a class="logo" href="#start" aria-label="Hamstr Startseite"><img src="img/mascot-happy.webp" alt="" width="38" height="38"><b>hamstr</b><span class="beta" title="Beta für Testzwecke. Angebote ohne «Echter Preis» sind Beispieldaten.">Beta</span></a>
     <form class="search" id="searchForm" role="search">
       <input id="q" type="search" autocomplete="off" placeholder="Suche: GTA VI" aria-label="Produkte suchen">
       <button type="submit">Suchen</button>
@@ -650,6 +653,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
   <div class="wrap legal">
     <p>Hamstr vergleicht Preise und verkauft selbst nichts. Den Kaufvertrag schliesst du mit dem jeweiligen Shop oder Verkäufer ab. Dort gelten Preis, Lieferbedingungen und Garantie.</p>
     <p>Alle Preise in CHF inkl. MWST, vorgezogener Recyclinggebühr (vRG) und allfälliger SUISA-Abgabe, zuzüglich der angegebenen Versandkosten. Shops übermitteln ihre Preise in Abständen. Seit dem letzten Update<span id="updFoot"></span> kann sich ein Preis geändert haben, massgebend ist der Preis im Shop bei der Bestellung. Bei Auslandsshops können Einfuhr-MWST und Verzollungsgebühren dazukommen.</p>
+    <p>Beta für Testzwecke: Angebote ohne «Echter Preis» sind Beispieldaten.</p>
     <p>Occasion-Inserate stammen von Ricardo und tutti.ch. Für Zustand und Abwicklung ist die verkaufende Person verantwortlich. Alle Angaben ohne Gewähr. Marken, Produktnamen und Produktbilder gehören den jeweiligen Rechteinhabern.</p>
   </div>
 </footer>
