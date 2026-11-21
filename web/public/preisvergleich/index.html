@@ -479,6 +479,17 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 .ord.done{color:var(--night-ink);font-size:14px;flex-wrap:wrap;background:#7BE0A61a;border:1px solid #7BE0A655;border-radius:12px;padding:12px}
 .ord-reset{border:0;background:none;color:var(--gold);font-weight:700;text-decoration:underline;padding:0}
 .deal-card .pimg{margin-bottom:4px}
+/* Marktplatz-Liste */
+.market{margin-top:18px}
+.mk-h{font-size:16px;margin:0 0 8px;display:flex;flex-direction:column;gap:2px}
+.mk-h span{font-size:12.5px;font-weight:400;color:var(--muted)}
+.mk-list{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.mk-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:10px 14px;border-top:1px solid var(--line);color:var(--ink);text-decoration:none}
+.mk-row:first-child{border-top:0}.mk-row:hover{background:var(--sunk)}
+.mk-t{display:flex;flex-direction:column;min-width:0;font-weight:600;font-size:14px}
+.mk-t small{font-weight:400;color:var(--muted);font-size:12px}
+.mk-go{font-size:12.5px;font-weight:700;color:var(--accent);white-space:nowrap}
+@media (max-width:560px){.mk-row{grid-template-columns:minmax(0,1fr) auto}.mk-row .src,.mk-go{display:none}}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
 
 /* drawer on narrow screens */
@@ -578,6 +589,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
       <div class="condbar" id="condbar"></div>
       <div class="active" id="active"></div>
       <div class="list" id="list"></div>
+      <div class="market" id="market"></div>
     </section>
   </div>
 </div>
@@ -666,7 +678,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 
 <script>
 /* ---------- data: kommt aus export.json (pipeline: python -m ingest export) ---------- */
-let PRODUCTS=[], SHOPS=[], UPDATED=null, CATS=[], ALLREAL=false, SHOPRANK={};
+let PRODUCTS=[], SHOPS=[], UPDATED=null, CATS=[], ALLREAL=false, SHOPRANK={}, MARKET=[];
 /* Reihenfolge: günstigster Preis; bei Gleichstand der Shop selbst vor einem Marktplatz-Händler,
    dann der Shop, der bei Hamstr mehr Produkte hat (so landet ein Setup eher bei einem Shop) */
 const isMkt=o=>/marktplatz/i.test(o.seller)?1:0;
@@ -683,6 +695,7 @@ function fromExport(d){
       note:o.source!=="shop"?`„${o.title}“${o.place?" · "+o.place:""} · erkannt über ${METHOD[o.method]||o.method}`
         :o.foreign?"Liefert in die Schweiz. Einfuhr-MwSt. und Verzollungsgebühr können dazukommen.":""}))}));
   UPDATED=d.generated_at?new Date(d.generated_at):null;
+  MARKET=d.market||[];
   ALLREAL=PRODUCTS.every(p=>p.offers.every(o=>o.real));
   SHOPRANK={};PRODUCTS.forEach(p=>new Set(p.offers.map(o=>o.seller)).forEach(s=>SHOPRANK[s]=(SHOPRANK[s]||0)+1));
   SHOPS=[...new Set(PRODUCTS.flatMap(p=>p.offers.filter(o=>o.src==="shop").map(o=>o.seller)))];
@@ -969,9 +982,22 @@ function renderCondbar(){
       <b>${o.l}</b><span class="num">${o.min==null?"keine Angebote":"ab CHF "+Math.floor(o.min)+".–"}</span>
       ${o.v==="occ"&&save>=5&&S.cond!=="occ"?`<em>bis −${save} %</em>`:""}</button>`).join("")}</div>`;
 }
+/* Occasionen vom Marktplatz, die keinem Modell eindeutig zugeordnet sind: eigene Liste, gefiltert nach Grösse und Preis */
+function renderMarket(){
+  const el=$("market");
+  const sizes=S.f.size;
+  const rows=S.cond==="neu"||!S.srcs.has("ricardo")?[]:MARKET.filter(m=>m.category===S.cat&&(!sizes||!sizes.size||sizes.has(m.size))
+    &&(S.pmin===""||m.price>=+S.pmin)&&(S.pmax===""||m.price<=+S.pmax));
+  if(!rows.length){el.innerHTML="";return}
+  el.innerHTML=`<h3 class="mk-h">Weitere Occasionen auf Ricardo <span>${rows.length} Inserate, keinem Modell eindeutig zugeordnet · nur «Sofort kaufen»-Preise</span></h3>
+    <div class="mk-list">${rows.map(m=>`<a class="mk-row" href="${esc(m.url)}" target="_blank" rel="noopener noreferrer">
+      <span class="src ricardo">Ricardo</span><span class="mk-t">${esc(m.title)}<small>${m.size}″ · ${esc(m.place||"")} · Stand ${esc((m.last_seen||"").slice(8,10)+"."+(m.last_seen||"").slice(5,7)+".")}</small></span>
+      <b class="num">CHF ${m.price.toFixed(2)}</b><span class="mk-go">Zum Inserat</span></a>`).join("")}</div>`;
+}
 function render(){
   $("facetBody").innerHTML=facetHTML();
   renderBuybar();
+  renderMarket();
   renderCondbar();
   const rows=PRODUCTS.filter(p=>match(p)).map(p=>({p,b:best(p)})).sort((a,b)=>total(a.b)-total(b.b));
   $("count").textContent=`${rows.length} ${CAT().name}`;
