@@ -468,6 +468,17 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 /* Beta-Hinweis: klein beim Logo statt Balken über der Seite */
 .demo{display:none}
 .logo .beta{align-self:flex-start;margin-top:2px;font-family:var(--f-body);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:0 4px;line-height:1.5}
+/* Shop-Logos, Bestell-Schritte */
+.slogo{width:18px;height:18px;border-radius:4px;vertical-align:-4px;margin-right:6px;background:#fff;object-fit:contain}
+.oshop .slogo{margin-right:0}
+.ord-go{display:block;text-align:center;text-decoration:none;font-size:16px;padding:15px 18px}
+.ord{font-size:12.5px;color:var(--night-mute);display:flex;gap:10px;align-items:center;line-height:1.4}
+.ord-dots{display:inline-flex;gap:5px;flex:none}
+.ord-dots span{width:9px;height:9px;border-radius:50%;background:#ffffff2e}
+.ord-dots span.ok{background:#7BE0A6}.ord-dots span.now{background:var(--gold);box-shadow:0 0 0 3px #F5B83D44}
+.ord.done{color:var(--night-ink);font-size:14px;flex-wrap:wrap;background:#7BE0A61a;border:1px solid #7BE0A655;border-radius:12px;padding:12px}
+.ord-reset{border:0;background:none;color:var(--gold);font-weight:700;text-decoration:underline;padding:0}
+.deal-card .pimg{margin-bottom:4px}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
 
 /* drawer on narrow screens */
@@ -498,7 +509,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 <div class="demo">Beta: Angebote mit «Echter Preis» sind echte Shop-Preise (Stand 21.11.2026). Alle anderen sind Beispieldaten.</div>
 <header>
   <div class="wrap hbar">
-    <a class="logo" href="#start" aria-label="Hamstr Startseite"><img src="img/mascot-happy.webp" alt="" width="38" height="38"><b>hamstr</b><span class="beta" title="Beta für Testzwecke. Angebote ohne «Echter Preis» sind Beispieldaten.">Beta</span></a>
+    <a class="logo" href="#start" aria-label="Hamstr Startseite"><img src="img/mascot-happy.webp" alt="" width="38" height="38"><b>hamstr</b><span class="beta" title="Beta für Testzwecke. Preise von Hand geprüft, Stand siehe Datum oben in der Liste.">Beta</span></a>
     <form class="search" id="searchForm" role="search">
       <input id="q" type="search" autocomplete="off" placeholder="Suche: GTA VI" aria-label="Produkte suchen">
       <button type="submit">Suchen</button>
@@ -525,9 +536,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
       <article class="dotd" id="dotd" aria-label="Deal des Tages"></article>
     </div>
     <div class="wrap">
-      <div class="bf-h2"><h2>Bundles</h2><p>Jedes Teil einzeln beim günstigsten Shop. Gerechnet mit Versand.</p></div>
-      <div class="bundles" id="bundles"></div>
-      <div class="bf-h2"><h2 id="dealsH">Top-Deals</h2><p>Heute klar unter dem 30-Tage-Durchschnitt. Sortiert nach echtem Rabatt.</p></div>
+      <div class="bf-h2"><h2 id="dealsH">Top-Deals</h2><p id="dealsP">Heute klar unter dem 30-Tage-Durchschnitt. Sortiert nach echtem Rabatt.</p></div>
       <div class="deals" id="deals"></div>
     </div>
   </section>
@@ -539,12 +548,6 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
       <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><span><b>Kein Zubehör-Müll</b>Fernbedienungen und Halterungen landen nie zwischen den Fernsehern.</span></div>
       <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12a8 8 0 1 0 3-6.3M4 4v4h4"/></svg><span><b>Neu und Occasion</b>Ricardo und tutti.ch direkt daneben.</span></div>
     </div>
-
-    <section class="sec" aria-labelledby="bundleH" id="setup">
-      <div class="sech"><h2 id="bundleH">Setup selbst zusammenstellen</h2>
-        <p>TV-Grösse und Konsole wählen. Hamstr sucht für jedes Teil den günstigsten Shop und rechnet nach, ob sich alles bei einem Shop lohnt.</p></div>
-      <div class="bundle" id="bundle"></div>
-    </section>
 
     <section class="sec" aria-labelledby="catsH">
       <div class="sech"><h2 id="catsH">Kategorien</h2></div>
@@ -575,7 +578,6 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
       <div class="condbar" id="condbar"></div>
       <div class="active" id="active"></div>
       <div class="list" id="list"></div>
-      <p class="note">Prototyp: Die Feeds sind Beispieldaten. Modelle real, EANs, Preise, Shops-Angebote und Ricardo-/tutti-Inserate erfunden.</p>
     </section>
   </div>
 </div>
@@ -653,7 +655,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
   <div class="wrap legal">
     <p>Hamstr vergleicht Preise und verkauft selbst nichts. Den Kaufvertrag schliesst du mit dem jeweiligen Shop oder Verkäufer ab. Dort gelten Preis, Lieferbedingungen und Garantie.</p>
     <p>Alle Preise in CHF inkl. MWST, vorgezogener Recyclinggebühr (vRG) und allfälliger SUISA-Abgabe, zuzüglich der angegebenen Versandkosten. Shops übermitteln ihre Preise in Abständen. Seit dem letzten Update<span id="updFoot"></span> kann sich ein Preis geändert haben, massgebend ist der Preis im Shop bei der Bestellung. Bei Auslandsshops können Einfuhr-MWST und Verzollungsgebühren dazukommen.</p>
-    <p>Beta für Testzwecke: Angebote ohne «Echter Preis» sind Beispieldaten.</p>
+    <p>Beta für Testzwecke. Preise werden von Hand bei den Shops geprüft und können sich seither geändert haben.</p>
     <p>Occasion-Inserate stammen von Ricardo und tutti.ch. Für Zustand und Abwicklung ist die verkaufende Person verantwortlich. Alle Angaben ohne Gewähr. Marken, Produktnamen und Produktbilder gehören den jeweiligen Rechteinhabern.</p>
   </div>
 </footer>
@@ -664,7 +666,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 
 <script>
 /* ---------- data: kommt aus export.json (pipeline: python -m ingest export) ---------- */
-let PRODUCTS=[], SHOPS=[], UPDATED=null, CATS=[];
+let PRODUCTS=[], SHOPS=[], UPDATED=null, CATS=[], ALLREAL=false;
 const AVAIL={"in stock":"an Lager","preorder":"Vorbestellung","out of stock":"nicht an Lager"};
 const METHOD={"model+variant":"Modell + Variante","model+size":"Modell + Grösse","mpn_in_title":"Modellnummer im Titel","mpn":"Herstellernummer","ean":"EAN","manual":"Prüfung von Hand"};
 const SOON=["Notebooks","Grafikkarten","Staubsauger","Kaffeemaschinen"];
@@ -677,6 +679,7 @@ function fromExport(d){
       note:o.source!=="shop"?`„${o.title}“${o.place?" · "+o.place:""} · erkannt über ${METHOD[o.method]||o.method}`
         :o.foreign?"Liefert in die Schweiz. Einfuhr-MwSt. und Verzollungsgebühr können dazukommen.":""}))}));
   UPDATED=d.generated_at?new Date(d.generated_at):null;
+  ALLREAL=PRODUCTS.every(p=>p.offers.every(o=>o.real));
   SHOPS=[...new Set(PRODUCTS.flatMap(p=>p.offers.filter(o=>o.src==="shop").map(o=>o.seller)))];
 }
 
@@ -877,7 +880,7 @@ function tipHTML(p,live){
   }
   return `<div class="tip">
     <div class="tip-main"><span class="tip-k">Hamstr-Tipp</span>
-      <b>${esc(b.seller)} für CHF ${total(b).toFixed(2)}</b>
+      <b>${shopLogo(b.seller)}${esc(b.seller)} für CHF ${total(b).toFixed(2)}</b>
       <span class="tip-why">${why.join(" · ")||"günstigstes Angebot"}</span></div>
     <div class="tip-side">${save>=1?`<span class="tip-save">Du sparst <b class="num">CHF ${save.toFixed(2)}</b> gegenüber ${esc(worst.seller)}</span>`:""}${when}</div>
     ${b.real?`<a class="go tip-go" href="${esc(b.url)}" target="_blank" rel="sponsored noopener noreferrer">Zum Shop</a>`:`<button type="button" class="go tip-go" data-go="${esc(b.seller)}">Zum Shop</button>`}
@@ -917,7 +920,7 @@ function renderBuybar(){
   const el=$("buybar"),p=lastOpen!=null?PRODUCTS[lastOpen]:null,b=p&&location.hash==="#vergleich"?best(p):null;
   el.hidden=!b;document.body.classList.toggle("has-buybar",!!b);
   if(!b)return;
-  el.innerHTML=`<div class="bb-t"><span>${esc(titleOf(p))}</span><b class="num">CHF ${total(b).toFixed(2)}</b><small>bei ${esc(b.seller)}${S.ship?(b.pickup?" · Abholung":b.ship?" · inkl. Versand":" · gratis Versand"):""}</small></div>
+  el.innerHTML=`<div class="bb-t"><span>${esc(titleOf(p))}</span><b class="num">CHF ${total(b).toFixed(2)}</b><small>bei ${shopLogo(b.seller)}${esc(b.seller)}${S.ship?(b.pickup?" · Abholung":b.ship?" · inkl. Versand":" · gratis Versand"):""}</small></div>
     ${b.real?`<a class="bb-go" href="${esc(b.url)}" target="_blank" rel="sponsored noopener noreferrer">Zum Shop</a>`:`<button type="button" class="bb-go" data-go="${esc(b.seller)}">Zum Shop</button>`}`;
 }
 /* Kategorie-Leiste: Icon, Name und ein Grund zum Klicken (bester echter Rabatt oder Einstiegspreis) */
@@ -998,15 +1001,15 @@ function render(){
         ${thumb(p)}
         <div class="info"><div class="brand">${esc(p.brand)}</div><h2>${esc(titleOf(p))} <span style="color:var(--muted);font-weight:500">${esc(p.model)}</span></h2>
           <div class="specs">${specChips(p)}</div></div>
-        <div class="price"><span class="lbl">${b.real?`<span class="otag real">Echter Preis</span> `:""}${lbl}</span><span class="amt num"><small>CHF</small>${total(b).toFixed(2)}</span>
-          <span class="meta">${esc(b.seller)}${S.ship?(b.pickup?" · Abholung":b.ship?` · inkl. ${b.ship.toFixed(2)} Versand`:" · gratis Versand"):""}</span>${dealBadge(p,b)}${scarce(b)}
+        <div class="price"><span class="lbl">${realTag(b)?`<span class="otag real">Echter Preis</span> `:""}${lbl}</span><span class="amt num"><small>CHF</small>${total(b).toFixed(2)}</span>
+          <span class="meta">${shopLogo(b.seller)}${esc(b.seller)}${S.ship?(b.pickup?" · Abholung":b.ship?` · inkl. ${b.ship.toFixed(2)} Versand`:" · gratis Versand"):""}</span>${dealBadge(p,b)}${scarce(b)}
           ${S.cond==="neu"&&usedMin?`<button type="button" class="usedhint" data-cond="alle">Occasion ab CHF ${usedMin.toFixed(2)}</button>`:""}</div>
       </div>
       <div class="cfoot"><div class="srcs">${srcSet.map(s=>`<span class="src ${s}">${SRC.find(x=>x[0]===s)[1]}</span>`).join("")}<span>${nNew} Neu-Angebote${used.length?` · ${used.length} Occasion`:""}</span></div>
         <button type="button" class="toggle" data-open="${p.id}" aria-expanded="${isOpen}">${isOpen?"Angebote ausblenden":`Alle ${p.offers.length} Angebote`}</button></div>
       ${isOpen?(()=>{const live=liveOffers(p).sort((a,c)=>total(a)-total(c)),hidden=p.offers.length-live.length;
         return `${tipHTML(p,live)}${histHTML(p)}<div class="olist">${live.map(o=>`<div class="orow ${o===b?"best":""}">
-          <div class="oshop"><b>${esc(o.seller)}</b>${o.real?`<span class="otag real">Echter Preis</span>`:""}${o===b?`<span class="otag win">Bestpreis</span>`:""}${o.cond==="occ"?`<span class="otag">Occasion</span>`:""}${o.src!=="shop"?`<span class="src ${o.src}">${SRC.find(x=>x[0]===o.src)[1]}</span>`:""}${o.foreign?`<span class="otag">Ausland</span>`:""}
+          <div class="oshop">${shopLogo(o.seller)}<b>${esc(o.seller)}</b>${realTag(o)?`<span class="otag real">Echter Preis</span>`:""}${o===b?`<span class="otag win">Bestpreis</span>`:""}${o.cond==="occ"?`<span class="otag">Occasion</span>`:""}${o.src!=="shop"?`<span class="src ${o.src}">${SRC.find(x=>x[0]===o.src)[1]}</span>`:""}${o.foreign?`<span class="otag">Ausland</span>`:""}
             <span class="odel"><span class="dot ${o.stock?"ok":"wait"}"></span>${esc(o.deliv)}${o.src!=="shop"&&o.place?` · ${esc(o.place)}`:""}</span></div>
           <div class="oprice num"><b>CHF ${total(o).toFixed(2)}</b><small>${o.pickup?"Abholung":!S.ship?"zzgl. Versand":o.ship?`inkl. ${o.ship.toFixed(2)} Versand`:"gratis Versand"}</small></div>
           ${o.real?`<a class="go" href="${esc(o.url)}" target="_blank" rel="sponsored noopener noreferrer">Zum Shop</a>`:`<button type="button" class="go" data-go="${esc(o.seller)}">Zum Shop</button>`}
@@ -1064,8 +1067,14 @@ $("cats").addEventListener("click",e=>{
 const BW_END=new Date("2026-11-30T23:59:59+01:00");          // Ende Cyber Monday, Schweizer Zeit
 const QUICK=["GTA VI","PS5 Pro","OLED 65 Zoll","iPhone 16 Pro","Monitor 27 Zoll 144 Hz","DualSense"];
 const catOf=p=>CATS.find(c=>c.id===p.category);
+/* Shop-Logo (img/shop-<name>.png) vor dem Shopnamen */
+function shopLogo(seller){
+  const slug=String(seller).toLowerCase().split(/[\s(.]/)[0].replace(/[^a-z0-9]/g,"");
+  return IMAGES.has(`shop-${slug}.png`)?`<img class="slogo" src="img/shop-${slug}.png" alt="" width="18" height="18">`:"";
+}
+const realTag=o=>o.real&&!ALLREAL;
 /* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
-const IMAGES=new Set(["mascot-happy.webp", "p-apple-airpods5-anc.webp", "p-gta6-ps5.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sam-s25edge-256.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp"]);
+const IMAGES=new Set(["mascot-happy.webp", "p-apple-airpods5-anc.webp", "p-gta6-ps5.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sam-s25edge-256.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp", "shop-interdiscount.png", "shop-mediamarkt.png"]);
 function imgFor(p){
   if(p.image)return p.image;
   for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;
@@ -1090,7 +1099,7 @@ function spark(h){
 }
 function topDeals(){return PRODUCTS.map(p=>({p,d:dealInfo(p)})).filter(x=>x.d&&x.d.pct>=.03).sort((a,b)=>b.d.pct-a.d.pct)}
 /* Deal des Tages: GTA-VI-Setup zum Anklicken. Teile an- und abwählen, Summe zählt mit. */
-const HB={tv:true,ps5:true,gta:true,ps5Key:null};
+const HB={tv:true,ps5:true,gta:true,ps5Key:null,step:0};
 const HB_ON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',HB_OFF='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>';
 let hbShown=0,hbAnim=0,hbInit=false;
 function hbItems(){
@@ -1103,6 +1112,17 @@ function countTo(el,to){
   const from=hbShown,t0=performance.now(),d=550;
   const step=t=>{const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=(from+(to-from)*e).toFixed(2);if(k<1)hbAnim=requestAnimationFrame(step);else hbShown=to};
   hbAnim=requestAnimationFrame(step);
+}
+/* Shops erlauben keinen fremden Warenkorb: Hamstr führt durch die Bestellung, ein Teil nach dem anderen */
+function orderHTML(on,sellers){
+  if(!on.length)return "";
+  const n=on.length,step=Math.min(HB.step,n);
+  if(step>=n)return `<div class="ord done"><b>Alle ${n} Teile geöffnet.</b> Viel Spass beim Hamstern! <button type="button" class="ord-reset" data-hbreset>Nochmal von vorn</button></div>`;
+  const i=on[step],o=i.o,one=sellers.length===1;
+  const label=`${one?`Bei ${esc(o.seller)} bestellen`:"Jetzt bestellen"} · ${step+1}/${n}: ${esc(titleOf(i.p))}${one?"":` bei ${esc(o.seller)}`}`;
+  const dots=on.map((x,k)=>`<span class="${k<step?"ok":k===step?"now":""}"></span>`).join("");
+  return `${o.real?`<a class="dcta ord-go" href="${esc(o.url)}" target="_blank" rel="sponsored noopener noreferrer" data-hbnext>${label} →</a>`:`<button type="button" class="dcta ord-go" data-hbnext data-go="${esc(o.seller)}">${label} →</button>`}
+    <div class="ord"><span class="ord-dots">${dots}</span>Shops erlauben keinen gemeinsamen Warenkorb von aussen. Hamstr öffnet die Produkte nacheinander, du legst sie mit einem Klick in den Warenkorb.</div>`;
 }
 function renderDotd(){
   const items=hbItems().map(i=>({...i,o:bestOf(newShop(i.p))})),on=items.filter(i=>HB[i.k]);
@@ -1127,7 +1147,7 @@ function renderDotd(){
           <span class="hb-k">${esc(i.label)}</span>
           <b class="hb-n">${esc(titleOf(i.p))}</b>
           <span class="hb-p num">CHF ${tot(i.o).toFixed(2)}</span>
-          <span class="hb-s">${esc(i.o.seller)}${i.o.real?" · echter Preis":""}</span>
+          <span class="hb-s">${shopLogo(i.o.seller)}${esc(i.o.seller)}${realTag(i.o)?" · echter Preis":""}</span>
         </button>
         ${i.k==="ps5"&&ps5s.length>1?`<div class="hb-var">${ps5s.map(p=>`<button type="button" data-hbps5="${p.key}" aria-pressed="${p.key===i.p.key}">${p.disc?"Mit Laufwerk":"Digital"}</button>`).join("")}</div>`:""}
         ${i.o.real?`<a class="hb-go" href="${esc(i.o.url)}" target="_blank" rel="sponsored noopener noreferrer">Zum Shop</a>`:`<button type="button" class="hb-go" data-go="${esc(i.o.seller)}">Zum Shop</button>`}
@@ -1137,11 +1157,22 @@ function renderDotd(){
         <span class="hb-ship">${on.length?"inkl. Versand":"Tippe ein Teil an"}</span></div>
       <strong class="num"><small>CHF</small><span id="hbSum">${hbShown.toFixed(2)}</span></strong>
     </div>
-    <button type="button" class="dcta" data-preset="setup">Setup anpassen: TV-Grösse, Controller, Occasion</button>`;
+    ${orderHTML(on,sellers)}`;
   countTo($("hbSum"),sum);
 }
 function renderDeals(){
   const list=topDeals().slice(0,8);
+  if(!list.length){
+    $("dealsH").textContent="Gerade im Vergleich";
+    $("dealsP").textContent="Echte Angebote, geprüft am "+(UPDATED?UPDATED.toLocaleDateString("de-CH"):"heute")+". Immer das günstigste zuerst.";
+    const ps=[...PRODUCTS].filter(p=>bestOf(newShop(p))).sort((a,b)=>tot(bestOf(newShop(a)))-tot(bestOf(newShop(b))));
+    $("deals").innerHTML=ps.map(p=>{const o=bestOf(newShop(p)),n=new Set(newShop(p).map(x=>x.seller)).size;
+      return `<button type="button" class="deal-card" data-goto="${esc(p.key)}">${pimg(p)}
+        <span class="b">${esc(p.brand)} · ${esc(catOf(p).name)}</span><span class="n">${esc(titleOf(p))}</span>
+        <span class="pr"><strong class="num">CHF ${tot(o).toFixed(2)}</strong></span>
+        <span class="why">${shopLogo(o.seller)}${esc(o.seller)}${o.ship?` · inkl. ${o.ship.toFixed(2)} Versand`:" · gratis Versand"}${n>1?` · ${n} Shops verglichen`:""}</span></button>`}).join("");
+    return;
+  }
   $("deals").innerHTML=list.length?list.map(({p,d})=>`<button type="button" class="deal-card" data-goto="${esc(p.key)}">
       ${pimg(p)}
       <span class="top"><span><span class="b">${esc(p.brand)} · ${esc(catOf(p).name)}</span><br><span class="n">${esc(titleOf(p))}</span></span><span class="pct num">−${Math.round(d.pct*100)} %</span></span>
@@ -1190,7 +1221,7 @@ function renderBundles(){
     return `<article class="bcard ${b.big?"big":""}">
       <div class="bt"><h3>${esc(b.title)}</h3><span>${esc(b.sub)}</span></div>
       <div class="bimgs">${c.rows.map(({p})=>pimg(p,"bimg")).join("")}</div>
-      <ul>${c.rows.map(({p,o})=>`<li><span>${esc(titleOf(p))}<em>${esc(o.seller)}${o.real?" · echter Preis":""}</em></span><b class="num">${tot(o).toFixed(2)}</b></li>`).join("")}</ul>
+      <ul>${c.rows.map(({p,o})=>`<li><span>${esc(titleOf(p))}<em>${esc(o.seller)}${realTag(o)?" · echter Preis":""}</em></span><b class="num">${tot(o).toFixed(2)}</b></li>`).join("")}</ul>
       <div class="btot"><span>Zusammen</span><strong class="num"><small>CHF</small>${c.mix.toFixed(2)}</strong></div>
       <div class="bsave num">${save?`<span class="g">−${save.toFixed(0)} CHF unter 30-Tage-Ø</span>`:""}${best1&&best1.sum>c.mix?`<span>${(best1.sum-c.mix).toFixed(0)} CHF günstiger als alles bei ${esc(best1.s)}</span>`:""}</div>
       <button type="button" class="badj" data-preset="${b.id}">Anpassen</button>
@@ -1240,7 +1271,7 @@ function tick(){
   const d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60,s=Math.floor(ms/1e3)%60;
   $("countdown").innerHTML=[[d,"Tage"],[h,"Std"],[m,"Min"],[s,"Sek"]].map(([v,l])=>`<div><b>${String(v).padStart(2,"0")}</b><span>${l}</span></div>`).join("");
 }
-function renderHome(){if(!B.touched&&cheapPS5())B.console=cheapPS5().key;renderDotd();renderBundles();renderDeals();renderBundle();renderCatTiles()}
+function renderHome(){$("bundles")&&renderBundles();$("bundle")&&renderBundle();if(!B.touched&&cheapPS5())B.console=cheapPS5().key;renderDotd();renderDeals();renderCatTiles()}
 function goSearch(q){$("q").value=q;if(location.hash!=="#vergleich")location.hash="vergleich";applyQuery(q);window.scrollTo(0,0)}
 function goProduct(key){
   const p=byKey(key);if(!p)return;lastOpen=p.id;S.cat=p.category;open.clear();open.add(p.id);
@@ -1251,8 +1282,10 @@ $("quick").addEventListener("click",e=>{const b=e.target.closest("[data-q]");if(
 $("heroForm").addEventListener("submit",e=>{e.preventDefault();goSearch($("hq").value)});
 $("homeView").addEventListener("click",e=>{
   const g=e.target.closest("[data-goto]");if(g)return goProduct(g.dataset.goto);
-  const hb=e.target.closest("[data-hb]");if(hb){HB[hb.dataset.hb]=!HB[hb.dataset.hb];renderDotd();return}
-  const hv=e.target.closest("[data-hbps5]");if(hv){HB.ps5Key=hv.dataset.hbps5;HB.ps5=true;renderDotd();return}
+  const nx=e.target.closest("[data-hbnext]");if(nx){if(nx.dataset.go)toast(`Demo: Hier geht es direkt zu ${nx.dataset.go}.`);setTimeout(()=>{HB.step++;renderDotd()},150);return}
+  if(e.target.closest("[data-hbreset]")){HB.step=0;renderDotd();return}
+  const hb=e.target.closest("[data-hb]");if(hb){HB[hb.dataset.hb]=!HB[hb.dataset.hb];HB.step=0;renderDotd();return}
+  const hv=e.target.closest("[data-hbps5]");if(hv){HB.ps5Key=hv.dataset.hbps5;HB.ps5=true;HB.step=0;renderDotd();return}
   const go=e.target.closest("button[data-go]");if(go){toast(`Demo: Hier geht es direkt zu ${go.dataset.go}, ohne Umweg über Werbe-Tracker.`);return}
   const pr=e.target.closest("[data-preset]");if(pr){Object.assign(B,PRESETS.find(x=>x.id===pr.dataset.preset).cfg(),{occ:false});renderBundle();$("setup").scrollIntoView({behavior:"smooth"});return}
   const c=e.target.closest(".cat-tile[data-cat]");if(c){S.cat=c.dataset.cat;open.clear();goSearch(CAT().default_query||"");return}
