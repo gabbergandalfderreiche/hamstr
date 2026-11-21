@@ -387,6 +387,45 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 /* Produktfotos stehen auf Weiss, wie in Shops üblich */
 .pimg,.bimg,.dimg,img.thumb{background:#fff;padding:4px}
 .dimg{border-radius:14px;max-height:220px}
+/* Deal des Tages: interaktives Setup */
+.dotd{margin-top:0;gap:10px;box-shadow:0 0 0 1px #F5B83D44,0 20px 60px -20px #FF7A2F55;animation:glow 3.2s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 1px #F5B83D99,0 24px 70px -18px #FF7A2F99}}
+.dotd .dk{margin-top:0}.dotd{margin-top:0!important}
+.hb-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.hb-new{background:#FF5A1F;color:#fff;font-weight:800;font-size:12px;border-radius:999px;padding:4px 10px;letter-spacing:.03em}
+.dotd .hb-h{font-family:var(--f-display);font-weight:800;font-size:34px;line-height:1.05;margin:2px 0 0;letter-spacing:-.03em;padding:0}
+.hb-sub{margin:0;color:var(--night-mute);font-size:14px}
+.hb-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:6px}
+.hb-cell{display:flex;flex-direction:column;gap:6px;min-width:0}
+.hb-item{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;border:2px solid #F5B83D;background:#ffffff0c;border-radius:16px;padding:10px;color:var(--night-ink);cursor:pointer;transition:transform .15s,border-color .15s,background .15s;min-width:0}
+.hb-item:hover{transform:translateY(-2px)}
+.hb-item:active{transform:scale(.97)}
+.hb-cell.off .hb-item{border-color:#ffffff26;border-style:dashed;background:transparent}
+.hb-cell.off .hb-img,.hb-cell.off .hb-n,.hb-cell.off .hb-p{opacity:.38}
+.hb-cell.off .hb-p{text-decoration:line-through}
+.hb-check{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;background:#F5B83D;color:#1F1200;display:grid;place-items:center;z-index:1;box-shadow:0 2px 8px #0006}
+.hb-check svg{width:16px;height:16px}
+.hb-cell.off .hb-check{background:#ffffff22;color:var(--night-ink)}
+.hb-img{width:100%;aspect-ratio:16/11;background:#fff;border-radius:11px;display:grid;place-items:center;overflow:hidden;color:var(--accent)}
+.hb-img img{width:100%;height:100%;object-fit:contain;padding:6px}
+.hb-img svg{width:60%;height:60%}
+.hb-k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:700;margin-top:4px}
+.hb-n{font-size:14px;line-height:1.2;overflow-wrap:anywhere}
+.hb-p{font-family:var(--f-display);font-weight:800;font-size:19px}
+.hb-s{font-size:11.5px;color:var(--night-mute)}
+.hb-var{display:flex;gap:4px}
+.hb-var button{flex:1;border:1px solid #ffffff2a;background:transparent;color:var(--night-mute);border-radius:8px;padding:5px 4px;font-size:11.5px;font-weight:600}
+.hb-var button[aria-pressed="true"]{background:var(--night-ink);color:#1F1200;border-color:transparent}
+.hb-go{display:block;text-align:center;text-decoration:none;border:1px solid #ffffff33;background:transparent;color:var(--night-ink);border-radius:9px;padding:7px;font-size:12.5px;font-weight:700}
+.hb-go:hover{background:#ffffff14}
+.hb-total{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-top:1px solid #ffffff1f;padding-top:12px;margin-top:4px;flex-wrap:wrap}
+.hb-total>div{display:flex;flex-direction:column;gap:2px}
+.hb-cnt{font-size:13.5px;font-weight:600}
+.hb-ship{font-size:12px;color:var(--night-mute)}
+.hb-total strong{font-family:var(--f-display);font-weight:800;font-size:clamp(40px,5vw,58px);line-height:1;color:var(--gold);letter-spacing:-.03em}
+.hb-total strong small{font-size:18px;color:var(--night-mute);margin-right:6px;font-family:var(--f-body)}
+@media (max-width:560px){.hb-items{grid-template-columns:minmax(0,1fr)}.hb-img{aspect-ratio:16/9}}
+@media (prefers-reduced-motion:reduce){.dotd{animation:none}}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
 
 /* drawer on narrow screens */
@@ -918,7 +957,7 @@ const BW_END=new Date("2026-11-30T23:59:59+01:00");          // Ende Cyber Monda
 const QUICK=["GTA VI","PS5 Pro","OLED 65 Zoll","iPhone 16 Pro","Monitor 27 Zoll 144 Hz","DualSense"];
 const catOf=p=>CATS.find(c=>c.id===p.category);
 /* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
-const IMAGES=new Set(["cat-tv.webp", "mascot-happy.webp", "mascot-wink.webp", "p-gta6-ps5.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp"]);
+const IMAGES=new Set(["mascot-happy.webp", "p-gta6-ps5.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp"]);
 function imgFor(p){
   if(p.image)return p.image;
   for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;
@@ -942,24 +981,59 @@ function spark(h){
   return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true"><polyline points="${d}" style="fill:none;stroke:var(--accent);stroke-width:2" vector-effect="non-scaling-stroke"/></svg>`;
 }
 function topDeals(){return PRODUCTS.map(p=>({p,d:dealInfo(p)})).filter(x=>x.d&&x.d.pct>=.03).sort((a,b)=>b.d.pct-a.d.pct)}
+/* Deal des Tages: GTA-VI-Setup zum Anklicken. Teile an- und abwählen, Summe zählt mit. */
+const HB={tv:true,ps5:true,gta:true,ps5Key:null};
+const HB_ON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',HB_OFF='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>';
+let hbShown=0,hbAnim=0,hbInit=false;
+function hbItems(){
+  const ps5=byKey(HB.ps5Key)||cheapPS5();
+  return [{k:"gta",label:"Das Spiel",p:byKey("gta6-ps5")},{k:"ps5",label:"Die Konsole",p:ps5},{k:"tv",label:"Der Fernseher",p:realTV(55)||pickTV(55)}].filter(i=>i.p&&bestOf(newShop(i.p)));
+}
+function countTo(el,to){
+  cancelAnimationFrame(hbAnim);
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){hbShown=to;el.textContent=to.toFixed(2);return}
+  const from=hbShown,t0=performance.now(),d=550;
+  const step=t=>{const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=(from+(to-from)*e).toFixed(2);if(k<1)hbAnim=requestAnimationFrame(step);else hbShown=to};
+  hbAnim=requestAnimationFrame(step);
+}
 function renderDotd(){
-  const t=topDeals()[0];
-  if(!t){$("dotd").hidden=true;return}
-  const {p,d}=t;$("dotd").hidden=false;
-  $("dotd").innerHTML=`<img class="dmascot" src="img/mascot-wink.webp" alt="" width="120" height="120"><div class="dbubble">Hab ich geprüft: echter Rabatt!</div>
-    <div class="dk">Deal des Tages</div>
-    <div class="dpct num">−${Math.round(d.pct*100)}<small>%</small></div>
-    <div class="db">${esc(p.brand)} · ${esc(catOf(p).name)}</div>
-    <h2>${esc(titleOf(p))}</h2>
-    ${pimg(p,"dimg")}
-    <div class="dprice num"><small>CHF</small>${d.now.toFixed(2)}</div>
-    <div class="dvs num">Ø der letzten 30 Tage: CHF ${p.avg30.toFixed(2)}${d.lowest?` · <b>Tiefstpreis seit 90 Tagen</b>`:""}</div>
-    ${spark(p.history)}
-    <div class="dshop">bei ${esc(d.b.seller)}${d.b.ship?` · inkl. ${d.b.ship.toFixed(2)} Versand`:" · gratis Versand"} ${scarce(d.b)}</div>
-    <button type="button" class="dcta" data-goto="${esc(p.key)}">Alle Angebote vergleichen</button>`;
+  const items=hbItems().map(i=>({...i,o:bestOf(newShop(i.p))})),on=items.filter(i=>HB[i.k]);
+  // Bei gleichem Preis den Shop nehmen, bei dem ohnehin bestellt wird: weniger Bestellungen, gleicher Preis
+  const freq={};on.forEach(i=>newShop(i.p).filter(o=>tot(o)<=tot(i.o)+.001).forEach(o=>freq[o.seller]=(freq[o.seller]||0)+1));
+  items.forEach(i=>{const ties=newShop(i.p).filter(o=>tot(o)<=tot(i.o)+.001);if(ties.length>1)i.o=ties.sort((a,b)=>(freq[b.seller]||0)-(freq[a.seller]||0))[0]});
+  if(!items.length){$("dotd").hidden=true;return}
+  $("dotd").hidden=false;
+  const sum=on.reduce((s,i)=>s+tot(i.o),0);
+  if(!hbInit){hbShown=sum;hbInit=true}          // erster Aufbau ohne Hochzählen: Summe steht sofort
+  const sellers=[...new Set(on.map(i=>i.o.seller))];
+  const ps5s=["sony-ps5-slim","sony-ps5-slim-digital"].map(byKey).filter(p=>p&&bestOf(newShop(p)));
+  $("dotd").innerHTML=`
+    <div class="hb-top"><span class="dk">Deal des Tages</span><span class="hb-new">GTA VI ist da</span></div>
+    <h2 class="hb-h">Dein GTA-VI-Setup</h2>
+    <p class="hb-sub">Tippe an, was du schon hast. Hamstr rechnet sofort mit dem günstigsten Shop pro Teil.</p>
+    <div class="hb-items">${items.map(i=>`
+      <div class="hb-cell ${HB[i.k]?"on":"off"}">
+        <button type="button" class="hb-item" data-hb="${i.k}" aria-pressed="${HB[i.k]}" aria-label="${esc(i.label)} ${HB[i.k]?"abwählen":"dazunehmen"}">
+          <span class="hb-check" aria-hidden="true">${HB[i.k]?HB_ON:HB_OFF}</span>
+          <span class="hb-img">${imgFor(i.p)?`<img src="${esc(imgFor(i.p))}" alt="" loading="lazy">`:`<svg viewBox="-6 -2 36 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${CAT_ICON[i.p.category]||""}</svg>`}</span>
+          <span class="hb-k">${esc(i.label)}</span>
+          <b class="hb-n">${esc(titleOf(i.p))}</b>
+          <span class="hb-p num">CHF ${tot(i.o).toFixed(2)}</span>
+          <span class="hb-s">${esc(i.o.seller)}${i.o.real?" · echter Preis":""}</span>
+        </button>
+        ${i.k==="ps5"&&ps5s.length>1?`<div class="hb-var">${ps5s.map(p=>`<button type="button" data-hbps5="${p.key}" aria-pressed="${p.key===i.p.key}">${p.disc?"Mit Laufwerk":"Digital"}</button>`).join("")}</div>`:""}
+        ${i.o.real?`<a class="hb-go" href="${esc(i.o.url)}" target="_blank" rel="sponsored noopener noreferrer">Zum Shop</a>`:`<button type="button" class="hb-go" data-go="${esc(i.o.seller)}">Zum Shop</button>`}
+      </div>`).join("")}</div>
+    <div class="hb-total">
+      <div><span class="hb-cnt">${on.length} ${on.length===1?"Teil":"Teile"}${on.length&&sellers.length===1?` · alles bei ${esc(sellers[0])}, eine Bestellung`:on.length?` · bei ${sellers.length} Shops`:""}</span>
+        <span class="hb-ship">${on.length?"inkl. Versand":"Tippe ein Teil an"}</span></div>
+      <strong class="num"><small>CHF</small><span id="hbSum">${hbShown.toFixed(2)}</span></strong>
+    </div>
+    <button type="button" class="dcta" data-preset="setup">Setup anpassen: TV-Grösse, Controller, Occasion</button>`;
+  countTo($("hbSum"),sum);
 }
 function renderDeals(){
-  const list=topDeals().slice(1,9);
+  const list=topDeals().slice(0,8);
   $("deals").innerHTML=list.length?list.map(({p,d})=>`<button type="button" class="deal-card" data-goto="${esc(p.key)}">
       ${pimg(p)}
       <span class="top"><span><span class="b">${esc(p.brand)} · ${esc(catOf(p).name)}</span><br><span class="n">${esc(titleOf(p))}</span></span><span class="pct num">−${Math.round(d.pct*100)} %</span></span>
@@ -1069,6 +1143,9 @@ $("quick").addEventListener("click",e=>{const b=e.target.closest("[data-q]");if(
 $("heroForm").addEventListener("submit",e=>{e.preventDefault();goSearch($("hq").value)});
 $("homeView").addEventListener("click",e=>{
   const g=e.target.closest("[data-goto]");if(g)return goProduct(g.dataset.goto);
+  const hb=e.target.closest("[data-hb]");if(hb){HB[hb.dataset.hb]=!HB[hb.dataset.hb];renderDotd();return}
+  const hv=e.target.closest("[data-hbps5]");if(hv){HB.ps5Key=hv.dataset.hbps5;HB.ps5=true;renderDotd();return}
+  const go=e.target.closest("button[data-go]");if(go){toast(`Demo: Hier geht es direkt zu ${go.dataset.go}, ohne Umweg über Werbe-Tracker.`);return}
   const pr=e.target.closest("[data-preset]");if(pr){Object.assign(B,PRESETS.find(x=>x.id===pr.dataset.preset).cfg(),{occ:false});renderBundle();$("setup").scrollIntoView({behavior:"smooth"});return}
   const c=e.target.closest(".cat-tile[data-cat]");if(c){S.cat=c.dataset.cat;open.clear();goSearch(CAT().default_query||"");return}
   const b=e.target.closest("button[data-b]");if(b){B.touched=true;const k=b.dataset.b;B[k]=k==="size"?+b.dataset.v:b.dataset.v;renderBundle()}
