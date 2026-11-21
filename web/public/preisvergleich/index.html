@@ -1079,7 +1079,7 @@ function shopLogo(seller){
 }
 const realTag=o=>o.real&&!ALLREAL;
 /* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
-const IMAGES=new Set(["mascot-happy.webp", "p-apple-airpods5-anc.webp", "p-gta6-ps5.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sam-s25edge-256.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp", "shop-digitec.png", "shop-interdiscount.png", "shop-mediamarkt.png"]);
+const IMAGES=new Set(["mascot-happy.webp", "p-apple-airpods5-anc.webp", "p-gta6-ps5.webp", "p-lg-qned72b-65.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sam-m70h-65.webp", "p-sam-q8f-65.webp", "p-sam-s25edge-256.webp", "p-sam-u8090h-65.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp", "shop-digitec.png", "shop-interdiscount.png", "shop-mediamarkt.png"]);
 function imgFor(p){
   if(p.image)return p.image;
   for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;

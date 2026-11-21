@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T21:25:06+00:00",
+ "generated_at": "2026-11-21T21:33:39+00:00",
  "categories": [
   {
    "id": "tv",
@@ -577,6 +577,198 @@
      "condition": "neu",
      "in_stock": 1,
      "availability": "Lieferung am Dienstag",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "lg-qned72b-65",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "65QNED72B6B.AVS",
+   "line": "QNED72B",
+   "variant": 65,
+   "label": "QNED72B 65″",
+   "size": 65,
+   "panel": "Mini-LED",
+   "hz": 60,
+   "res": "4K",
+   "os": "webOS",
+   "hdmi21": false,
+   "best_new": 499.95,
+   "best_any": 499.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     499.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Interdiscount",
+     "title": "LG 65QNED72B Smart AI TV (65\", QNED MiniLED)",
+     "url": "https://www.interdiscount.ch/de/product/lg-65qned72b-smart-ai-tv-65-qned-miniled-ultra-hd-4k-0014508058",
+     "price": 499.95,
+     "shipping": 0.0,
+     "total": 499.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Lieferung am Dienstag",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "sam-m70h-65",
+   "category": "tv",
+   "brand": "Samsung",
+   "mpn": "UE65M70HAUXXN",
+   "line": "Mini LED M70H",
+   "variant": 65,
+   "label": "Mini LED M70H 65″",
+   "size": 65,
+   "panel": "Mini-LED",
+   "hz": null,
+   "res": "4K",
+   "os": "Tizen",
+   "hdmi21": false,
+   "best_new": 499.95,
+   "best_any": 499.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     499.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Interdiscount",
+     "title": "SAMSUNG UE65M70H Smart AI TV (65\", Mini LED)",
+     "url": "https://www.interdiscount.ch/de/product/samsung-ue65m70h-smart-ai-tv-65-mini-led-ultra-hd-4k-0014444930",
+     "price": 499.95,
+     "shipping": 0.0,
+     "total": 499.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Lieferung am Donnerstag",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "sam-u8090h-65",
+   "category": "tv",
+   "brand": "Samsung",
+   "mpn": "UE65U8090HUXXN",
+   "line": "Crystal UHD U8090H",
+   "variant": 65,
+   "label": "Crystal UHD U8090H 65″",
+   "size": 65,
+   "panel": "LED",
+   "hz": 60,
+   "res": "4K",
+   "os": "Tizen",
+   "hdmi21": false,
+   "best_new": 499.95,
+   "best_any": 499.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     499.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Interdiscount",
+     "title": "SAMSUNG UE65U8090H Smart TV (65\", Crystal UHD)",
+     "url": "https://www.interdiscount.ch/de/product/samsung-ue65u8090h-smart-tv-65-crystal-uhd-ultra-hd-4k-0014444594",
+     "price": 499.95,
+     "shipping": 0.0,
+     "total": 499.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Lieferung am Donnerstag",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "sam-q8f-65",
+   "category": "tv",
+   "brand": "Samsung",
+   "mpn": "QE65Q8FAAUXXN",
+   "line": "Q8F",
+   "variant": 65,
+   "label": "Q8F 65″",
+   "size": 65,
+   "panel": "QLED",
+   "hz": 60,
+   "res": "4K",
+   "os": "Tizen",
+   "hdmi21": false,
+   "best_new": 599.95,
+   "best_any": 599.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     599.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Interdiscount",
+     "title": "SAMSUNG QE65Q8F Smart AI TV (65\", QLED)",
+     "url": "https://www.interdiscount.ch/de/product/samsung-qe65q8f-smart-ai-tv-65-qled-ultra-hd-4k-0014298967",
+     "price": 599.95,
+     "shipping": 0.0,
+     "total": 599.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Lieferung am Dienstag, in 150 Filialen",
      "pickup": 0,
      "place": null,
      "country": "CH",
