@@ -15,8 +15,11 @@
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.45 system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Hamstr</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Bricolage Grotesque";src:url("fonts/bricolage.woff2") format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Inter";src:url("fonts/inter.woff2") format("woff2");font-weight:100 900;font-display:swap}
+</style>
 <style>
 /* Layout: sticky search header · filter rail left (drawer on phone) · result list always sorted cheapest-first */
 :root{
@@ -426,7 +429,41 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 .hb-ship{font-size:12px;color:var(--night-mute)}
 .hb-total strong{font-family:var(--f-display);font-weight:800;font-size:clamp(40px,5vw,58px);line-height:1;color:var(--gold);letter-spacing:-.03em}
 .hb-total strong small{font-size:18px;color:var(--night-mute);margin-right:6px;font-family:var(--f-body)}
-@media (max-width:560px){.hb-items{grid-template-columns:minmax(0,1fr)}.hb-img{aspect-ratio:16/9}}
+/* Handy: Setup als drei kompakte Zeilen direkt unter der Suche, kein Endlos-Scrollen */
+@media (max-width:880px){
+  .bf-top{padding-block:18px 22px;gap:14px}
+  .bf-head{display:contents}
+  .bf-kick{order:1}.bf h1{order:2}.bf .count{order:3}.hsearch{order:4}.dotd{order:5}.bf-claim,.quick{display:none}
+  .bf h1{font-size:clamp(30px,8.5vw,44px);margin:0}
+  .bf .count{margin:0;max-width:none;gap:6px}
+  .bf .count div{padding:7px 4px}.bf .count b{font-size:22px}.bf .count span{font-size:10px}
+  .bf-kick{display:block;font-size:11.5px;line-height:1.4}.bf-kick .pulse{display:inline-block;vertical-align:middle;margin-right:6px}
+  body:has(#homeView:not([hidden])) header .search{display:none}   /* Startseite hat ihre eigene grosse Suche */
+}
+@media (max-width:560px){
+  .dotd{padding:16px;gap:8px;border-radius:18px}
+  .dotd .hb-h{font-size:24px}
+  .hb-sub{font-size:13px}
+  .hb-items{grid-template-columns:minmax(0,1fr);gap:8px}
+  .hb-item{display:grid;grid-template-columns:76px minmax(0,1fr) auto;grid-template-areas:"img k p" "img n n" "img s s";column-gap:12px;row-gap:2px;align-items:center;padding:8px 10px 8px 8px;border-radius:14px}
+  .hb-img{grid-area:img;width:76px;aspect-ratio:4/3;border-radius:9px;align-self:center}
+  .hb-img img{padding:3px}
+  .hb-k{grid-area:k;margin:0;font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hb-n{grid-area:n;font-size:14px}
+  .hb-s{grid-area:s;font-size:11px}
+  .hb-p{grid-area:p;font-size:17px;text-align:right;white-space:nowrap}
+  .hb-check{top:3px;left:3px;right:auto;width:22px;height:22px}
+  .hb-check svg{width:12px;height:12px}
+  .hb-total{padding-top:10px}
+  .hb-total{align-items:center}
+  .deals{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .deal-card{padding:8px;gap:4px;border-radius:12px}
+  .deal-card .n{font-size:13.5px}
+  .deal-card .pr strong{font-size:18px}
+  .deal-card .why{font-size:11px}
+  .deal-card svg.spark{height:24px}
+  .hb-total strong{font-size:36px;white-space:nowrap}
+}
 @media (prefers-reduced-motion:reduce){.dotd{animation:none}}
 /* Zustand-Leiste über der Ergebnisliste */
 .condbar{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:12px}
@@ -640,7 +677,11 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 <main class="wrap page" id="page-datenschutz" hidden>
   <a class="back" href="#">← Zurück zum Preisvergleich</a>
   <h1>Datenschutz</h1>
-  <p class="todo">Datenschutzerklärung nach Schweizer Datenschutzgesetz (DSG) folgt.</p>
+  <p class="lead">Kurz: Hamstr setzt keine Cookies, hat kein Tracking und keine Werbung. Deshalb gibt es auch kein Cookie-Banner.</p>
+  <p><b>Was im Browser gespeichert wird:</b> nur deine Wahl zwischen hellem und dunklem Design (lokal in deinem Browser, wird nicht übertragen).</p>
+  <p><b>Hosting:</b> Die Seite läuft bei Vercel. Wie bei jeder Website verarbeitet der Server technische Daten wie IP-Adresse und Zeitpunkt des Aufrufs, um die Seite auszuliefern.</p>
+  <p><b>Schriften und Bilder</b> kommen von unserem eigenen Server, nicht von Google oder anderen Drittanbietern.</p>
+  <p><b>Links zu Shops:</b> Klickst du auf ein Angebot, gelten ab dort die Datenschutzregeln des jeweiligen Shops.</p>
 </main>
 <main class="wrap page" id="page-fehler-melden" hidden>
   <a class="back" href="#">← Zurück zum Preisvergleich</a>
@@ -1106,7 +1147,7 @@ function shopLogo(seller){
 }
 const realTag=o=>o.real&&!ALLREAL;
 /* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
-const IMAGES=new Set(["mascot-happy.webp", "p-apple-airpods5-anc.webp", "p-digitec-20244063.webp", "p-digitec-20328506.webp", "p-digitec-24924226.webp", "p-digitec-39997174.webp", "p-digitec-45058538.webp", "p-digitec-45068640.webp", "p-digitec-46520180.webp", "p-digitec-49942864.webp", "p-digitec-53093987.webp", "p-digitec-56419464.webp", "p-digitec-56419475.webp", "p-digitec-56449276.webp", "p-digitec-56570923.webp", "p-digitec-56677243.webp", "p-digitec-56677244.webp", "p-digitec-57490667.webp", "p-digitec-57490669.webp", "p-digitec-57490692.webp", "p-digitec-57491130.webp", "p-digitec-57617533.webp", "p-digitec-57945517.webp", "p-digitec-57946208.webp", "p-digitec-58627963.webp", "p-digitec-68955210.webp", "p-digitec-68955226.webp", "p-digitec-68955231.webp", "p-digitec-68955232.webp", "p-digitec-69071881.webp", "p-digitec-69071886.webp", "p-digitec-70573513.webp", "p-digitec-70573514.webp", "p-estar-55a1t2.webp", "p-gta6-ps5.webp", "p-his-55a6s.webp", "p-lg-55nano81a.webp", "p-lg-55nu800b.webp", "p-lg-55nu900b.webp", "p-lg-qned72b-65.webp", "p-majestic-fl55vd.webp", "p-phi-pqs7801-55.webp", "p-phi-pus7000-55.webp", "p-phi-pus7061-55.webp", "p-phi-pus7800-55.webp", "p-phi-pus7810-55.webp", "p-sam-m70h-55.webp", "p-sam-m70h-65.webp", "p-sam-q8f-65.webp", "p-sam-s25edge-256.webp", "p-sam-u8072h-55.webp", "p-sam-u8090h-65.webp", "p-sharp-55hp5465e.webp", "p-smarttech-55qg06k.webp", "p-smarttech-55qv02k.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp", "p-thomson-55-frameless.webp", "p-thomson-55qg6c14.webp", "p-xiaomi-apro-55-2026.webp", "shop-digitec.png", "shop-interdiscount.png", "shop-mediamarkt.png"]);
+const IMAGES=new Set(["mascot-happy.webp", "p-apple-airpods5-anc.webp", "p-conforama-597027.webp", "p-conforama-600137.webp", "p-conforama-611823.webp", "p-conforama-611945.webp", "p-conforama-634074.webp", "p-conforama-634085.webp", "p-conforama-634091.webp", "p-conforama-634103.webp", "p-conforama-637180.webp", "p-conforama-638758.webp", "p-conforama-640330.webp", "p-conforama-640340.webp", "p-conforama-640349.webp", "p-conforama-640353.webp", "p-conforama-641492.webp", "p-conforama-643412.webp", "p-conforama-643413.webp", "p-conforama-643416.webp", "p-conforama-643421.webp", "p-conforama-643424.webp", "p-conforama-643430.webp", "p-conforama-643433.webp", "p-conforama-643438.webp", "p-conforama-649127.webp", "p-conforama-649132.webp", "p-digitec-20244063.webp", "p-digitec-20328506.webp", "p-digitec-24924226.webp", "p-digitec-39997174.webp", "p-digitec-45058538.webp", "p-digitec-45068640.webp", "p-digitec-46520180.webp", "p-digitec-49942864.webp", "p-digitec-53093987.webp", "p-digitec-56419464.webp", "p-digitec-56419475.webp", "p-digitec-56449276.webp", "p-digitec-56570923.webp", "p-digitec-56677243.webp", "p-digitec-56677244.webp", "p-digitec-57490667.webp", "p-digitec-57490669.webp", "p-digitec-57490692.webp", "p-digitec-57491130.webp", "p-digitec-57617533.webp", "p-digitec-57945517.webp", "p-digitec-57946208.webp", "p-digitec-58627963.webp", "p-digitec-68955210.webp", "p-digitec-68955226.webp", "p-digitec-68955231.webp", "p-digitec-68955232.webp", "p-digitec-69071881.webp", "p-digitec-69071886.webp", "p-digitec-70573513.webp", "p-digitec-70573514.webp", "p-estar-55a1t2.webp", "p-gta6-ps5.webp", "p-his-55a6s.webp", "p-lg-55nano81a.webp", "p-lg-55nu800b.webp", "p-lg-55nu900b.webp", "p-lg-qned72b-65.webp", "p-majestic-fl55vd.webp", "p-phi-pqs7801-55.webp", "p-phi-pus7000-55.webp", "p-phi-pus7061-55.webp", "p-phi-pus7800-55.webp", "p-phi-pus7810-55.webp", "p-sam-m70h-55.webp", "p-sam-m70h-65.webp", "p-sam-q8f-65.webp", "p-sam-s25edge-256.webp", "p-sam-u8072h-55.webp", "p-sam-u8090h-65.webp", "p-sharp-55hp5465e.webp", "p-smarttech-55qg06k.webp", "p-smarttech-55qv02k.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp", "p-thomson-55-frameless.webp", "p-thomson-55qg6c14.webp", "p-xiaomi-apro-55-2026.webp", "shop-digitec.png", "shop-interdiscount.png", "shop-mediamarkt.png"]);
 function imgFor(p){
   if(p.image)return p.image;
   for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;
@@ -1219,7 +1260,9 @@ function renderDeals(){
   if(!list.length){
     $("dealsH").textContent="Gerade im Vergleich";
     $("dealsP").textContent="Echte Angebote, geprüft am "+(UPDATED?UPDATED.toLocaleDateString("de-CH"):"heute")+". Immer das günstigste zuerst.";
-    const ps=[...PRODUCTS].filter(p=>bestOf(newShop(p))).sort((a,b)=>tot(bestOf(newShop(a)))-tot(bestOf(newShop(b))));
+    // Pro Kategorie die zwei günstigsten, höchstens 8 Karten: ein Überblick, keine Endlos-Liste (die ganze Auswahl liegt hinter den Kategorien)
+    const all=[...PRODUCTS].filter(p=>bestOf(newShop(p))).sort((a,b)=>tot(bestOf(newShop(a)))-tot(bestOf(newShop(b)))),per={};
+    const ps=all.filter(p=>(per[p.category]=(per[p.category]||0)+1)<=2).slice(0,8);
     $("deals").innerHTML=ps.map(p=>{const o=bestOf(newShop(p)),n=new Set(newShop(p).map(x=>x.seller)).size;
       return `<button type="button" class="deal-card" data-goto="${esc(p.key)}">${pimg(p)}
         <span class="b">${esc(catOf(p).name)}</span><span class="n">${esc(niceName(p))}</span>

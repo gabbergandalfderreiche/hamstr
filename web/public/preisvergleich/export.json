@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T21:55:49+00:00",
+ "generated_at": "2026-11-21T22:03:53+00:00",
  "categories": [
   {
    "id": "tv",
@@ -455,6 +455,102 @@
    ]
   },
   {
+   "id": "conforama-600137",
+   "category": "tv",
+   "brand": "Polaroid",
+   "mpn": "VIDAA BORDERLESS",
+   "line": "VIDAA BORDERLESS",
+   "variant": 55,
+   "label": "VIDAA BORDERLESS 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 299.95,
+   "best_any": 299.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     299.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Polaroid VIDAA BORDERLESS (55\", QLED)",
+     "url": "https://www.conforama.ch/de/qled-fernseher-polaroid-vidaa-borderless-55/product/600137",
+     "price": 299.95,
+     "shipping": 0.0,
+     "total": 299.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-637180",
+   "category": "tv",
+   "brand": "Hisense",
+   "mpn": "55E7S",
+   "line": "55E7S",
+   "variant": 55,
+   "label": "55E7S 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 299.95,
+   "best_any": 299.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     299.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Hisense 55E7S (55\", QLED)",
+     "url": "https://www.conforama.ch/de/tv-qled-hisense-55e7s-55/product/637180",
+     "price": 299.95,
+     "shipping": 0.0,
+     "total": 299.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
    "id": "phi-pus7000-55",
    "category": "tv",
    "brand": "Philips",
@@ -879,6 +975,54 @@
    ]
   },
   {
+   "id": "conforama-597027",
+   "category": "tv",
+   "brand": "Roadstar",
+   "mpn": "LED555UHD",
+   "line": "LED555UHD",
+   "variant": 55,
+   "label": "LED555UHD 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 349.95,
+   "best_any": 349.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     349.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Roadstar LED555UHD (55\", LED)",
+     "url": "https://www.conforama.ch/de/led-fernseher-roadstar-55-140-cm/product/597027",
+     "price": 349.95,
+     "shipping": 0.0,
+     "total": 349.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
    "id": "smarttech-55qv02k",
    "category": "tv",
    "brand": "Smart Tech",
@@ -1107,6 +1251,26 @@
      "confidence": 1.0,
      "foreign": false,
      "real": true
+    },
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Samsung UE55M70HAUXXN (55\", Mini-LED)",
+     "url": "https://www.conforama.ch/de/tv-miniled-samsung-ue55m70hauxxn-55/product/634096",
+     "price": 499.95,
+     "shipping": 0.0,
+     "total": 499.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
     }
    ]
   },
@@ -1238,6 +1402,74 @@
      "condition": "occ",
      "in_stock": 1,
      "availability": "Geprüfte Rückgabe",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "lg-55nu900b",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "55NU900B6LA",
+   "line": "55NU900B6LA",
+   "variant": 55,
+   "label": "55NU900B6LA 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 379.96,
+   "best_any": 379.96,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     379.96
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "LG 55NU900B6LA (55\", LED)",
+     "url": "https://www.conforama.ch/de/tv-nanocell-lg-electronics-55nu900b6la-55/product/640335",
+     "price": 379.96,
+     "shipping": 0.0,
+     "total": 379.96,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    },
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "LG 55NU900B6LA (55\", LED)",
+     "url": "https://www.digitec.ch/de/s1/product/lg-55nu900b6laaeu-55-lcd-led-4k-eu-tv-68288215",
+     "price": 394.3,
+     "shipping": 0.0,
+     "total": 394.3,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "EU-Modell",
      "pickup": 0,
      "place": null,
      "country": "CH",
@@ -1485,42 +1717,42 @@
    ]
   },
   {
-   "id": "lg-55nu900b",
+   "id": "conforama-611823",
    "category": "tv",
-   "brand": "LG",
-   "mpn": "55NU900B6LA",
-   "line": "55NU900B6LA",
+   "brand": "Samsung",
+   "mpn": "QE55Q7FAAUXXN",
+   "line": "QE55Q7FAAUXXN",
    "variant": 55,
-   "label": "55NU900B6LA 55″",
+   "label": "QE55Q7FAAUXXN 55″",
    "size": 55,
-   "panel": "LED",
+   "panel": "QLED",
    "hz": null,
    "res": "4K",
    "os": null,
    "hdmi21": false,
-   "best_new": 394.3,
-   "best_any": 394.3,
+   "best_new": 399.95,
+   "best_any": 399.95,
    "avg30": null,
    "min90": null,
    "history": [
     [
      "2026-11-21",
-     394.3
+     399.95
     ]
    ],
    "real": true,
    "offers": [
     {
      "source": "shop",
-     "seller": "Digitec",
-     "title": "LG 55NU900B6LA (55\", LED)",
-     "url": "https://www.digitec.ch/de/s1/product/lg-55nu900b6laaeu-55-lcd-led-4k-eu-tv-68288215",
-     "price": 394.3,
+     "seller": "Conforama",
+     "title": "Samsung QE55Q7FAAUXXN (55\", QLED)",
+     "url": "https://www.conforama.ch/de/tv-qled-samsung-qe55q7faauxxn-55/product/611823",
+     "price": 399.95,
      "shipping": 0.0,
-     "total": 394.3,
+     "total": 399.95,
      "condition": "neu",
      "in_stock": 1,
-     "availability": "EU-Modell",
+     "availability": "lieferbar",
      "pickup": 0,
      "place": null,
      "country": "CH",
@@ -1615,6 +1847,54 @@
      "condition": "neu",
      "in_stock": 1,
      "availability": "Lieferung am Dienstag",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-611945",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "55QNED80A6A",
+   "line": "55QNED80A6A",
+   "variant": 55,
+   "label": "55QNED80A6A 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 447.96,
+   "best_any": 447.96,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     447.96
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "LG 55QNED80A6A (55\", QLED)",
+     "url": "https://www.conforama.ch/de/tv-qned-lg-electronics-55qned80a6a-55/product/611945",
+     "price": 447.96,
+     "shipping": 0.0,
+     "total": 447.96,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
      "pickup": 0,
      "place": null,
      "country": "CH",
@@ -1781,6 +2061,198 @@
    ]
   },
   {
+   "id": "conforama-643412",
+   "category": "tv",
+   "brand": "Philips",
+   "mpn": "55PQS8501/12",
+   "line": "55PQS8501/12",
+   "variant": 55,
+   "label": "55PQS8501/12 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 499.95,
+   "best_any": 499.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     499.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Philips 55PQS8501/12 (55\", QLED)",
+     "url": "https://www.conforama.ch/de/tv-qled-philips-55pqs8501-12-55/product/643412",
+     "price": 499.95,
+     "shipping": 0.0,
+     "total": 499.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-643433",
+   "category": "tv",
+   "brand": "Panasonic",
+   "mpn": "W61A-Serie",
+   "line": "W61A-Serie",
+   "variant": 55,
+   "label": "W61A-Serie 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 499.95,
+   "best_any": 499.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     499.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Panasonic W61A-Serie (55\", LED)",
+     "url": "https://www.conforama.ch/de/tv-lcd-panasonic-w61a-serie-55/product/643433",
+     "price": 499.95,
+     "shipping": 0.0,
+     "total": 499.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-643438",
+   "category": "tv",
+   "brand": "Panasonic",
+   "mpn": "W60C-Serie",
+   "line": "W60C-Serie",
+   "variant": 55,
+   "label": "W60C-Serie 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 499.95,
+   "best_any": 499.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     499.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Panasonic W60C-Serie (55\", LED)",
+     "url": "https://www.conforama.ch/de/tv-lcd-panasonic-w60c-serie-55/product/643438",
+     "price": 499.95,
+     "shipping": 0.0,
+     "total": 499.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-649127",
+   "category": "tv",
+   "brand": "Sony",
+   "mpn": "BRAVIA 2M2",
+   "line": "BRAVIA 2M2",
+   "variant": 55,
+   "label": "BRAVIA 2M2 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 499.95,
+   "best_any": 499.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     499.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Sony BRAVIA 2M2 (55\", LED)",
+     "url": "https://www.conforama.ch/de/tv-led-sony-bravia-2m2-55/product/649127",
+     "price": 499.95,
+     "shipping": 0.0,
+     "total": 499.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
    "id": "lg-qned72b-65",
    "category": "tv",
    "brand": "LG",
@@ -1877,6 +2349,150 @@
    ]
   },
   {
+   "id": "conforama-640349",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "55QNED81B6A",
+   "line": "55QNED81B6A",
+   "variant": 55,
+   "label": "55QNED81B6A 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 499.96,
+   "best_any": 499.96,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     499.96
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "LG 55QNED81B6A (55\", QLED)",
+     "url": "https://www.conforama.ch/de/tv-qned-lg-electronics-55qned81b6a-55/product/640349",
+     "price": 499.96,
+     "shipping": 0.0,
+     "total": 499.96,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-634103",
+   "category": "tv",
+   "brand": "Samsung",
+   "mpn": "UE55U8090HUXXN",
+   "line": "UE55U8090HUXXN",
+   "variant": 55,
+   "label": "UE55U8090HUXXN 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 549.95,
+   "best_any": 549.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     549.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Samsung UE55U8090HUXXN (55\", LED)",
+     "url": "https://www.conforama.ch/de/tv-led-samsung-ue55u8090huxxn-55/product/634103",
+     "price": 549.95,
+     "shipping": 0.0,
+     "total": 549.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-643413",
+   "category": "tv",
+   "brand": "Philips",
+   "mpn": "55PQS8701/12",
+   "line": "55PQS8701/12",
+   "variant": 55,
+   "label": "55PQS8701/12 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 599.95,
+   "best_any": 599.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     599.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Philips 55PQS8701/12 (55\", QLED)",
+     "url": "https://www.conforama.ch/de/tv-qled-philips-55pqs8701-12-55/product/643413",
+     "price": 599.95,
+     "shipping": 0.0,
+     "total": 599.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
    "id": "sam-q8f-65",
    "category": "tv",
    "brand": "Samsung",
@@ -1913,6 +2529,102 @@
      "condition": "neu",
      "in_stock": 1,
      "availability": "Lieferung am Dienstag, in 150 Filialen",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-640353",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "55QNED86B6B",
+   "line": "55QNED86B6B",
+   "variant": 55,
+   "label": "55QNED86B6B 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 599.96,
+   "best_any": 599.96,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     599.96
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "LG 55QNED86B6B (55\", QLED)",
+     "url": "https://www.conforama.ch/de/tv-qned-lg-electronics-55qned86b6b-55/product/640353",
+     "price": 599.96,
+     "shipping": 0.0,
+     "total": 599.96,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-641492",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "55PK640S",
+   "line": "55PK640S",
+   "variant": 55,
+   "label": "55PK640S 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 639.95,
+   "best_any": 639.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     639.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "LG 55PK640S (55\", LED)",
+     "url": "https://www.conforama.ch/de/tv-led-lg-electronics-55pk640s-55/product/641492",
+     "price": 639.95,
+     "shipping": 0.0,
+     "total": 639.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
      "pickup": 0,
      "place": null,
      "country": "CH",
@@ -2029,6 +2741,102 @@
    ]
   },
   {
+   "id": "conforama-643430",
+   "category": "tv",
+   "brand": "Panasonic",
+   "mpn": "W80A-Serie",
+   "line": "W80A-Serie",
+   "variant": 55,
+   "label": "W80A-Serie 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 699.95,
+   "best_any": 699.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     699.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Panasonic W80A-Serie (55\", LED)",
+     "url": "https://www.conforama.ch/de/tv-lcd-panasonic-w80a-serie-55/product/643430",
+     "price": 699.95,
+     "shipping": 0.0,
+     "total": 699.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-640330",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "55MRGB87B9B",
+   "line": "55MRGB87B9B",
+   "variant": 55,
+   "label": "55MRGB87B9B 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 699.96,
+   "best_any": 699.96,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     699.96
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "LG 55MRGB87B9B (55\", LED)",
+     "url": "https://www.conforama.ch/de/tv-micro-rgb-lg-electronics-55mrgb87b9b-55/product/640330",
+     "price": 699.96,
+     "shipping": 0.0,
+     "total": 699.96,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
    "id": "digitec-57490692",
    "category": "tv",
    "brand": "Samsung",
@@ -2082,6 +2890,150 @@
      "price": 799.0,
      "shipping": 0.0,
      "total": 799.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-634091",
+   "category": "tv",
+   "brand": "Samsung",
+   "mpn": "QE55QN80HAUXXN",
+   "line": "QE55QN80HAUXXN",
+   "variant": 55,
+   "label": "QE55QN80HAUXXN 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 799.95,
+   "best_any": 799.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     799.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Samsung QE55QN80HAUXXN (55\", QLED)",
+     "url": "https://www.conforama.ch/de/tv-neo-qled-samsung-qe55qn80hauxxn-55/product/634091",
+     "price": 799.95,
+     "shipping": 0.0,
+     "total": 799.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-640340",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "OLED55B68LA",
+   "line": "OLED55B68LA",
+   "variant": 55,
+   "label": "OLED55B68LA 55″",
+   "size": 55,
+   "panel": "OLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 799.96,
+   "best_any": 799.96,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     799.96
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "LG OLED55B68LA (55\", OLED)",
+     "url": "https://www.conforama.ch/de/tv-oled-lg-electronics-oled55b68la-55/product/640340",
+     "price": 799.96,
+     "shipping": 0.0,
+     "total": 799.96,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-643416",
+   "category": "tv",
+   "brand": "Philips",
+   "mpn": "55OLED761/12",
+   "line": "55OLED761/12",
+   "variant": 55,
+   "label": "55OLED761/12 55″",
+   "size": 55,
+   "panel": "OLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 849.95,
+   "best_any": 849.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     849.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Philips 55OLED761/12 (55\", OLED)",
+     "url": "https://www.conforama.ch/de/tv-oled-ambilight-philips-55oled761-12-55/product/643416",
+     "price": 849.95,
+     "shipping": 0.0,
+     "total": 849.95,
      "condition": "neu",
      "in_stock": 1,
      "availability": "lieferbar",
@@ -2279,6 +3231,102 @@
    ]
   },
   {
+   "id": "conforama-643424",
+   "category": "tv",
+   "brand": "Panasonic",
+   "mpn": "W90C-Serie",
+   "line": "W90C-Serie",
+   "variant": 55,
+   "label": "W90C-Serie 55″",
+   "size": 55,
+   "panel": "Mini-LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 899.95,
+   "best_any": 899.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     899.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Panasonic W90C-Serie (55\", Mini-LED)",
+     "url": "https://www.conforama.ch/de/tv-miniled-panasonic-w90c-serie-55/product/643424",
+     "price": 899.95,
+     "shipping": 0.0,
+     "total": 899.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-649132",
+   "category": "tv",
+   "brand": "Sony",
+   "mpn": "BRAVIA 6",
+   "line": "BRAVIA 6",
+   "variant": 55,
+   "label": "BRAVIA 6 55″",
+   "size": 55,
+   "panel": "OLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 899.95,
+   "best_any": 899.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     899.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Sony BRAVIA 6 (55\", OLED)",
+     "url": "https://www.conforama.ch/de/tv-oled-sony-bravia-6-55/product/649132",
+     "price": 899.95,
+     "shipping": 0.0,
+     "total": 899.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
    "id": "digitec-57617533",
    "category": "tv",
    "brand": "Samsung",
@@ -2355,6 +3403,122 @@
      "price": 999.0,
      "shipping": 0.0,
      "total": 999.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    },
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "LG OLED55C68LA (55\", OLED)",
+     "url": "https://www.conforama.ch/de/tv-oled-lg-electronics-oled55c68la-55/product/640344",
+     "price": 999.96,
+     "shipping": 0.0,
+     "total": 999.96,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-638758",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "55LX7B6LA.AEEQ",
+   "line": "55LX7B6LA.AEEQ",
+   "variant": 55,
+   "label": "55LX7B6LA.AEEQ 55″",
+   "size": 55,
+   "panel": "Mini-LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 999.95,
+   "best_any": 999.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     999.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "LG 55LX7B6LA.AEEQ (55\", Mini-LED)",
+     "url": "https://www.conforama.ch/de/tv-miniled-lg-electronics-55lx7b6la.aeeq-55/product/638758",
+     "price": 999.95,
+     "shipping": 0.0,
+     "total": 999.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-643421",
+   "category": "tv",
+   "brand": "Panasonic",
+   "mpn": "W95C-Serie",
+   "line": "W95C-Serie",
+   "variant": 55,
+   "label": "W95C-Serie 55″",
+   "size": 55,
+   "panel": "Mini-LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 1099.95,
+   "best_any": 1099.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     1099.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Panasonic W95C-Serie (55\", Mini-LED)",
+     "url": "https://www.conforama.ch/de/tv-miniled-panasonic-w95c-serie-55/product/643421",
+     "price": 1099.95,
+     "shipping": 0.0,
+     "total": 1099.95,
      "condition": "neu",
      "in_stock": 1,
      "availability": "lieferbar",
@@ -2449,6 +3613,54 @@
      "condition": "occ",
      "in_stock": 1,
      "availability": "Geprüfte Rückgabe",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "conforama-634085",
+   "category": "tv",
+   "brand": "Samsung",
+   "mpn": "QE55S85HAEXZU",
+   "line": "QE55S85HAEXZU",
+   "variant": 55,
+   "label": "QE55S85HAEXZU 55″",
+   "size": 55,
+   "panel": "OLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 1199.95,
+   "best_any": 1199.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     1199.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Samsung QE55S85HAEXZU (55\", OLED)",
+     "url": "https://www.conforama.ch/de/tv-oled-samsung-qe55s85haexzu-55/product/634085",
+     "price": 1199.95,
+     "shipping": 0.0,
+     "total": 1199.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
      "pickup": 0,
      "place": null,
      "country": "CH",
@@ -2822,6 +4034,54 @@
    ]
   },
   {
+   "id": "conforama-634074",
+   "category": "tv",
+   "brand": "Samsung",
+   "mpn": "QE55S90HAEXZU",
+   "line": "QE55S90HAEXZU",
+   "variant": 55,
+   "label": "QE55S90HAEXZU 55″",
+   "size": 55,
+   "panel": "OLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 1499.95,
+   "best_any": 1499.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     1499.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Conforama",
+     "title": "Samsung QE55S90HAEXZU (55\", OLED)",
+     "url": "https://www.conforama.ch/de/tv-oled-samsung-qe55s90haexzu-55/product/634074",
+     "price": 1499.95,
+     "shipping": 0.0,
+     "total": 1499.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
    "id": "digitec-20244063",
    "category": "tv",
    "brand": "LG",
@@ -3065,7 +4325,7 @@
    "url": "https://www.ricardo.ch/de/a/loewe-fernseh-connect-id-55-full-hd-smart-tv-1336191470/",
    "price": 75.0,
    "place": "Sofort kaufen · endet Fr, 27 Nov., 13:02",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3076,7 +4336,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55-4k-suhd-smart-tv-ue55ks8080t-one-connect-1336275950/",
    "price": 149.0,
    "place": "Sofort kaufen · endet Sa, 28 Nov., 11:15",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3087,7 +4347,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-curved-led-tv-55-inch-full-hd-smart-television-2015-1336328066/",
    "price": 150.0,
    "place": "Sofort kaufen · endet oder Preis vorschlagen",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3098,7 +4358,7 @@
    "url": "https://www.ricardo.ch/de/a/sony-lcd-tv-kdl-55w807a-55-zoll-neuwertig-1334904534/",
    "price": 150.0,
    "place": "Sofort kaufen · endet Morgen, 08:07",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3109,7 +4369,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55-curved-4k-uhd-smart-tv-ue55ju6570-top-zustand-1336051144/",
    "price": 180.0,
    "place": "Sofort kaufen · endet Mi, 25 Nov., 21:11",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3120,7 +4380,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55-zoll-curved-suhd-4k-tv-1336189092/",
    "price": 230.0,
    "place": "Sofort kaufen · endet So, 29 Nov., 11:31",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3131,7 +4391,7 @@
    "url": "https://www.ricardo.ch/de/a/philips-oled-tv-mit-ambilight-55zoll-1331971168/",
    "price": 249.0,
    "place": "Sofort kaufen · endet oder Preis vorschlagen",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3142,7 +4402,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55%E2%80%9D-4k-uhd-smart-tv-%E2%80%93-modell-ue55mu6170-%E2%80%93top-zustand-1333464224/",
    "price": 249.0,
    "place": "Sofort kaufen · endet Fr, 22 Jan., 21:18",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3153,7 +4413,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-fernseher-qe55q60bau-55-zoll-qled-in-gutem-zustand-1336195144/",
    "price": 250.0,
    "place": "Sofort kaufen · endet Mo, 30 Nov., 13:48",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3164,7 +4424,7 @@
    "url": "https://www.ricardo.ch/de/a/lg-oled55b9sla-55-zoll-1335805702/",
    "price": 250.0,
    "place": "Sofort kaufen · endet Mo, 23 Nov., 13:56",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3175,7 +4435,7 @@
    "url": "https://www.ricardo.ch/de/a/sony-bravia-kd55x80j-55-inch-led-4k-ultra-hd-uhd-1336322686/",
    "price": 250.0,
    "place": "Sofort kaufen · endet Sa, 28 Nov., 17:33",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3186,7 +4446,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55-ju6740-6-series-curved-uhd-4k-smart-led-tv-1335161250/",
    "price": 270.0,
    "place": "Sofort kaufen · endet oder Preis vorschlagen",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3197,7 +4457,7 @@
    "url": "https://www.ricardo.ch/de/a/sony-bravia-kd-55xh9005-55-4k-android-tv-1336172628/",
    "price": 290.0,
    "place": "Sofort kaufen · endet So, 29 Nov., 20:00",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3208,7 +4468,7 @@
    "url": "https://www.ricardo.ch/de/a/sony-bravia-55-zoll-4k-uhd-google-tv-1336070506/",
    "price": 299.0,
    "place": "Sofort kaufen · endet oder Preis vorschlagen",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3219,7 +4479,7 @@
    "url": "https://www.ricardo.ch/de/a/sony-bravia-fernseher-55-zoll-tv-1274505174/",
    "price": 300.0,
    "place": "Sofort kaufen · endet Fr, 27 Nov., 13:26",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3230,7 +4490,7 @@
    "url": "https://www.ricardo.ch/de/a/lg-oled55b19la-fernseher-55-zoll-oled-tv-guter-zustand-1335980914/",
    "price": 300.0,
    "place": "Sofort kaufen · endet Mi, 25 Nov., 10:17",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3241,7 +4501,7 @@
    "url": "https://www.ricardo.ch/de/a/lg-oled-55b9-4k-55-zoll-smart-tv-1335711676/",
    "price": 399.0,
    "place": "Sofort kaufen · endet Morgen, 17:10",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3252,7 +4512,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-ue55tu8070u-smart-tv-55-zoll-crystal-uhd-in-ovp-1336045610/",
    "price": 399.0,
    "place": "Sofort kaufen · endet oder Preis vorschlagen",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3263,7 +4523,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-qe55q60bau-55'-qled-4k-quantum-smart-tv-1330592768/",
    "price": 429.0,
    "place": "Sofort kaufen · endet Heute, 23:06",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3274,7 +4534,7 @@
    "url": "https://www.ricardo.ch/de/a/lg-oled55e7n-55-oled-4k-hdr-smart-tv-1336285358/",
    "price": 449.0,
    "place": "Sofort kaufen · endet Fr, 19 Feb., 12:27",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3285,7 +4545,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55-zoll-qled-4k-smart-tv-qe55q95t-1335252808/",
    "price": 450.0,
    "place": "Sofort kaufen · endet Mi, 25 Nov., 10:03",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3296,7 +4556,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-the-frame-tv-55-zoll-mit-studio-stand-1334836804/",
    "price": 600.0,
    "place": "Sofort kaufen · endet Sa, 28 Nov., 14:18",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -3307,7 +4567,7 @@
    "url": "https://www.ricardo.ch/de/a/hisense-u8-55-zoll-fernseher-mini-led-fabrikneu-1336282000/",
    "price": 900.0,
    "place": "Sofort kaufen · endet Sa, 28 Nov., 11:51",
-   "last_seen": "2026-11-21T21:55:48+00:00",
+   "last_seen": "2026-11-21T22:03:52+00:00",
    "size": 55,
    "category": "tv"
   }
