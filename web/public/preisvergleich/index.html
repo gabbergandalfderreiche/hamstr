@@ -88,8 +88,8 @@ form.search button{border:0;background:var(--accent);color:var(--on-accent);font
 aside.filters{align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 130px);max-height:calc(100vh - 150px);overflow:auto;padding-right:4px}
 .fgroup{border-bottom:1px solid var(--line);padding-block:14px}
 .fgroup:first-child{padding-top:0}
-.fgroup h3{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;align-items:baseline}
-.fgroup h3 .hint{text-transform:none;letter-spacing:0;font-weight:500;cursor:help;border-bottom:1px dotted var(--muted)}
+.fgroup h3{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;align-items:baseline;gap:4px 10px;flex-wrap:wrap}
+.fgroup h3 .hint{text-transform:none;letter-spacing:0;font-weight:500;cursor:help;border-bottom:1px dotted var(--muted);white-space:nowrap;margin-left:auto}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 10px;font-size:13.5px;display:inline-flex;align-items:baseline;gap:5px;transition:background .12s,border-color .12s}
 .chip:hover:not(:disabled){border-color:var(--ink)}
