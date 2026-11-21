@@ -920,7 +920,7 @@ function renderBuybar(){
   const el=$("buybar"),p=lastOpen!=null?PRODUCTS[lastOpen]:null,b=p&&location.hash==="#vergleich"?best(p):null;
   el.hidden=!b;document.body.classList.toggle("has-buybar",!!b);
   if(!b)return;
-  el.innerHTML=`<div class="bb-t"><span>${esc(titleOf(p))}</span><b class="num">CHF ${total(b).toFixed(2)}</b><small>bei ${shopLogo(b.seller)}${esc(b.seller)}${S.ship?(b.pickup?" · Abholung":b.ship?" · inkl. Versand":" · gratis Versand"):""}</small></div>
+  el.innerHTML=`<div class="bb-t"><span>${esc(niceName(p))}</span><b class="num">CHF ${total(b).toFixed(2)}</b><small>bei ${shopLogo(b.seller)}${esc(b.seller)}${S.ship?(b.pickup?" · Abholung":b.ship?" · inkl. Versand":" · gratis Versand"):""}</small></div>
     ${b.real?`<a class="bb-go" href="${esc(b.url)}" target="_blank" rel="sponsored noopener noreferrer">Zum Shop</a>`:`<button type="button" class="bb-go" data-go="${esc(b.seller)}">Zum Shop</button>`}`;
 }
 /* Kategorie-Leiste: Icon, Name und ein Grund zum Klicken (bester echter Rabatt oder Einstiegspreis) */
@@ -999,7 +999,7 @@ function render(){
       <div class="crow">
         <div class="rank num">${i+1}.</div>
         ${thumb(p)}
-        <div class="info"><div class="brand">${esc(p.brand)}</div><h2>${esc(titleOf(p))} <span style="color:var(--muted);font-weight:500">${esc(p.model)}</span></h2>
+        <div class="info"><div class="brand">${esc(p.brand)}</div><h2>${esc(niceName(p))} <span style="color:var(--muted);font-weight:500">${esc(p.model)}</span></h2>
           <div class="specs">${specChips(p)}</div></div>
         <div class="price"><span class="lbl">${realTag(b)?`<span class="otag real">Echter Preis</span> `:""}${lbl}</span><span class="amt num"><small>CHF</small>${total(b).toFixed(2)}</span>
           <span class="meta">${shopLogo(b.seller)}${esc(b.seller)}${S.ship?(b.pickup?" · Abholung":b.ship?` · inkl. ${b.ship.toFixed(2)} Versand`:" · gratis Versand"):""}</span>${dealBadge(p,b)}${scarce(b)}
@@ -1081,6 +1081,12 @@ function imgFor(p){
   return null;
 }
 const pimg=(p,cls="pimg")=>{const u=imgFor(p);return u?`<img class="${cls}" src="${esc(u)}" alt="" loading="lazy">`:""};
+function niceName(p){
+  if(p.category==="tv")return `${p.brand} ${p.size}″ ${p.panel==="LED"?"LED":p.panel}-Fernseher`;
+  if(p.category==="monitor")return `${p.brand} ${p.size}″ Monitor`;
+  const t=titleOf(p);
+  return p.brand==="Rockstar Games"||t.toLowerCase().startsWith(p.brand.toLowerCase())?t:`${p.brand} ${t}`;
+}
 function titleOf(p){const c=catOf(p);if(c.variant.kind==="none")return p.line;const vf=c.facets.find(f=>f.key===c.variant.key)||{};return `${p.line} ${fmt(vf,p[c.variant.key])}`}
 const tot=o=>o.price+o.ship;
 function bestOf(list){return list.length?list.reduce((a,b)=>tot(b)<tot(a)?b:a):null}
@@ -1101,28 +1107,30 @@ function topDeals(){return PRODUCTS.map(p=>({p,d:dealInfo(p)})).filter(x=>x.d&&x
 /* Deal des Tages: GTA-VI-Setup zum Anklicken. Teile an- und abwählen, Summe zählt mit. */
 const HB={tv:true,ps5:true,gta:true,ps5Key:null,step:0};
 const HB_ON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',HB_OFF='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>';
-let hbShown=0,hbAnim=0,hbInit=false;
+let hbShown=0,hbAnim=0,hbInit=false,hbFix=0;
 function hbItems(){
   const ps5=byKey(HB.ps5Key)||cheapPS5();
   return [{k:"gta",label:"Das Spiel",p:byKey("gta6-ps5")},{k:"ps5",label:"Die Konsole",p:ps5},{k:"tv",label:"Der Fernseher",p:realTV(55)||pickTV(55)}].filter(i=>i.p&&bestOf(newShop(i.p)));
 }
 function countTo(el,to){
   cancelAnimationFrame(hbAnim);
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches){hbShown=to;el.textContent=to.toFixed(2);return}
+  if(document.hidden||matchMedia("(prefers-reduced-motion: reduce)").matches){hbShown=to;el.textContent=to.toFixed(2);return}
   const from=hbShown,t0=performance.now(),d=550;
   const step=t=>{const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=(from+(to-from)*e).toFixed(2);if(k<1)hbAnim=requestAnimationFrame(step);else hbShown=to};
   hbAnim=requestAnimationFrame(step);
+  // Sicherheitsnetz: läuft keine Animation (Tab im Hintergrund), steht trotzdem der richtige Betrag da
+  clearTimeout(hbFix);hbFix=setTimeout(()=>{cancelAnimationFrame(hbAnim);el.textContent=to.toFixed(2);hbShown=to},d+80);
 }
 /* Shops erlauben keinen fremden Warenkorb: Hamstr führt durch die Bestellung, ein Teil nach dem anderen */
 function orderHTML(on,sellers){
   if(!on.length)return "";
   const n=on.length,step=Math.min(HB.step,n);
-  if(step>=n)return `<div class="ord done"><b>Alle ${n} Teile geöffnet.</b> Viel Spass beim Hamstern! <button type="button" class="ord-reset" data-hbreset>Nochmal von vorn</button></div>`;
-  const i=on[step],o=i.o,one=sellers.length===1;
-  const label=`${one?`Bei ${esc(o.seller)} bestellen`:"Jetzt bestellen"} · ${step+1}/${n}: ${esc(titleOf(i.p))}${one?"":` bei ${esc(o.seller)}`}`;
-  const dots=on.map((x,k)=>`<span class="${k<step?"ok":k===step?"now":""}"></span>`).join("");
-  return `${o.real?`<a class="dcta ord-go" href="${esc(o.url)}" target="_blank" rel="sponsored noopener noreferrer" data-hbnext>${label} →</a>`:`<button type="button" class="dcta ord-go" data-hbnext data-go="${esc(o.seller)}">${label} →</button>`}
-    <div class="ord"><span class="ord-dots">${dots}</span>Shops erlauben keinen gemeinsamen Warenkorb von aussen. Hamstr öffnet die Produkte nacheinander, du legst sie mit einem Klick in den Warenkorb.</div>`;
+  if(step>=n)return `<div class="ord done"><b>Alles geöffnet.</b> Viel Spass beim Hamstern! <button type="button" class="ord-reset" data-hbreset>Nochmal</button></div>`;
+  const i=on[step],o=i.o,rest=on.slice(step+1).map(x=>esc(niceName(x.p)));
+  const label=`${n===1?"Bestellen bei":step===0?"Los geht's bei":"Weiter bei"} ${esc(o.seller)}: ${esc(niceName(i.p))}`;
+  const btn=o.real?`<a class="dcta ord-go" href="${esc(o.url)}" target="_blank" rel="sponsored noopener noreferrer" data-hbnext>${label} →</a>`
+    :`<button type="button" class="dcta ord-go" data-hbnext data-go="${esc(o.seller)}">${label} →</button>`;
+  return btn+(rest.length?`<div class="ord">Danach: ${rest.join(", ")}. Jedes Teil öffnet sich beim Shop, dort in den Warenkorb legen.</div>`:"");
 }
 function renderDotd(){
   const items=hbItems().map(i=>({...i,o:bestOf(newShop(i.p))})),on=items.filter(i=>HB[i.k]);
@@ -1145,15 +1153,14 @@ function renderDotd(){
           <span class="hb-check" aria-hidden="true">${HB[i.k]?HB_ON:HB_OFF}</span>
           <span class="hb-img">${imgFor(i.p)?`<img src="${esc(imgFor(i.p))}" alt="" loading="lazy">`:`<svg viewBox="-6 -2 36 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${CAT_ICON[i.p.category]||""}</svg>`}</span>
           <span class="hb-k">${esc(i.label)}</span>
-          <b class="hb-n">${esc(titleOf(i.p))}</b>
+          <b class="hb-n">${esc(niceName(i.p))}</b>
           <span class="hb-p num">CHF ${tot(i.o).toFixed(2)}</span>
           <span class="hb-s">${shopLogo(i.o.seller)}${esc(i.o.seller)}${realTag(i.o)?" · echter Preis":""}</span>
         </button>
-        ${i.k==="ps5"&&ps5s.length>1?`<div class="hb-var">${ps5s.map(p=>`<button type="button" data-hbps5="${p.key}" aria-pressed="${p.key===i.p.key}">${p.disc?"Mit Laufwerk":"Digital"}</button>`).join("")}</div>`:""}
-        ${i.o.real?`<a class="hb-go" href="${esc(i.o.url)}" target="_blank" rel="sponsored noopener noreferrer">Zum Shop</a>`:`<button type="button" class="hb-go" data-go="${esc(i.o.seller)}">Zum Shop</button>`}
+        ${i.k==="ps5"&&HB.ps5&&ps5s.length>1?`<div class="hb-var">${ps5s.map(p=>`<button type="button" data-hbps5="${p.key}" aria-pressed="${p.key===i.p.key}">${p.disc?"Mit Laufwerk":"Digital"}</button>`).join("")}</div>`:""}
       </div>`).join("")}</div>
     <div class="hb-total">
-      <div><span class="hb-cnt">${on.length} ${on.length===1?"Teil":"Teile"}${on.length&&sellers.length===1?` · alles bei ${esc(sellers[0])}, eine Bestellung`:on.length?` · bei ${sellers.length} Shops`:""}</span>
+      <div><span class="hb-cnt">${on.length} ${on.length===1?"Teil":"Teile"}${on.length>1&&sellers.length===1?` · alles bei ${esc(sellers[0])}`:on.length>1?` · bei ${sellers.length} Shops`:on.length?` · bei ${esc(sellers[0])}`:""}</span>
         <span class="hb-ship">${on.length?"inkl. Versand":"Tippe ein Teil an"}</span></div>
       <strong class="num"><small>CHF</small><span id="hbSum">${hbShown.toFixed(2)}</span></strong>
     </div>
@@ -1168,7 +1175,7 @@ function renderDeals(){
     const ps=[...PRODUCTS].filter(p=>bestOf(newShop(p))).sort((a,b)=>tot(bestOf(newShop(a)))-tot(bestOf(newShop(b))));
     $("deals").innerHTML=ps.map(p=>{const o=bestOf(newShop(p)),n=new Set(newShop(p).map(x=>x.seller)).size;
       return `<button type="button" class="deal-card" data-goto="${esc(p.key)}">${pimg(p)}
-        <span class="b">${esc(p.brand)} · ${esc(catOf(p).name)}</span><span class="n">${esc(titleOf(p))}</span>
+        <span class="b">${esc(catOf(p).name)}</span><span class="n">${esc(niceName(p))}</span>
         <span class="pr"><strong class="num">CHF ${tot(o).toFixed(2)}</strong></span>
         <span class="why">${shopLogo(o.seller)}${esc(o.seller)}${o.ship?` · inkl. ${o.ship.toFixed(2)} Versand`:" · gratis Versand"}${n>1?` · ${n} Shops verglichen`:""}</span></button>`}).join("");
     return;
