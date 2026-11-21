@@ -663,7 +663,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 let PRODUCTS=[], SHOPS=[], UPDATED=null, CATS=[];
 const AVAIL={"in stock":"an Lager","preorder":"Vorbestellung","out of stock":"nicht an Lager"};
 const METHOD={"model+variant":"Modell + Variante","model+size":"Modell + Grösse","mpn_in_title":"Modellnummer im Titel","mpn":"Herstellernummer","ean":"EAN","manual":"Prüfung von Hand"};
-const SOON=["Notebooks","Kopfhörer","Grafikkarten","Staubsauger","Kaffeemaschinen"];
+const SOON=["Notebooks","Grafikkarten","Staubsauger","Kaffeemaschinen"];
 function fromExport(d){
   CATS=d.categories||[];
   PRODUCTS=d.products.map((p,i)=>({...p,id:i,key:p.id,model:p.mpn,name:`${p.brand} ${p.mpn}`,history:p.history||[],
@@ -750,7 +750,12 @@ function parse(q){
 }
 function optLabelIn(f,v,prods){if(f.options){const o=f.options.find(o=>(Array.isArray(o)?o[0]:o)===v);if(o)return Array.isArray(o)?(o[1]||o[0]):o}return fmt(f,v)}
 function applyQuery(q){
-  S.q=q;const p=parse(q);
+  S.q=q;let p=parse(q);
+  // Kein Kategoriewort, aber der Text passt nur in eine andere Kategorie ("s25 edge" in Kopfhörer)? Dorthin wechseln.
+  if(!p.cat&&p.rest.length){
+    const hit=c=>PRODUCTS.some(x=>x.category===c&&p.rest.every(w=>`${x.name} ${x.line} ${(x.aliases||[]).join(" ")} ${x.os||""}`.toLowerCase().includes(w)));
+    if(!hit(S.cat)){const other=CATS.find(c=>hit(c.id));if(other){S.cat=other.id;p=parse(q)}}
+  }
   if(p.cat&&p.cat!==S.cat){S.cat=p.cat;open.clear()}
   resetFilters();
   for(const [k,v] of Object.entries(p.f))S.f[k]=Array.isArray(v)?new Set(v):v;
@@ -916,6 +921,7 @@ const CAT_ICON={
   tv:'<path d="M3 5h18v11H3z"/><path d="M8 20h8M12 16v4"/>',
   monitor:'<path d="M3 4h18v12H3z"/><path d="M9 20h6M12 16v4"/><path d="M7 8h4"/>',
   phone:'<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>',
+  audio:'<path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="5" height="7" rx="2"/><rect x="16" y="14" width="5" height="7" rx="2"/>',
   gaming:'<path d="M7 9h10a4 4 0 0 1 4 4v1.5a2.5 2.5 0 0 1-4.3 1.7L15 14.5H9l-1.7 1.7A2.5 2.5 0 0 1 3 14.5V13a4 4 0 0 1 4-4z"/><path d="M8 11.5v3M6.5 13h3"/><circle cx="16" cy="12" r=".8"/><circle cx="17.5" cy="13.6" r=".8"/>',
 };
 function catHint(id){
@@ -986,7 +992,7 @@ function render(){
       <div class="crow">
         <div class="rank num">${i+1}.</div>
         ${thumb(p)}
-        <div class="info"><div class="brand">${esc(p.brand)}</div><h2>${esc(p.line)} ${esc(fmt(vf,p[vdef.key]))} <span style="color:var(--muted);font-weight:500">${esc(p.model)}</span></h2>
+        <div class="info"><div class="brand">${esc(p.brand)}</div><h2>${esc(titleOf(p))} <span style="color:var(--muted);font-weight:500">${esc(p.model)}</span></h2>
           <div class="specs">${specChips(p)}</div></div>
         <div class="price"><span class="lbl">${b.real?`<span class="otag real">Echter Preis</span> `:""}${lbl}</span><span class="amt num"><small>CHF</small>${total(b).toFixed(2)}</span>
           <span class="meta">${esc(b.seller)}${S.ship?(b.pickup?" · Abholung":b.ship?` · inkl. ${b.ship.toFixed(2)} Versand`:" · gratis Versand"):""}</span>${dealBadge(p,b)}${scarce(b)}
@@ -1055,7 +1061,7 @@ const BW_END=new Date("2026-11-30T23:59:59+01:00");          // Ende Cyber Monda
 const QUICK=["GTA VI","PS5 Pro","OLED 65 Zoll","iPhone 16 Pro","Monitor 27 Zoll 144 Hz","DualSense"];
 const catOf=p=>CATS.find(c=>c.id===p.category);
 /* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
-const IMAGES=new Set(["mascot-happy.webp", "p-gta6-ps5.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp"]);
+const IMAGES=new Set(["mascot-happy.webp", "p-apple-airpods5-anc.webp", "p-gta6-ps5.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sam-s25edge-256.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp"]);
 function imgFor(p){
   if(p.image)return p.image;
   for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;

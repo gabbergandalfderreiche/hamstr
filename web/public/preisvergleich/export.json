@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T19:14:45+00:00",
+ "generated_at": "2026-11-21T20:49:41+00:00",
  "categories": [
   {
    "id": "tv",
@@ -409,6 +409,52 @@
      "label": "Speicher",
      "type": "info",
      "format": "storage"
+    }
+   ]
+  },
+  {
+   "id": "audio",
+   "name": "Kopfhörer",
+   "keywords": [
+    "kopfhörer",
+    "kopfhorer",
+    "airpods",
+    "earbuds",
+    "headset",
+    "in-ear"
+   ],
+   "variant": {
+    "key": "model",
+    "kind": "none",
+    "label": "Modell"
+   },
+   "default_query": "",
+   "facets": [
+    {
+     "key": "typ",
+     "label": "Bauform",
+     "type": "enum",
+     "options": [
+      "In-Ear",
+      "Over-Ear"
+     ],
+     "parse": "keywords",
+     "keywords": {
+      "in-ear": "In-Ear",
+      "in ear": "In-Ear",
+      "over-ear": "Over-Ear",
+      "over ear": "Over-Ear"
+     }
+    },
+    {
+     "key": "anc",
+     "label": "Geräuschunterdrückung (ANC)",
+     "short": "ANC",
+     "type": "bool",
+     "keywords": {
+      "anc": true,
+      "noise cancelling": true
+     }
     }
    ]
   }
@@ -823,6 +869,50 @@
      "condition": "neu",
      "in_stock": 1,
      "availability": "Lieferung am Dienstag, in 22 Filialen",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "apple-airpods5-anc",
+   "category": "audio",
+   "brand": "Apple",
+   "mpn": "MKFW4ZM/A",
+   "line": "AirPods 5 (ANC)",
+   "variant": null,
+   "label": "AirPods 5 (ANC) ",
+   "typ": "In-Ear",
+   "anc": true,
+   "best_new": 99.95,
+   "best_any": 99.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     99.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Interdiscount",
+     "title": "APPLE AirPods 5 (ANC, Weiss)",
+     "url": "https://www.interdiscount.ch/de/product/apple-airpods-5-anc-weiss-0014564508",
+     "price": 99.95,
+     "shipping": 0.0,
+     "total": 99.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Aktion: CHF 20.– Rabatt bis 29.11. · Lieferung am Dienstag",
      "pickup": 0,
      "place": null,
      "country": "CH",
@@ -2975,6 +3065,53 @@
      "condition": "neu",
      "in_stock": 1,
      "availability": "Online verfügbar, Lieferung ab 25.11.",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "sam-s25edge-256",
+   "category": "phone",
+   "brand": "Samsung",
+   "mpn": "",
+   "line": "Galaxy S25 Edge",
+   "variant": 256,
+   "label": "Galaxy S25 Edge 256 GB",
+   "storage": 256,
+   "os": "Android",
+   "hz": 120,
+   "display": 6.7,
+   "ram": 12,
+   "best_new": 429.95,
+   "best_any": 429.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     429.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Interdiscount",
+     "title": "SAMSUNG Galaxy S25 Edge (256 GB, Titanium Jetblack)",
+     "url": "https://www.interdiscount.ch/de/product/samsung-galaxy-s25-edge-256-gb-titanium-jetblack-6-7-200-mp-5g-0014297051",
+     "price": 429.95,
+     "shipping": 0.0,
+     "total": 429.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Lieferung am Dienstag",
      "pickup": 0,
      "place": null,
      "country": "CH",
