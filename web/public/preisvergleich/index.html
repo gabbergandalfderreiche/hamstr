@@ -715,6 +715,7 @@ function options(f){                      // -> [[wert, label, tooltip]]
 const optLabel=(f,v)=>(options(f).find(o=>o[0]===v)||[v,fmt(f,v)])[1];
 
 /* ---------- Suche -> Filter: "55 120 Hz", "27 Zoll OLED", "iPhone 16 Pro 256GB" ---------- */
+const GENERIC=new Set(["fernseher","tv","television","monitor","monitore","bildschirm","gaming monitor","smartphone","handy","natel","konsole","konsolen","games","spiel","kopfhörer","kopfhorer","headset","earbuds","in-ear"]);
 const reEsc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
 function parse(q){
   const out={f:{},brands:[],rest:[],tags:[],cat:null};
@@ -722,7 +723,7 @@ function parse(q){
   // Kategorie aus Stichworten ("monitor", "handy", "iphone"); reine Kategoriewörter werden entfernt
   for(const c of CATS)for(const kw of [...c.keywords].sort((a,b)=>b.length-a.length)){
     const re=new RegExp(`\\s${reEsc(kw)}(?=\\s)`);
-    if(re.test(s)){out.cat=out.cat||c.id;if(!PRODUCTS.some(p=>p.line.toLowerCase().includes(kw)))s=s.replace(re," ")}
+    if(re.test(s)){out.cat=out.cat||c.id;if(GENERIC.has(kw))s=s.replace(re," ")}
   }
   const cat=CATS.find(c=>c.id===(out.cat||S.cat))||CATS[0];
   const prods=PRODUCTS.filter(p=>p.category===cat.id);
@@ -765,7 +766,7 @@ function applyQuery(q){
   S.q=q;let p=parse(q);
   // Kein Kategoriewort, aber der Text passt nur in eine andere Kategorie ("s25 edge" in Kopfhörer)? Dorthin wechseln.
   if(!p.cat&&p.rest.length){
-    const hit=c=>PRODUCTS.some(x=>x.category===c&&p.rest.every(w=>`${x.name} ${x.line} ${(x.aliases||[]).join(" ")} ${x.os||""}`.toLowerCase().includes(w)));
+    const hit=c=>PRODUCTS.some(x=>x.category===c&&p.rest.every(w=>new RegExp("(^|[^a-z0-9])"+reEsc(w)).test(`${x.brand} ${x.name} ${x.line} ${(x.aliases||[]).join(" ")} ${x.os||""}`.toLowerCase())));
     if(!hit(S.cat)){const other=CATS.find(c=>hit(c.id));if(other){S.cat=other.id;p=parse(q)}}
   }
   if(p.cat&&p.cat!==S.cat){S.cat=p.cat;open.clear()}
@@ -784,7 +785,7 @@ function liveOffers(p){return p.offers.filter(o=>(S.cond==="alle"||o.cond===S.co
 function best(p){const L=liveOffers(p);if(!L.length)return null;return [...L].sort((a,b)=>cmpOffer(a,b,total))[0]}
 function match(p,skip){
   if(p.category!==S.cat)return false;
-  if(skip!=="text"&&S.text.length){const hay=`${p.name} ${p.line} ${p.os||""}`.toLowerCase();if(!S.text.every(w=>hay.includes(w)))return false}
+  if(skip!=="text"&&S.text.length){const hay=`${p.brand} ${p.name} ${p.line} ${(p.aliases||[]).join(" ")} ${p.os||""}`.toLowerCase();if(!S.text.every(w=>new RegExp("(^|[^a-z0-9])"+reEsc(w)).test(hay)))return false}
   for(const f of FACETS()){
     if(skip===f.key)continue;const v=S.f[f.key];
     if(f.type==="enum"&&v.size&&!v.has(p[f.key]))return false;
@@ -1079,7 +1080,7 @@ function shopLogo(seller){
 }
 const realTag=o=>o.real&&!ALLREAL;
 /* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
-const IMAGES=new Set(["mascot-happy.webp", "p-apple-airpods5-anc.webp", "p-gta6-ps5.webp", "p-lg-qned72b-65.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sam-m70h-65.webp", "p-sam-q8f-65.webp", "p-sam-s25edge-256.webp", "p-sam-u8090h-65.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp", "shop-digitec.png", "shop-interdiscount.png", "shop-mediamarkt.png"]);
+const IMAGES=new Set(["mascot-happy.webp", "p-apple-airpods5-anc.webp", "p-estar-55a1t2.webp", "p-gta6-ps5.webp", "p-his-55a6s.webp", "p-lg-55nano81a.webp", "p-lg-55nu800b.webp", "p-lg-55nu900b.webp", "p-lg-qned72b-65.webp", "p-majestic-fl55vd.webp", "p-phi-pqs7801-55.webp", "p-phi-pus7000-55.webp", "p-phi-pus7061-55.webp", "p-phi-pus7800-55.webp", "p-phi-pus7810-55.webp", "p-sam-m70h-55.webp", "p-sam-m70h-65.webp", "p-sam-q8f-65.webp", "p-sam-s25edge-256.webp", "p-sam-u8072h-55.webp", "p-sam-u8090h-65.webp", "p-sharp-55hp5465e.webp", "p-smarttech-55qg06k.webp", "p-smarttech-55qv02k.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp", "p-thomson-55-frameless.webp", "p-thomson-55qg6c14.webp", "p-xiaomi-apro-55-2026.webp", "shop-digitec.png", "shop-interdiscount.png", "shop-mediamarkt.png"]);
 function imgFor(p){
   if(p.image)return p.image;
   for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;

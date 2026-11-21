@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T21:33:39+00:00",
+ "generated_at": "2026-11-21T21:43:37+00:00",
  "categories": [
   {
    "id": "tv",
@@ -327,6 +327,12 @@
    "label": "Grand Theft Auto VI (PS5) ",
    "typ": "Spiel",
    "platform": "PS5",
+   "aliases": [
+    "gta 6",
+    "gta vi",
+    "grand theft auto vi",
+    "grand theft auto 6"
+   ],
    "best_new": 72.9,
    "best_any": 72.9,
    "avg30": null,
@@ -411,6 +417,9 @@
    "label": "AirPods 5 (ANC) ",
    "typ": "In-Ear",
    "anc": true,
+   "aliases": [
+    "airpods 5"
+   ],
    "best_new": 99.95,
    "best_any": 99.95,
    "avg30": null,
@@ -494,6 +503,486 @@
    ]
   },
   {
+   "id": "estar-55a1t2",
+   "category": "tv",
+   "brand": "Estar",
+   "mpn": "LEDTV55A1T2",
+   "line": "LEDTV55A1T2",
+   "variant": 55,
+   "label": "LEDTV55A1T2 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 330.0,
+   "best_any": 330.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     330.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Estar LEDTV55A1T2 (55\", LED)",
+     "url": "https://www.digitec.ch/de/s1/product/estar-ledtv55a1t2-55-led-4k-tv-47313696",
+     "price": 330.0,
+     "shipping": 0.0,
+     "total": 330.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "sharp-55hp5465e",
+   "category": "tv",
+   "brand": "Sharp",
+   "mpn": "55HP5465E",
+   "line": "55HP5465E",
+   "variant": 55,
+   "label": "55HP5465E 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 330.0,
+   "best_any": 330.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     330.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Sharp 55HP5465E (55\", QLED)",
+     "url": "https://www.digitec.ch/de/s1/product/sharp-55hp5465e-55-qled-2025-tv-66146404",
+     "price": 330.0,
+     "shipping": 0.0,
+     "total": 330.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "xiaomi-apro-55-2026",
+   "category": "tv",
+   "brand": "Xiaomi",
+   "mpn": "A Pro 55 (2026)",
+   "line": "A Pro 55 (2026)",
+   "variant": 55,
+   "label": "A Pro 55 (2026) 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 335.0,
+   "best_any": 335.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     335.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Xiaomi A Pro 55 (2026) (55\", QLED)",
+     "url": "https://www.digitec.ch/de/s1/product/xiaomi-a-pro-55-qled-4k-2026-tv-57338209",
+     "price": 335.0,
+     "shipping": 0.0,
+     "total": 335.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "thomson-55qg6c14",
+   "category": "tv",
+   "brand": "Thomson",
+   "mpn": "55QG6C14 QLED Plus",
+   "line": "55QG6C14 QLED Plus",
+   "variant": 55,
+   "label": "55QG6C14 QLED Plus 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 338.0,
+   "best_any": 338.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     338.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Thomson 55QG6C14 QLED Plus (55\", QLED)",
+     "url": "https://www.digitec.ch/de/s1/product/thomson-55qg6c14-qled-plus-55-smart-tv-55-qled-4k-tv-46183488",
+     "price": 338.0,
+     "shipping": 0.0,
+     "total": 338.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "sam-u8072h-55",
+   "category": "tv",
+   "brand": "Samsung",
+   "mpn": "UE55U8072HU",
+   "line": "UE55U8072HU",
+   "variant": 55,
+   "label": "UE55U8072HU 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 340.38,
+   "best_any": 340.38,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     340.38
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Samsung UE55U8072HU (55\", LED)",
+     "url": "https://www.digitec.ch/de/s1/product/samsung-ue55u8072hu-55-u80h-led-4k-2026-eu-tv-70120290",
+     "price": 340.38,
+     "shipping": 0.0,
+     "total": 340.38,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "EU-Modell",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "smarttech-55qg06k",
+   "category": "tv",
+   "brand": "Smart Tech",
+   "mpn": "55QG06K Google TV",
+   "line": "55QG06K Google TV",
+   "variant": 55,
+   "label": "55QG06K Google TV 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 341.0,
+   "best_any": 341.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     341.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Smart Tech 55QG06K Google TV (55\", QLED)",
+     "url": "https://www.digitec.ch/de/s1/product/smart-tech-55-qled-google-tv-55qg06k-55-qled-4k-tv-65622584",
+     "price": 341.0,
+     "shipping": 0.0,
+     "total": 341.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "phi-pus7800-55",
+   "category": "tv",
+   "brand": "Philips",
+   "mpn": "55PUS7800/12",
+   "line": "55PUS7800/12",
+   "variant": 55,
+   "label": "55PUS7800/12 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 349.0,
+   "best_any": 349.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     349.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Philips 55PUS7800/12 (55\", QLED)",
+     "url": "https://www.digitec.ch/de/s1/product/philips-55pus780012-55-pus7800-qled-4k-2025-tv-56449280",
+     "price": 349.0,
+     "shipping": 0.0,
+     "total": 349.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "smarttech-55qv02k",
+   "category": "tv",
+   "brand": "Smart Tech",
+   "mpn": "55QV02K",
+   "line": "55QV02K",
+   "variant": 55,
+   "label": "55QV02K 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 356.0,
+   "best_any": 356.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     356.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Smart Tech 55QV02K (55\", QLED)",
+     "url": "https://www.digitec.ch/de/s1/product/smart-tech-55qv02k-55-qled-4k-tv-68700295",
+     "price": 356.0,
+     "shipping": 0.0,
+     "total": 356.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "his-55a6s",
+   "category": "tv",
+   "brand": "Hisense",
+   "mpn": "55A6S",
+   "line": "55A6S",
+   "variant": 55,
+   "label": "55A6S 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 368.0,
+   "best_any": 368.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     368.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Hisense 55A6S (55\", LED)",
+     "url": "https://www.digitec.ch/de/s1/product/hisense-55a6s-55-led-4k-de-tv-67580712",
+     "price": 368.0,
+     "shipping": 0.0,
+     "total": 368.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "phi-pqs7801-55",
+   "category": "tv",
+   "brand": "Philips",
+   "mpn": "55PQS7801/12",
+   "line": "55PQS7801/12",
+   "variant": 55,
+   "label": "55PQS7801/12 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 369.0,
+   "best_any": 369.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     369.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Philips 55PQS7801/12 (55\", QLED)",
+     "url": "https://www.digitec.ch/de/s1/product/philips-55pqs780112-55-qled-4k-2026-tv-71948128",
+     "price": 369.0,
+     "shipping": 0.0,
+     "total": 369.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Aktion: noch 41 von 94 Stück",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
    "id": "sam-m70h-55",
    "category": "tv",
    "brand": "Samsung",
@@ -506,6 +995,266 @@
    "hz": null,
    "res": "4K",
    "os": "Tizen",
+   "hdmi21": false,
+   "best_new": 370.33,
+   "best_any": 370.33,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     370.33
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Samsung UE55M70HAU (55\", Mini-LED)",
+     "url": "https://www.digitec.ch/de/s1/product/samsung-ue55m70hau-55-m70-mini-led-4k-2026-eu-tv-69895249",
+     "price": 370.33,
+     "shipping": 0.0,
+     "total": 370.33,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "EU-Modell",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    },
+    {
+     "source": "shop",
+     "seller": "MediaMarkt",
+     "title": "SAMSUNG 55\" Mini LED M70H 4K, Vision AI Smart TV (2026)",
+     "url": "https://www.mediamarkt.ch/de/product/_samsung-55-mini-led-m70h-4k-mini-led-prozessor-4k-vision-ai-smart-tv-2026-2290389.html",
+     "price": 389.0,
+     "shipping": 0.0,
+     "total": 389.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Online verfügbar, Lieferung ab 25.11.",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "thomson-55-frameless",
+   "category": "tv",
+   "brand": "Thomson",
+   "mpn": "55\" Google TV Frameless",
+   "line": "55\" Google TV Frameless",
+   "variant": 55,
+   "label": "55\" Google TV Frameless 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 377.0,
+   "best_any": 377.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     377.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Thomson 55\" Google TV Frameless (55\", LED)",
+     "url": "https://www.digitec.ch/de/s1/product/thomson-tv-55-4k-smart-uhd-t2c2s2-google-tv-frameless-55-lcd-4k-tv-52449422",
+     "price": 377.0,
+     "shipping": 0.0,
+     "total": 377.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "phi-pus7810-55",
+   "category": "tv",
+   "brand": "Philips",
+   "mpn": "55PUS7810/12",
+   "line": "55PUS7810/12",
+   "variant": 55,
+   "label": "55PUS7810/12 55″",
+   "size": 55,
+   "panel": "QLED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 377.27,
+   "best_any": 377.27,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     377.27
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Philips 55PUS7810/12 (55\", QLED)",
+     "url": "https://www.digitec.ch/de/s1/product/philips-55pus781012-55-qled-4k-2025-tv-58109206",
+     "price": 377.27,
+     "shipping": 0.0,
+     "total": 377.27,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "majestic-fl55vd",
+   "category": "tv",
+   "brand": "Majestic",
+   "mpn": "FL55VD UHD V2",
+   "line": "FL55VD UHD V2",
+   "variant": 55,
+   "label": "FL55VD UHD V2 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 386.0,
+   "best_any": 386.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     386.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Majestic FL55VD UHD V2 (55\", LED)",
+     "url": "https://www.digitec.ch/de/s1/product/majestic-fl55vd-uhd-v2-55-led-4k-tv-69494979",
+     "price": 386.0,
+     "shipping": 0.0,
+     "total": 386.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "lg-55nu800b",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "55NU800B6LA",
+   "line": "55NU800B6LA",
+   "variant": 55,
+   "label": "55NU800B6LA 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 388.0,
+   "best_any": 388.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     388.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "LG 55NU800B6LA (55\", LED)",
+     "url": "https://www.digitec.ch/de/s1/product/lg-55nu800b6la-55-nu800b-lcd-4k-2026-tv-68421537",
+     "price": 388.0,
+     "shipping": 0.0,
+     "total": 388.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "phi-pus7061-55",
+   "category": "tv",
+   "brand": "Philips",
+   "mpn": "55PUS7061/12",
+   "line": "55PUS7061/12",
+   "variant": 55,
+   "label": "55PUS7061/12 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
    "hdmi21": false,
    "best_new": 389.0,
    "best_any": 389.0,
@@ -521,15 +1270,111 @@
    "offers": [
     {
      "source": "shop",
-     "seller": "MediaMarkt",
-     "title": "SAMSUNG 55\" Mini LED M70H 4K, Vision AI Smart TV (2026)",
-     "url": "https://www.mediamarkt.ch/de/product/_samsung-55-mini-led-m70h-4k-mini-led-prozessor-4k-vision-ai-smart-tv-2026-2290389.html",
+     "seller": "Digitec",
+     "title": "Philips 55PUS7061/12 (55\", LED)",
+     "url": "https://www.digitec.ch/de/s1/product/philips-55pus706112-55-led-4k-2026-eu-tv-72339478",
      "price": 389.0,
      "shipping": 0.0,
      "total": 389.0,
      "condition": "neu",
      "in_stock": 1,
-     "availability": "Online verfügbar, Lieferung ab 25.11.",
+     "availability": "EU-Modell",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "lg-55nano81a",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "55NANO81A6A NanoCell",
+   "line": "55NANO81A6A NanoCell",
+   "variant": 55,
+   "label": "55NANO81A6A NanoCell 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 393.97,
+   "best_any": 393.97,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     393.97
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "LG 55NANO81A6A NanoCell (55\", LED)",
+     "url": "https://www.digitec.ch/de/s1/product/lg-55nano81a6a-sw-nanocell-led-tv-uhdmultitunersmartpvra7hdr-55-nano81-led-4k-2025-tv-55034518",
+     "price": 393.97,
+     "shipping": 0.0,
+     "total": 393.97,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "lieferbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
+   "id": "lg-55nu900b",
+   "category": "tv",
+   "brand": "LG",
+   "mpn": "55NU900B6LA",
+   "line": "55NU900B6LA",
+   "variant": 55,
+   "label": "55NU900B6LA 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": null,
+   "res": "4K",
+   "os": null,
+   "hdmi21": false,
+   "best_new": 394.3,
+   "best_any": 394.3,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     394.3
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "LG 55NU900B6LA (55\", LED)",
+     "url": "https://www.digitec.ch/de/s1/product/lg-55nu900b6laaeu-55-lcd-led-4k-eu-tv-68288215",
+     "price": 394.3,
+     "shipping": 0.0,
+     "total": 394.3,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "EU-Modell",
      "pickup": 0,
      "place": null,
      "country": "CH",
@@ -554,6 +1399,10 @@
    "hz": 120,
    "display": 6.7,
    "ram": 12,
+   "aliases": [
+    "galaxy s25 edge",
+    "s25 edge"
+   ],
    "best_new": 429.95,
    "best_any": 429.95,
    "avg30": null,
@@ -792,6 +1641,12 @@
    "platform": "PS5",
    "disc": true,
    "storage": 1024,
+   "aliases": [
+    "ps5 slim",
+    "ps5 disc",
+    "playstation 5 slim",
+    "ps5 mit laufwerk"
+   ],
    "best_new": 649.95,
    "best_any": 649.95,
    "avg30": null,
@@ -838,6 +1693,12 @@
    "platform": "PS5",
    "disc": false,
    "storage": 825,
+   "aliases": [
+    "ps5 slim digital",
+    "ps5 digital",
+    "playstation 5 digital",
+    "playstation 5 slim digital"
+   ],
    "best_new": 699.0,
    "best_any": 699.0,
    "avg30": null,
