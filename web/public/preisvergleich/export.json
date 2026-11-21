@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T19:10:47+00:00",
+ "generated_at": "2026-11-21T19:14:45+00:00",
  "categories": [
   {
    "id": "tv",
@@ -803,6 +803,26 @@
      "condition": "neu",
      "in_stock": 1,
      "availability": "Online verfügbar, Lieferung ab 24.11.",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    },
+    {
+     "source": "shop",
+     "seller": "Interdiscount",
+     "title": "ROCKSTAR GAMES Grand Theft Auto VI (DE, PS5)",
+     "url": "https://www.interdiscount.ch/de/product/grand-theft-auto-vi-de-ps5-0014500562",
+     "price": 72.9,
+     "shipping": 0.0,
+     "total": 72.9,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Lieferung am Dienstag, in 22 Filialen",
      "pickup": 0,
      "place": null,
      "country": "CH",
@@ -2607,6 +2627,54 @@
    ]
   },
   {
+   "id": "phi-pus7000-55",
+   "category": "tv",
+   "brand": "Philips",
+   "mpn": "55PUS7000",
+   "line": "PUS7000",
+   "variant": 55,
+   "label": "PUS7000 55″",
+   "size": 55,
+   "panel": "LED",
+   "hz": 60,
+   "res": "4K",
+   "os": "Titan OS",
+   "hdmi21": false,
+   "best_new": 329.95,
+   "best_any": 329.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     329.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Interdiscount",
+     "title": "PHILIPS 55PUS7000 Smart TV (55\", LED, Ultra HD 4K)",
+     "url": "https://www.interdiscount.ch/de/product/philips-55pus7000-smart-tv-55-led-ultra-hd-4k-0014305169",
+     "price": 329.95,
+     "shipping": 0.0,
+     "total": 329.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Lieferung am Dienstag",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    }
+   ]
+  },
+  {
    "id": "dell-u2724d-27",
    "category": "monitor",
    "brand": "Dell",
@@ -2915,332 +2983,6 @@
      "confidence": 1.0,
      "foreign": false,
      "real": true
-    }
-   ]
-  },
-  {
-   "id": "sony-ps5-slim",
-   "category": "gaming",
-   "brand": "Sony",
-   "mpn": "CFI-2016A",
-   "line": "PlayStation 5 Slim",
-   "variant": null,
-   "label": "PlayStation 5 Slim ",
-   "typ": "Konsole",
-   "platform": "PS5",
-   "disc": true,
-   "storage": 1024,
-   "best_new": 449.0,
-   "best_any": 449.0,
-   "avg30": 452.63,
-   "min90": 435.0,
-   "history": [
-    [
-     "2026-09-12",
-     520.0
-    ],
-    [
-     "2026-09-13",
-     520.0
-    ],
-    [
-     "2026-09-14",
-     520.0
-    ],
-    [
-     "2026-09-15",
-     520.0
-    ],
-    [
-     "2026-09-16",
-     520.0
-    ],
-    [
-     "2026-09-17",
-     520.0
-    ],
-    [
-     "2026-09-18",
-     520.0
-    ],
-    [
-     "2026-09-19",
-     510.0
-    ],
-    [
-     "2026-09-20",
-     510.0
-    ],
-    [
-     "2026-09-21",
-     510.0
-    ],
-    [
-     "2026-09-22",
-     510.0
-    ],
-    [
-     "2026-09-23",
-     510.0
-    ],
-    [
-     "2026-09-24",
-     510.0
-    ],
-    [
-     "2026-09-25",
-     510.0
-    ],
-    [
-     "2026-09-26",
-     510.0
-    ],
-    [
-     "2026-09-27",
-     515.0
-    ],
-    [
-     "2026-09-28",
-     515.0
-    ],
-    [
-     "2026-09-29",
-     515.0
-    ],
-    [
-     "2026-09-30",
-     515.0
-    ],
-    [
-     "2026-10-01",
-     515.0
-    ],
-    [
-     "2026-10-02",
-     515.0
-    ],
-    [
-     "2026-10-03",
-     515.0
-    ],
-    [
-     "2026-10-04",
-     515.0
-    ],
-    [
-     "2026-10-05",
-     460.0
-    ],
-    [
-     "2026-10-06",
-     460.0
-    ],
-    [
-     "2026-10-07",
-     460.0
-    ],
-    [
-     "2026-10-08",
-     460.0
-    ],
-    [
-     "2026-10-09",
-     460.0
-    ],
-    [
-     "2026-10-10",
-     460.0
-    ],
-    [
-     "2026-10-11",
-     460.0
-    ],
-    [
-     "2026-10-12",
-     435.0
-    ],
-    [
-     "2026-10-13",
-     435.0
-    ],
-    [
-     "2026-10-14",
-     435.0
-    ],
-    [
-     "2026-10-15",
-     435.0
-    ],
-    [
-     "2026-10-16",
-     435.0
-    ],
-    [
-     "2026-10-17",
-     435.0
-    ],
-    [
-     "2026-10-18",
-     435.0
-    ],
-    [
-     "2026-10-19",
-     435.0
-    ],
-    [
-     "2026-10-20",
-     435.0
-    ],
-    [
-     "2026-10-21",
-     450.0
-    ],
-    [
-     "2026-10-22",
-     450.0
-    ],
-    [
-     "2026-10-23",
-     450.0
-    ],
-    [
-     "2026-10-24",
-     450.0
-    ],
-    [
-     "2026-10-25",
-     450.0
-    ],
-    [
-     "2026-10-26",
-     450.0
-    ],
-    [
-     "2026-10-27",
-     450.0
-    ],
-    [
-     "2026-10-28",
-     450.0
-    ],
-    [
-     "2026-10-29",
-     450.0
-    ],
-    [
-     "2026-10-30",
-     450.0
-    ],
-    [
-     "2026-10-31",
-     450.0
-    ],
-    [
-     "2026-11-01",
-     450.0
-    ],
-    [
-     "2026-11-02",
-     450.0
-    ],
-    [
-     "2026-11-03",
-     450.0
-    ],
-    [
-     "2026-11-04",
-     450.0
-    ],
-    [
-     "2026-11-05",
-     450.0
-    ],
-    [
-     "2026-11-06",
-     450.0
-    ],
-    [
-     "2026-11-07",
-     450.0
-    ],
-    [
-     "2026-11-08",
-     450.0
-    ],
-    [
-     "2026-11-09",
-     450.0
-    ],
-    [
-     "2026-11-10",
-     460.0
-    ],
-    [
-     "2026-11-11",
-     460.0
-    ],
-    [
-     "2026-11-12",
-     460.0
-    ],
-    [
-     "2026-11-13",
-     460.0
-    ],
-    [
-     "2026-11-14",
-     460.0
-    ],
-    [
-     "2026-11-15",
-     460.0
-    ],
-    [
-     "2026-11-16",
-     460.0
-    ],
-    [
-     "2026-11-17",
-     460.0
-    ],
-    [
-     "2026-11-18",
-     450.0
-    ],
-    [
-     "2026-11-19",
-     450.0
-    ],
-    [
-     "2026-11-20",
-     450.0
-    ],
-    [
-     "2026-11-21",
-     449.0
-    ]
-   ],
-   "real": false,
-   "offers": [
-    {
-     "source": "shop",
-     "seller": "Digitec",
-     "title": "Sony PlayStation 5 Slim (Disc, 1000 GB)",
-     "url": "https://example.ch/a/6100001",
-     "price": 449.0,
-     "shipping": 0.0,
-     "total": 449.0,
-     "condition": "neu",
-     "in_stock": 1,
-     "availability": "in stock",
-     "pickup": 0,
-     "place": null,
-     "country": "CH",
-     "stock_qty": null,
-     "method": "ean",
-     "confidence": 1.0,
-     "foreign": false,
-     "real": false
     }
    ]
   },
@@ -4647,6 +4389,52 @@
      "confidence": 1.0,
      "foreign": false,
      "real": false
+    }
+   ]
+  },
+  {
+   "id": "sony-ps5-slim",
+   "category": "gaming",
+   "brand": "Sony",
+   "mpn": "CFI-2016A",
+   "line": "PlayStation 5 Slim",
+   "variant": null,
+   "label": "PlayStation 5 Slim ",
+   "typ": "Konsole",
+   "platform": "PS5",
+   "disc": true,
+   "storage": 1024,
+   "best_new": 649.95,
+   "best_any": 649.95,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     649.95
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "Interdiscount",
+     "title": "SONY Playstation 5 Slim 1000 GB (mit Disc-Laufwerk)",
+     "url": "https://www.interdiscount.ch/de/product/sony-playstation-5-slim-1000-gb-0014354247",
+     "price": 649.95,
+     "shipping": 0.0,
+     "total": 649.95,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Liefertermin unbekannt, in 5 Filialen verfügbar",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
     }
    ]
   },

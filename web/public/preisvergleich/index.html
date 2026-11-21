@@ -918,7 +918,7 @@ const BW_END=new Date("2026-11-30T23:59:59+01:00");          // Ende Cyber Monda
 const QUICK=["GTA VI","PS5 Pro","OLED 65 Zoll","iPhone 16 Pro","Monitor 27 Zoll 144 Hz","DualSense"];
 const catOf=p=>CATS.find(c=>c.id===p.category);
 /* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
-const IMAGES=new Set(["cat-tv.webp", "mascot-happy.webp", "mascot-wink.webp", "p-gta6-ps5.webp", "p-sam-m70h-55.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp"]);
+const IMAGES=new Set(["cat-tv.webp", "mascot-happy.webp", "mascot-wink.webp", "p-gta6-ps5.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp"]);
 function imgFor(p){
   if(p.image)return p.image;
   for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;
@@ -990,10 +990,16 @@ function calcBundle(items,occ){
   const avgSum=items.every(p=>p.avg30!=null)?items.reduce((s,p)=>s+p.avg30,0):null;
   return {rows,mix,single,avgSum,complete:rows.length===items.length};
 }
+/* Günstigste PS5 (ohne Pro) mit echtem Angebot, sonst die günstigste überhaupt */
+function cheapPS5(){
+  const c=["sony-ps5-slim","sony-ps5-slim-digital"].map(byKey).filter(p=>p&&bestOf(newShop(p)));
+  const real=c.filter(p=>p.real),pool=real.length?real:c;
+  return pool.sort((a,b)=>tot(bestOf(newShop(a)))-tot(bestOf(newShop(b))))[0];
+}
 function realTV(size){return PRODUCTS.filter(p=>p.category==="tv"&&p.size===size&&p.real&&bestOf(newShop(p))).sort((a,b)=>tot(bestOf(newShop(a)))-tot(bestOf(newShop(b))))[0]}
 const PRESETS=[
-  {id:"ps5gta",title:"PS5 + GTA VI",sub:"Konsole und das Spiel der Saison",items:()=>[byKey("sony-ps5-slim-digital"),byKey("gta6-ps5")],cfg:{console:"sony-ps5-slim-digital",game:true,pad:false}},
-  {id:"setup",title:"55″ TV + PS5 + GTA VI",sub:"4K-Fernseher, Konsole und Spiel",items:()=>[realTV(55)||pickTV(55),byKey("sony-ps5-slim-digital"),byKey("gta6-ps5")],cfg:{size:55,console:"sony-ps5-slim-digital",game:true,pad:false},big:true},
+  {id:"ps5gta",title:"PS5 + GTA VI",sub:"Konsole und das Spiel der Saison",items:()=>[cheapPS5(),byKey("gta6-ps5")],cfg:()=>({console:cheapPS5().key,game:true,pad:false})},
+  {id:"setup",title:"55″ TV + PS5 + GTA VI",sub:"4K-Fernseher, Konsole und Spiel",items:()=>[realTV(55)||pickTV(55),cheapPS5(),byKey("gta6-ps5")],cfg:()=>({size:55,console:cheapPS5().key,game:true,pad:false}),big:true},
 ];
 function renderBundles(){
   $("bundles").innerHTML=PRESETS.map(b=>{
@@ -1052,7 +1058,7 @@ function tick(){
   const d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60,s=Math.floor(ms/1e3)%60;
   $("countdown").innerHTML=[[d,"Tage"],[h,"Std"],[m,"Min"],[s,"Sek"]].map(([v,l])=>`<div><b>${String(v).padStart(2,"0")}</b><span>${l}</span></div>`).join("");
 }
-function renderHome(){renderDotd();renderBundles();renderDeals();renderBundle();renderCatTiles()}
+function renderHome(){if(!B.touched&&cheapPS5())B.console=cheapPS5().key;renderDotd();renderBundles();renderDeals();renderBundle();renderCatTiles()}
 function goSearch(q){$("q").value=q;if(location.hash!=="#vergleich")location.hash="vergleich";applyQuery(q);window.scrollTo(0,0)}
 function goProduct(key){
   const p=byKey(key);if(!p)return;S.cat=p.category;open.clear();open.add(p.id);
@@ -1063,9 +1069,9 @@ $("quick").addEventListener("click",e=>{const b=e.target.closest("[data-q]");if(
 $("heroForm").addEventListener("submit",e=>{e.preventDefault();goSearch($("hq").value)});
 $("homeView").addEventListener("click",e=>{
   const g=e.target.closest("[data-goto]");if(g)return goProduct(g.dataset.goto);
-  const pr=e.target.closest("[data-preset]");if(pr){Object.assign(B,PRESETS.find(x=>x.id===pr.dataset.preset).cfg,{occ:false});renderBundle();$("setup").scrollIntoView({behavior:"smooth"});return}
+  const pr=e.target.closest("[data-preset]");if(pr){Object.assign(B,PRESETS.find(x=>x.id===pr.dataset.preset).cfg(),{occ:false});renderBundle();$("setup").scrollIntoView({behavior:"smooth"});return}
   const c=e.target.closest(".cat-tile[data-cat]");if(c){S.cat=c.dataset.cat;open.clear();goSearch(CAT().default_query||"");return}
-  const b=e.target.closest("button[data-b]");if(b){const k=b.dataset.b;B[k]=k==="size"?+b.dataset.v:b.dataset.v;renderBundle()}
+  const b=e.target.closest("button[data-b]");if(b){B.touched=true;const k=b.dataset.b;B[k]=k==="size"?+b.dataset.v:b.dataset.v;renderBundle()}
 });
 $("homeView").addEventListener("change",e=>{const t=e.target;if(t.dataset.b){B[t.dataset.b]=t.checked;renderBundle()}});
 tick();setInterval(tick,1000);
