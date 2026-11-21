@@ -666,7 +666,11 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 
 <script>
 /* ---------- data: kommt aus export.json (pipeline: python -m ingest export) ---------- */
-let PRODUCTS=[], SHOPS=[], UPDATED=null, CATS=[], ALLREAL=false;
+let PRODUCTS=[], SHOPS=[], UPDATED=null, CATS=[], ALLREAL=false, SHOPRANK={};
+/* Reihenfolge: günstigster Preis; bei Gleichstand der Shop selbst vor einem Marktplatz-Händler,
+   dann der Shop, der bei Hamstr mehr Produkte hat (so landet ein Setup eher bei einem Shop) */
+const isMkt=o=>/marktplatz/i.test(o.seller)?1:0;
+function cmpOffer(a,b,f){return (f(a)-f(b))||(isMkt(a)-isMkt(b))||((SHOPRANK[b.seller]||0)-(SHOPRANK[a.seller]||0))}
 const AVAIL={"in stock":"an Lager","preorder":"Vorbestellung","out of stock":"nicht an Lager"};
 const METHOD={"model+variant":"Modell + Variante","model+size":"Modell + Grösse","mpn_in_title":"Modellnummer im Titel","mpn":"Herstellernummer","ean":"EAN","manual":"Prüfung von Hand"};
 const SOON=["Notebooks","Grafikkarten","Staubsauger","Kaffeemaschinen"];
@@ -680,6 +684,7 @@ function fromExport(d){
         :o.foreign?"Liefert in die Schweiz. Einfuhr-MwSt. und Verzollungsgebühr können dazukommen.":""}))}));
   UPDATED=d.generated_at?new Date(d.generated_at):null;
   ALLREAL=PRODUCTS.every(p=>p.offers.every(o=>o.real));
+  SHOPRANK={};PRODUCTS.forEach(p=>new Set(p.offers.map(o=>o.seller)).forEach(s=>SHOPRANK[s]=(SHOPRANK[s]||0)+1));
   SHOPS=[...new Set(PRODUCTS.flatMap(p=>p.offers.filter(o=>o.src==="shop").map(o=>o.seller)))];
 }
 
@@ -776,7 +781,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 /* ---------- matching ---------- */
 const total=o=>o.price+(S.ship?o.ship:0);
 function liveOffers(p){return p.offers.filter(o=>(S.cond==="alle"||o.cond===S.cond)&&S.srcs.has(o.src)&&(!S.stock||o.stock)&&(!S.chOnly||!o.foreign))}
-function best(p){const L=liveOffers(p);if(!L.length)return null;return L.reduce((a,b)=>total(b)<total(a)?b:a)}
+function best(p){const L=liveOffers(p);if(!L.length)return null;return [...L].sort((a,b)=>cmpOffer(a,b,total))[0]}
 function match(p,skip){
   if(p.category!==S.cat)return false;
   if(skip!=="text"&&S.text.length){const hay=`${p.name} ${p.line} ${p.os||""}`.toLowerCase();if(!S.text.every(w=>hay.includes(w)))return false}
@@ -862,7 +867,7 @@ function specChips(p){
 }
 /* Entscheidungshilfe über den Angeboten: eine klare Empfehlung mit Grund, Ersparnis und Kauf-Zeitpunkt */
 function tipHTML(p,live){
-  const L=[...live].sort((a,c)=>total(a)-total(c));if(!L.length)return "";
+  const L=[...live].sort((a,c)=>cmpOffer(a,c,total));if(!L.length)return "";
   const b=L[0],next=L[1],worst=L[L.length-1];
   const why=[];
   if(next&&total(next)>total(b)+.004)why.push(`CHF ${(total(next)-total(b)).toFixed(2)} günstiger als ${esc(next.seller)}`);
@@ -1007,7 +1012,7 @@ function render(){
       </div>
       <div class="cfoot"><div class="srcs">${srcSet.map(s=>`<span class="src ${s}">${SRC.find(x=>x[0]===s)[1]}</span>`).join("")}<span>${nNew} Neu-Angebote${used.length?` · ${used.length} Occasion`:""}</span></div>
         <button type="button" class="toggle" data-open="${p.id}" aria-expanded="${isOpen}">${isOpen?"Angebote ausblenden":`Alle ${p.offers.length} Angebote`}</button></div>
-      ${isOpen?(()=>{const live=liveOffers(p).sort((a,c)=>total(a)-total(c)),hidden=p.offers.length-live.length;
+      ${isOpen?(()=>{const live=liveOffers(p).sort((a,c)=>cmpOffer(a,c,total)),hidden=p.offers.length-live.length;
         return `${tipHTML(p,live)}${histHTML(p)}<div class="olist">${live.map(o=>`<div class="orow ${o===b?"best":""}">
           <div class="oshop">${shopLogo(o.seller)}<b>${esc(o.seller)}</b>${realTag(o)?`<span class="otag real">Echter Preis</span>`:""}${o===b?`<span class="otag win">Bestpreis</span>`:""}${o.cond==="occ"?`<span class="otag">Occasion</span>`:""}${o.src!=="shop"?`<span class="src ${o.src}">${SRC.find(x=>x[0]===o.src)[1]}</span>`:""}${o.foreign?`<span class="otag">Ausland</span>`:""}
             <span class="odel"><span class="dot ${o.stock?"ok":"wait"}"></span>${esc(o.deliv)}${o.src!=="shop"&&o.place?` · ${esc(o.place)}`:""}</span></div>
@@ -1074,7 +1079,7 @@ function shopLogo(seller){
 }
 const realTag=o=>o.real&&!ALLREAL;
 /* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
-const IMAGES=new Set(["mascot-happy.webp", "p-apple-airpods5-anc.webp", "p-gta6-ps5.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sam-s25edge-256.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp", "shop-interdiscount.png", "shop-mediamarkt.png"]);
+const IMAGES=new Set(["mascot-happy.webp", "p-apple-airpods5-anc.webp", "p-gta6-ps5.webp", "p-phi-pus7000-55.webp", "p-sam-m70h-55.webp", "p-sam-s25edge-256.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp", "shop-digitec.png", "shop-interdiscount.png", "shop-mediamarkt.png"]);
 function imgFor(p){
   if(p.image)return p.image;
   for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;
@@ -1089,7 +1094,7 @@ function niceName(p){
 }
 function titleOf(p){const c=catOf(p);if(c.variant.kind==="none")return p.line;const vf=c.facets.find(f=>f.key===c.variant.key)||{};return `${p.line} ${fmt(vf,p[c.variant.key])}`}
 const tot=o=>o.price+o.ship;
-function bestOf(list){return list.length?list.reduce((a,b)=>tot(b)<tot(a)?b:a):null}
+function bestOf(list){return list.length?[...list].sort((a,b)=>cmpOffer(a,b,tot))[0]:null}
 const newShop=p=>p.offers.filter(o=>o.src==="shop"&&o.cond==="neu");
 /* Rabatt = günstigster Shop-Neupreis heute gegen den echten 30-Tage-Durchschnitt (kein Listenpreis) */
 function dealInfo(p){
@@ -1107,7 +1112,8 @@ function topDeals(){return PRODUCTS.map(p=>({p,d:dealInfo(p)})).filter(x=>x.d&&x
 /* Deal des Tages: GTA-VI-Setup zum Anklicken. Teile an- und abwählen, Summe zählt mit. */
 const HB={tv:true,ps5:true,gta:true,ps5Key:null,step:0};
 const HB_ON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',HB_OFF='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>';
-let hbShown=0,hbAnim=0,hbInit=false,hbFix=0;
+let hbShown=0,hbAnim=0,hbInit=false,hbFix=0,HB_LAST={};
+const dotdOffer=i=>HB_LAST[i.k]||bestOf(newShop(i.p));
 function hbItems(){
   const ps5=byKey(HB.ps5Key)||cheapPS5();
   return [{k:"gta",label:"Das Spiel",p:byKey("gta6-ps5")},{k:"ps5",label:"Die Konsole",p:ps5},{k:"tv",label:"Der Fernseher",p:realTV(55)||pickTV(55)}].filter(i=>i.p&&bestOf(newShop(i.p)));
@@ -1124,19 +1130,33 @@ function countTo(el,to){
 /* Shops erlauben keinen fremden Warenkorb: Hamstr führt durch die Bestellung, ein Teil nach dem anderen */
 function orderHTML(on,sellers){
   if(!on.length)return "";
-  const n=on.length,step=Math.min(HB.step,n);
+  const n=on.length,step=Math.min(HB.step,n),one=sellers.length===1;
   if(step>=n)return `<div class="ord done"><b>Alles geöffnet.</b> Viel Spass beim Hamstern! <button type="button" class="ord-reset" data-hbreset>Nochmal</button></div>`;
-  const i=on[step],o=i.o,rest=on.slice(step+1).map(x=>esc(niceName(x.p)));
-  const label=`${n===1?"Bestellen bei":step===0?"Los geht's bei":"Weiter bei"} ${esc(o.seller)}: ${esc(niceName(i.p))}`;
-  const btn=o.real?`<a class="dcta ord-go" href="${esc(o.url)}" target="_blank" rel="sponsored noopener noreferrer" data-hbnext>${label} →</a>`
+  if(n>1&&step===0)return `<button type="button" class="dcta ord-go" data-hball>${n===2?"Beide Produkte":`Alle ${n} Produkte`} öffnen${one?` bei ${esc(sellers[0])}`:""} →</button>
+    <div class="ord">Öffnet ${one?"die Produktseiten":`die Seiten bei ${sellers.map(esc).join(" und ")}`} in neuen Tabs. Dort in den Warenkorb legen.</div>`;
+  const i=on[step],o=i.o,label=`${n===1?"Bestellen bei":"Weiter bei"} ${esc(o.seller)}: ${esc(niceName(i.p))}`;
+  return o.real?`<a class="dcta ord-go" href="${esc(o.url)}" target="_blank" rel="sponsored noopener noreferrer" data-hbnext>${label} →</a>`
     :`<button type="button" class="dcta ord-go" data-hbnext data-go="${esc(o.seller)}">${label} →</button>`;
-  return btn+(rest.length?`<div class="ord">Danach: ${rest.join(", ")}. Jedes Teil öffnet sich beim Shop, dort in den Warenkorb legen.</div>`:"");
+}
+function openAll(){
+  const items=hbItems().filter(i=>HB[i.k]).map(i=>dotdOffer(i));
+  let opened=0;
+  for(const o of items){
+    if(!o.real)continue;
+    const w=window.open(o.url,"_blank");
+    if(!w)break;                       // Popup-Blocker: Rest geht über "Weiter"
+    try{w.opener=null}catch(e){}
+    opened++;
+  }
+  HB.step=opened;renderDotd();
+  if(opened<items.length)toast(`Dein Browser hat ${items.length-opened} ${items.length-opened===1?"Seite":"Seiten"} blockiert. Klick auf «Weiter» für den Rest.`);
 }
 function renderDotd(){
   const items=hbItems().map(i=>({...i,o:bestOf(newShop(i.p))})),on=items.filter(i=>HB[i.k]);
   // Bei gleichem Preis den Shop nehmen, bei dem ohnehin bestellt wird: weniger Bestellungen, gleicher Preis
   const freq={};on.forEach(i=>newShop(i.p).filter(o=>tot(o)<=tot(i.o)+.001).forEach(o=>freq[o.seller]=(freq[o.seller]||0)+1));
-  items.forEach(i=>{const ties=newShop(i.p).filter(o=>tot(o)<=tot(i.o)+.001);if(ties.length>1)i.o=ties.sort((a,b)=>(freq[b.seller]||0)-(freq[a.seller]||0))[0]});
+  items.forEach(i=>{const ties=newShop(i.p).filter(o=>tot(o)<=tot(i.o)+.001);if(ties.length>1)i.o=ties.sort((a,b)=>(freq[b.seller]||0)-(freq[a.seller]||0)||cmpOffer(a,b,tot))[0]});
+  HB_LAST=Object.fromEntries(items.map(i=>[i.k,i.o]));
   if(!items.length){$("dotd").hidden=true;return}
   $("dotd").hidden=false;
   const sum=on.reduce((s,i)=>s+tot(i.o),0);
@@ -1289,6 +1309,7 @@ $("quick").addEventListener("click",e=>{const b=e.target.closest("[data-q]");if(
 $("heroForm").addEventListener("submit",e=>{e.preventDefault();goSearch($("hq").value)});
 $("homeView").addEventListener("click",e=>{
   const g=e.target.closest("[data-goto]");if(g)return goProduct(g.dataset.goto);
+  if(e.target.closest("[data-hball]")){openAll();return}
   const nx=e.target.closest("[data-hbnext]");if(nx){if(nx.dataset.go)toast(`Demo: Hier geht es direkt zu ${nx.dataset.go}.`);setTimeout(()=>{HB.step++;renderDotd()},150);return}
   if(e.target.closest("[data-hbreset]")){HB.step=0;renderDotd();return}
   const hb=e.target.closest("[data-hb]");if(hb){HB[hb.dataset.hb]=!HB[hb.dataset.hb];HB.step=0;renderDotd();return}

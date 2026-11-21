@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T21:14:03+00:00",
+ "generated_at": "2026-11-21T21:25:06+00:00",
  "categories": [
   {
    "id": "tv",
@@ -370,6 +370,26 @@
      "condition": "neu",
      "in_stock": 1,
      "availability": "Lieferung am Dienstag, in 22 Filialen",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
+    },
+    {
+     "source": "shop",
+     "seller": "Digitec",
+     "title": "Rockstar Grand Theft Auto VI (PS5, DE)",
+     "url": "https://www.digitec.ch/de/s1/product/rockstar-grand-theft-auto-vi-ps5-de-game-71758339",
+     "price": 72.9,
+     "shipping": 0.0,
+     "total": 72.9,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Lieferung Di, 24.11. · mehr als 10 an Lager",
      "pickup": 0,
      "place": null,
      "country": "CH",
