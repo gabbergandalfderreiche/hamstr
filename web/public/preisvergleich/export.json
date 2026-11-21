@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T17:37:58+00:00",
+ "generated_at": "2026-11-21T18:33:27+00:00",
  "categories": [
   {
    "id": "tv",
@@ -31,7 +31,7 @@
      100
     ]
    },
-   "default_query": "55 120 Hz",
+   "default_query": "",
    "facets": [
     {
      "key": "size",
@@ -158,7 +158,7 @@
      49
     ]
    },
-   "default_query": "27 Zoll 144 Hz",
+   "default_query": "",
    "facets": [
     {
      "key": "size",

@@ -291,6 +291,58 @@ aside.filters{align-self:start;position:sticky;top:calc(env(safe-area-inset-top,
 }
 @media (max-width:480px){.trust{grid-template-columns:minmax(0,1fr)}.count b{font-size:22px}}
 
+/* ---------- Black Week: dunkles Band oben, alles Wichtige im ersten Blick ---------- */
+.bf{background:var(--night);color:var(--night-ink);padding-bottom:36px}
+.bf-top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:stretch;padding-block:34px 30px}
+.bf-kick{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.pulse{width:9px;height:9px;border-radius:50%;background:#FF5A1F;box-shadow:0 0 0 0 #FF5A1F88;animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px #FF5A1F00}100%{box-shadow:0 0 0 0 #FF5A1F00}}
+.bf h1{font-family:var(--f-display);font-weight:800;font-size:clamp(44px,7vw,86px);line-height:.92;letter-spacing:-.045em;margin:14px 0 14px}
+.bf h1 em{font-style:normal;color:var(--gold)}
+.bf-head>p{color:var(--night-mute);font-size:16.5px;max-width:48ch;margin:0 0 16px}
+.bf .count{margin:0 0 18px;max-width:420px}
+.bf .hsearch{max-width:520px}
+.dotd{background:linear-gradient(160deg,#2B211A,#17120F);border:1px solid #F5B83D55;border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
+.dotd .dk{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.dotd .dpct{position:absolute;top:18px;right:20px;font-family:var(--f-display);font-weight:800;font-size:64px;line-height:1;color:#FF7A2F;letter-spacing:-.04em}
+.dotd .dpct small{font-size:30px}
+.dotd .db{font-size:12.5px;color:var(--night-mute);text-transform:uppercase;letter-spacing:.06em;margin-top:10px}
+.dotd h2{font-family:var(--f-display);font-weight:800;font-size:28px;margin:0;letter-spacing:-.02em;padding-right:120px}
+.dotd .dprice{font-family:var(--f-display);font-weight:800;font-size:56px;letter-spacing:-.03em;line-height:1.05;margin-top:8px}
+.dotd .dprice small{font-size:20px;color:var(--night-mute);margin-right:6px;font-family:var(--f-body)}
+.dotd .dvs{font-size:13.5px;color:var(--night-mute)}
+.dotd .dvs b{color:#7BE0A6}
+.dotd svg.spark{height:52px;margin:8px 0}
+.dotd .dshop{font-size:13.5px;color:var(--night-ink);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.dotd .scarce,.bf .scarce{color:#FF9A5C}
+.dcta{margin-top:12px;border:0;background:var(--gold);color:#2A1A00;font-weight:800;font-size:15px;border-radius:12px;padding:13px 18px;width:100%}
+.dcta:hover{filter:brightness(1.06)}
+.bf-h2{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:26px 0 12px}
+.bf-h2 h2{font-family:var(--f-display);font-weight:800;font-size:28px;margin:0;letter-spacing:-.02em}
+.bf-h2 p{margin:0;color:var(--night-mute);font-size:14px}
+.bundles{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:12px}
+.bcard{background:var(--night-2);border:1px solid #ffffff1c;border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.bcard.big{border-color:#F5B83D66}
+.bt h3{margin:0;font-family:var(--f-display);font-weight:800;font-size:22px}
+.bt span{font-size:13px;color:var(--night-mute)}
+.bcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.bcard li{display:flex;justify-content:space-between;gap:10px;font-size:14px;border-bottom:1px dashed #ffffff1f;padding-bottom:6px}
+.bcard li em{display:block;font-style:normal;font-size:12px;color:var(--night-mute)}
+.btot{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto}
+.btot strong{font-family:var(--f-display);font-weight:800;font-size:36px;color:var(--gold);letter-spacing:-.02em}
+.btot strong small{font-size:15px;color:var(--night-mute);margin-right:5px;font-family:var(--f-body)}
+.bsave{display:flex;flex-direction:column;gap:3px;font-size:13px;color:var(--night-mute)}
+.bsave .g{color:#7BE0A6;font-weight:700}
+.badj{align-self:flex-start;border:1px solid #ffffff33;background:transparent;color:var(--night-ink);border-radius:10px;padding:8px 14px;font-weight:600}
+.badj:hover{background:#ffffff14}
+.bf .deal-card{background:var(--night-2);border-color:#ffffff1c;color:var(--night-ink)}
+.bf .deal-card:hover{border-color:var(--gold)}
+.bf .deal-card .b,.bf .deal-card .pr span,.bf .deal-card .why{color:var(--night-mute)}
+.bf .deal-card .pct{background:#FF6A1F;color:#fff}
+.bf .lowest{background:#7BE0A622;color:#7BE0A6}
+.bf .empty{background:transparent;border-color:#ffffff2a;color:var(--night-mute)}.bf .empty b{color:var(--night-ink)}
+@media (max-width:880px){.bf-top{grid-template-columns:minmax(0,1fr)}.bundles{grid-template-columns:minmax(0,1fr)}.dotd h2{padding-right:96px}.dotd .dpct{font-size:48px}}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none}}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
 
 /* drawer on narrow screens */
@@ -323,7 +375,7 @@ aside.filters{align-self:start;position:sticky;top:calc(env(safe-area-inset-top,
   <div class="wrap hbar">
     <a class="logo" href="#start" aria-label="Hamstr Startseite"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="8.5" cy="8" r="4.2" fill="#C9560C"/><circle cx="23.5" cy="8" r="4.2" fill="#C9560C"/><ellipse cx="16" cy="18.5" rx="13.5" ry="11.5" fill="#F5B83D"/><ellipse cx="7.2" cy="21.5" rx="5" ry="4.2" fill="#FFDB96"/><ellipse cx="24.8" cy="21.5" rx="5" ry="4.2" fill="#FFDB96"/><circle cx="12" cy="15.8" r="1.8" fill="#14110F"/><circle cx="20" cy="15.8" r="1.8" fill="#14110F"/><ellipse cx="16" cy="19.6" rx="1.7" ry="1.2" fill="#7A3A10"/></svg><b>hamstr</b></a>
     <form class="search" id="searchForm" role="search">
-      <input id="q" type="search" autocomplete="off" placeholder="z.B. 55 Zoll OLED 120 Hz · iPhone 16 256GB · Monitor 27 144Hz" aria-label="Produkte suchen">
+      <input id="q" type="search" autocomplete="off" placeholder="Suche: GTA VI" aria-label="Produkte suchen">
       <button type="submit">Suchen</button>
     </form>
   </div>
@@ -332,43 +384,40 @@ aside.filters{align-self:start;position:sticky;top:calc(env(safe-area-inset-top,
 
 <!-- Startseite -->
 <div class="home" id="homeView">
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <h1>Hamster dir den <em>besten Preis</em> der Schweiz.</h1>
-        <p>Alle Schweizer Shops plus Occasionen von Ricardo und tutti.ch. Immer der günstigste zuerst, jeder Rabatt gegen den echten Preisverlauf geprüft.</p>
+  <section class="bf">
+    <div class="wrap bf-top">
+      <div class="bf-head">
+        <div class="bf-kick"><span class="pulse" aria-hidden="true"></span>Black Week · <span id="bwTitle">endet Cyber Monday, 30.11. um 23:59</span></div>
+        <h1>Black Week.<br><em>Nur echte Rabatte.</em></h1>
+        <p>Jeder Deal ist gegen den Preisverlauf der letzten 30 Tage geprüft. Keine Mondpreise, kein Zubehör zwischen den Geräten, immer das günstigste Angebot zuerst.</p>
+        <div class="count num" id="countdown"></div>
         <form class="hsearch" id="heroForm" role="search">
           <input id="hq" type="search" autocomplete="off" placeholder="Was willst du hamstern?" aria-label="Produkt suchen">
           <button type="submit">Suchen</button>
         </form>
         <div class="quick" id="quick"></div>
       </div>
-      <aside class="bw" id="bw" aria-label="Black Week">
-        <div class="k">Black Week</div>
-        <h2 id="bwTitle">Endet Cyber Monday, 30. November</h2>
-        <div class="count num" id="countdown"></div>
-        <p>Viele „Rabatte“ rechnen von Listenpreisen, die nie jemand bezahlt hat. Hamstr vergleicht mit dem echten Durchschnittspreis der letzten 30 Tage.</p>
-      </aside>
+      <article class="dotd" id="dotd" aria-label="Deal des Tages"></article>
+    </div>
+    <div class="wrap">
+      <div class="bf-h2"><h2>Bundles</h2><p>Jedes Teil einzeln beim günstigsten Shop. Gerechnet mit Versand.</p></div>
+      <div class="bundles" id="bundles"></div>
+      <div class="bf-h2"><h2 id="dealsH">Top-Deals</h2><p>Heute klar unter dem 30-Tage-Durchschnitt. Sortiert nach echtem Rabatt.</p></div>
+      <div class="deals" id="deals"></div>
     </div>
   </section>
 
   <div class="wrap">
     <div class="trust">
       <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h6"/></svg><span><b>Günstigster zuerst</b>Die Reihenfolge bestimmt nur der Preis. Plätze kann man nicht kaufen.</span></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12l3-3 4 4 8-8 3 3"/><path d="M3 20h18"/></svg><span><b>Echte Rabatte</b>Verglichen mit dem 30-Tage-Ø, nicht mit Mondpreisen.</span></div>
-      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><span><b>Liefert in die Schweiz</b>Auslandsshops nur mit bestätigter Lieferung.</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12l3-3 4 4 8-8 3 3"/><path d="M3 20h18"/></svg><span><b>Echte Rabatte</b>Verglichen mit dem 30-Tage-Ø, nicht mit Listenpreisen.</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><span><b>Kein Zubehör-Müll</b>Fernbedienungen und Halterungen landen nie zwischen den Fernsehern.</span></div>
       <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12a8 8 0 1 0 3-6.3M4 4v4h4"/></svg><span><b>Neu und Occasion</b>Ricardo und tutti.ch direkt daneben.</span></div>
     </div>
 
-    <section class="sec" aria-labelledby="dealsH">
-      <div class="sech"><h2 id="dealsH">Echte Black-Week-Deals</h2>
-        <p>Nur Produkte, deren günstigster Shop-Preis heute klar unter dem Durchschnitt der letzten 30 Tage liegt.</p></div>
-      <div class="deals" id="deals"></div>
-    </section>
-
-    <section class="sec" aria-labelledby="bundleH">
-      <div class="sech"><h2 id="bundleH">Dein Gamer-Setup</h2>
-        <p>Fernseher, PS5 und GTA VI zusammen. Hamstr sucht für jedes Teil den günstigsten Shop und rechnet nach, ob sich alles bei einem Shop lohnt.</p></div>
+    <section class="sec" aria-labelledby="bundleH" id="setup">
+      <div class="sech"><h2 id="bundleH">Setup selbst zusammenstellen</h2>
+        <p>TV-Grösse und Konsole wählen. Hamstr sucht für jedes Teil den günstigsten Shop und rechnet nach, ob sich alles bei einem Shop lohnt.</p></div>
       <div class="bundle" id="bundle"></div>
     </section>
 
@@ -703,7 +752,7 @@ function histHTML(p){
 }
 let open=new Set();
 function renderCats(){
-  $("cats").innerHTML=CATS.map(c=>`<button type="button" data-cat="${c.id}" aria-pressed="${c.id===S.cat}">${esc(c.name)}<span class="cn">${PRODUCTS.filter(p=>p.category===c.id).length}</span></button>`).join("")
+  $("cats").innerHTML=CATS.map(c=>`<button type="button" data-cat="${c.id}" aria-pressed="${c.id===S.cat&&location.hash==="#vergleich"}">${esc(c.name)}<span class="cn">${PRODUCTS.filter(p=>p.category===c.id).length}</span></button>`).join("")
     +SOON.map(c=>`<button type="button" data-soon="1" class="soon">${c}</button>`).join("");
 }
 function render(){
@@ -803,7 +852,7 @@ $("cats").addEventListener("click",e=>{
 
 /* ---------- Startseite: Black Week, echte Deals, Gamer-Setup ---------- */
 const BW_END=new Date("2026-11-30T23:59:59+01:00");          // Ende Cyber Monday, Schweizer Zeit
-const QUICK=["55 Zoll 120 Hz","PS5 Pro","GTA 6","iPhone 16 256GB","Monitor 27 Zoll 144 Hz","OLED 65"];
+const QUICK=["GTA VI","PS5 Pro","OLED 65 Zoll","iPhone 16 Pro","Monitor 27 Zoll 144 Hz","DualSense"];
 const catOf=p=>CATS.find(c=>c.id===p.category);
 function titleOf(p){const c=catOf(p);if(c.variant.kind==="none")return p.line;const vf=c.facets.find(f=>f.key===c.variant.key)||{};return `${p.line} ${fmt(vf,p[c.variant.key])}`}
 const tot=o=>o.price+o.ship;
@@ -821,8 +870,23 @@ function spark(h){
   const d=pts.map((x,i)=>`${(i/(pts.length-1)*W).toFixed(1)},${(3+(hi-x[1])/((hi-lo)||1)*(H-6)).toFixed(1)}`).join(" ");
   return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true"><polyline points="${d}" style="fill:none;stroke:var(--accent);stroke-width:2" vector-effect="non-scaling-stroke"/></svg>`;
 }
+function topDeals(){return PRODUCTS.map(p=>({p,d:dealInfo(p)})).filter(x=>x.d&&x.d.pct>=.03).sort((a,b)=>b.d.pct-a.d.pct)}
+function renderDotd(){
+  const t=topDeals()[0];
+  if(!t){$("dotd").hidden=true;return}
+  const {p,d}=t;$("dotd").hidden=false;
+  $("dotd").innerHTML=`<div class="dk">Deal des Tages</div>
+    <div class="dpct num">−${Math.round(d.pct*100)}<small>%</small></div>
+    <div class="db">${esc(p.brand)} · ${esc(catOf(p).name)}</div>
+    <h2>${esc(titleOf(p))}</h2>
+    <div class="dprice num"><small>CHF</small>${d.now.toFixed(2)}</div>
+    <div class="dvs num">Ø der letzten 30 Tage: CHF ${p.avg30.toFixed(2)}${d.lowest?` · <b>Tiefstpreis seit 90 Tagen</b>`:""}</div>
+    ${spark(p.history)}
+    <div class="dshop">bei ${esc(d.b.seller)}${d.b.ship?` · inkl. ${d.b.ship.toFixed(2)} Versand`:" · gratis Versand"} ${scarce(d.b)}</div>
+    <button type="button" class="dcta" data-goto="${esc(p.key)}">Alle Angebote vergleichen</button>`;
+}
 function renderDeals(){
-  const list=PRODUCTS.map(p=>({p,d:dealInfo(p)})).filter(x=>x.d&&x.d.pct>=.03).sort((a,b)=>b.d.pct-a.d.pct).slice(0,8);
+  const list=topDeals().slice(1,9);
   $("deals").innerHTML=list.length?list.map(({p,d})=>`<button type="button" class="deal-card" data-goto="${esc(p.key)}">
       <span class="top"><span><span class="b">${esc(p.brand)} · ${esc(catOf(p).name)}</span><br><span class="n">${esc(titleOf(p))}</span></span><span class="pct num">−${Math.round(d.pct*100)} %</span></span>
       ${spark(p.history)}
@@ -836,11 +900,37 @@ function renderDeals(){
 /* Gamer-Setup: pro Teil der günstigste Shop, verglichen mit "alles bei einem Shop" */
 const B={size:55,console:"sony-ps5-slim-digital",game:true,pad:false,occ:false};
 const tvsForBundle=()=>PRODUCTS.filter(p=>p.category==="tv"&&p.hz>=100&&p.hdmi21&&bestOf(newShop(p)));
-function pickTV(){const c=tvsForBundle().filter(p=>p.size===B.size);return c.sort((a,b)=>tot(bestOf(newShop(a)))-tot(bestOf(newShop(b))))[0]}
+function pickTV(size=B.size){const c=tvsForBundle().filter(p=>p.size===size);return c.sort((a,b)=>tot(bestOf(newShop(a)))-tot(bestOf(newShop(b))))[0]}
 const byKey=k=>PRODUCTS.find(p=>p.key===k);
 function offerFor(p){
   const pool=B.occ?p.offers.filter(o=>o.src!=="shop"||o.cond==="neu"):newShop(p);
   return bestOf(pool.filter(o=>!S.chOnly||!o.foreign));
+}
+function calcBundle(items,occ){
+  const pick=p=>bestOf((occ?p.offers.filter(o=>o.src!=="shop"||o.cond==="neu"):newShop(p)).filter(o=>!S.chOnly||!o.foreign));
+  const rows=items.map(p=>({p,o:pick(p)})).filter(r=>r.o);
+  const mix=rows.reduce((s,r)=>s+tot(r.o),0);
+  const sellers=[...new Set(items.flatMap(p=>newShop(p).map(o=>o.seller)))];
+  const single=sellers.map(s=>{const os=items.map(p=>bestOf(newShop(p).filter(o=>o.seller===s)));
+      return os.every(Boolean)?{s,sum:os.reduce((a,o)=>a+tot(o),0)}:null}).filter(Boolean).sort((a,b)=>a.sum-b.sum);
+  const avgSum=items.every(p=>p.avg30!=null)?items.reduce((s,p)=>s+p.avg30,0):null;
+  return {rows,mix,single,avgSum,complete:rows.length===items.length};
+}
+const PRESETS=[
+  {id:"ps5gta",title:"PS5 + GTA VI",sub:"Konsole und das Spiel der Saison",items:()=>[byKey("sony-ps5-slim-digital"),byKey("gta6-ps5")],cfg:{console:"sony-ps5-slim-digital",game:true,pad:false}},
+  {id:"setup",title:"55″ TV + PS5 + GTA VI",sub:"120 Hz und HDMI 2.1, bereit für die PS5",items:()=>[pickTV(55),byKey("sony-ps5-slim-digital"),byKey("gta6-ps5")],cfg:{size:55,console:"sony-ps5-slim-digital",game:true,pad:false},big:true},
+];
+function renderBundles(){
+  $("bundles").innerHTML=PRESETS.map(b=>{
+    const items=b.items().filter(Boolean),c=calcBundle(items,false);if(!c.complete)return "";
+    const best1=c.single[0],save=c.avgSum&&c.avgSum>c.mix?c.avgSum-c.mix:0;
+    return `<article class="bcard ${b.big?"big":""}">
+      <div class="bt"><h3>${esc(b.title)}</h3><span>${esc(b.sub)}</span></div>
+      <ul>${c.rows.map(({p,o})=>`<li><span>${esc(titleOf(p))}<em>${esc(o.seller)}</em></span><b class="num">${tot(o).toFixed(2)}</b></li>`).join("")}</ul>
+      <div class="btot"><span>Zusammen</span><strong class="num"><small>CHF</small>${c.mix.toFixed(2)}</strong></div>
+      <div class="bsave num">${save?`<span class="g">−${save.toFixed(0)} CHF unter 30-Tage-Ø</span>`:""}${best1&&best1.sum>c.mix?`<span>${(best1.sum-c.mix).toFixed(0)} CHF günstiger als alles bei ${esc(best1.s)}</span>`:""}</div>
+      <button type="button" class="badj" data-preset="${b.id}">Anpassen</button>
+    </article>`}).join("");
 }
 function renderBundle(){
   const sizes=[...new Set(tvsForBundle().map(p=>p.size))].sort((a,b)=>a-b);
@@ -886,7 +976,7 @@ function tick(){
   const d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60,s=Math.floor(ms/1e3)%60;
   $("countdown").innerHTML=[[d,"Tage"],[h,"Std"],[m,"Min"],[s,"Sek"]].map(([v,l])=>`<div><b>${String(v).padStart(2,"0")}</b><span>${l}</span></div>`).join("");
 }
-function renderHome(){renderDeals();renderBundle();renderCatTiles()}
+function renderHome(){renderDotd();renderBundles();renderDeals();renderBundle();renderCatTiles()}
 function goSearch(q){$("q").value=q;if(location.hash!=="#vergleich")location.hash="vergleich";applyQuery(q);window.scrollTo(0,0)}
 function goProduct(key){
   const p=byKey(key);if(!p)return;S.cat=p.category;open.clear();open.add(p.id);
@@ -897,11 +987,13 @@ $("quick").addEventListener("click",e=>{const b=e.target.closest("[data-q]");if(
 $("heroForm").addEventListener("submit",e=>{e.preventDefault();goSearch($("hq").value)});
 $("homeView").addEventListener("click",e=>{
   const g=e.target.closest("[data-goto]");if(g)return goProduct(g.dataset.goto);
+  const pr=e.target.closest("[data-preset]");if(pr){Object.assign(B,PRESETS.find(x=>x.id===pr.dataset.preset).cfg,{occ:false});renderBundle();$("setup").scrollIntoView({behavior:"smooth"});return}
   const c=e.target.closest(".cat-tile[data-cat]");if(c){S.cat=c.dataset.cat;open.clear();goSearch(CAT().default_query||"");return}
   const b=e.target.closest("button[data-b]");if(b){const k=b.dataset.b;B[k]=k==="size"?+b.dataset.v:b.dataset.v;renderBundle()}
 });
 $("homeView").addEventListener("change",e=>{const t=e.target;if(t.dataset.b){B[t.dataset.b]=t.checked;renderBundle()}});
 tick();setInterval(tick,1000);
+let qi=0;setInterval(()=>{if(!$("q").value){qi=(qi+1)%QUICK.length;$("q").placeholder="Suche: "+QUICK[qi]}},2600);
 
 /* Info-Seiten über #hash */
 const PAGES=["ueber-uns","haendler","impressum","datenschutz","fehler-melden"];
@@ -911,6 +1003,7 @@ function route(){
   $("homeView").hidden=!!pg||h==="vergleich";
   PAGES.forEach(p=>$("page-"+p).hidden=p!==pg);
   if(pg)window.scrollTo(0,0);
+  if(CATS.length)renderCats();
 }
 addEventListener("hashchange",route);route();
 
@@ -936,7 +1029,7 @@ fetch("export.json").then(r=>{if(!r.ok)throw new Error(r.status);return r.json()
     const s=UPDATED.toLocaleString("de-CH",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});
     $("updLbl").textContent=` · Preise vom ${s}`;$("updFoot").textContent=` (${s})`;
   }
-  const q=CAT().default_query||"";$("q").value=q;
+  const q=CAT().default_query||"";$("q").value=location.hash==="#vergleich"?q:"";
   applyQuery(q);renderHome();
 }).catch(()=>{$("list").innerHTML=`<div class="empty"><b>Keine Angebotsdaten gefunden</b>export.json fehlt oder ist veraltet. Im Ordner pipeline <code>python -m ingest export</code> ausführen und neben dieser Seite ablegen.</div>`});
 </script>
