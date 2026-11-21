@@ -63,11 +63,20 @@ form.search{flex:1;display:flex;align-items:center;background:var(--sunk);border
 form.search:focus-within{border-color:var(--accent);background:var(--surface)}
 form.search input{flex:1;border:0;background:transparent;font-size:16px;padding:8px 0;min-width:0;outline:none}
 form.search button{border:0;background:var(--accent);color:var(--on-accent);font-weight:600;border-radius:999px;padding:9px 18px}
-.cats{display:flex;gap:6px;overflow-x:auto;padding-block:0 12px;scrollbar-width:none}
-.cats button{border:1px solid var(--line);background:transparent;border-radius:999px;padding:5px 12px;font-size:13px;white-space:nowrap;color:var(--muted)}
+.cats{display:flex;gap:8px;overflow-x:auto;padding-block:2px 12px;scrollbar-width:none}
+.cats button,.cats a{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--sunk);border-radius:14px;padding:7px 14px 7px 9px;white-space:nowrap;color:var(--ink);text-decoration:none;text-align:left;transition:transform .12s,border-color .12s,background .12s}
+.cats button:hover,.cats a:hover{transform:translateY(-1px);border-color:var(--accent)}
+.cats .ci{width:34px;height:34px;flex:none;border-radius:10px;background:var(--surface);color:var(--accent);padding:6px;display:grid;place-items:center;font-weight:900;font-size:17px}
+.cats .ct{display:flex;flex-direction:column;line-height:1.15}
+.cats .ct b{font-size:14px;font-weight:700}
+.cats .ct small{font-size:12px;color:var(--muted)}
+.cats .ct small.hot{color:var(--accent);font-weight:700}
 .cats button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
-.cats .cn{font-size:11px;margin-left:5px;opacity:.6}
-.cats .soon{border-style:dashed;opacity:.65}
+.cats button[aria-pressed="true"] .ct small{color:inherit;opacity:.75}
+.cats .cat-hot{background:linear-gradient(135deg,#FF7A2F,#F5B83D);border-color:transparent;color:#1F1200}
+.cats .cat-hot .ci{background:#1F1200;color:#F5B83D}
+.cats .cat-hot small{color:#3D2400}
+.cats .cat-hot[aria-current="true"]{box-shadow:0 0 0 2px var(--ink)}
 
 /* parse hint */
 .detected{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:var(--muted);padding-block:14px 0}
@@ -352,7 +361,8 @@ aside.filters{align-self:start;position:sticky;top:calc(env(safe-area-inset-top,
 .pimg{width:100%;aspect-ratio:16/10;object-fit:contain;border-radius:10px;background:#ffffff0a}
 .bimgs{display:flex;gap:8px}.bimgs:empty{display:none}
 .bimg{flex:1;min-width:0;height:84px;object-fit:contain;border-radius:10px;background:#ffffff0a}
-img.thumb{object-fit:contain;height:auto}
+img.thumb{object-fit:contain;height:auto;width:128px;border-radius:8px}
+@media (max-width:880px){img.thumb{width:72px}}
 .emascot{display:block;margin:0 auto 8px;width:84px;height:84px}
 @media (max-width:880px){.dotd{margin-top:56px}.dbubble{font-size:12px}}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
@@ -764,9 +774,25 @@ function histHTML(p){
   </div>`;
 }
 let open=new Set();
+/* Kategorie-Leiste: Icon, Name und ein Grund zum Klicken (bester echter Rabatt oder Einstiegspreis) */
+const CAT_ICON={
+  tv:'<path d="M3 5h18v11H3z"/><path d="M8 20h8M12 16v4"/>',
+  monitor:'<path d="M3 4h18v12H3z"/><path d="M9 20h6M12 16v4"/><path d="M7 8h4"/>',
+  phone:'<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>',
+  gaming:'<path d="M7 9h10a4 4 0 0 1 4 4v1.5a2.5 2.5 0 0 1-4.3 1.7L15 14.5H9l-1.7 1.7A2.5 2.5 0 0 1 3 14.5V13a4 4 0 0 1 4-4z"/><path d="M8 11.5v3M6.5 13h3"/><circle cx="16" cy="12" r=".8"/><circle cx="17.5" cy="13.6" r=".8"/>',
+};
+function catHint(id){
+  const ps=PRODUCTS.filter(p=>p.category===id);
+  const best=Math.max(0,...ps.map(p=>dealInfo(p)?.pct||0));
+  if(best>=.03)return {hot:true,t:`bis −${Math.round(best*100)} %`};
+  const min=Math.min(...ps.map(p=>{const b=bestOf(newShop(p));return b?tot(b):Infinity}));
+  return {hot:false,t:isFinite(min)?`ab CHF ${Math.floor(min)}.–`:`${ps.length} Produkte`};
+}
 function renderCats(){
-  $("cats").innerHTML=CATS.map(c=>`<button type="button" data-cat="${c.id}" aria-pressed="${c.id===S.cat&&location.hash==="#vergleich"}">${esc(c.name)}<span class="cn">${PRODUCTS.filter(p=>p.category===c.id).length}</span></button>`).join("")
-    +SOON.map(c=>`<button type="button" data-soon="1" class="soon">${c}</button>`).join("");
+  const onHome=location.hash!=="#vergleich";
+  $("cats").innerHTML=`<a class="cat-hot" href="#start" aria-current="${onHome}"><span class="ci">%</span><span class="ct"><b>Black-Week-Deals</b><small>nur echte Rabatte</small></span></a>`
+    +CATS.map(c=>{const h=catHint(c.id);
+      return `<button type="button" data-cat="${c.id}" aria-pressed="${!onHome&&c.id===S.cat}"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${CAT_ICON[c.id]||""}</svg><span class="ct"><b>${esc(c.name)}</b><small class="${h.hot?"hot":""}">${esc(h.t)}</small></span></button>`}).join("");
 }
 function render(){
   $("facetBody").innerHTML=facetHTML();
@@ -868,7 +894,7 @@ const BW_END=new Date("2026-11-30T23:59:59+01:00");          // Ende Cyber Monda
 const QUICK=["GTA VI","PS5 Pro","OLED 65 Zoll","iPhone 16 Pro","Monitor 27 Zoll 144 Hz","DualSense"];
 const catOf=p=>CATS.find(c=>c.id===p.category);
 /* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
-const IMAGES=new Set(["mascot-happy.webp", "mascot-wink.webp"]);
+const IMAGES=new Set(["cat-tv.webp", "mascot-happy.webp", "mascot-wink.webp"]);
 function imgFor(p){
   if(p.image)return p.image;
   for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;
