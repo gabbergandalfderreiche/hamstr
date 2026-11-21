@@ -216,7 +216,7 @@ aside.filters{align-self:start;position:sticky;top:calc(env(safe-area-inset-top,
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--gold:#F5B83D;--gold-ink:#FFD58A;--night:#0B0908;--night-2:#1A1613;--night-ink:#F6EFE6;--night-mute:#A89C90}}
 :root[data-theme="dark"]{--gold:#F5B83D;--gold-ink:#FFD58A;--night:#0B0908;--night-2:#1A1613;--night-ink:#F6EFE6;--night-mute:#A89C90}
 .logo{gap:9px;cursor:pointer;text-decoration:none;color:inherit}
-.logo svg{width:32px;height:32px;flex:none}
+.logo svg,.logo img{width:38px;height:38px;flex:none;object-fit:contain}
 .logo b{font-weight:800}
 .logo i{font-style:normal;color:var(--accent)}
 .demo{background:var(--gold);color:#2A1A00;font-size:12.5px;font-weight:600;text-align:center;padding-block:5px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -343,6 +343,18 @@ aside.filters{align-self:start;position:sticky;top:calc(env(safe-area-inset-top,
 .bf .empty{background:transparent;border-color:#ffffff2a;color:var(--night-mute)}.bf .empty b{color:var(--night-ink)}
 @media (max-width:880px){.bf-top{grid-template-columns:minmax(0,1fr)}.bundles{grid-template-columns:minmax(0,1fr)}.dotd h2{padding-right:96px}.dotd .dpct{font-size:48px}}
 @media (prefers-reduced-motion:reduce){.pulse{animation:none}}
+/* Bilder & Maskottchen */
+.dotd{overflow:visible;margin-top:30px}
+.dmascot{position:absolute;top:-62px;left:-14px;width:120px;height:120px;filter:drop-shadow(0 8px 18px #0008);pointer-events:none}
+.dbubble{position:absolute;top:-44px;left:108px;background:var(--night-ink);color:#2A1A00;font-weight:800;font-size:13px;border-radius:12px 12px 12px 2px;padding:7px 11px;white-space:nowrap}
+.dotd .dk{margin-top:44px}
+.dimg{width:100%;max-height:200px;object-fit:contain;margin:8px 0 0}
+.pimg{width:100%;aspect-ratio:16/10;object-fit:contain;border-radius:10px;background:#ffffff0a}
+.bimgs{display:flex;gap:8px}.bimgs:empty{display:none}
+.bimg{flex:1;min-width:0;height:84px;object-fit:contain;border-radius:10px;background:#ffffff0a}
+img.thumb{object-fit:contain;height:auto}
+.emascot{display:block;margin:0 auto 8px;width:84px;height:84px}
+@media (max-width:880px){.dotd{margin-top:56px}.dbubble{font-size:12px}}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
 
 /* drawer on narrow screens */
@@ -373,7 +385,7 @@ aside.filters{align-self:start;position:sticky;top:calc(env(safe-area-inset-top,
 <div class="demo">Demo: Alle Preise und Angebote sind Beispieldaten. Echte Shop-Preise folgen.</div>
 <header>
   <div class="wrap hbar">
-    <a class="logo" href="#start" aria-label="Hamstr Startseite"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="8.5" cy="8" r="4.2" fill="#C9560C"/><circle cx="23.5" cy="8" r="4.2" fill="#C9560C"/><ellipse cx="16" cy="18.5" rx="13.5" ry="11.5" fill="#F5B83D"/><ellipse cx="7.2" cy="21.5" rx="5" ry="4.2" fill="#FFDB96"/><ellipse cx="24.8" cy="21.5" rx="5" ry="4.2" fill="#FFDB96"/><circle cx="12" cy="15.8" r="1.8" fill="#14110F"/><circle cx="20" cy="15.8" r="1.8" fill="#14110F"/><ellipse cx="16" cy="19.6" rx="1.7" ry="1.2" fill="#7A3A10"/></svg><b>hamstr</b></a>
+    <a class="logo" href="#start" aria-label="Hamstr Startseite"><img src="img/mascot-happy.webp" alt="" width="38" height="38"><b>hamstr</b></a>
     <form class="search" id="searchForm" role="search">
       <input id="q" type="search" autocomplete="off" placeholder="Suche: GTA VI" aria-label="Produkte suchen">
       <button type="submit">Suchen</button>
@@ -512,7 +524,7 @@ aside.filters{align-self:start;position:sticky;top:calc(env(safe-area-inset-top,
 <footer class="foot">
   <div class="wrap fgrid">
     <div class="fbrand">
-      <div class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="8.5" cy="8" r="4.2" fill="#C9560C"/><circle cx="23.5" cy="8" r="4.2" fill="#C9560C"/><ellipse cx="16" cy="18.5" rx="13.5" ry="11.5" fill="#F5B83D"/><ellipse cx="7.2" cy="21.5" rx="5" ry="4.2" fill="#FFDB96"/><ellipse cx="24.8" cy="21.5" rx="5" ry="4.2" fill="#FFDB96"/><circle cx="12" cy="15.8" r="1.8" fill="#14110F"/><circle cx="20" cy="15.8" r="1.8" fill="#14110F"/><ellipse cx="16" cy="19.6" rx="1.7" ry="1.2" fill="#7A3A10"/></svg><b>hamstr</b></div>
+      <div class="logo"><img src="img/mascot-happy.webp" alt="" width="38" height="38"><b>hamstr</b></div>
       <p>Der Schweizer Preisvergleich, der immer mit dem günstigsten Angebot beginnt. Neu und Occasion.</p>
       <div class="theme" role="group" aria-label="Darstellung">
         <button type="button" data-theme-set="light" title="Hell" aria-label="Hell">☀</button>
@@ -702,6 +714,7 @@ function facetHTML(){
 /* ---------- render results ---------- */
 const HUE={Samsung:220,LG:340,Sony:260,TCL:200,Hisense:170,Philips:30,Panasonic:280,Xiaomi:20,Apple:200,Google:140,Dell:210,ASUS:0,AOC:350};
 function thumb(p){
+  const u=imgFor(p);if(u)return `<img class="thumb" src="${esc(u)}" alt="" loading="lazy">`;
   const hue=HUE[p.brand]||210;
   const grad=`<defs><linearGradient id="g${p.id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${hue} 70% 55%)"/><stop offset="1" stop-color="hsl(${(hue+60)%360} 75% 45%)"/></linearGradient></defs>`;
   if(p.category==="phone"){
@@ -774,7 +787,7 @@ function render(){
   $("applyDrawer").textContent=`${rows.length} Resultate anzeigen`;
 
   const L=$("list");
-  if(!rows.length){L.innerHTML=`<div class="empty"><b>Nichts passt zu allen Filtern</b>Entferne einen Filter oben, z.B. die Grösse oder den Zustand.</div>`;return}
+  if(!rows.length){L.innerHTML=`<div class="empty"><img class="emascot" src="img/mascot-happy.webp" alt="" width="84" height="84"><b>Nichts passt zu allen Filtern</b>Entferne einen Filter oben, z.B. die Grösse oder den Zustand.</div>`;return}
   const vdef=CAT().variant;
   L.innerHTML=rows.map(({p,b},i)=>{
     const used=p.offers.filter(o=>o.cond==="occ"&&S.srcs.has(o.src));
@@ -854,6 +867,14 @@ $("cats").addEventListener("click",e=>{
 const BW_END=new Date("2026-11-30T23:59:59+01:00");          // Ende Cyber Monday, Schweizer Zeit
 const QUICK=["GTA VI","PS5 Pro","OLED 65 Zoll","iPhone 16 Pro","Monitor 27 Zoll 144 Hz","DualSense"];
 const catOf=p=>CATS.find(c=>c.id===p.category);
+/* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
+const IMAGES=new Set(["mascot-happy.webp", "mascot-wink.webp"]);
+function imgFor(p){
+  if(p.image)return p.image;
+  for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;
+  return null;
+}
+const pimg=(p,cls="pimg")=>{const u=imgFor(p);return u?`<img class="${cls}" src="${esc(u)}" alt="" loading="lazy">`:""};
 function titleOf(p){const c=catOf(p);if(c.variant.kind==="none")return p.line;const vf=c.facets.find(f=>f.key===c.variant.key)||{};return `${p.line} ${fmt(vf,p[c.variant.key])}`}
 const tot=o=>o.price+o.ship;
 function bestOf(list){return list.length?list.reduce((a,b)=>tot(b)<tot(a)?b:a):null}
@@ -875,10 +896,12 @@ function renderDotd(){
   const t=topDeals()[0];
   if(!t){$("dotd").hidden=true;return}
   const {p,d}=t;$("dotd").hidden=false;
-  $("dotd").innerHTML=`<div class="dk">Deal des Tages</div>
+  $("dotd").innerHTML=`<img class="dmascot" src="img/mascot-wink.webp" alt="" width="120" height="120"><div class="dbubble">Hab ich geprüft: echter Rabatt!</div>
+    <div class="dk">Deal des Tages</div>
     <div class="dpct num">−${Math.round(d.pct*100)}<small>%</small></div>
     <div class="db">${esc(p.brand)} · ${esc(catOf(p).name)}</div>
     <h2>${esc(titleOf(p))}</h2>
+    ${pimg(p,"dimg")}
     <div class="dprice num"><small>CHF</small>${d.now.toFixed(2)}</div>
     <div class="dvs num">Ø der letzten 30 Tage: CHF ${p.avg30.toFixed(2)}${d.lowest?` · <b>Tiefstpreis seit 90 Tagen</b>`:""}</div>
     ${spark(p.history)}
@@ -888,13 +911,14 @@ function renderDotd(){
 function renderDeals(){
   const list=topDeals().slice(1,9);
   $("deals").innerHTML=list.length?list.map(({p,d})=>`<button type="button" class="deal-card" data-goto="${esc(p.key)}">
+      ${pimg(p)}
       <span class="top"><span><span class="b">${esc(p.brand)} · ${esc(catOf(p).name)}</span><br><span class="n">${esc(titleOf(p))}</span></span><span class="pct num">−${Math.round(d.pct*100)} %</span></span>
       ${spark(p.history)}
       <span class="pr"><strong class="num">CHF ${d.now.toFixed(2)}</strong><span class="num">Ø 30 Tage ${p.avg30.toFixed(2)}</span></span>
       <span class="why">bei ${esc(d.b.seller)}${d.b.ship?` · inkl. ${d.b.ship.toFixed(2)} Versand`:" · gratis Versand"}</span>
       ${d.lowest?`<span class="lowest">Tiefstpreis seit 90 Tagen</span>`:""}${scarce(d.b)}
     </button>`).join("")
-    :`<div class="empty"><b>Gerade keine Rabatte, die den Namen verdienen</b>Sobald ein Preis klar unter seinen 30-Tage-Schnitt fällt, steht er hier.</div>`;
+    :`<div class="empty"><img class="emascot" src="img/mascot-happy.webp" alt="" width="84" height="84"><b>Gerade keine Rabatte, die den Namen verdienen</b>Sobald ein Preis klar unter seinen 30-Tage-Schnitt fällt, steht er hier.</div>`;
 }
 
 /* Gamer-Setup: pro Teil der günstigste Shop, verglichen mit "alles bei einem Shop" */
@@ -926,6 +950,7 @@ function renderBundles(){
     const best1=c.single[0],save=c.avgSum&&c.avgSum>c.mix?c.avgSum-c.mix:0;
     return `<article class="bcard ${b.big?"big":""}">
       <div class="bt"><h3>${esc(b.title)}</h3><span>${esc(b.sub)}</span></div>
+      <div class="bimgs">${c.rows.map(({p})=>pimg(p,"bimg")).join("")}</div>
       <ul>${c.rows.map(({p,o})=>`<li><span>${esc(titleOf(p))}<em>${esc(o.seller)}</em></span><b class="num">${tot(o).toFixed(2)}</b></li>`).join("")}</ul>
       <div class="btot"><span>Zusammen</span><strong class="num"><small>CHF</small>${c.mix.toFixed(2)}</strong></div>
       <div class="bsave num">${save?`<span class="g">−${save.toFixed(0)} CHF unter 30-Tage-Ø</span>`:""}${best1&&best1.sum>c.mix?`<span>${(best1.sum-c.mix).toFixed(0)} CHF günstiger als alles bei ${esc(best1.s)}</span>`:""}</div>
@@ -1021,7 +1046,7 @@ const totop=$("totop");
 addEventListener("scroll",()=>{totop.hidden=scrollY<900},{passive:true});
 totop.onclick=()=>window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
 
-$("list").innerHTML=`<div class="empty"><b>Angebote werden geladen …</b></div>`;
+$("list").innerHTML=`<div class="empty"><img class="emascot" src="img/mascot-happy.webp" alt="" width="84" height="84"><b>Angebote werden geladen …</b></div>`;
 fetch("export.json").then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>{
   fromExport(d);
   if(!CATS.length)throw new Error("Export ohne Kategorien");
@@ -1031,7 +1056,7 @@ fetch("export.json").then(r=>{if(!r.ok)throw new Error(r.status);return r.json()
   }
   const q=CAT().default_query||"";$("q").value=location.hash==="#vergleich"?q:"";
   applyQuery(q);renderHome();
-}).catch(()=>{$("list").innerHTML=`<div class="empty"><b>Keine Angebotsdaten gefunden</b>export.json fehlt oder ist veraltet. Im Ordner pipeline <code>python -m ingest export</code> ausführen und neben dieser Seite ablegen.</div>`});
+}).catch(()=>{$("list").innerHTML=`<div class="empty"><img class="emascot" src="img/mascot-happy.webp" alt="" width="84" height="84"><b>Keine Angebotsdaten gefunden</b>export.json fehlt oder ist veraltet. Im Ordner pipeline <code>python -m ingest export</code> ausführen und neben dieser Seite ablegen.</div>`});
 </script>
 
 </body>
