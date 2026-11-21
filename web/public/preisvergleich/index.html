@@ -365,6 +365,23 @@ img.thumb{object-fit:contain;height:auto;width:128px;border-radius:8px}
 @media (max-width:880px){img.thumb{width:72px}}
 .emascot{display:block;margin:0 auto 8px;width:84px;height:84px}
 @media (max-width:880px){.dotd{margin-top:56px}.dbubble{font-size:12px}}
+/* Angebotsliste: nur das Nötige */
+.olist{border-top:1px solid var(--line);display:flex;flex-direction:column}
+.orow{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:16px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line)}
+.orow:last-child{border-bottom:0}
+.orow.best{background:var(--good-soft)}
+.oshop{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-width:0}
+.oshop b{font-size:15px}
+.otag{font-size:11px;font-weight:700;border-radius:5px;padding:1px 6px;background:var(--sunk);color:var(--muted)}
+.otag.win{background:var(--good);color:#fff}
+.odel{flex-basis:100%;font-size:12.5px;color:var(--muted)}
+.oprice{text-align:right;display:flex;flex-direction:column}
+.oprice b{font-size:18px}
+.oprice small{font-size:11.5px;color:var(--muted)}
+.orow .go{background:var(--accent);color:var(--on-accent);border:0;border-radius:10px;padding:10px 16px;font-weight:700;font-size:14px}
+.orow:not(.best) .go{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.ohid{margin:0;padding:10px 16px;font-size:12.5px;color:var(--muted)}
+@media (max-width:560px){.orow{grid-template-columns:minmax(0,1fr) auto;gap:8px 12px}.orow .go{grid-column:1/-1;width:100%}}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
 
 /* drawer on narrow screens */
@@ -725,6 +742,7 @@ function facetHTML(){
 const HUE={Samsung:220,LG:340,Sony:260,TCL:200,Hisense:170,Philips:30,Panasonic:280,Xiaomi:20,Apple:200,Google:140,Dell:210,ASUS:0,AOC:350};
 function thumb(p){
   const u=imgFor(p);if(u)return `<img class="thumb" src="${esc(u)}" alt="" loading="lazy">`;
+  if(p.category!=="phone"&&p.size==null)return `<svg class="thumb" viewBox="-6 -2 36 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)" aria-hidden="true">${CAT_ICON[p.category]||'<rect x="4" y="4" width="16" height="16" rx="3"/>'}</svg>`;
   const hue=HUE[p.brand]||210;
   const grad=`<defs><linearGradient id="g${p.id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${hue} 70% 55%)"/><stop offset="1" stop-color="hsl(${(hue+60)%360} 75% 45%)"/></linearGradient></defs>`;
   if(p.category==="phone"){
@@ -836,12 +854,13 @@ function render(){
       </div>
       <div class="cfoot"><div class="srcs">${srcSet.map(s=>`<span class="src ${s}">${SRC.find(x=>x[0]===s)[1]}</span>`).join("")}<span>${nNew} Neu-Angebote${used.length?` · ${used.length} Occasion`:""}</span></div>
         <button type="button" class="toggle" data-open="${p.id}" aria-expanded="${isOpen}">${isOpen?"Angebote ausblenden":`Alle ${p.offers.length} Angebote`}</button></div>
-      ${isOpen?`${histHTML(p)}<div class="offers"><table><thead><tr><th>Anbieter</th><th>Zustand</th><th>Lieferung</th><th class="r">Preis</th><th class="r">Versand</th><th class="r">Total</th><th></th></tr></thead><tbody>
-        ${all.map(o=>{const on=liveOffers(p).includes(o);return `<tr class="${o===b?"best":""} ${on?"":"off"}"><td><span class="src ${o.src}">${SRC.find(x=>x[0]===o.src)[1]}</span> <span class="shopname">${esc(o.seller)}</span>${o.foreign?` <span class="flag">Ausland · ${esc(o.country)}</span>`:""}${o.note?`<span class="sub">${esc(o.note)}</span>`:""}</td>
-        <td>${o.cond==="neu"?"Neu":"Occasion"}</td><td><span class="dot ${o.stock?"ok":"wait"}"></span>${esc(o.deliv)}</td>
-        <td class="r num">${o.price.toFixed(2)}</td><td class="r num">${o.pickup?"Abholung":o.ship?o.ship.toFixed(2):"gratis"}</td><td class="r num tot">${(o.price+o.ship).toFixed(2)}</td>
-        <td class="r"><button type="button" class="go" data-go="${esc(o.seller)}">Zum Angebot ↗</button></td></tr>`}).join("")}
-      </tbody></table></div>`:""}
+      ${isOpen?(()=>{const live=liveOffers(p).sort((a,c)=>total(a)-total(c)),hidden=p.offers.length-live.length;
+        return `${histHTML(p)}<div class="olist">${live.map(o=>`<div class="orow ${o===b?"best":""}">
+          <div class="oshop"><b>${esc(o.seller)}</b>${o===b?`<span class="otag win">Bestpreis</span>`:""}${o.cond==="occ"?`<span class="otag">Occasion</span>`:""}${o.src!=="shop"?`<span class="src ${o.src}">${SRC.find(x=>x[0]===o.src)[1]}</span>`:""}${o.foreign?`<span class="otag">Ausland</span>`:""}
+            <span class="odel"><span class="dot ${o.stock?"ok":"wait"}"></span>${esc(o.deliv)}${o.src!=="shop"&&o.place?` · ${esc(o.place)}`:""}</span></div>
+          <div class="oprice num"><b>CHF ${total(o).toFixed(2)}</b><small>${o.pickup?"Abholung":!S.ship?"zzgl. Versand":o.ship?`inkl. ${o.ship.toFixed(2)} Versand`:"gratis Versand"}</small></div>
+          <button type="button" class="go" data-go="${esc(o.seller)}">Zum Shop</button>
+        </div>`).join("")}${hidden?`<p class="ohid">${hidden} ${hidden===1?"Angebot passt":"Angebote passen"} nicht zu deinen Filtern</p>`:""}</div>`})():""}
     </article>`}).join("");
 }
 
@@ -878,7 +897,7 @@ $("active").addEventListener("click",e=>{
 $("list").addEventListener("click",e=>{
   const t=e.target.closest("[data-open]");if(t){const id=+t.dataset.open;open.has(id)?open.delete(id):open.add(id);render();return}
   const c=e.target.closest("[data-cond]");if(c){S.cond="alle";render();return}
-  const g=e.target.closest("[data-go]");if(g)toast(`Prototyp: hier würde das Angebot bei ${g.dataset.go} öffnen.`);
+  const g=e.target.closest("[data-go]");if(g)toast(`Demo: Hier geht es direkt zu ${g.dataset.go}, ohne Umweg über Werbe-Tracker.`);
 });
 let tt;function toast(m){const t=$("toast");t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,2600)}
 function drawer(o){$("filters").classList.toggle("open",o);$("scrim").hidden=!o}
