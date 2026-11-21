@@ -374,6 +374,8 @@ img.thumb{object-fit:contain;height:auto;width:128px;border-radius:8px}
 .oshop b{font-size:15px}
 .otag{font-size:11px;font-weight:700;border-radius:5px;padding:1px 6px;background:var(--sunk);color:var(--muted)}
 .otag.win{background:var(--good);color:#fff}
+.otag.real{background:var(--gold);color:#2A1A00}
+a.go{text-decoration:none;display:inline-block;text-align:center}
 .odel{flex-basis:100%;font-size:12.5px;color:var(--muted)}
 .oprice{text-align:right;display:flex;flex-direction:column}
 .oprice b{font-size:18px}
@@ -412,7 +414,7 @@ img.thumb{object-fit:contain;height:auto;width:128px;border-radius:8px}
 </style>
 </head>
 <body>
-<div class="demo">Demo: Alle Preise und Angebote sind Beispieldaten. Echte Shop-Preise folgen.</div>
+<div class="demo">Beta: Angebote mit «Echter Preis» sind echte Shop-Preise (Stand 21.11.2026). Alle anderen sind Beispieldaten.</div>
 <header>
   <div class="wrap hbar">
     <a class="logo" href="#start" aria-label="Hamstr Startseite"><img src="img/mascot-happy.webp" alt="" width="38" height="38"><b>hamstr</b></a>
@@ -586,7 +588,7 @@ function fromExport(d){
   CATS=d.categories||[];
   PRODUCTS=d.products.map((p,i)=>({...p,id:i,key:p.id,model:p.mpn,name:`${p.brand} ${p.mpn}`,history:p.history||[],
     offers:p.offers.map(o=>({src:o.source,seller:o.seller,cond:o.condition,price:o.price,ship:o.shipping||0,pickup:!!o.pickup,
-      stock:!!o.in_stock,stockQty:o.stock_qty,url:o.url,foreign:!!o.foreign,country:o.country||"CH",
+      stock:!!o.in_stock,stockQty:o.stock_qty,url:o.url,real:!!o.real,foreign:!!o.foreign,country:o.country||"CH",
       deliv:o.pickup?"Abholung":(AVAIL[o.availability]||o.availability||(o.in_stock?"an Lager":"auf Bestellung")),
       note:o.source!=="shop"?`„${o.title}“${o.place?" · "+o.place:""} · erkannt über ${METHOD[o.method]||o.method}`
         :o.foreign?"Liefert in die Schweiz. Einfuhr-MwSt. und Verzollungsgebühr können dazukommen.":""}))}));
@@ -851,7 +853,7 @@ function render(){
         ${thumb(p)}
         <div class="info"><div class="brand">${esc(p.brand)}</div><h2>${esc(p.line)} ${esc(fmt(vf,p[vdef.key]))} <span style="color:var(--muted);font-weight:500">${esc(p.model)}</span></h2>
           <div class="specs">${specChips(p)}</div></div>
-        <div class="price"><span class="lbl">${lbl}</span><span class="amt num"><small>CHF</small>${total(b).toFixed(2)}</span>
+        <div class="price"><span class="lbl">${b.real?`<span class="otag real">Echter Preis</span> `:""}${lbl}</span><span class="amt num"><small>CHF</small>${total(b).toFixed(2)}</span>
           <span class="meta">${esc(b.seller)}${S.ship?(b.pickup?" · Abholung":b.ship?` · inkl. ${b.ship.toFixed(2)} Versand`:" · gratis Versand"):""}</span>${dealBadge(p,b)}${scarce(b)}
           ${S.cond==="neu"&&usedMin?`<button type="button" class="usedhint" data-cond="alle">Occasion ab CHF ${usedMin.toFixed(2)}</button>`:""}</div>
       </div>
@@ -859,10 +861,10 @@ function render(){
         <button type="button" class="toggle" data-open="${p.id}" aria-expanded="${isOpen}">${isOpen?"Angebote ausblenden":`Alle ${p.offers.length} Angebote`}</button></div>
       ${isOpen?(()=>{const live=liveOffers(p).sort((a,c)=>total(a)-total(c)),hidden=p.offers.length-live.length;
         return `${histHTML(p)}<div class="olist">${live.map(o=>`<div class="orow ${o===b?"best":""}">
-          <div class="oshop"><b>${esc(o.seller)}</b>${o===b?`<span class="otag win">Bestpreis</span>`:""}${o.cond==="occ"?`<span class="otag">Occasion</span>`:""}${o.src!=="shop"?`<span class="src ${o.src}">${SRC.find(x=>x[0]===o.src)[1]}</span>`:""}${o.foreign?`<span class="otag">Ausland</span>`:""}
+          <div class="oshop"><b>${esc(o.seller)}</b>${o.real?`<span class="otag real">Echter Preis</span>`:""}${o===b?`<span class="otag win">Bestpreis</span>`:""}${o.cond==="occ"?`<span class="otag">Occasion</span>`:""}${o.src!=="shop"?`<span class="src ${o.src}">${SRC.find(x=>x[0]===o.src)[1]}</span>`:""}${o.foreign?`<span class="otag">Ausland</span>`:""}
             <span class="odel"><span class="dot ${o.stock?"ok":"wait"}"></span>${esc(o.deliv)}${o.src!=="shop"&&o.place?` · ${esc(o.place)}`:""}</span></div>
           <div class="oprice num"><b>CHF ${total(o).toFixed(2)}</b><small>${o.pickup?"Abholung":!S.ship?"zzgl. Versand":o.ship?`inkl. ${o.ship.toFixed(2)} Versand`:"gratis Versand"}</small></div>
-          <button type="button" class="go" data-go="${esc(o.seller)}">Zum Shop</button>
+          ${o.real?`<a class="go" href="${esc(o.url)}" target="_blank" rel="sponsored noopener noreferrer">Zum Shop</a>`:`<button type="button" class="go" data-go="${esc(o.seller)}">Zum Shop</button>`}
         </div>`).join("")}${hidden?`<p class="ohid">${hidden} ${hidden===1?"Angebot passt":"Angebote passen"} nicht zu deinen Filtern</p>`:""}</div>`})():""}
     </article>`}).join("");
 }
@@ -916,7 +918,7 @@ const BW_END=new Date("2026-11-30T23:59:59+01:00");          // Ende Cyber Monda
 const QUICK=["GTA VI","PS5 Pro","OLED 65 Zoll","iPhone 16 Pro","Monitor 27 Zoll 144 Hz","DualSense"];
 const catOf=p=>CATS.find(c=>c.id===p.category);
 /* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
-const IMAGES=new Set(["cat-tv.webp", "mascot-happy.webp", "mascot-wink.webp", "p-gta6-ps5.webp", "p-sam-du7170-55.webp", "p-sam-q80d-55.webp", "p-sam-q80d-65.webp", "p-sam-s90d-55.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp"]);
+const IMAGES=new Set(["cat-tv.webp", "mascot-happy.webp", "mascot-wink.webp", "p-gta6-ps5.webp", "p-sam-m70h-55.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp"]);
 function imgFor(p){
   if(p.image)return p.image;
   for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;
@@ -988,9 +990,10 @@ function calcBundle(items,occ){
   const avgSum=items.every(p=>p.avg30!=null)?items.reduce((s,p)=>s+p.avg30,0):null;
   return {rows,mix,single,avgSum,complete:rows.length===items.length};
 }
+function realTV(size){return PRODUCTS.filter(p=>p.category==="tv"&&p.size===size&&p.real&&bestOf(newShop(p))).sort((a,b)=>tot(bestOf(newShop(a)))-tot(bestOf(newShop(b))))[0]}
 const PRESETS=[
   {id:"ps5gta",title:"PS5 + GTA VI",sub:"Konsole und das Spiel der Saison",items:()=>[byKey("sony-ps5-slim-digital"),byKey("gta6-ps5")],cfg:{console:"sony-ps5-slim-digital",game:true,pad:false}},
-  {id:"setup",title:"55″ TV + PS5 + GTA VI",sub:"120 Hz und HDMI 2.1, bereit für die PS5",items:()=>[pickTV(55),byKey("sony-ps5-slim-digital"),byKey("gta6-ps5")],cfg:{size:55,console:"sony-ps5-slim-digital",game:true,pad:false},big:true},
+  {id:"setup",title:"55″ TV + PS5 + GTA VI",sub:"4K-Fernseher, Konsole und Spiel",items:()=>[realTV(55)||pickTV(55),byKey("sony-ps5-slim-digital"),byKey("gta6-ps5")],cfg:{size:55,console:"sony-ps5-slim-digital",game:true,pad:false},big:true},
 ];
 function renderBundles(){
   $("bundles").innerHTML=PRESETS.map(b=>{
@@ -999,7 +1002,7 @@ function renderBundles(){
     return `<article class="bcard ${b.big?"big":""}">
       <div class="bt"><h3>${esc(b.title)}</h3><span>${esc(b.sub)}</span></div>
       <div class="bimgs">${c.rows.map(({p})=>pimg(p,"bimg")).join("")}</div>
-      <ul>${c.rows.map(({p,o})=>`<li><span>${esc(titleOf(p))}<em>${esc(o.seller)}</em></span><b class="num">${tot(o).toFixed(2)}</b></li>`).join("")}</ul>
+      <ul>${c.rows.map(({p,o})=>`<li><span>${esc(titleOf(p))}<em>${esc(o.seller)}${o.real?" · echter Preis":""}</em></span><b class="num">${tot(o).toFixed(2)}</b></li>`).join("")}</ul>
       <div class="btot"><span>Zusammen</span><strong class="num"><small>CHF</small>${c.mix.toFixed(2)}</strong></div>
       <div class="bsave num">${save?`<span class="g">−${save.toFixed(0)} CHF unter 30-Tage-Ø</span>`:""}${best1&&best1.sum>c.mix?`<span>${(best1.sum-c.mix).toFixed(0)} CHF günstiger als alles bei ${esc(best1.s)}</span>`:""}</div>
       <button type="button" class="badj" data-preset="${b.id}">Anpassen</button>

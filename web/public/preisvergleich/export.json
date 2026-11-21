@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T18:33:27+00:00",
+ "generated_at": "2026-11-21T19:10:47+00:00",
  "categories": [
   {
    "id": "tv",
@@ -746,6 +746,7 @@
      59.9
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -764,7 +765,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -778,436 +780,37 @@
    "label": "Grand Theft Auto VI (PS5) ",
    "typ": "Spiel",
    "platform": "PS5",
-   "best_new": 60.0,
-   "best_any": 60.0,
-   "avg30": 74.95,
-   "min90": 74.9,
+   "best_new": 72.9,
+   "best_any": 72.9,
+   "avg30": null,
+   "min90": null,
    "history": [
     [
-     "2026-08-27",
-     79.95
-    ],
-    [
-     "2026-08-28",
-     79.95
-    ],
-    [
-     "2026-08-29",
-     79.95
-    ],
-    [
-     "2026-08-30",
-     79.95
-    ],
-    [
-     "2026-08-31",
-     79.95
-    ],
-    [
-     "2026-09-01",
-     79.95
-    ],
-    [
-     "2026-09-02",
-     79.95
-    ],
-    [
-     "2026-09-03",
-     79.95
-    ],
-    [
-     "2026-09-04",
-     79.95
-    ],
-    [
-     "2026-09-05",
-     79.95
-    ],
-    [
-     "2026-09-06",
-     79.95
-    ],
-    [
-     "2026-09-07",
-     79.95
-    ],
-    [
-     "2026-09-08",
-     79.95
-    ],
-    [
-     "2026-09-09",
-     79.95
-    ],
-    [
-     "2026-09-10",
-     79.95
-    ],
-    [
-     "2026-09-11",
-     79.95
-    ],
-    [
-     "2026-09-12",
-     79.95
-    ],
-    [
-     "2026-09-13",
-     79.95
-    ],
-    [
-     "2026-09-14",
-     79.95
-    ],
-    [
-     "2026-09-15",
-     79.95
-    ],
-    [
-     "2026-09-16",
-     79.95
-    ],
-    [
-     "2026-09-17",
-     79.95
-    ],
-    [
-     "2026-09-18",
-     79.95
-    ],
-    [
-     "2026-09-19",
-     79.95
-    ],
-    [
-     "2026-09-20",
-     79.95
-    ],
-    [
-     "2026-09-21",
-     79.95
-    ],
-    [
-     "2026-09-22",
-     79.95
-    ],
-    [
-     "2026-09-23",
-     79.95
-    ],
-    [
-     "2026-09-24",
-     79.95
-    ],
-    [
-     "2026-09-25",
-     79.95
-    ],
-    [
-     "2026-09-26",
-     79.95
-    ],
-    [
-     "2026-09-27",
-     79.95
-    ],
-    [
-     "2026-09-28",
-     79.95
-    ],
-    [
-     "2026-09-29",
-     79.95
-    ],
-    [
-     "2026-09-30",
-     79.95
-    ],
-    [
-     "2026-10-01",
-     79.95
-    ],
-    [
-     "2026-10-02",
-     74.95
-    ],
-    [
-     "2026-10-03",
-     74.95
-    ],
-    [
-     "2026-10-04",
-     74.95
-    ],
-    [
-     "2026-10-05",
-     74.95
-    ],
-    [
-     "2026-10-06",
-     74.95
-    ],
-    [
-     "2026-10-07",
-     74.95
-    ],
-    [
-     "2026-10-08",
-     74.95
-    ],
-    [
-     "2026-10-09",
-     74.95
-    ],
-    [
-     "2026-10-10",
-     74.95
-    ],
-    [
-     "2026-10-11",
-     74.95
-    ],
-    [
-     "2026-10-12",
-     74.95
-    ],
-    [
-     "2026-10-13",
-     74.95
-    ],
-    [
-     "2026-10-14",
-     74.95
-    ],
-    [
-     "2026-10-15",
-     74.95
-    ],
-    [
-     "2026-10-16",
-     74.95
-    ],
-    [
-     "2026-10-17",
-     74.95
-    ],
-    [
-     "2026-10-18",
-     74.95
-    ],
-    [
-     "2026-10-19",
-     74.95
-    ],
-    [
-     "2026-10-20",
-     74.95
-    ],
-    [
-     "2026-10-21",
-     74.95
-    ],
-    [
-     "2026-10-22",
-     74.95
-    ],
-    [
-     "2026-10-23",
-     74.95
-    ],
-    [
-     "2026-10-24",
-     74.95
-    ],
-    [
-     "2026-10-25",
-     74.95
-    ],
-    [
-     "2026-10-26",
-     74.95
-    ],
-    [
-     "2026-10-27",
-     74.95
-    ],
-    [
-     "2026-10-28",
-     74.95
-    ],
-    [
-     "2026-10-29",
-     74.95
-    ],
-    [
-     "2026-10-30",
-     74.95
-    ],
-    [
-     "2026-10-31",
-     74.95
-    ],
-    [
-     "2026-11-01",
-     74.95
-    ],
-    [
-     "2026-11-02",
-     74.95
-    ],
-    [
-     "2026-11-03",
-     74.95
-    ],
-    [
-     "2026-11-04",
-     74.95
-    ],
-    [
-     "2026-11-05",
-     74.95
-    ],
-    [
-     "2026-11-06",
-     74.95
-    ],
-    [
-     "2026-11-07",
-     74.95
-    ],
-    [
-     "2026-11-08",
-     74.95
-    ],
-    [
-     "2026-11-09",
-     74.95
-    ],
-    [
-     "2026-11-10",
-     74.95
-    ],
-    [
-     "2026-11-11",
-     74.95
-    ],
-    [
-     "2026-11-12",
-     74.95
-    ],
-    [
-     "2026-11-13",
-     74.95
-    ],
-    [
-     "2026-11-14",
-     74.95
-    ],
-    [
-     "2026-11-15",
-     74.95
-    ],
-    [
-     "2026-11-16",
-     74.95
-    ],
-    [
-     "2026-11-17",
-     74.95
-    ],
-    [
-     "2026-11-18",
-     74.95
-    ],
-    [
-     "2026-11-19",
-     74.95
-    ],
-    [
-     "2026-11-20",
-     74.95
-    ],
-    [
      "2026-11-21",
-     74.9
+     72.9
     ]
    ],
+   "real": true,
    "offers": [
     {
-     "source": "tutti",
-     "seller": "tutti.ch",
-     "title": "GTA 6 PS5 neu OVP",
-     "url": "https://example.ch/t/2201",
-     "price": 60.0,
-     "shipping": 0.0,
-     "total": 60.0,
-     "condition": "neu",
-     "in_stock": 1,
-     "availability": "",
-     "pickup": 1,
-     "place": "Zürich",
-     "country": "CH",
-     "stock_qty": null,
-     "method": "model",
-     "confidence": 0.85,
-     "foreign": false
-    },
-    {
      "source": "shop",
-     "seller": "Digitec",
-     "title": "Rockstar Games Grand Theft Auto VI (PS5, DE)",
-     "url": "https://example.ch/a/6100003",
-     "price": 74.9,
+     "seller": "MediaMarkt (Marktplatz: Softridge)",
+     "title": "GTA 6 (Code in a Box) - [PlayStation 5]",
+     "url": "https://www.mediamarkt.ch/de/product/_gta-6-code-in-a-box-playstation-5-179315669.html",
+     "price": 72.9,
      "shipping": 0.0,
-     "total": 74.9,
+     "total": 72.9,
      "condition": "neu",
      "in_stock": 1,
-     "availability": "in stock",
+     "availability": "Online verfügbar, Lieferung ab 24.11.",
      "pickup": 0,
      "place": null,
      "country": "CH",
      "stock_qty": null,
-     "method": "ean",
+     "method": "kuratiert",
      "confidence": 1.0,
-     "foreign": false
-    },
-    {
-     "source": "shop",
-     "seller": "Brack",
-     "title": "GTA VI (PS5) Standard Edition",
-     "url": "https://example.ch/b/180003",
-     "price": 79.9,
-     "shipping": 0.0,
-     "total": 79.9,
-     "condition": "neu",
-     "in_stock": 1,
-     "availability": "",
-     "pickup": 0,
-     "place": null,
-     "country": "CH",
-     "stock_qty": 35,
-     "method": "ean",
-     "confidence": 1.0,
-     "foreign": false
-    },
-    {
-     "source": "shop",
-     "seller": "Interdiscount",
-     "title": "ROCKSTAR GAMES GTA VI PS5",
-     "url": "https://example.ch/c/9902",
-     "price": 79.95,
-     "shipping": 0.0,
-     "total": 79.95,
-     "condition": "neu",
-     "in_stock": 1,
-     "availability": "Lieferung in 1-2 Arbeitstagen",
-     "pickup": 0,
-     "place": null,
-     "country": "CH",
-     "stock_qty": null,
-     "method": "mpn",
-     "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": true
     }
    ]
   },
@@ -1563,6 +1166,7 @@
      139.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -1581,7 +1185,8 @@
      "stock_qty": 50,
      "method": "mpn",
      "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -1941,6 +1546,7 @@
      219.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -1959,7 +1565,8 @@
      "stock_qty": 30,
      "method": "mpn",
      "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -1978,7 +1585,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -2294,6 +1902,7 @@
      219.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -2312,7 +1921,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -2331,7 +1941,8 @@
      "stock_qty": 14,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -2647,6 +2258,7 @@
      289.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -2665,7 +2277,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -2969,6 +2582,7 @@
      329.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -2987,7 +2601,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -3231,6 +2846,7 @@
      389.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -3249,333 +2865,56 @@
      "stock_qty": null,
      "method": "mpn",
      "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
   {
-   "id": "sony-ps5-slim-digital",
-   "category": "gaming",
-   "brand": "Sony",
-   "mpn": "CFI-2016B",
-   "line": "PlayStation 5 Slim Digital",
-   "variant": null,
-   "label": "PlayStation 5 Slim Digital ",
-   "typ": "Konsole",
-   "platform": "PS5",
-   "disc": false,
-   "storage": 1024,
+   "id": "sam-m70h-55",
+   "category": "tv",
+   "brand": "Samsung",
+   "mpn": "",
+   "line": "Mini LED M70H",
+   "variant": 55,
+   "label": "Mini LED M70H 55″",
+   "size": 55,
+   "panel": "Mini-LED",
+   "hz": null,
+   "res": "4K",
+   "os": "Tizen",
+   "hdmi21": false,
    "best_new": 389.0,
-   "best_any": 300.0,
-   "avg30": 398.3,
-   "min90": 375.0,
+   "best_any": 389.0,
+   "avg30": null,
+   "min90": null,
    "history": [
-    [
-     "2026-09-21",
-     445.0
-    ],
-    [
-     "2026-09-22",
-     445.0
-    ],
-    [
-     "2026-09-23",
-     445.0
-    ],
-    [
-     "2026-09-24",
-     425.0
-    ],
-    [
-     "2026-09-25",
-     425.0
-    ],
-    [
-     "2026-09-26",
-     425.0
-    ],
-    [
-     "2026-09-27",
-     395.0
-    ],
-    [
-     "2026-09-28",
-     395.0
-    ],
-    [
-     "2026-09-29",
-     395.0
-    ],
-    [
-     "2026-09-30",
-     395.0
-    ],
-    [
-     "2026-10-01",
-     395.0
-    ],
-    [
-     "2026-10-02",
-     395.0
-    ],
-    [
-     "2026-10-03",
-     395.0
-    ],
-    [
-     "2026-10-04",
-     390.0
-    ],
-    [
-     "2026-10-05",
-     390.0
-    ],
-    [
-     "2026-10-06",
-     390.0
-    ],
-    [
-     "2026-10-07",
-     390.0
-    ],
-    [
-     "2026-10-08",
-     390.0
-    ],
-    [
-     "2026-10-09",
-     390.0
-    ],
-    [
-     "2026-10-10",
-     390.0
-    ],
-    [
-     "2026-10-11",
-     390.0
-    ],
-    [
-     "2026-10-12",
-     390.0
-    ],
-    [
-     "2026-10-13",
-     390.0
-    ],
-    [
-     "2026-10-14",
-     390.0
-    ],
-    [
-     "2026-10-15",
-     375.0
-    ],
-    [
-     "2026-10-16",
-     375.0
-    ],
-    [
-     "2026-10-17",
-     375.0
-    ],
-    [
-     "2026-10-18",
-     375.0
-    ],
-    [
-     "2026-10-19",
-     390.0
-    ],
-    [
-     "2026-10-20",
-     390.0
-    ],
-    [
-     "2026-10-21",
-     390.0
-    ],
-    [
-     "2026-10-22",
-     390.0
-    ],
-    [
-     "2026-10-23",
-     390.0
-    ],
-    [
-     "2026-10-24",
-     390.0
-    ],
-    [
-     "2026-10-25",
-     390.0
-    ],
-    [
-     "2026-10-26",
-     390.0
-    ],
-    [
-     "2026-10-27",
-     390.0
-    ],
-    [
-     "2026-10-28",
-     400.0
-    ],
-    [
-     "2026-10-29",
-     400.0
-    ],
-    [
-     "2026-10-30",
-     400.0
-    ],
-    [
-     "2026-10-31",
-     400.0
-    ],
-    [
-     "2026-11-01",
-     400.0
-    ],
-    [
-     "2026-11-02",
-     400.0
-    ],
-    [
-     "2026-11-03",
-     410.0
-    ],
-    [
-     "2026-11-04",
-     410.0
-    ],
-    [
-     "2026-11-05",
-     410.0
-    ],
-    [
-     "2026-11-06",
-     410.0
-    ],
-    [
-     "2026-11-07",
-     410.0
-    ],
-    [
-     "2026-11-08",
-     400.0
-    ],
-    [
-     "2026-11-09",
-     400.0
-    ],
-    [
-     "2026-11-10",
-     400.0
-    ],
-    [
-     "2026-11-11",
-     400.0
-    ],
-    [
-     "2026-11-12",
-     400.0
-    ],
-    [
-     "2026-11-13",
-     400.0
-    ],
-    [
-     "2026-11-14",
-     400.0
-    ],
-    [
-     "2026-11-15",
-     400.0
-    ],
-    [
-     "2026-11-16",
-     400.0
-    ],
-    [
-     "2026-11-17",
-     390.0
-    ],
-    [
-     "2026-11-18",
-     390.0
-    ],
-    [
-     "2026-11-19",
-     390.0
-    ],
-    [
-     "2026-11-20",
-     390.0
-    ],
     [
      "2026-11-21",
      389.0
     ]
    ],
+   "real": true,
    "offers": [
     {
-     "source": "tutti",
-     "seller": "tutti.ch",
-     "title": "Playstation 5 Slim Digital, 6 Monate alt",
-     "url": "https://example.ch/t/2202",
-     "price": 300.0,
-     "shipping": 0.0,
-     "total": 300.0,
-     "condition": "occ",
-     "in_stock": 1,
-     "availability": "",
-     "pickup": 1,
-     "place": "Bern",
-     "country": "CH",
-     "stock_qty": null,
-     "method": "model",
-     "confidence": 0.85,
-     "foreign": false
-    },
-    {
      "source": "shop",
-     "seller": "Digitec",
-     "title": "Sony PlayStation 5 Slim Digital (1000 GB)",
-     "url": "https://example.ch/a/6100002",
+     "seller": "MediaMarkt",
+     "title": "SAMSUNG 55\" Mini LED M70H 4K, Vision AI Smart TV (2026)",
+     "url": "https://www.mediamarkt.ch/de/product/_samsung-55-mini-led-m70h-4k-mini-led-prozessor-4k-vision-ai-smart-tv-2026-2290389.html",
      "price": 389.0,
      "shipping": 0.0,
      "total": 389.0,
      "condition": "neu",
      "in_stock": 1,
-     "availability": "in stock",
+     "availability": "Online verfügbar, Lieferung ab 25.11.",
      "pickup": 0,
      "place": null,
      "country": "CH",
      "stock_qty": null,
-     "method": "ean",
+     "method": "kuratiert",
      "confidence": 1.0,
-     "foreign": false
-    },
-    {
-     "source": "shop",
-     "seller": "Brack",
-     "title": "Sony PlayStation 5 Slim Digital Edition 1TB",
-     "url": "https://example.ch/b/180001",
-     "price": 399.0,
-     "shipping": 0.0,
-     "total": 399.0,
-     "condition": "neu",
-     "in_stock": 1,
-     "availability": "",
-     "pickup": 0,
-     "place": null,
-     "country": "CH",
-     "stock_qty": 4,
-     "method": "ean",
-     "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": true
     }
    ]
   },
@@ -3881,6 +3220,7 @@
      449.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -3899,7 +3239,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -4143,6 +3484,7 @@
      449.95
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -4161,7 +3503,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -4432,6 +3775,7 @@
      479.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -4450,7 +3794,8 @@
      "stock_qty": null,
      "method": "mpn",
      "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -4698,6 +4043,7 @@
      529.95
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -4716,7 +4062,8 @@
      "stock_qty": null,
      "method": "mpn",
      "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -4987,6 +4334,7 @@
      629.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -5005,7 +4353,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -5277,6 +4626,7 @@
      649.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -5295,7 +4645,54 @@
      "stock_qty": 6,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
+    }
+   ]
+  },
+  {
+   "id": "sony-ps5-slim-digital",
+   "category": "gaming",
+   "brand": "Sony",
+   "mpn": "CFI-2016B",
+   "line": "PlayStation 5 Slim Digital (2025)",
+   "variant": null,
+   "label": "PlayStation 5 Slim Digital (2025) ",
+   "typ": "Konsole",
+   "platform": "PS5",
+   "disc": false,
+   "storage": 825,
+   "best_new": 699.0,
+   "best_any": 699.0,
+   "avg30": null,
+   "min90": null,
+   "history": [
+    [
+     "2026-11-21",
+     699.0
+    ]
+   ],
+   "real": true,
+   "offers": [
+    {
+     "source": "shop",
+     "seller": "MediaMarkt",
+     "title": "SONY PlayStation 5 Slim - Digital Edition (2025) Spielekonsole",
+     "url": "https://www.mediamarkt.ch/de/product/_sony-ps-playstation-5-slim-digital-edition-2025-spielekonsole-2283622.html",
+     "price": 699.0,
+     "shipping": 0.0,
+     "total": 699.0,
+     "condition": "neu",
+     "in_stock": 1,
+     "availability": "Online verfügbar, Lieferung ab 25.11.",
+     "pickup": 0,
+     "place": null,
+     "country": "CH",
+     "stock_qty": null,
+     "method": "kuratiert",
+     "confidence": 1.0,
+     "foreign": false,
+     "real": true
     }
    ]
   },
@@ -5617,6 +5014,7 @@
      729.95
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "ricardo",
@@ -5635,7 +5033,8 @@
      "stock_qty": null,
      "method": "model",
      "confidence": 0.85,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -5654,7 +5053,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -5673,7 +5073,8 @@
      "stock_qty": 2,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -5941,6 +5342,7 @@
      738.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -5959,7 +5361,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": true
+     "foreign": true,
+     "real": false
     },
     {
      "source": "shop",
@@ -5978,7 +5381,8 @@
      "stock_qty": 25,
      "method": "mpn",
      "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -6294,6 +5698,7 @@
      739.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "tutti",
@@ -6312,7 +5717,8 @@
      "stock_qty": null,
      "method": "mpn_in_title",
      "confidence": 0.92,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -6331,7 +5737,8 @@
      "stock_qty": 9,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -6714,6 +6121,7 @@
      739.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "ricardo",
@@ -6732,7 +6140,8 @@
      "stock_qty": null,
      "method": "model+variant",
      "confidence": 0.85,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -6751,7 +6160,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -6770,7 +6180,8 @@
      "stock_qty": null,
      "method": "model+variant",
      "confidence": 0.85,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -7053,6 +6464,7 @@
      779.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "tutti",
@@ -7071,7 +6483,8 @@
      "stock_qty": null,
      "method": "model+variant",
      "confidence": 0.85,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -7090,7 +6503,8 @@
      "stock_qty": 20,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -7417,6 +6831,7 @@
      789.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -7435,7 +6850,8 @@
      "stock_qty": 15,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -7770,6 +7186,7 @@
      869.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -7788,7 +7205,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -7807,7 +7225,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -8095,6 +7514,7 @@
      869.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "ricardo",
@@ -8113,7 +7533,8 @@
      "stock_qty": null,
      "method": "model+variant",
      "confidence": 0.85,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -8132,7 +7553,8 @@
      "stock_qty": 12,
      "method": "mpn",
      "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -8151,7 +7573,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -8463,6 +7886,7 @@
      988.9
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -8481,7 +7905,8 @@
      "stock_qty": 7,
      "method": "mpn",
      "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -8761,6 +8186,7 @@
      1148.9
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "ricardo",
@@ -8779,7 +8205,8 @@
      "stock_qty": null,
      "method": "model+variant",
      "confidence": 0.85,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -8798,7 +8225,8 @@
      "stock_qty": 0,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -8817,7 +8245,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -9121,6 +8550,7 @@
      1079.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -9139,7 +8569,8 @@
      "stock_qty": 4,
      "method": "mpn",
      "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -9503,6 +8934,7 @@
      1099.95
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -9521,7 +8953,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -9828,6 +9261,7 @@
      1129.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "ricardo",
@@ -9846,7 +9280,8 @@
      "stock_qty": null,
      "method": "model+variant",
      "confidence": 0.85,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -9865,7 +9300,8 @@
      "stock_qty": 8,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -10225,6 +9661,7 @@
      1149.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -10243,7 +9680,8 @@
      "stock_qty": 3,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -10619,6 +10057,7 @@
      1199.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "tutti",
@@ -10637,7 +10076,8 @@
      "stock_qty": null,
      "method": "model+variant",
      "confidence": 0.85,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -10656,7 +10096,8 @@
      "stock_qty": null,
      "method": "mpn",
      "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": false
     },
     {
      "source": "shop",
@@ -10675,7 +10116,8 @@
      "stock_qty": null,
      "method": "mpn",
      "confidence": 0.97,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -10955,6 +10397,7 @@
      1249.0
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -10973,7 +10416,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   },
@@ -11253,6 +10697,7 @@
      1649.95
     ]
    ],
+   "real": false,
    "offers": [
     {
      "source": "shop",
@@ -11271,7 +10716,8 @@
      "stock_qty": null,
      "method": "ean",
      "confidence": 1.0,
-     "foreign": false
+     "foreign": false,
+     "real": false
     }
    ]
   }
