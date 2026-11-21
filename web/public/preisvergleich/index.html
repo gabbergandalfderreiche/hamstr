@@ -382,6 +382,9 @@ img.thumb{object-fit:contain;height:auto;width:128px;border-radius:8px}
 .orow:not(.best) .go{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
 .ohid{margin:0;padding:10px 16px;font-size:12.5px;color:var(--muted)}
 @media (max-width:560px){.orow{grid-template-columns:minmax(0,1fr) auto;gap:8px 12px}.orow .go{grid-column:1/-1;width:100%}}
+/* Produktfotos stehen auf Weiss, wie in Shops üblich */
+.pimg,.bimg,.dimg,img.thumb{background:#fff;padding:4px}
+.dimg{border-radius:14px;max-height:220px}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
 
 /* drawer on narrow screens */
@@ -913,7 +916,7 @@ const BW_END=new Date("2026-11-30T23:59:59+01:00");          // Ende Cyber Monda
 const QUICK=["GTA VI","PS5 Pro","OLED 65 Zoll","iPhone 16 Pro","Monitor 27 Zoll 144 Hz","DualSense"];
 const catOf=p=>CATS.find(c=>c.id===p.category);
 /* Bilder in img/ (vom Build eingetragen). Reihenfolge: Produktbild (aus Katalog/Feed) > img/p-<id>.webp > img/cat-<kategorie>.webp */
-const IMAGES=new Set(["cat-tv.webp", "mascot-happy.webp", "mascot-wink.webp"]);
+const IMAGES=new Set(["cat-tv.webp", "mascot-happy.webp", "mascot-wink.webp", "p-gta6-ps5.webp", "p-sam-du7170-55.webp", "p-sam-q80d-55.webp", "p-sam-q80d-65.webp", "p-sam-s90d-55.webp", "p-sony-ps5-slim-digital.webp", "p-sony-ps5-slim.webp"]);
 function imgFor(p){
   if(p.image)return p.image;
   for(const f of [`p-${p.key}.webp`,`p-${p.key}.png`,`cat-${p.category}.webp`,`cat-${p.category}.png`])if(IMAGES.has(f))return "img/"+f;
