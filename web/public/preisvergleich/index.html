@@ -445,6 +445,18 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 @keyframes nudge{0%,80%,100%{transform:none}88%{transform:rotate(-6deg) scale(1.08)}94%{transform:rotate(5deg) scale(1.08)}}
 @media (prefers-reduced-motion:reduce){.cb-opts em{animation:none}}
 @media (max-width:560px){.cb-opts{width:100%}.cb-opts button{flex:1;min-width:0}}
+/* Hamstr-Tipp */
+.tip{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px 18px;align-items:center;margin:0 16px 4px;padding:14px 16px;border-radius:14px;background:linear-gradient(135deg,var(--accent-soft),var(--good-soft));border:1.5px solid var(--accent)}
+.tip-main{display:flex;flex-direction:column;gap:2px;min-width:0}
+.tip-k{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.tip-main b{font-size:18px}
+.tip-why{font-size:13px;color:var(--muted)}
+.tip-side{display:flex;flex-direction:column;gap:4px;align-items:flex-end;text-align:right}
+.tip-save{font-size:13px}.tip-save b{color:var(--good);font-size:15px}
+.tw{font-size:12px;font-weight:700;border-radius:999px;padding:3px 9px;background:var(--sunk);color:var(--muted)}
+.tw.good{background:var(--good);color:#fff}.tw.bad{background:#B42318;color:#fff}
+.tip .tip-go{background:var(--accent);color:var(--on-accent);border:0;border-radius:11px;padding:12px 20px;font-weight:800;font-size:15px;text-decoration:none}
+@media (max-width:700px){.tip{grid-template-columns:minmax(0,1fr)}.tip-side{align-items:flex-start;text-align:left}.tip .tip-go{text-align:center}}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
 
 /* drawer on narrow screens */
@@ -827,6 +839,32 @@ function specChips(p){
     if(f.type==="min")txt=`${v} ${f.unit||""}`;
     return `<span class="${active?"hit":""}">${esc(txt)}</span>`}).join("");
 }
+/* Entscheidungshilfe über den Angeboten: eine klare Empfehlung mit Grund, Ersparnis und Kauf-Zeitpunkt */
+function tipHTML(p,live){
+  const L=[...live].sort((a,c)=>total(a)-total(c));if(!L.length)return "";
+  const b=L[0],next=L[1],worst=L[L.length-1];
+  const why=[];
+  if(next&&total(next)>total(b)+.004)why.push(`CHF ${(total(next)-total(b)).toFixed(2)} günstiger als ${esc(next.seller)}`);
+  if(!b.pickup&&!b.ship)why.push("gratis Versand");
+  if(b.stock)why.push(/lager|morgen|verfügbar/i.test(b.deliv)?esc(b.deliv):"lieferbar");
+  if(b.cond==="occ")why.push("Occasion");
+  const save=L.length>1?total(worst)-total(b):0;
+  // Zeitpunkt: nur mit echtem Verlauf (avg30), sonst keine Aussage
+  const now=shopNewMin(p);let when="";
+  if(p.avg30!=null&&now!=null){
+    const d=1-now/p.avg30;
+    when=d>=.03?`<span class="tw good">Guter Zeitpunkt: ${Math.round(d*100)} % unter dem 30-Tage-Schnitt</span>`
+      :d<=-.03?`<span class="tw bad">Eher warten: ${Math.round(-d*100)} % über dem 30-Tage-Schnitt</span>`
+      :`<span class="tw">Normaler Preis: etwa beim 30-Tage-Schnitt</span>`;
+  }
+  return `<div class="tip">
+    <div class="tip-main"><span class="tip-k">Hamstr-Tipp</span>
+      <b>${esc(b.seller)} für CHF ${total(b).toFixed(2)}</b>
+      <span class="tip-why">${why.join(" · ")||"günstigstes Angebot"}</span></div>
+    <div class="tip-side">${save>=1?`<span class="tip-save">Du sparst <b class="num">CHF ${save.toFixed(2)}</b> gegenüber ${esc(worst.seller)}</span>`:""}${when}</div>
+    ${b.real?`<a class="go tip-go" href="${esc(b.url)}" target="_blank" rel="sponsored noopener noreferrer">Zum Shop</a>`:`<button type="button" class="go tip-go" data-go="${esc(b.seller)}">Zum Shop</button>`}
+  </div>`;
+}
 /* Preisverlauf: Badge nur mit genug Verlauf (avg30/min90 kommen sonst als null) */
 function shopNewMin(p){const t=p.offers.filter(o=>o.src==="shop"&&o.cond==="neu").map(o=>o.price+o.ship);return t.length?Math.min(...t):null}
 /* Der Verlauf misst den tiefsten Shop-Neupreis. Badge nur, wenn genau dieser Preis auf der Karte steht:
@@ -939,7 +977,7 @@ function render(){
       <div class="cfoot"><div class="srcs">${srcSet.map(s=>`<span class="src ${s}">${SRC.find(x=>x[0]===s)[1]}</span>`).join("")}<span>${nNew} Neu-Angebote${used.length?` · ${used.length} Occasion`:""}</span></div>
         <button type="button" class="toggle" data-open="${p.id}" aria-expanded="${isOpen}">${isOpen?"Angebote ausblenden":`Alle ${p.offers.length} Angebote`}</button></div>
       ${isOpen?(()=>{const live=liveOffers(p).sort((a,c)=>total(a)-total(c)),hidden=p.offers.length-live.length;
-        return `${histHTML(p)}<div class="olist">${live.map(o=>`<div class="orow ${o===b?"best":""}">
+        return `${tipHTML(p,live)}${histHTML(p)}<div class="olist">${live.map(o=>`<div class="orow ${o===b?"best":""}">
           <div class="oshop"><b>${esc(o.seller)}</b>${o.real?`<span class="otag real">Echter Preis</span>`:""}${o===b?`<span class="otag win">Bestpreis</span>`:""}${o.cond==="occ"?`<span class="otag">Occasion</span>`:""}${o.src!=="shop"?`<span class="src ${o.src}">${SRC.find(x=>x[0]===o.src)[1]}</span>`:""}${o.foreign?`<span class="otag">Ausland</span>`:""}
             <span class="odel"><span class="dot ${o.stock?"ok":"wait"}"></span>${esc(o.deliv)}${o.src!=="shop"&&o.place?` · ${esc(o.place)}`:""}</span></div>
           <div class="oprice num"><b>CHF ${total(o).toFixed(2)}</b><small>${o.pickup?"Abholung":!S.ship?"zzgl. Versand":o.ship?`inkl. ${o.ship.toFixed(2)} Versand`:"gratis Versand"}</small></div>
