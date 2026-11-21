@@ -457,6 +457,14 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 .tw.good{background:var(--good);color:#fff}.tw.bad{background:#B42318;color:#fff}
 .tip .tip-go{background:var(--accent);color:var(--on-accent);border:0;border-radius:11px;padding:12px 20px;font-weight:800;font-size:15px;text-decoration:none}
 @media (max-width:700px){.tip{grid-template-columns:minmax(0,1fr)}.tip-side{align-items:flex-start;text-align:left}.tip .tip-go{text-align:center}}
+/* Fixer Kaufknopf (nur Handy/Tablet) */
+.buybar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;align-items:center;gap:12px;background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(0,0,0,.12);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.bb-t{flex:1;min-width:0;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:10px;align-items:baseline}
+.bb-t span{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bb-t b{font-family:var(--f-display);font-weight:800;font-size:20px;grid-row:span 2;align-self:center}
+.bb-t small{font-size:12px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bb-go{flex:none;background:var(--accent);color:var(--on-accent);border:0;border-radius:12px;padding:13px 18px;font-weight:800;font-size:15px;text-decoration:none}
+@media (max-width:880px){.buybar:not([hidden]){display:flex}body.has-buybar{padding-bottom:84px}body.has-buybar .totop{bottom:calc(90px + env(safe-area-inset-bottom,0px))}body.has-buybar .toast{bottom:calc(96px + env(safe-area-inset-bottom,0px))}}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
 
 /* drawer on narrow screens */
@@ -648,6 +656,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 <button type="button" class="totop" id="totop" hidden>Zum Seitenanfang ↑</button>
 <div class="scrim" id="scrim" hidden></div>
 <div class="toast" id="toast" hidden></div>
+<div class="buybar" id="buybar" hidden></div>
 
 <script>
 /* ---------- data: kommt aus export.json (pipeline: python -m ingest export) ---------- */
@@ -893,7 +902,15 @@ function histHTML(p){
     <div class="hstats num"><span>Höchst <b>${hi.toFixed(2)}</b></span>${p.avg30!=null?`<span>Ø 30 Tage <b>${p.avg30.toFixed(2)}</b></span>`:""}<span>Tiefst <b>${lo.toFixed(2)}</b></span><span>Heute <b>${vals[vals.length-1].toFixed(2)}</b></span></div>
   </div>`;
 }
-let open=new Set();
+let open=new Set(),lastOpen=null;
+/* Handy: fixer Kaufknopf unten für das zuletzt geöffnete Produkt */
+function renderBuybar(){
+  const el=$("buybar"),p=lastOpen!=null?PRODUCTS[lastOpen]:null,b=p&&location.hash==="#vergleich"?best(p):null;
+  el.hidden=!b;document.body.classList.toggle("has-buybar",!!b);
+  if(!b)return;
+  el.innerHTML=`<div class="bb-t"><span>${esc(titleOf(p))}</span><b class="num">CHF ${total(b).toFixed(2)}</b><small>bei ${esc(b.seller)}${S.ship?(b.pickup?" · Abholung":b.ship?" · inkl. Versand":" · gratis Versand"):""}</small></div>
+    ${b.real?`<a class="bb-go" href="${esc(b.url)}" target="_blank" rel="sponsored noopener noreferrer">Zum Shop</a>`:`<button type="button" class="bb-go" data-go="${esc(b.seller)}">Zum Shop</button>`}`;
+}
 /* Kategorie-Leiste: Icon, Name und ein Grund zum Klicken (bester echter Rabatt oder Einstiegspreis) */
 const CAT_ICON={
   tv:'<path d="M3 5h18v11H3z"/><path d="M8 20h8M12 16v4"/>',
@@ -935,6 +952,7 @@ function renderCondbar(){
 }
 function render(){
   $("facetBody").innerHTML=facetHTML();
+  renderBuybar();
   renderCondbar();
   const rows=PRODUCTS.filter(p=>match(p)).map(p=>({p,b:best(p)})).sort((a,b)=>total(a.b)-total(b.b));
   $("count").textContent=`${rows.length} ${CAT().name}`;
@@ -1016,9 +1034,10 @@ $("active").addEventListener("click",e=>{
   else{const f=facetByKey(k);if(f.type==="min")S.f[k]=0;else if(f.type==="bool")S.f[k]=false;else S.f[k].delete(castV(k,v))}
   render();
 });
+$("buybar").addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g)toast(`Demo: Hier geht es direkt zu ${g.dataset.go}, ohne Umweg über Werbe-Tracker.`)});
 $("condbar").addEventListener("click",e=>{const b=e.target.closest("[data-cond-set]");if(b){S.cond=b.dataset.condSet;render()}});
 $("list").addEventListener("click",e=>{
-  const t=e.target.closest("[data-open]");if(t){const id=+t.dataset.open;open.has(id)?open.delete(id):open.add(id);render();return}
+  const t=e.target.closest("[data-open]");if(t){const id=+t.dataset.open;if(open.has(id)){open.delete(id);if(lastOpen===id)lastOpen=open.size?[...open].pop():null}else{open.add(id);lastOpen=id}render();return}
   const c=e.target.closest("[data-cond]");if(c){S.cond="alle";render();return}
   const g=e.target.closest("[data-go]");if(g)toast(`Demo: Hier geht es direkt zu ${g.dataset.go}, ohne Umweg über Werbe-Tracker.`);
 });
@@ -1214,7 +1233,7 @@ function tick(){
 function renderHome(){if(!B.touched&&cheapPS5())B.console=cheapPS5().key;renderDotd();renderBundles();renderDeals();renderBundle();renderCatTiles()}
 function goSearch(q){$("q").value=q;if(location.hash!=="#vergleich")location.hash="vergleich";applyQuery(q);window.scrollTo(0,0)}
 function goProduct(key){
-  const p=byKey(key);if(!p)return;S.cat=p.category;open.clear();open.add(p.id);
+  const p=byKey(key);if(!p)return;lastOpen=p.id;S.cat=p.category;open.clear();open.add(p.id);
   $("q").value=p.model;if(location.hash!=="#vergleich")location.hash="vergleich";applyQuery(p.model);open.add(p.id);render();window.scrollTo(0,0);
 }
 $("quick").innerHTML=QUICK.map(q=>`<button type="button" data-q="${esc(q)}">${esc(q)}</button>`).join("");
@@ -1241,7 +1260,7 @@ function route(){
   $("homeView").hidden=!!pg||h==="vergleich";
   PAGES.forEach(p=>$("page-"+p).hidden=p!==pg);
   if(pg)window.scrollTo(0,0);
-  if(CATS.length)renderCats();
+  if(CATS.length){renderCats();renderBuybar()}
 }
 addEventListener("hashchange",route);route();
 
