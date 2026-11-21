@@ -428,6 +428,23 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
 .hb-total strong small{font-size:18px;color:var(--night-mute);margin-right:6px;font-family:var(--f-body)}
 @media (max-width:560px){.hb-items{grid-template-columns:minmax(0,1fr)}.hb-img{aspect-ratio:16/9}}
 @media (prefers-reduced-motion:reduce){.dotd{animation:none}}
+/* Zustand-Leiste über der Ergebnisliste */
+.condbar{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:12px}
+.cb-q{display:flex;flex-direction:column;gap:2px}
+.cb-q b{font-family:var(--f-display);font-weight:800;font-size:19px}
+.cb-q span{font-size:13px;color:var(--muted)}
+.cb-opts{display:flex;gap:8px;flex-wrap:wrap}
+.cb-opts button{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:1px;border:1.5px solid var(--line);background:var(--sunk);border-radius:12px;padding:8px 14px;min-width:118px;color:var(--ink);transition:transform .12s,border-color .12s}
+.cb-opts button:hover:not(:disabled){transform:translateY(-1px);border-color:var(--accent)}
+.cb-opts button b{font-size:14.5px}
+.cb-opts button span{font-size:12.5px;color:var(--muted)}
+.cb-opts button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.cb-opts button[aria-pressed="true"] span{color:inherit;opacity:.75}
+.cb-opts button:disabled{opacity:.45;cursor:default}
+.cb-opts em{position:absolute;top:-10px;right:-6px;font-style:normal;font-size:11px;font-weight:800;background:#FF5A1F;color:#fff;border-radius:999px;padding:2px 8px;animation:nudge 2.4s ease-in-out infinite}
+@keyframes nudge{0%,80%,100%{transform:none}88%{transform:rotate(-6deg) scale(1.08)}94%{transform:rotate(5deg) scale(1.08)}}
+@media (prefers-reduced-motion:reduce){.cb-opts em{animation:none}}
+@media (max-width:560px){.cb-opts{width:100%}.cb-opts button{flex:1;min-width:0}}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:10px;font-size:14px;z-index:50}
 
 /* drawer on narrow screens */
@@ -532,6 +549,7 @@ a.go{text-decoration:none;display:inline-block;text-align:center}
         <div class="sort"><button type="button" class="mfilter" id="openDrawer">Filter <b id="fcount" hidden>0</b></button>
           <span>Sortiert nach <b>Günstigster Preis</b><span id="shipLbl">, inkl. Versand</span><span id="updLbl"></span></span></div>
       </div>
+      <div class="condbar" id="condbar"></div>
       <div class="active" id="active"></div>
       <div class="list" id="list"></div>
       <p class="note">Prototyp: Die Feeds sind Beispieldaten. Modelle real, EANs, Preise, Shops-Angebote und Ricardo-/tutti-Inserate erfunden.</p>
@@ -858,8 +876,28 @@ function renderCats(){
     +CATS.map(c=>{const h=catHint(c.id);
       return `<button type="button" data-cat="${c.id}" aria-pressed="${!onHome&&c.id===S.cat}"><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${CAT_ICON[c.id]||""}</svg><span class="ct"><b>${esc(c.name)}</b><small class="${h.hot?"hot":""}">${esc(h.t)}</small></span></button>`}).join("");
 }
+/* "Wie günstig willst du es haben?": Zustand gross über der Liste, mit Einstiegspreis je Option */
+function condMin(cond){
+  const keep=S.cond;S.cond=cond;
+  const t=PRODUCTS.filter(p=>match(p)).map(p=>total(best(p)));
+  S.cond=keep;return t.length?Math.min(...t):null;
+}
+function renderCondbar(){
+  const opts=[["neu","Nur neu"],["occ","Occasion"],["alle","Alles"]].map(([v,l])=>({v,l,min:condMin(v)}));
+  // Ersparnis pro Gerät: Occasion gegen Neupreis desselben Produkts, der grösste Wert zählt
+  const keep=S.cond;S.cond="alle";
+  const save=Math.round(100*Math.max(0,...PRODUCTS.filter(p=>match(p)).map(p=>{
+    const L=liveOffers(p),n=L.filter(o=>o.cond==="neu"),u=L.filter(o=>o.cond==="occ");
+    return n.length&&u.length?1-Math.min(...u.map(total))/Math.min(...n.map(total)):0})));
+  S.cond=keep;
+  $("condbar").innerHTML=`<div class="cb-q"><b>Wie günstig willst du es haben?</b><span>Auch Occasionen von Ricardo und tutti.ch, direkt daneben.</span></div>
+    <div class="cb-opts" role="group" aria-label="Zustand">${opts.map(o=>`<button type="button" data-cond-set="${o.v}" aria-pressed="${S.cond===o.v}" ${o.min==null?"disabled":""}>
+      <b>${o.l}</b><span class="num">${o.min==null?"keine Angebote":"ab CHF "+Math.floor(o.min)+".–"}</span>
+      ${o.v==="occ"&&save>=5&&S.cond!=="occ"?`<em>bis −${save} %</em>`:""}</button>`).join("")}</div>`;
+}
 function render(){
   $("facetBody").innerHTML=facetHTML();
+  renderCondbar();
   const rows=PRODUCTS.filter(p=>match(p)).map(p=>({p,b:best(p)})).sort((a,b)=>total(a.b)-total(b.b));
   $("count").textContent=`${rows.length} ${CAT().name}`;
   $("shipLbl").hidden=!S.ship;
@@ -940,6 +978,7 @@ $("active").addEventListener("click",e=>{
   else{const f=facetByKey(k);if(f.type==="min")S.f[k]=0;else if(f.type==="bool")S.f[k]=false;else S.f[k].delete(castV(k,v))}
   render();
 });
+$("condbar").addEventListener("click",e=>{const b=e.target.closest("[data-cond-set]");if(b){S.cond=b.dataset.condSet;render()}});
 $("list").addEventListener("click",e=>{
   const t=e.target.closest("[data-open]");if(t){const id=+t.dataset.open;open.has(id)?open.delete(id):open.add(id);render();return}
   const c=e.target.closest("[data-cond]");if(c){S.cond="alle";render();return}
