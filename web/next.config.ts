@@ -10,7 +10,10 @@ const nextConfig: NextConfig = {
   // Preisvergleich (Demo): statische Seite in public/preisvergleich/, gebaut im Projekt "hamstere".
   // Next liefert index.html in Unterordnern nicht von selbst aus, darum diese Weiterleitung.
   async rewrites() {
-    return [{ source: "/preisvergleich", destination: "/preisvergleich/index.html" }];
+    return [
+      { source: "/preisvergleich", destination: "/preisvergleich/index.html" },
+      { source: "/preisvergleich/mode", destination: "/preisvergleich/mode/index.html" },
+    ];
   },
   turbopack: {
     rules: {
