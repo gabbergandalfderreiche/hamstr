@@ -5,6 +5,7 @@ import { erc20Abi, formatUnits, parseUnits, type Address, type Hash } from "viem
 import { useConnection, useEstimateFeesPerGas, useSwitchChain } from "wagmi";
 import { useAttributedWrite } from "@/lib/attribution";
 import { useAaveSupplyBlocked } from "@/lib/useAaveStatus";
+import { useWalletChain } from "@/lib/useWalletChain";
 import { waitForTransactionReceipt } from "wagmi/actions";
 import { Hamster } from "@/components/Hamster";
 import { Logo } from "@/components/Logo";
@@ -50,7 +51,7 @@ export function LiveDashboard({ live }: { live: Live }) {
   const { t } = useT();
   const a = t.app;
   const { fmt, fmtSats, fmtEarned } = formatters(t.numberLocale);
-  const { address, isConnected, chainId } = useConnection();
+  const { address, isConnected } = useConnection();
   const switchChain = useSwitchChain();
   const market = useMarketData();
   const apyText = (id: LiveVault["id"]) =>
@@ -64,7 +65,9 @@ export function LiveDashboard({ live }: { live: Live }) {
   const [mood, setMood] = useState<Mood>("sparkle");
 
   const selected = live.vaults.find((v) => v.id === selectedId)!;
-  const wrongChain = isConnected && chainId !== activeChain.id;
+  // Ask the wallet itself: wagmi can keep a stale chain after a switch inside the wallet.
+  const walletChain = useWalletChain();
+  const wrongChain = isConnected && walletChain !== undefined && walletChain !== activeChain.id;
 
   const totalUsd = usdc.depositedUsd + eth.depositedUsd;
   const claimable = usdc.claimableSats + eth.claimableSats;
@@ -102,7 +105,8 @@ export function LiveDashboard({ live }: { live: Live }) {
           </div>
         )}
 
-        <TestRun live={live} states={states} user={address} disabled={!isConnected || wrongChain} />
+        {/* Buttons stay usable on the wrong network: every transaction switches to Base first. */}
+        <TestRun live={live} states={states} user={address} disabled={!isConnected} />
 
         <section className="screentone card grid items-center gap-6 overflow-hidden p-6 md:grid-cols-[auto_1fr]">
           <div className="relative mx-auto">
@@ -180,7 +184,7 @@ export function LiveDashboard({ live }: { live: Live }) {
             vault={selected}
             state={states[selected.id]}
             user={address}
-            disabled={!isConnected || wrongChain}
+            disabled={!isConnected}
             onReact={react}
           />
         </div>

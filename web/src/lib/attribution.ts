@@ -19,10 +19,12 @@ export const DATA_SUFFIX = BUILDER_CODE ? Attribution.toDataSuffix({ codes: [BUI
  */
 export function useAttributedWrite() {
   const write = useWriteContract();
-  const { chainId } = useConnection();
+  const { chainId, connector } = useConnection();
   const switchChain = useSwitchChain();
   const mutateAsync = (async (args: Parameters<typeof write.mutateAsync>[0]) => {
-    if (chainId !== activeChain.id) await switchChain.mutateAsync({ chainId: activeChain.id });
+    // Ask the wallet directly: wagmi's chain can be stale after a switch made inside the wallet.
+    const current = (await connector?.getChainId().catch(() => undefined)) ?? chainId;
+    if (current !== activeChain.id) await switchChain.mutateAsync({ chainId: activeChain.id });
     return write.mutateAsync({ ...args, chainId: activeChain.id, dataSuffix: DATA_SUFFIX });
   }) as typeof write.mutateAsync;
   return { ...write, mutateAsync };
