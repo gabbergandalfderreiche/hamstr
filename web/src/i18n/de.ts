@@ -65,6 +65,7 @@ export const de = {
 
     heroCard: { label: "Rendite gerade", hint: "pro Jahr, in Bitcoin, nach Gebühren", demo: "Beispielwert" },
     petHint: "Psst: klick mich an – oder doppelt 👆",
+    more: "Auch von uns",
     bet: {
       badge: "Neu · Testnet",
       title: "P2P Bet: Fußball-Wetten unter Freunden",

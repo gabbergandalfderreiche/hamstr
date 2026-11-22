@@ -48,10 +48,11 @@ export function LiveStats() {
 
   return (
     <section className="border-b border-line bg-surface">
-      <div className="mx-auto grid max-w-6xl gap-4 px-4 py-6 sm:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 py-6 sm:grid-cols-3">
         <Stat label={l.apyUsdc} value={pct(m.netApy.usdc, t.numberLocale)} hint={l.apyHint} accent />
         <Stat label={l.apyEth} value={pct(m.netApy.eth, t.numberLocale)} hint={l.apyHint} accent />
         <Stat
+          wide
           label={l.tvl}
           value={
             <details className="group">
@@ -113,9 +114,10 @@ export function LiveStats() {
   );
 }
 
-function Stat({ label, value, hint, accent }: { label: string; value: ReactNode; hint: ReactNode; accent?: boolean }) {
+function Stat({ label, value, hint, accent, wide }: { label: string; value: ReactNode; hint: ReactNode; accent?: boolean; wide?: boolean }) {
   return (
-    <div>
+    // On phones the two yields sit side by side and the TVL takes the full row below.
+    <div className={wide ? "col-span-2 sm:col-span-1" : undefined}>
       <div className="text-xs font-semibold text-muted">{label}</div>
       <div className={`num font-display text-3xl font-extrabold ${accent ? "text-good" : ""}`}>{value}</div>
       <div className="text-xs text-muted">{hint}</div>

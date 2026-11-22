@@ -67,6 +67,7 @@ export const en: Dictionary = {
 
     heroCard: { label: "Yield right now", hint: "per year, in Bitcoin, after fees", demo: "Example value" },
     petHint: "Psst: tap me – or double-tap 👆",
+    more: "Also from us",
     bet: {
       badge: "New · Testnet",
       title: "P2P Bet: football bets between friends",
