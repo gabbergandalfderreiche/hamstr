@@ -20,6 +20,11 @@ function pickLocale(request: NextRequest): Locale {
 /** Sends every path without a locale prefix to its localized version, e.g. /app -> /de/app. */
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  // price.hamstr.online: the static price comparison (English by default) at the root of the subdomain.
+  // Its assets live under /preisvergleich/ (the page sets <base href>), so only page paths land here.
+  if ((request.headers.get("host") ?? "").startsWith("price.")) {
+    return NextResponse.rewrite(new URL("/preisvergleich/index.html", request.url));
+  }
   if (/^\/(de|en)(\/|$)/.test(pathname)) return;
 
   const url = request.nextUrl.clone();
