@@ -95,6 +95,9 @@ contract TurboVault is ERC20, AccessControl, Pausable, ReentrancyGuard, IERC721R
 
     event Deposit(address indexed caller, address indexed receiver, uint256 assets, uint256 shares);
     event Withdraw(address indexed caller, address indexed receiver, address indexed owner, uint256 shares, uint256 assets);
+    event WithdrawInKind(
+        address indexed caller, address indexed receiver, address indexed owner, uint256 shares, uint256 weth, uint256 cbbtc
+    );
     event Claim(address indexed user, address indexed receiver, uint256 cbbtcOut, uint256 wethOut);
     event FeesCollected(uint256 amount0, uint256 amount1, uint256 protocol0, uint256 protocol1);
     event Rebalanced(int24 tickLower, int24 tickUpper, uint256 positionId);
@@ -235,6 +238,23 @@ contract TurboVault is ERC20, AccessControl, Pausable, ReentrancyGuard, IERC721R
         IWETH(address(weth)).withdraw(assets);
         Address.sendValue(payable(receiver), assets);
         emit Withdraw(msg.sender, receiver, owner, shares, assets);
+    }
+
+    /// @notice Burn `shares` of `owner` and receive their part as it is, in WETH and cbBTC: no swap
+    ///         and no Chainlink. It works while paused, after an emergency exit and during an oracle
+    ///         or sequencer outage, so depositors can always leave. `min0`/`min1` (WETH/cbBTC) protect
+    ///         against an unfavourable pool price when part of the live position is withdrawn.
+    function withdrawInKind(uint256 shares, address receiver, address owner, uint256 min0, uint256 min1)
+        external
+        nonReentrant
+        returns (uint256 out0, uint256 out1)
+    {
+        (out0, out1) = _takeShare(shares, owner);
+        if (out0 < min0) revert Slippage(out0, min0);
+        if (out1 < min1) revert Slippage(out1, min1);
+        if (out0 > 0) weth.safeTransfer(receiver, out0);
+        if (out1 > 0) cbbtc.safeTransfer(receiver, out1);
+        emit WithdrawInKind(msg.sender, receiver, owner, shares, out0, out1);
     }
 
     /// @notice Pay out the caller's earned fees. With `toBitcoin`, the WETH part is swapped to cbBTC.
@@ -417,15 +437,24 @@ contract TurboVault is ERC20, AccessControl, Pausable, ReentrancyGuard, IERC721R
     }
 
     function _withdraw(uint256 shares, address owner, uint256 minAssetsOut) internal returns (uint256 assets) {
+        // Paying out in ETH swaps the cbBTC part, so the pool must agree with Chainlink first.
+        _checkPoolPrice();
+        (uint256 out0, uint256 out1) = _takeShare(shares, owner);
+        assets = out0 + (out1 == 0 ? 0 : _swap(cbbtc, weth, out1));
+        if (assets < minAssetsOut) revert Slippage(assets, minAssetsOut);
+    }
+
+    /// @dev Burn `shares` of `owner` and return their pro-rata part of the idle tokens and of the
+    ///      position, without any price check or swap.
+    function _takeShare(uint256 shares, address owner) internal returns (uint256 out0, uint256 out1) {
         if (shares == 0) revert ZeroAmount();
         if (msg.sender != owner) _spendAllowance(owner, msg.sender, shares);
-        _checkPoolPrice();
         _collectFees();
 
         uint256 supply = totalSupply();
         (uint256 idle0, uint256 idle1) = _idle();
-        uint256 out0 = idle0.mulDiv(shares, supply);
-        uint256 out1 = idle1.mulDiv(shares, supply);
+        out0 = idle0.mulDiv(shares, supply);
+        out1 = idle1.mulDiv(shares, supply);
 
         if (positionId != 0) {
             uint128 liquidity = positionManager.positions(positionId).liquidity;
@@ -435,7 +464,7 @@ contract TurboVault is ERC20, AccessControl, Pausable, ReentrancyGuard, IERC721R
                     INonfungiblePositionManager.DecreaseLiquidityParams({
                         tokenId: positionId,
                         liquidity: part,
-                        amount0Min: 0, // pool price checked above
+                        amount0Min: 0, // withdraw checks the pool price, withdrawInKind the outputs
                         amount1Min: 0,
                         deadline: block.timestamp
                     })
@@ -450,9 +479,6 @@ contract TurboVault is ERC20, AccessControl, Pausable, ReentrancyGuard, IERC721R
         uint256 balance = balanceOf(owner);
         principalOf[owner] -= principalOf[owner].mulDiv(shares, balance);
         _burn(owner, shares);
-
-        assets = out0 + (out1 == 0 ? 0 : _swap(cbbtc, weth, out1));
-        if (assets < minAssetsOut) revert Slippage(assets, minAssetsOut);
     }
 
     // ---------------------------------------------------------------------

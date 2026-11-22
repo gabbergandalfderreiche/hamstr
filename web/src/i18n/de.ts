@@ -166,13 +166,13 @@ export const de = {
         title: "Selbst geprüft. Offen nachprüfbar.",
         sub: "Bevor etwas live geht, laufen die Contracts durch automatische Tests und eine statische Sicherheitsanalyse. Jede Zahl hier kannst du selbst nachvollziehen.",
         stats: [
-          { value: "73 / 73", label: "Tests bestanden" },
+          { value: "87 / 87", label: "Tests bestanden" },
           { value: "1.536", label: "Zufalls-Szenarien pro Testlauf (Fuzzing)" },
-          { value: "29", label: "Tests gegen das echte Base-Netzwerk mit Aave, Uniswap und Chainlink" },
+          { value: "43", label: "Tests gegen das echte Base-Netzwerk mit Aave, Uniswap und Chainlink" },
           { value: "0", label: "kritische Funde in der Slither-Analyse" },
           { value: "8 / 8", label: "Contracts öffentlich verifiziert (Basescan & Sourcify)" },
         ],
-        runs: "Über 20 komplette Testläufe während der Entwicklung, zuletzt am 26.10.2026.",
+        runs: "Über 20 komplette Testläufe während der Entwicklung, zuletzt am 22.11.2026.",
         slitherBadge: "Analysiert mit Slither",
         slitherBy: "Open-Source-Analysetool von Trail of Bits",
         slitherNote: "64 Hinweise mittlerer Stufe wurden einzeln geprüft, keiner davon ist ausnutzbar.",
@@ -554,7 +554,7 @@ export const de = {
       basis: "Basis: Im Pool gab es zuletzt rund 20 % pro Jahr an Gebühren. Nach Neuausrichtungen und unserer Gebühr realistisch eher 8–15 %, manchmal weniger. Nicht garantiert.",
       risk: (pct: string) =>
         `Der Haken: Steigt einer der beiden Coins stark, verkauft der Pool automatisch davon – du hältst dann mehr vom schwächeren. Dieser Kursverlust (Impermanent Loss) kann die Gebühren auffressen. Beispiel: Fällt ETH gegenüber BTC um 20 %, liegst du vor Gebühren rund ${pct} % hinter „halb ETH, halb BTC halten“.`,
-      final: "Wer im falschen Moment auszahlt, macht einen Verlust endgültig.",
+      final: "Wer im falschen Moment auszahlt, macht einen Verlust endgültig. Und: Auszahlen in ETH braucht aktuelle Chainlink-Preise – bei einer Störung kann es zeitweise blockiert sein, bis die Preise wieder aktuell sind.",
     },
     quiz: {
       title: "Kurzer Check, bevor es losgeht",

@@ -338,4 +338,106 @@ contract TurboVaultForkTest is Test {
         (uint256 bob0, uint256 bob1) = vault.claimable(bob);
         assertEq(bob0 + bob1, 0, "fees earned before the transfer stay with alice");
     }
+
+    // --- in-kind exit: no oracle, no swap ---------------------------------
+
+    /// Value of a WETH + cbBTC bundle in WETH at the (mocked) Chainlink price.
+    function _valueInWeth(uint256 weth, uint256 cbbtc) internal view returns (uint256) {
+        return weth + (cbbtc == 0 ? 0 : swapper.quote(B.CBBTC, B.WETH, cbbtc));
+    }
+
+    function _staleFeed(address feed) internal {
+        (, int256 price,,,) = IChainlinkAggregator(feed).latestRoundData();
+        uint256 old = block.timestamp - 2 days;
+        vm.mockCall(
+            feed,
+            abi.encodeWithSelector(IChainlinkAggregator.latestRoundData.selector),
+            abi.encode(uint80(1), price, old, old, uint80(1))
+        );
+    }
+
+    function _sequencerDown() internal {
+        vm.mockCall(
+            B.SEQUENCER_UPTIME,
+            abi.encodeWithSelector(IChainlinkAggregator.latestRoundData.selector),
+            abi.encode(uint80(1), int256(1), block.timestamp - 1 days, block.timestamp, uint80(1))
+        );
+    }
+
+    function test_Fork_WithdrawInKindReturnsTheShare() public {
+        uint256 shares = _deposit(alice, 10 ether);
+        _rebalance();
+        uint256 before = vault.totalAssets();
+
+        vm.prank(alice);
+        (uint256 out0, uint256 out1) = vault.withdrawInKind(shares, alice, alice, 0, 0);
+        assertEq(WETH.balanceOf(alice), out0);
+        assertEq(CBBTC.balanceOf(alice), out1);
+        assertGt(out1, 0, "part of the share comes back as cbBTC");
+        assertApproxEqRel(_valueInWeth(out0, out1), before, 0.0001e18, "no swap costs, same value");
+        assertEq(vault.totalSupply(), 0);
+        assertEq(vault.principalOf(alice), 0);
+    }
+
+    function test_Fork_StaleOracleBlocksWithdrawButNotInKind() public {
+        uint256 shares = _deposit(alice, 10 ether);
+        _rebalance();
+        _generateVolume(5);
+        _syncOracleToPool();
+        _staleFeed(B.FEED_CBBTC_USD);
+
+        vm.prank(alice);
+        vm.expectRevert(abi.encodeWithSelector(OracleUniswapSwapper.StalePrice.selector, B.CBBTC));
+        vault.withdrawETH(shares, alice, alice, 0);
+
+        vm.prank(alice);
+        (uint256 out0, uint256 out1) = vault.withdrawInKind(shares, alice, alice, 0, 0);
+        assertGt(out0 + out1, 0);
+        assertEq(vault.totalSupply(), 0, "alice is fully out despite the stale price");
+
+        // Fees earned before the exit can still be claimed without swapping.
+        vm.prank(alice);
+        (uint256 btcOut, uint256 wethOut) = vault.claim(alice, false);
+        assertGt(btcOut + wethOut, 0, "fees claimable without the oracle");
+    }
+
+    function test_Fork_EmergencyExitDuringSequencerOutage() public {
+        uint256 shares = _deposit(alice, 10 ether);
+        _rebalance();
+        vm.prank(guardian);
+        vault.emergencyExit();
+        _sequencerDown();
+
+        vm.prank(alice);
+        vm.expectRevert(OracleUniswapSwapper.SequencerDown.selector);
+        vault.withdrawETH(shares, alice, alice, 0);
+
+        vm.prank(alice);
+        (uint256 out0, uint256 out1) = vault.withdrawInKind(shares, alice, alice, 0, 0);
+        assertGt(out0 + out1, 9.9 ether / 2, "paused, exited and no oracle: the money still comes out");
+        assertEq(vault.totalSupply(), 0);
+    }
+
+    function test_Fork_WithdrawInKindMinimumsGuardAgainstPoolMoves() public {
+        uint256 shares = _deposit(alice, 10 ether);
+        _rebalance();
+        (uint256 exp0, uint256 exp1) = vault.principalAmounts(); // at the Chainlink price
+
+        _movePool(-300); // pool pushed 3 % away from Chainlink: the share holds more WETH, less cbBTC
+        vm.prank(alice);
+        vm.expectPartialRevert(TurboVault.Slippage.selector);
+        vault.withdrawInKind(shares, alice, alice, exp0 * 99 / 100, exp1 * 99 / 100);
+
+        // Without minimums the exit still goes through: the depositor decides.
+        vm.prank(alice);
+        vault.withdrawInKind(shares, alice, alice, 0, 0);
+        assertEq(vault.totalSupply(), 0);
+    }
+
+    function test_Fork_WithdrawInKindNeedsAllowanceForOthers() public {
+        uint256 shares = _deposit(alice, 1 ether);
+        vm.prank(bob);
+        vm.expectRevert();
+        vault.withdrawInKind(shares, bob, alice, 0, 0);
+    }
 }

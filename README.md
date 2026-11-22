@@ -30,7 +30,7 @@ User ──USDC/ETH──▶ BtcYieldVault ──▶ AaveV3Strategy ──▶ Aa
 
 An optional vault for people who knowingly take risk: ETH is deposited, the vault provides concentrated WETH/cbBTC liquidity on Uniswap V3 (range ±8 %), and the trading fees are paid out as cbBTC. **The deposit is not protected** – when ETH and BTC move apart, the position ends up holding more of the weaker coin (impermanent loss); withdrawing makes the loss final. Fork test: ETH −15 % vs BTC → 6.2 % less than holding half/half.
 
-- Shares priced with Chainlink, never with the pool price; withdrawals and keeper actions revert if the pool is more than 1 % away from Chainlink (anti-manipulation)
+- Shares priced with Chainlink, never with the pool price; withdrawals in ETH and keeper actions revert if the pool is more than 1 % away from Chainlink or a price is stale (anti-manipulation). v2 (not deployed yet) adds `withdrawInKind`: WETH + cbBTC without oracle or swap, so an oracle outage cannot lock depositors in. Details in [SECURITY.md](SECURITY.md#known-limits-of-withdrawals).
 - Fees are credited per share on every deposit/withdrawal/transfer, so late depositors get nothing earned before them
 - The keeper re-centers the range when the price leaves it and deploys idle deposits
 - In the UI: interactive impermanent-loss simulator, two quiz questions and a risk confirmation before the vault unlocks; the dashboard always shows value vs. ETH deposited
@@ -44,7 +44,7 @@ An optional vault for people who knowingly take risk: ETH is deposited, the vaul
 | Guardian | Multisig | pause immediately, pull funds out of the strategy |
 | Keeper | Bot wallet | only `harvest()` – swap floor enforced by Chainlink |
 
-Withdrawing and claiming always work, even while paused. The deployer keeps no rights after deployment (checked by the deploy script).
+Withdrawing and claiming work even while paused; see [the known limits](SECURITY.md#known-limits-of-withdrawals) for what the underlying protocols can delay. The deployer keeps no rights after deployment (checked by the deploy script).
 
 ## Project structure
 

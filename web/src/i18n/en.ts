@@ -168,13 +168,13 @@ export const en: Dictionary = {
         title: "Checked by us. Verifiable by you.",
         sub: "Before anything goes live, the contracts run through automated tests and a static security analysis. You can check every number here yourself.",
         stats: [
-          { value: "73 / 73", label: "tests passed" },
+          { value: "87 / 87", label: "tests passed" },
           { value: "1,536", label: "random scenarios per test run (fuzzing)" },
-          { value: "29", label: "tests against the real Base network with Aave, Uniswap and Chainlink" },
+          { value: "43", label: "tests against the real Base network with Aave, Uniswap and Chainlink" },
           { value: "0", label: "critical findings in the Slither analysis" },
           { value: "8 / 8", label: "contracts publicly verified (Basescan & Sourcify)" },
         ],
-        runs: "More than 20 full test runs during development, most recently on 26 Oct 2026.",
+        runs: "More than 20 full test runs during development, most recently on 22 Nov 2026.",
         slitherBadge: "Analyzed with Slither",
         slitherBy: "open-source analysis tool by Trail of Bits",
         slitherNote: "64 medium-level hints were reviewed one by one; none of them is exploitable.",
@@ -554,7 +554,7 @@ export const en: Dictionary = {
       basis: "Basis: the pool recently paid around 20 % per year in fees. After rebalancing and our fee, realistically 8–15 %, sometimes less. Not guaranteed.",
       risk: (pct) =>
         `The catch: if one of the two coins rises strongly, the pool automatically sells some of it – you end up holding more of the weaker one. This price loss (impermanent loss) can eat up the fees. Example: if ETH falls 20 % against BTC, you're about ${pct} % behind “holding half ETH, half BTC”, before fees.`,
-      final: "Withdrawing at the wrong moment makes a loss permanent.",
+      final: "Withdrawing at the wrong moment makes a loss permanent. Also: withdrawing in ETH needs current Chainlink prices – during an outage it can be blocked for a while until prices are current again.",
     },
     quiz: {
       title: "Quick check before you start",
