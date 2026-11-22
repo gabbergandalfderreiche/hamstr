@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T18:07:08+00:00",
+ "generated_at": "2026-11-22T18:10:09+00:00",
  "categories": [
   {
    "id": "tv",
@@ -405,6 +405,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -449,6 +450,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -493,6 +495,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -537,6 +540,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -581,6 +585,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -601,6 +606,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -645,6 +651,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -665,6 +672,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -685,6 +693,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -705,6 +714,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -725,6 +735,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -745,6 +756,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -765,6 +777,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -785,6 +798,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -805,6 +819,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -825,6 +840,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -869,6 +885,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -913,6 +930,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -933,6 +951,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -953,6 +972,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -973,6 +993,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -993,6 +1014,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -1037,6 +1059,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1057,6 +1080,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1077,6 +1101,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1097,6 +1122,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1117,6 +1143,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1137,6 +1164,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1157,6 +1185,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1177,6 +1206,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1197,6 +1227,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1217,6 +1248,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1237,6 +1269,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1257,6 +1290,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1277,6 +1311,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1297,6 +1332,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1317,6 +1353,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1337,6 +1374,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1357,6 +1395,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1377,6 +1416,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1397,6 +1437,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1417,6 +1458,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1437,6 +1479,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1457,6 +1500,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -1501,6 +1545,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -1545,6 +1590,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -1589,6 +1635,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1609,6 +1656,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1629,6 +1677,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1649,6 +1698,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1669,6 +1719,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1689,6 +1740,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1709,6 +1761,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1729,6 +1782,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -1773,6 +1827,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -1817,6 +1872,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -1861,6 +1917,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -1905,6 +1962,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1925,6 +1983,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -1945,6 +2004,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -1989,6 +2049,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2033,6 +2094,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2053,6 +2115,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2097,6 +2160,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2141,6 +2205,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2185,6 +2250,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2229,6 +2295,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2273,6 +2340,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2293,6 +2361,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2337,6 +2406,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2381,6 +2451,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2425,6 +2496,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2469,6 +2541,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2513,6 +2586,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2533,6 +2607,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2553,6 +2628,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2573,6 +2649,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2593,6 +2670,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2613,6 +2691,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2633,6 +2712,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2653,6 +2733,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2673,6 +2754,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2693,6 +2775,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2713,6 +2796,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2757,6 +2841,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2777,6 +2862,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2821,6 +2907,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2841,6 +2928,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2861,6 +2949,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2905,6 +2994,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2925,6 +3015,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -2969,6 +3060,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -2989,6 +3081,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3009,6 +3102,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -3053,6 +3147,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3073,6 +3168,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3093,6 +3189,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3113,6 +3210,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3133,6 +3231,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -3177,6 +3276,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3197,6 +3297,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3217,6 +3318,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3237,6 +3339,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -3281,6 +3384,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -3325,6 +3429,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3345,6 +3450,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3365,6 +3471,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3385,6 +3492,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -3429,6 +3537,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3449,6 +3558,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3469,6 +3579,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3489,6 +3600,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -3533,6 +3645,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3553,6 +3666,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3573,6 +3687,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3593,6 +3708,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3613,6 +3729,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3633,6 +3750,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -3677,6 +3795,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3697,6 +3816,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3717,6 +3837,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3737,6 +3858,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -3781,6 +3903,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3801,6 +3924,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3821,6 +3945,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3841,6 +3966,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3861,6 +3987,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3881,6 +4008,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3901,6 +4029,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -3921,6 +4050,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -3965,6 +4095,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4009,6 +4140,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4029,6 +4161,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4049,6 +4182,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4069,6 +4203,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4113,6 +4248,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4157,6 +4293,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4201,6 +4338,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4221,6 +4359,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4241,6 +4380,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4285,6 +4425,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4305,6 +4446,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4325,6 +4467,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4345,6 +4488,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4365,6 +4509,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4385,6 +4530,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4405,6 +4551,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4425,6 +4572,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4445,6 +4593,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4465,6 +4614,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4485,6 +4635,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4505,6 +4656,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4549,6 +4701,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4593,6 +4746,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4613,6 +4767,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4657,6 +4812,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4677,6 +4833,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4721,6 +4878,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4741,6 +4899,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4785,6 +4944,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4829,6 +4989,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4873,6 +5034,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4917,6 +5079,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -4961,6 +5124,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -4981,6 +5145,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5025,6 +5190,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5069,6 +5235,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5089,6 +5256,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5109,6 +5277,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5153,6 +5322,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5197,6 +5367,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5241,6 +5412,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5285,6 +5457,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5305,6 +5478,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5325,6 +5499,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5369,6 +5544,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5413,6 +5589,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5457,6 +5634,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5477,6 +5655,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5497,6 +5676,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5541,6 +5721,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5585,6 +5766,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5605,6 +5787,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5625,6 +5808,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5645,6 +5829,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5665,6 +5850,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5685,6 +5871,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5705,6 +5892,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5725,6 +5913,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5745,6 +5934,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5765,6 +5955,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5785,6 +5976,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5805,6 +5997,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5825,6 +6018,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5845,6 +6039,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5865,6 +6060,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5885,6 +6081,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5905,6 +6102,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5925,6 +6123,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -5945,6 +6144,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -5989,6 +6189,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -6033,6 +6234,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6053,6 +6255,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6073,6 +6276,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -6117,6 +6321,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -6161,6 +6366,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6181,6 +6387,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6201,6 +6408,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6221,6 +6429,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6241,6 +6450,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6261,6 +6471,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6281,6 +6492,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6301,6 +6513,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6321,6 +6534,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6341,6 +6555,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6361,6 +6576,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6381,6 +6597,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6401,6 +6618,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6421,6 +6639,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6441,6 +6660,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6461,6 +6681,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6481,6 +6702,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6501,6 +6723,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6521,6 +6744,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6541,6 +6765,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6561,6 +6786,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6581,6 +6807,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -6625,6 +6852,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6645,6 +6873,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -6689,6 +6918,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6709,6 +6939,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6729,6 +6960,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6749,6 +6981,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6769,6 +7002,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6789,6 +7023,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6809,6 +7044,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6829,6 +7065,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -6873,6 +7110,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6893,6 +7131,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6913,6 +7152,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -6957,6 +7197,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6977,6 +7218,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -6997,6 +7239,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -7041,6 +7284,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -7085,6 +7329,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -7129,6 +7374,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -7173,6 +7419,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7193,6 +7440,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -7237,6 +7485,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -7281,6 +7530,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -7325,6 +7575,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7345,6 +7596,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -7389,6 +7641,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -7433,6 +7686,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -7477,6 +7731,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -7521,6 +7776,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7541,6 +7797,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7561,6 +7818,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7581,6 +7839,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7601,6 +7860,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7621,6 +7881,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7641,6 +7902,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7661,6 +7923,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7681,6 +7944,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7701,6 +7965,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7721,6 +7986,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7741,6 +8007,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7761,6 +8028,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7781,6 +8049,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7801,6 +8070,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7821,6 +8091,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7841,6 +8112,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7861,6 +8133,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7881,6 +8154,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7901,6 +8175,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7921,6 +8196,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7941,6 +8217,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7961,6 +8238,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -7981,6 +8259,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8001,6 +8280,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8021,6 +8301,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8041,6 +8322,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8061,6 +8343,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8081,6 +8364,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8101,6 +8385,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8121,6 +8406,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8141,6 +8427,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8161,6 +8448,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8181,6 +8469,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8201,6 +8490,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8221,6 +8511,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8241,6 +8532,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8261,6 +8553,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8281,6 +8574,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8301,6 +8595,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8321,6 +8616,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8341,6 +8637,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8361,6 +8658,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8381,6 +8679,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8401,6 +8700,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8421,6 +8721,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8441,6 +8742,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8461,6 +8763,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8481,6 +8784,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8501,6 +8805,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8521,6 +8826,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8541,6 +8847,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8561,6 +8868,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8581,6 +8889,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8601,6 +8910,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8621,6 +8931,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8641,6 +8952,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8661,6 +8973,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8681,6 +8994,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8701,6 +9015,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8721,6 +9036,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8741,6 +9057,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8761,6 +9078,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8781,6 +9099,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8801,6 +9120,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8821,6 +9141,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8841,6 +9162,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8861,6 +9183,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8881,6 +9204,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8901,6 +9225,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8921,6 +9246,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8941,6 +9267,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8961,6 +9288,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -8981,6 +9309,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9025,6 +9354,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9045,6 +9375,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9065,6 +9396,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9085,6 +9417,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9105,6 +9438,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9125,6 +9459,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9145,6 +9480,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9189,6 +9525,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9233,6 +9570,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9277,6 +9615,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9321,6 +9660,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9365,6 +9705,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9409,6 +9750,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9453,6 +9795,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9473,6 +9816,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9493,6 +9837,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9513,6 +9858,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9533,6 +9879,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9553,6 +9900,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9597,6 +9945,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9617,6 +9966,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9637,6 +9987,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9681,6 +10032,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9701,6 +10053,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9745,6 +10098,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9765,6 +10119,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9785,6 +10140,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9805,6 +10161,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9849,6 +10206,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9893,6 +10251,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -9913,6 +10272,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -9957,6 +10317,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10001,6 +10362,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10045,6 +10407,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10089,6 +10452,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10109,6 +10473,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10129,6 +10494,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10149,6 +10515,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10169,6 +10536,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10213,6 +10581,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10257,6 +10626,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10277,6 +10647,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10321,6 +10692,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10365,6 +10737,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10385,6 +10758,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10429,6 +10803,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10473,6 +10848,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10517,6 +10893,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10561,6 +10938,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10581,6 +10959,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10625,6 +11004,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10645,6 +11025,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10689,6 +11070,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10733,6 +11115,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -10777,6 +11160,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10797,6 +11181,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10817,6 +11202,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10837,6 +11223,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10857,6 +11244,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10877,6 +11265,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10897,6 +11286,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10917,6 +11307,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10937,6 +11328,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10957,6 +11349,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10977,6 +11370,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -10997,6 +11391,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11017,6 +11412,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11037,6 +11433,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11057,6 +11454,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -11101,6 +11499,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -11145,6 +11544,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11165,6 +11565,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11185,6 +11586,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11205,6 +11607,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -11249,6 +11652,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11269,6 +11673,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11289,6 +11694,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11309,6 +11715,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11329,6 +11736,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11349,6 +11757,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11369,6 +11778,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11389,6 +11799,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11409,6 +11820,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11429,6 +11841,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11449,6 +11862,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11469,6 +11883,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11489,6 +11904,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11509,6 +11925,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11529,6 +11946,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11549,6 +11967,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11569,6 +11988,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11589,6 +12009,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11609,6 +12030,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11629,6 +12051,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11649,6 +12072,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11669,6 +12093,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11689,6 +12114,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11709,6 +12135,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11729,6 +12156,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11749,6 +12177,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11769,6 +12198,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11789,6 +12219,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11809,6 +12240,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11829,6 +12261,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11849,6 +12282,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11869,6 +12303,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11889,6 +12324,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11909,6 +12345,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11929,6 +12366,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11949,6 +12387,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11969,6 +12408,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -11989,6 +12429,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12033,6 +12474,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12077,6 +12519,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12097,6 +12540,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12117,6 +12561,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12137,6 +12582,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12157,6 +12603,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12177,6 +12624,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12197,6 +12645,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12217,6 +12666,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12261,6 +12711,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12305,6 +12756,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12325,6 +12777,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12345,6 +12798,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12389,6 +12843,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12409,6 +12864,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12453,6 +12909,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12497,6 +12954,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12517,6 +12975,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12537,6 +12996,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12557,6 +13017,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12577,6 +13038,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12621,6 +13083,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12665,6 +13128,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12685,6 +13149,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12729,6 +13194,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12749,6 +13215,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -12769,6 +13236,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12813,6 +13281,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12857,6 +13326,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12901,6 +13371,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -12955,6 +13426,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -12975,6 +13447,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -12995,6 +13468,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -13039,6 +13513,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13059,6 +13534,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13079,6 +13555,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13099,6 +13576,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13119,6 +13597,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13139,6 +13618,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -13183,6 +13663,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -13227,6 +13708,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13247,6 +13729,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13267,6 +13750,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13287,6 +13771,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13307,6 +13792,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13327,6 +13813,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -13371,6 +13858,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -13415,6 +13903,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -13459,6 +13948,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13479,6 +13969,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13499,6 +13990,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13519,6 +14011,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13539,6 +14032,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13559,6 +14053,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13579,6 +14074,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -13623,6 +14119,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13643,6 +14140,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13663,6 +14161,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13683,6 +14182,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13703,6 +14203,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13723,6 +14224,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13743,6 +14245,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13763,6 +14266,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13783,6 +14287,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13803,6 +14308,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13823,6 +14329,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13843,6 +14350,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13863,6 +14371,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13883,6 +14392,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13903,6 +14413,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13923,6 +14434,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -13943,6 +14455,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -13987,6 +14500,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -14031,6 +14545,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14051,6 +14566,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14071,6 +14587,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -14115,6 +14632,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14135,6 +14653,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14155,6 +14674,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14175,6 +14695,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -14219,6 +14740,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14239,6 +14761,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14259,6 +14782,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14279,6 +14803,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14299,6 +14824,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14319,6 +14845,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -14363,6 +14890,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -14407,6 +14935,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14427,6 +14956,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14447,6 +14977,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14467,6 +14998,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14487,6 +15019,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14507,6 +15040,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14527,6 +15061,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14547,6 +15082,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14567,6 +15103,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14587,6 +15124,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14607,6 +15145,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14627,6 +15166,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14647,6 +15187,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14667,6 +15208,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14687,6 +15229,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -14731,6 +15274,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14751,6 +15295,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14771,6 +15316,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14791,6 +15337,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14811,6 +15358,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14831,6 +15379,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14851,6 +15400,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14871,6 +15421,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14891,6 +15442,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -14935,6 +15487,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14955,6 +15508,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14975,6 +15529,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -14995,6 +15550,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15015,6 +15571,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15035,6 +15592,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15055,6 +15613,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15075,6 +15634,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15095,6 +15655,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15115,6 +15676,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -15159,6 +15721,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15179,6 +15742,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15199,6 +15763,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -15243,6 +15808,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -15287,6 +15853,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15307,6 +15874,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -15351,6 +15919,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15371,6 +15940,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -15415,6 +15985,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15435,6 +16006,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15455,6 +16027,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15475,6 +16048,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15495,6 +16069,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15515,6 +16090,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15535,6 +16111,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15555,6 +16132,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15575,6 +16153,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15595,6 +16174,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15615,6 +16195,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15635,6 +16216,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15655,6 +16237,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15675,6 +16258,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15695,6 +16279,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15715,6 +16300,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15735,6 +16321,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15755,6 +16342,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15775,6 +16363,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15795,6 +16384,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15815,6 +16405,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15835,6 +16426,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15855,6 +16447,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15875,6 +16468,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15895,6 +16489,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15915,6 +16510,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15935,6 +16531,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15955,6 +16552,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15975,6 +16573,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -15995,6 +16594,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16015,6 +16615,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16035,6 +16636,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16055,6 +16657,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16075,6 +16678,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16095,6 +16699,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16115,6 +16720,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16135,6 +16741,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16155,6 +16762,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16175,6 +16783,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16195,6 +16804,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16215,6 +16825,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16235,6 +16846,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16255,6 +16867,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16275,6 +16888,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16295,6 +16909,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16315,6 +16930,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16335,6 +16951,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16355,6 +16972,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16375,6 +16993,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16395,6 +17014,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16415,6 +17035,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16435,6 +17056,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16455,6 +17077,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16475,6 +17098,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16495,6 +17119,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16515,6 +17140,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16535,6 +17161,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16555,6 +17182,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -16599,6 +17227,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -16643,6 +17272,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16663,6 +17293,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16683,6 +17314,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -16727,6 +17359,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16747,6 +17380,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16767,6 +17401,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -16811,6 +17446,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16831,6 +17467,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16851,6 +17488,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16871,6 +17509,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16891,6 +17530,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16911,6 +17551,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16931,6 +17572,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16951,6 +17593,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -16971,6 +17614,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17015,6 +17659,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17059,6 +17704,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17079,6 +17725,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17099,6 +17746,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17143,6 +17791,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17163,6 +17812,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17207,6 +17857,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17251,6 +17902,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17271,6 +17923,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17291,6 +17944,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17311,6 +17965,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17355,6 +18010,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17375,6 +18031,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17395,6 +18052,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17415,6 +18073,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17435,6 +18094,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17455,6 +18115,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17475,6 +18136,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17519,6 +18181,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17563,6 +18226,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17583,6 +18247,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17627,6 +18292,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17647,6 +18313,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17691,6 +18358,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17735,6 +18403,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17779,6 +18448,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17823,6 +18493,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17843,6 +18514,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17863,6 +18535,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17883,6 +18556,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17903,6 +18577,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17923,6 +18598,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -17943,6 +18619,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -17987,6 +18664,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18007,6 +18685,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18027,6 +18706,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18047,6 +18727,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18091,6 +18772,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18111,6 +18793,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18131,6 +18814,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18151,6 +18835,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18171,6 +18856,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18191,6 +18877,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18211,6 +18898,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18231,6 +18919,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18251,6 +18940,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18271,6 +18961,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18291,6 +18982,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18311,6 +19003,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18331,6 +19024,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18351,6 +19045,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18371,6 +19066,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18391,6 +19087,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18411,6 +19108,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18431,6 +19129,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18451,6 +19150,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18471,6 +19171,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18491,6 +19192,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -18511,6 +19213,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18555,6 +19258,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18599,6 +19303,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18643,6 +19348,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18687,6 +19393,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18731,6 +19438,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18775,6 +19483,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18819,6 +19528,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18863,6 +19573,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18907,6 +19618,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18951,6 +19663,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -18995,6 +19708,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19039,6 +19753,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19083,6 +19798,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19103,6 +19819,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19123,6 +19840,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19143,6 +19861,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19187,6 +19906,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19207,6 +19927,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19227,6 +19948,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19247,6 +19969,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19267,6 +19990,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19287,6 +20011,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19307,6 +20032,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19327,6 +20053,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19371,6 +20098,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19391,6 +20119,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19411,6 +20140,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19431,6 +20161,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19451,6 +20182,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19471,6 +20203,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19491,6 +20224,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19511,6 +20245,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19562,6 +20297,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -19606,6 +20342,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19650,6 +20387,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19694,6 +20432,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19738,6 +20477,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19782,6 +20522,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19826,6 +20567,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19870,6 +20612,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19890,6 +20633,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -19910,6 +20654,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19954,6 +20699,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -19998,6 +20744,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20042,6 +20789,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20086,6 +20834,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20106,6 +20855,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20150,6 +20900,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20170,6 +20921,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20190,6 +20942,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20210,6 +20963,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20230,6 +20984,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20250,6 +21005,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20270,6 +21026,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20290,6 +21047,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20334,6 +21092,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20378,6 +21137,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20398,6 +21158,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20442,6 +21203,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20462,6 +21224,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20506,6 +21269,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20526,6 +21290,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20546,6 +21311,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20566,6 +21332,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20610,6 +21377,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20630,6 +21398,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20650,6 +21419,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20694,6 +21464,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20738,6 +21509,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20782,6 +21554,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20826,6 +21599,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20846,6 +21620,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20866,6 +21641,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20886,6 +21662,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20930,6 +21707,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -20950,6 +21728,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -20994,6 +21773,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21014,6 +21794,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21034,6 +21815,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21054,6 +21836,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -21098,6 +21881,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -21142,6 +21926,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -21186,6 +21971,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21206,6 +21992,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21226,6 +22013,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21246,6 +22034,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21266,6 +22055,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21286,6 +22076,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21306,6 +22097,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21326,6 +22118,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21346,6 +22139,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21366,6 +22160,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21386,6 +22181,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21406,6 +22202,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21426,6 +22223,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21446,6 +22244,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21466,6 +22265,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -21510,6 +22310,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21530,6 +22331,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -21574,6 +22376,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -21618,6 +22421,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -21662,6 +22466,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21682,6 +22487,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21702,6 +22508,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21722,6 +22529,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21742,6 +22550,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -21786,6 +22595,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -21830,6 +22640,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21850,6 +22661,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21870,6 +22682,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -21914,6 +22727,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21934,6 +22748,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21954,6 +22769,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21974,6 +22790,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -21994,6 +22811,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22014,6 +22832,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22034,6 +22853,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22054,6 +22874,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22074,6 +22895,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22094,6 +22916,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22114,6 +22937,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22134,6 +22958,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22154,6 +22979,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22174,6 +23000,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22194,6 +23021,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22214,6 +23042,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22234,6 +23063,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22254,6 +23084,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22298,6 +23129,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22342,6 +23174,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22362,6 +23195,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22382,6 +23216,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22402,6 +23237,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22446,6 +23282,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22490,6 +23327,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22534,6 +23372,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22578,6 +23417,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22598,6 +23438,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22642,6 +23483,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22686,6 +23528,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22730,6 +23573,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22774,6 +23618,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22818,6 +23663,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22838,6 +23684,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22858,6 +23705,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22878,6 +23726,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22898,6 +23747,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -22942,6 +23792,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -22962,6 +23813,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23006,6 +23858,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23050,6 +23903,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23094,6 +23948,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23138,6 +23993,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23182,6 +24038,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23226,6 +24083,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23270,6 +24128,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23290,6 +24149,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23310,6 +24170,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23330,6 +24191,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23350,6 +24212,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23370,6 +24233,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23390,6 +24254,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23410,6 +24275,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23430,6 +24296,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23474,6 +24341,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23518,6 +24386,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23538,6 +24407,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23558,6 +24428,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23578,6 +24449,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23622,6 +24494,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23642,6 +24515,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23662,6 +24536,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23706,6 +24581,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23726,6 +24602,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23746,6 +24623,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23766,6 +24644,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23810,6 +24689,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23854,6 +24734,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -23898,6 +24779,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23918,6 +24800,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23938,6 +24821,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23958,6 +24842,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23978,6 +24863,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -23998,6 +24884,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -24018,6 +24905,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -24038,6 +24926,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -24058,6 +24947,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24102,6 +24992,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24146,6 +25037,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24190,6 +25082,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24234,6 +25127,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24278,6 +25172,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24322,6 +25217,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24366,6 +25262,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24410,6 +25307,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24454,6 +25352,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24498,6 +25397,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -24518,6 +25418,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -24538,6 +25439,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -24558,6 +25460,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24602,6 +25505,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24646,6 +25550,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24690,6 +25595,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24734,6 +25640,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24786,6 +25693,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -24838,6 +25746,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -24858,6 +25767,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -24910,6 +25820,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -24962,6 +25873,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25014,6 +25926,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -25034,6 +25947,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25086,6 +26000,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25138,6 +26053,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -25190,6 +26106,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25242,6 +26159,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25294,6 +26212,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25346,6 +26265,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -25398,6 +26318,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25450,6 +26371,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25502,6 +26424,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25554,6 +26477,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -25574,6 +26498,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -25594,6 +26519,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -25614,6 +26540,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -25666,6 +26593,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25718,6 +26646,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25761,6 +26690,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25813,6 +26743,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     },
@@ -25833,6 +26764,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25885,6 +26817,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25937,6 +26870,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -25989,6 +26923,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -26032,6 +26967,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -26084,6 +27020,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -26136,6 +27073,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -26179,6 +27117,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -26234,6 +27173,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -26286,6 +27226,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -26329,6 +27270,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -26381,6 +27323,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -26424,6 +27367,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -26476,6 +27420,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -26496,6 +27441,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -26548,6 +27494,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -26600,6 +27547,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -26652,6 +27600,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -26704,6 +27653,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -26756,6 +27706,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -26808,6 +27759,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -26860,6 +27812,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -26912,6 +27865,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -26964,6 +27918,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -27016,6 +27971,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -27068,6 +28024,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -27124,6 +28081,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -27180,6 +28138,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -27232,6 +28191,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -27284,6 +28244,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -27336,6 +28297,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -27356,6 +28318,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -27408,6 +28371,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -27460,6 +28424,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -27512,6 +28477,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -27555,6 +28521,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -27598,6 +28565,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -27650,6 +28618,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -27702,6 +28671,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -27754,6 +28724,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -27806,6 +28777,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -27858,6 +28830,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -27901,6 +28874,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -27953,6 +28927,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -27973,6 +28948,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -28025,6 +29001,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -28077,6 +29054,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -28129,6 +29107,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28172,6 +29151,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28215,6 +29195,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28258,6 +29239,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28310,6 +29292,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28362,6 +29345,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28414,6 +29398,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28457,6 +29442,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28509,6 +29495,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -28529,6 +29516,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     },
@@ -28549,6 +29537,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28601,6 +29590,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-22",
      "foreign": false,
      "real": true
     }
@@ -28644,6 +29634,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28696,6 +29687,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28748,6 +29740,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28800,6 +29793,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28852,6 +29846,7 @@
      "stock_qty": null,
      "method": "kuratiert",
      "confidence": 1.0,
+     "checked": "2026-11-21",
      "foreign": false,
      "real": true
     }
@@ -28866,7 +29861,7 @@
    "url": "https://www.ricardo.ch/de/a/loewe-fernseh-connect-id-55-full-hd-smart-tv-1336191470/",
    "price": 75.0,
    "place": "Sofort kaufen · endet Fr, 27 Nov., 13:02",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28877,7 +29872,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55-4k-suhd-smart-tv-ue55ks8080t-one-connect-1336275950/",
    "price": 149.0,
    "place": "Sofort kaufen · endet Sa, 28 Nov., 11:15",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28888,7 +29883,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-curved-led-tv-55-inch-full-hd-smart-television-2015-1336328066/",
    "price": 150.0,
    "place": "Sofort kaufen · endet oder Preis vorschlagen",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28899,7 +29894,7 @@
    "url": "https://www.ricardo.ch/de/a/sony-lcd-tv-kdl-55w807a-55-zoll-neuwertig-1334904534/",
    "price": 150.0,
    "place": "Sofort kaufen · endet Morgen, 08:07",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28910,7 +29905,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55-curved-4k-uhd-smart-tv-ue55ju6570-top-zustand-1336051144/",
    "price": 180.0,
    "place": "Sofort kaufen · endet Mi, 25 Nov., 21:11",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28921,7 +29916,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55-zoll-curved-suhd-4k-tv-1336189092/",
    "price": 230.0,
    "place": "Sofort kaufen · endet So, 29 Nov., 11:31",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28932,7 +29927,7 @@
    "url": "https://www.ricardo.ch/de/a/philips-oled-tv-mit-ambilight-55zoll-1331971168/",
    "price": 249.0,
    "place": "Sofort kaufen · endet oder Preis vorschlagen",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28943,7 +29938,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55%E2%80%9D-4k-uhd-smart-tv-%E2%80%93-modell-ue55mu6170-%E2%80%93top-zustand-1333464224/",
    "price": 249.0,
    "place": "Sofort kaufen · endet Fr, 22 Jan., 21:18",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28954,7 +29949,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-fernseher-qe55q60bau-55-zoll-qled-in-gutem-zustand-1336195144/",
    "price": 250.0,
    "place": "Sofort kaufen · endet Mo, 30 Nov., 13:48",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28965,7 +29960,7 @@
    "url": "https://www.ricardo.ch/de/a/lg-oled55b9sla-55-zoll-1335805702/",
    "price": 250.0,
    "place": "Sofort kaufen · endet Mo, 23 Nov., 13:56",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28976,7 +29971,7 @@
    "url": "https://www.ricardo.ch/de/a/sony-bravia-kd55x80j-55-inch-led-4k-ultra-hd-uhd-1336322686/",
    "price": 250.0,
    "place": "Sofort kaufen · endet Sa, 28 Nov., 17:33",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28987,7 +29982,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55-ju6740-6-series-curved-uhd-4k-smart-led-tv-1335161250/",
    "price": 270.0,
    "place": "Sofort kaufen · endet oder Preis vorschlagen",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -28998,7 +29993,7 @@
    "url": "https://www.ricardo.ch/de/a/sony-bravia-kd-55xh9005-55-4k-android-tv-1336172628/",
    "price": 290.0,
    "place": "Sofort kaufen · endet So, 29 Nov., 20:00",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -29009,7 +30004,7 @@
    "url": "https://www.ricardo.ch/de/a/sony-bravia-55-zoll-4k-uhd-google-tv-1336070506/",
    "price": 299.0,
    "place": "Sofort kaufen · endet oder Preis vorschlagen",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -29020,7 +30015,7 @@
    "url": "https://www.ricardo.ch/de/a/sony-bravia-fernseher-55-zoll-tv-1274505174/",
    "price": 300.0,
    "place": "Sofort kaufen · endet Fr, 27 Nov., 13:26",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -29031,7 +30026,7 @@
    "url": "https://www.ricardo.ch/de/a/lg-oled55b19la-fernseher-55-zoll-oled-tv-guter-zustand-1335980914/",
    "price": 300.0,
    "place": "Sofort kaufen · endet Mi, 25 Nov., 10:17",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -29042,7 +30037,7 @@
    "url": "https://www.ricardo.ch/de/a/lg-oled-55b9-4k-55-zoll-smart-tv-1335711676/",
    "price": 399.0,
    "place": "Sofort kaufen · endet Morgen, 17:10",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -29053,7 +30048,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-ue55tu8070u-smart-tv-55-zoll-crystal-uhd-in-ovp-1336045610/",
    "price": 399.0,
    "place": "Sofort kaufen · endet oder Preis vorschlagen",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -29064,7 +30059,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-qe55q60bau-55'-qled-4k-quantum-smart-tv-1330592768/",
    "price": 429.0,
    "place": "Sofort kaufen · endet Heute, 23:06",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -29075,7 +30070,7 @@
    "url": "https://www.ricardo.ch/de/a/lg-oled55e7n-55-oled-4k-hdr-smart-tv-1336285358/",
    "price": 449.0,
    "place": "Sofort kaufen · endet Fr, 19 Feb., 12:27",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -29086,7 +30081,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-55-zoll-qled-4k-smart-tv-qe55q95t-1335252808/",
    "price": 450.0,
    "place": "Sofort kaufen · endet Mi, 25 Nov., 10:03",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -29097,7 +30092,7 @@
    "url": "https://www.ricardo.ch/de/a/samsung-the-frame-tv-55-zoll-mit-studio-stand-1334836804/",
    "price": 600.0,
    "place": "Sofort kaufen · endet Sa, 28 Nov., 14:18",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   },
@@ -29108,7 +30103,7 @@
    "url": "https://www.ricardo.ch/de/a/hisense-u8-55-zoll-fernseher-mini-led-fabrikneu-1336282000/",
    "price": 900.0,
    "place": "Sofort kaufen · endet Sa, 28 Nov., 11:51",
-   "last_seen": "2026-11-22T18:07:07+00:00",
+   "last_seen": "2026-11-22T18:10:08+00:00",
    "size": 55,
    "category": "tv"
   }
